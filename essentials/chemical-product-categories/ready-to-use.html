@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ready to Use - Essentials</title>
+  <style>
+    
+    :root {
+      --bg: #ffffff;
+      --page: #ffffff;
+      --ink: #071426;
+      --muted: #4a5568;
+      --line: #c9d3df;
+      --section: #f4f8fb;
+      --accent: #061a33;
+      --radius: 8px;
+      --shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+      --tablet-page-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 17px;
+      line-height: 1.25;
+    }
+
+    body {
+      padding: 6px;
+    }
+
+    .page {
+      position: relative;
+      width: 100%;
+      max-width: var(--tablet-page-width);
+      min-height: 760px;
+      margin: 0 auto 16px auto;
+      background: var(--page);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      padding: 8px;
+      overflow: visible;
+      border: 2px solid var(--accent);
+    }
+
+    .home-strip {
+      display: block;
+      margin: -8px -8px 8px -8px;
+      padding: 0;
+      background: var(--accent);
+      border-radius: 8px 8px 0 0;
+      overflow: hidden;
+    }
+
+    .home-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 42px;
+      padding: 10px 14px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 900;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      border: 0;
+      border-bottom: 4px solid var(--accent-soft);
+      line-height: 1;
+    }
+
+    .home-button:hover,
+    .home-button:focus {
+      background: #ffffff;
+      color: var(--accent);
+      outline: 3px solid var(--accent);
+      outline-offset: -3px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      align-items: stretch;
+    }
+
+    .block,
+    .site-card {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--section);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 210px;
+      box-shadow: none;
+    }
+
+    .block:hover,
+    .block:focus,
+    .site-card:hover,
+    .site-card:focus {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .block img,
+    .site-card-image img,
+    .image-placeholder {
+      width: 100%;
+      height: 150px;
+      max-height: 150px;
+      object-fit: contain;
+      object-position: center center;
+      background: #ffffff;
+      padding: 6px;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .site-card-image {
+      width: 100%;
+      height: 150px;
+      max-height: 150px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .site-card-image img {
+      height: 100%;
+      max-height: 100%;
+      border-bottom: 0;
+    }
+
+    .image-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .block-title,
+    .site-card-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      padding: 8px;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 900;
+      line-height: 1.08;
+      color: #ffffff;
+      background: var(--accent);
+      overflow-wrap: anywhere;
+    }
+
+    .note {
+      margin-top: 8px;
+      padding: 8px;
+      background: var(--section);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--ink);
+      font-size: 0.95rem;
+    }
+
+    .note p {
+      margin: 0;
+    }
+
+    @media print {
+      @page {
+        size: Letter landscape;
+        margin: 0.25in;
+      }
+
+      html,
+      body {
+        background: white;
+        font-size: 15px;
+      }
+
+      body {
+        padding: 0;
+      }
+
+      .page {
+        width: 100%;
+        max-width: none;
+        min-height: 0;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 8px;
+        margin: 0;
+      }
+
+      .home-strip {
+        display: none;
+      }
+
+      .block,
+      .site-card {
+        break-inside: avoid;
+        box-shadow: none;
+      }
+    }
+
+    @media screen and (max-width: 850px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media screen and (max-width: 560px) {
+      body {
+        padding: 5px;
+        font-size: 16px;
+      }
+
+      .page {
+        min-height: 0;
+        padding: 6px;
+        border-radius: 8px;
+      }
+
+      .home-strip {
+        margin: -6px -6px 8px -6px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    
+    <nav class="home-strip" aria-label="Page navigation">
+      <a class="home-button" href="../index.html">HOME</a>
+    </nav>
+    <section class="grid">
+        <a class="block" href="../chemical-products/Bacterial Odor - Grease Digestant.html">
+          <img src="../assets/chemical-product-images/Bacterial Odor - Grease Digestant.png" alt="Bacterial Odor &amp; Grease Digestant">
+          <div class="block-title">Bacterial Odor &amp; Grease Digestant</div>
+        </a>
+        <a class="block" href="../chemical-products/Citrus Spray - Wipe.html">
+          <img src="../assets/chemical-product-images/Citrus Spray - Wipe.jpg" alt="Citrus Spray &amp; Wipe">
+          <div class="block-title">Citrus Spray &amp; Wipe</div>
+        </a>
+        <a class="block" href="../chemical-products/Clinging Delimer.html">
+          <img src="../assets/chemical-product-images/Clinging Delimer.png" alt="Clinging Delimer">
+          <div class="block-title">Clinging Delimer</div>
+        </a>
+        <a class="block" href="../chemical-products/Dock - Dumpster Treatment.html">
+          <img src="../assets/chemical-product-images/Dock - Dumpster Treatment.png" alt="Dock &amp; Dumpster Treatment">
+          <div class="block-title">Dock &amp; Dumpster Treatment</div>
+        </a>
+        <a class="block" href="../chemical-products/Freezer Cleaner.html">
+          <img src="../assets/chemical-product-images/Freezer Cleaner.png" alt="Freezer Cleaner">
+          <div class="block-title">Freezer Cleaner</div>
+        </a>
+        <a class="block" href="../chemical-products/Heavy Duty Degreaser.html">
+          <img src="../assets/chemical-product-images/Heavy Duty Degreaser.jpg" alt="Heavy Duty Degreaser">
+          <div class="block-title">Heavy Duty Degreaser</div>
+        </a>
+        <a class="block" href="../chemical-products/Multi Purpose Spot - Stain Remover.html">
+          <img src="../assets/chemical-product-images/Multi Purpose Spot - Stain Remover.jpg" alt="Multi Purpose Spot &amp; Stain Remover">
+          <div class="block-title">Multi Purpose Spot &amp; Stain Remover</div>
+        </a>
+        <a class="block" href="../chemical-products/Opti-Dose Detergent.html">
+          <img src="../assets/chemical-product-images/Opti-Dose Detergent.png" alt="Opti-Dose Detergent">
+          <div class="block-title">Opti-Dose Detergent</div>
+        </a>
+        <a class="block" href="../chemical-products/Opti-Dose Sanitizer.html">
+          <img src="../assets/chemical-product-images/Opti-Dose Sanitizer.png" alt="Opti-Dose Sanitizer">
+          <div class="block-title">Opti-Dose Sanitizer</div>
+        </a>
+        <a class="block" href="../chemical-products/Organic Stain Remover.html">
+          <img src="../assets/chemical-product-images/Organic Stain Remover.png" alt="Organic Stain Remover">
+          <div class="block-title">Organic Stain Remover</div>
+        </a>
+        <a class="block" href="../chemical-products/Plastic - China Destainer.html">
+          <img src="../assets/chemical-product-images/Plastic - China Destainer.png" alt="Plastic &amp; China Destainer">
+          <div class="block-title">Plastic &amp; China Destainer</div>
+        </a>
+        <a class="block" href="../chemical-products/Powdered Flatware Presoak.html">
+          <img src="../assets/chemical-product-images/Powdered Flatware Presoak.png" alt="Powdered Flatware Presoak">
+          <div class="block-title">Powdered Flatware Presoak</div>
+        </a>
+        <a class="block" href="../chemical-products/Tannin Stain Remover.html">
+          <img src="../assets/chemical-product-images/Tannin Stain Remover.png" alt="Tannin Stain Remover">
+          <div class="block-title">Tannin Stain Remover</div>
+        </a></section>
+  </main>
+</body>
+</html>
