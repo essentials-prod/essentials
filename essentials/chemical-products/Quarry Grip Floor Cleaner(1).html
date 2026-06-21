@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+  >
+  <title>Quarry Grip Floor Cleaner | Service Essentials</title>
+  <style>
+    
+    :root {
+      --bg: #ffffff;
+      --page: #ffffff;
+      --ink: #071426;
+      --muted: #4a5568;
+      --line: #c9d3df;
+      --section: #f4f8fb;
+      --accent: #061a33;
+      --accent-2: #e9f7a6;
+      --accent-soft: #f4f9d8;
+      --accent-soft-blue: #e8eef7;
+      --table-row-alt: #f2f7fc;
+      --radius: 8px;
+      --shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+
+      --tablet-page-height: 760px;
+      --tablet-page-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 17px;
+      line-height: 1.25;
+    }
+
+    body {
+      padding: 6px;
+    }
+
+    .page {
+      position: relative;
+      width: 100%;
+      max-width: var(--tablet-page-width);
+      height: var(--tablet-page-height);
+      max-height: var(--tablet-page-height);
+      margin: 0 auto 16px auto;
+      background: var(--page);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      padding: 8px;
+      overflow: visible;
+      page-break-after: always;
+      border: 2px solid var(--accent);
+    }
+
+    .online-mode .page {
+      height: auto;
+      max-height: none;
+      min-height: var(--tablet-page-height);
+    }
+
+    .home-strip {
+      display: block;
+      margin: -8px -8px 8px -8px;
+      padding: 0;
+      background: var(--accent);
+      border-radius: 8px 8px 0 0;
+      overflow: hidden;
+    }
+
+    .home-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 42px;
+      padding: 10px 14px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 900;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      border: 0;
+      border-bottom: 4px solid var(--accent-soft);
+      line-height: 1;
+    }
+
+    .home-button:hover,
+    .home-button:focus {
+      background: #ffffff;
+      color: var(--accent);
+      outline: 3px solid var(--accent);
+      outline-offset: -3px;
+    }
+
+    .hero {
+      display: block;
+      background: #ffffff;
+      border-bottom: 4px solid var(--accent);
+      padding: 7px 8px;
+      margin: 0 -8px 8px -8px;
+      border-radius: 0;
+    }
+
+    .hero-left {
+      min-width: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.75rem, 3vw, 2.45rem);
+      line-height: 1;
+      color: var(--accent);
+    }
+
+    h2 {
+      margin: 0 0 4px;
+      font-size: 1.12rem;
+      line-height: 1.08;
+      color: var(--accent);
+    }
+
+    .section-card h2,
+    .info-card h2 {
+      background: var(--accent);
+      color: #ffffff;
+      margin: -4px -4px 6px -4px;
+      padding: 5px 8px;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .top-grid {
+      display: grid !important;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 8px;
+      margin-bottom: 8px;
+      align-items: stretch;
+    }
+
+    .photo-card,
+    .spec-card,
+    .info-card,
+    .section-card,
+    .notice-card {
+      border: 1px solid var(--line);
+      background: var(--section);
+      border-radius: var(--radius);
+      padding: 4px;
+    }
+
+    .photo-card {
+      border: 0px;
+      height: 150px;
+      min-height: 150px;
+      max-height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .photo-card img {
+      height: 150px;
+      max-height: 150px;
+      max-width: 100%;
+      width: auto;
+      object-fit: contain;
+      object-position: left center;
+      border-radius: 4px;
+    }
+
+    .photo-placeholder {
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 700;
+      border: 1px dashed var(--line);
+      border-radius: 5px;
+      padding: 55px 4px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .spec-card {
+      border: 0px;
+      height: 150px;
+      min-height: 150px;
+      max-height: 150px;
+      overflow: hidden;
+      padding: 4px 6px;
+    }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(2, 1fr);
+      gap: 4px;
+      height: 100%;
+    }
+
+    .spec-item {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      padding: 6px 8px;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .manuals-spec-item,
+    .chemical-tech-spec-item {
+      padding: 4px 6px;
+    }
+
+    .manuals-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 4px;
+      height: calc(100% - 18px);
+      margin-top: 1px;
+    }
+
+    .manual-bucket {
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: var(--accent-soft-blue);
+      min-width: 0;
+      overflow: hidden;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    .manual-tile,
+    .tech-sheet-tile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: calc(100% - 18px);
+      min-height: 30px;
+      padding: 0;
+      margin: 1px 0 0 0;
+      color: var(--accent);
+      background: var(--accent-soft-blue);
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      font-weight: 900;
+      font-size: 10px;
+      line-height: 10px;
+      text-align: center;
+      text-decoration: none;
+      overflow: hidden;
+      word-break: break-word;
+    }
+
+    .manual-bucket .manual-tile {
+      height: 100%;
+      margin: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .manual-tile:hover,
+    .manual-tile:focus,
+    .tech-sheet-tile:hover,
+    .tech-sheet-tile:focus {
+      background: #ffffff;
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+    }
+
+    .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 1px;
+    }
+
+    .value {
+      display: block;
+      font-weight: 800;
+      color: var(--ink);
+      font-size: 1.02rem;
+      line-height: 1.1;
+      overflow-wrap: anywhere;
+    }
+
+    .summary-table {
+      margin-bottom: 8px;
+    }
+
+    .summary-table td,
+    .summary-table th {
+      text-align: left;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .info-card p,
+    .section-card p,
+    .notice-card p {
+      margin: 0;
+    }
+
+    .section-card,
+    .notice-card {
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 1.02rem;
+    }
+
+    th {
+      background: var(--accent-soft);
+      color: var(--accent);
+      text-align: left;
+      padding: 5px 6px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.08;
+      border-bottom: 1px solid var(--line);
+      font-weight: 900;
+    }
+
+    .soft-header th {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-bottom: 1px solid var(--line);
+      font-weight: 900;
+    }
+
+    tbody tr:nth-child(odd) td {
+      background: #ffffff;
+    }
+
+    tbody tr:nth-child(even) td {
+      background: var(--table-row-alt);
+    }
+
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 5px 6px;
+      vertical-align: top;
+      line-height: 1.18;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .summary-description-label {
+      background: var(--accent-soft) !important;
+      color: var(--accent);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .summary-description-value {
+      background: #ffffff !important;
+    }
+
+    .parts-table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
+
+    .parts-table th:nth-child(1),
+    .parts-table td:nth-child(1) {
+      width: calc(12ch + 10px);
+      white-space: nowrap;
+    }
+
+    .parts-table th:nth-child(2),
+    .parts-table td:nth-child(2) {
+      width: auto;
+    }
+
+    .parts-table th:nth-child(3),
+    .parts-table td:nth-child(3) {
+      width: 20ch;
+      white-space: nowrap;
+    }
+
+    .component-table,
+    .troubleshooting-table,
+    .chemical-packaging-table,
+    .chemical-materials-table {
+      table-layout: fixed;
+    }
+
+    .component-table th:nth-child(1),
+    .component-table td:nth-child(1) {
+      width: 40%;
+    }
+
+    .component-table th:nth-child(2),
+    .component-table td:nth-child(2) {
+      width: 60%;
+    }
+
+    .troubleshooting-table th:nth-child(1),
+    .troubleshooting-table td:nth-child(1) {
+      width: 35%;
+    }
+
+    .troubleshooting-table th:nth-child(2),
+    .troubleshooting-table td:nth-child(2) {
+      width: 65%;
+    }
+
+    .chemical-packaging-table th:nth-child(1),
+    .chemical-packaging-table td:nth-child(1) {
+      width: 24%;
+    }
+
+    .chemical-packaging-table th:nth-child(2),
+    .chemical-packaging-table td:nth-child(2) {
+      width: 34%;
+    }
+
+    .chemical-packaging-table th:nth-child(3),
+    .chemical-packaging-table td:nth-child(3) {
+      width: 42%;
+    }
+
+    .chemical-materials-table th:nth-child(1),
+    .chemical-materials-table td:nth-child(1) {
+      width: 40%;
+    }
+
+    .chemical-materials-table th:nth-child(2),
+    .chemical-materials-table td:nth-child(2) {
+      width: 60%;
+    }
+
+    a {
+      color: var(--accent);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    footer {
+      border-top: 2px solid var(--accent);
+      margin-top: 6px;
+      padding-top: 4px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .empty {
+      color: var(--muted);
+      font-style: italic;
+      margin: 0;
+      font-size: 1.02rem;
+    }
+
+    .used-on-equipment-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 8px;
+    }
+
+    .used-on-equipment-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 9px;
+      background: var(--accent-soft-blue);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--accent);
+      font-weight: 900;
+      text-decoration: none;
+      line-height: 1;
+    }
+
+    .used-on-equipment-link:hover,
+    .used-on-equipment-link:focus {
+      background: var(--accent-soft);
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    @media print {
+      .home-strip {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 650px) {
+      body {
+        padding: 5px;
+        font-size: 16px;
+      }
+
+      .page {
+        padding: 6px;
+        border-radius: 8px;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+      }
+
+      .home-strip {
+        margin: -6px -6px 8px -6px;
+      }
+
+      .hero {
+        margin: 0 -6px 8px -6px;
+      }
+
+      .top-grid {
+        grid-template-columns: 160px minmax(0, 1fr);
+      }
+
+      .photo-card,
+      .spec-card {
+        height: 120px;
+        min-height: 120px;
+        max-height: 120px;
+      }
+
+      .photo-card img {
+        height: 120px;
+        max-height: 120px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      table {
+        font-size: 0.95rem;
+      }
+
+      th,
+      td {
+        padding: 4px 5px;
+      }
+    }
+  
+    
+    body.online-mode {
+      min-height: 100vh;
+      padding: 6px;
+    }
+
+    .online-mode .page {
+      height: auto;
+      max-height: none;
+      min-height: var(--tablet-page-height);
+      overflow: visible;
+      page-break-after: auto;
+      margin-bottom: 0;
+    }
+
+    .online-mode footer {
+      margin-bottom: 0;
+    }
+  
+  </style>
+</head>
+
+<body class="online-mode">
+
+  <main class="page online-page chemical-page">
+
+    
+    <nav class="home-strip" aria-label="Page navigation">
+      <a class="home-button" href="../index.html">HOME</a>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-left">
+        <h1>Quarry Grip Floor Cleaner</h1>
+      </div>
+    </header>
+
+    <section class="top-grid">
+      <div class="photo-card">
+        <img src="../assets/chemical-product-images/Quarry Grip Floor Cleaner.png" alt="Quarry Grip Floor Cleaner">
+      </div>
+
+      <div class="spec-card">
+        <div class="spec-grid">
+    <div class="spec-item">
+      <span class="label">Category</span>
+      <span class="value">Chem Disp</span>
+    </div>
+    <div class="spec-item">
+      <span class="label">1 GPM (Grey)</span>
+      <span class="value">Pink</span>
+    </div>
+    <div class="spec-item">
+      <span class="label">3.5 GPM (Yellow)</span>
+      <span class="value">Aqua</span>
+    </div>
+      <div class="spec-item chemical-tech-spec-item">
+        <span class="label">Tech Sheet</span>
+        <a class="manual-tile tech-sheet-tile" href="https://drive.google.com/file/d/1b-Y9IE3WfUNldpgVkLE8eGL-nbY6WEfv/view" target="_blank" rel="noopener">
+          TECH SHEET
+        </a>
+      </div></div>
+      </div>
+    </section>
+
+    
+    <section class="section-card chemical-directions-card">
+      <h2>Product Information</h2>
+      <p>Daily cleaning and traction treatment of quarry tile floors in institutional kitchens.</p>
+    </section>
+
+    
+    <section class="section-card summary-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Dilution Ratio</th><th>Product Color</th><th>Replacement</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1:128</td><td>Orange</td><td>Heavy Duty Grease Release</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    
+    <section class="section-card">
+      <h2>Packaging / Item Codes</h2>
+      <table class="chemical-packaging-table">
+        <thead class="soft-header">
+          <tr>
+            <th>Item Code</th>
+            <th>Case Size</th>
+            <th>Case Yield</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+      <tr>
+        <td><strong>185264</strong></td>
+        <td>2/1gal.</td>
+        <td>258gal.</td>
+      </tr>
+        </tbody>
+      </table>
+    </section>
+
+    
+    <section class="section-card">
+      <h2>Labels / Decals / Wall Charts</h2>
+      <table class="chemical-materials-table">
+        <thead class="soft-header">
+          <tr>
+            <th>Material</th>
+            <th>Part Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr>
+      <td>Wall Chart</td>
+      <td><strong>10004</strong></td>
+    </tr>
+  
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+</body>
+</html>
