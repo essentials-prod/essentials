@@ -88,6 +88,93 @@
       outline-offset: -3px;
     }
 
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .product-lookup {
+      margin: 0 0 8px 0;
+      padding: 10px;
+      background: var(--section);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .product-lookup-title {
+      margin: 0 0 7px 0;
+      color: var(--accent);
+      font-size: 1.05rem;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .product-lookup-row {
+      display: flex;
+      gap: 7px;
+      align-items: stretch;
+    }
+
+    .product-lookup-input {
+      flex: 1 1 auto;
+      min-width: 0;
+      min-height: 44px;
+      padding: 9px 11px;
+      background: #ffffff;
+      color: var(--ink);
+      border: 2px solid var(--line);
+      border-radius: 6px;
+      font: inherit;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .product-lookup-input:focus {
+      border-color: var(--accent);
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .product-lookup-input.lookup-not-found {
+      border-color: #b42318;
+    }
+
+    .product-lookup-button {
+      flex: 0 0 auto;
+      min-height: 44px;
+      padding: 9px 18px;
+      background: var(--accent);
+      color: #ffffff;
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .product-lookup-button:hover,
+    .product-lookup-button:focus {
+      background: #ffffff;
+      color: var(--accent);
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .product-lookup-message {
+      min-height: 1.2em;
+      margin-top: 5px;
+      color: #b42318;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -244,6 +331,14 @@
         margin: -6px -6px 8px -6px;
       }
 
+      .product-lookup-row {
+        flex-direction: column;
+      }
+
+      .product-lookup-button {
+        width: 100%;
+      }
+
       .grid {
         grid-template-columns: 1fr;
       }
@@ -260,23 +355,23 @@
     </nav>
     <section class="grid">
       <a class="block" href="equipment/VPR.html">
-        <img src="assets/equipment-images/VPR.jpg" alt="VPR">
+        <img src="assets/equipment-images/VPR.jpg" alt="VPR" loading="lazy" decoding="async">
         <div class="block-title">VPR</div>
       </a>
       <a class="block" href="equipment/VPS.html">
-        <img src="assets/equipment-images/VPS.jpg" alt="VPS">
+        <img src="assets/equipment-images/VPS.jpg" alt="VPS" loading="lazy" decoding="async">
         <div class="block-title">VPS</div>
       </a>
       <a class="block" href="equipment/VP173U.html">
-        <img src="assets/equipment-images/VP173U.jpg" alt="VP173U">
+        <img src="assets/equipment-images/VP173U.jpg" alt="VP173U" loading="lazy" decoding="async">
         <div class="block-title">VP173U</div>
       </a>
       <a class="block" href="equipment/VP173.html">
-        <img src="assets/equipment-images/VP173.jpg" alt="VP173">
+        <img src="assets/equipment-images/VP173.jpg" alt="VP173" loading="lazy" decoding="async">
         <div class="block-title">VP173</div>
       </a>
       <a class="block" href="equipment/CWTF15.html">
-        <img src="assets/equipment-images/CWTF15.jpg" alt="CWTF15">
+        <img src="assets/equipment-images/CWTF15.jpg" alt="CWTF15" loading="lazy" decoding="async">
         <div class="block-title">CWTF15</div>
       </a>
       <a class="block" href="equipment/CWTF35.html">
@@ -284,55 +379,55 @@
         <div class="block-title">CWTF35</div>
       </a>
       <a class="block" href="equipment/CWTF153.html">
-        <img src="assets/equipment-images/CWTF153.jpg" alt="CWTF153">
+        <img src="assets/equipment-images/CWTF153.jpg" alt="CWTF153" loading="lazy" decoding="async">
         <div class="block-title">CWTF153</div>
       </a>
       <a class="block" href="equipment/Axiom153U.html">
-        <img src="assets/equipment-images/Axiom153U.jpg" alt="Axiom153U">
+        <img src="assets/equipment-images/Axiom153U.jpg" alt="Axiom153U" loading="lazy" decoding="async">
         <div class="block-title">Axiom153U</div>
       </a>
       <a class="block" href="equipment/Axiom153L.html">
-        <img src="assets/equipment-images/Axiom153L.jpg" alt="Axiom153L">
+        <img src="assets/equipment-images/Axiom153L.jpg" alt="Axiom153L" loading="lazy" decoding="async">
         <div class="block-title">Axiom153L</div>
       </a>
       <a class="block" href="equipment/CWTFAPS.html">
-        <img src="assets/equipment-images/CWTFAPS.jpg" alt="CWTFAPS">
+        <img src="assets/equipment-images/CWTFAPS.jpg" alt="CWTFAPS" loading="lazy" decoding="async">
         <div class="block-title">CWTFAPS</div>
       </a>
       <a class="block" href="equipment/AxiomDVAPS.html">
-        <img src="assets/equipment-images/AxiomDVAPS.jpg" alt="AxiomDVAPS">
+        <img src="assets/equipment-images/AxiomDVAPS.jpg" alt="AxiomDVAPS" loading="lazy" decoding="async">
         <div class="block-title">AxiomDVAPS</div>
       </a>
       <a class="block" href="equipment/G92T.html">
-        <img src="assets/equipment-images/G92T.jpg" alt="G92T">
+        <img src="assets/equipment-images/G92T.jpg" alt="G92T" loading="lazy" decoding="async">
         <div class="block-title">G92T</div>
       </a>
       <a class="block" href="equipment/ICBDVT3.0.html">
-        <img src="assets/equipment-images/ICBDVT3.0" alt="ICBDVT3.0">
+        <img src="assets/equipment-images/ICBDVT3.0" alt="ICBDVT3.0" loading="lazy" decoding="async">
         <div class="block-title">ICBDVT3.0</div>
       </a>
       <a class="block" href="equipment/ICBTwinT3.0.html">
-        <img src="assets/equipment-images/ICBTwinT3.0" alt="ICBTwinT3.0">
+        <img src="assets/equipment-images/ICBTwinT3.0" alt="ICBTwinT3.0" loading="lazy" decoding="async">
         <div class="block-title">ICBTwinT3.0</div>
       </a>
       <a class="block" href="equipment/ITCB-DV.html">
-        <img src="assets/equipment-images/ITCB-DV.jpg" alt="ITCB-DV">
+        <img src="assets/equipment-images/ITCB-DV.jpg" alt="ITCB-DV" loading="lazy" decoding="async">
         <div class="block-title">ITCB-DV</div>
       </a>
       <a class="block" href="equipment/LCA2LP.html">
-        <img src="assets/equipment-images/LCA2LP.jpg" alt="LCA2LP">
+        <img src="assets/equipment-images/LCA2LP.jpg" alt="LCA2LP" loading="lazy" decoding="async">
         <div class="block-title">LCA2LP</div>
       </a>
       <a class="block" href="equipment/LCA2.html">
-        <img src="assets/equipment-images/LCA2.jpg" alt="LCA2">
+        <img src="assets/equipment-images/LCA2.jpg" alt="LCA2" loading="lazy" decoding="async">
         <div class="block-title">LCA2</div>
       </a>
       <a class="block" href="equipment/LCD2.html">
-        <img src="assets/equipment-images/LCD2.jpg" alt="LCD2">
+        <img src="assets/equipment-images/LCD2.jpg" alt="LCD2" loading="lazy" decoding="async">
         <div class="block-title">LCD2</div>
       </a>
       <a class="block" href="equipment/Bistro - Touch.html">
-        <img src="assets/equipment-images/Bistro - Touch.png" alt="Bistro - Touch">
+        <img src="assets/equipment-images/Bistro - Touch.png" alt="Bistro - Touch" loading="lazy" decoding="async">
         <div class="block-title">Bistro - Touch</div>
       </a></section>
   </main>

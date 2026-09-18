@@ -88,6 +88,93 @@
       outline-offset: -3px;
     }
 
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .product-lookup {
+      margin: 0 0 8px 0;
+      padding: 10px;
+      background: var(--section);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .product-lookup-title {
+      margin: 0 0 7px 0;
+      color: var(--accent);
+      font-size: 1.05rem;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .product-lookup-row {
+      display: flex;
+      gap: 7px;
+      align-items: stretch;
+    }
+
+    .product-lookup-input {
+      flex: 1 1 auto;
+      min-width: 0;
+      min-height: 44px;
+      padding: 9px 11px;
+      background: #ffffff;
+      color: var(--ink);
+      border: 2px solid var(--line);
+      border-radius: 6px;
+      font: inherit;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .product-lookup-input:focus {
+      border-color: var(--accent);
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .product-lookup-input.lookup-not-found {
+      border-color: #b42318;
+    }
+
+    .product-lookup-button {
+      flex: 0 0 auto;
+      min-height: 44px;
+      padding: 9px 18px;
+      background: var(--accent);
+      color: #ffffff;
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .product-lookup-button:hover,
+    .product-lookup-button:focus {
+      background: #ffffff;
+      color: var(--accent);
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .product-lookup-message {
+      min-height: 1.2em;
+      margin-top: 5px;
+      color: #b42318;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -244,6 +331,14 @@
         margin: -6px -6px 8px -6px;
       }
 
+      .product-lookup-row {
+        flex-direction: column;
+      }
+
+      .product-lookup-button {
+        width: 100%;
+      }
+
       .grid {
         grid-template-columns: 1fr;
       }
@@ -258,21 +353,86 @@
     <nav class="home-strip" aria-label="Page navigation">
       <a class="home-button" href="index.html">HOME</a>
     </nav>
-    <section class="grid">
+    
+    <section class="product-lookup" aria-labelledby="product-lookup-title">
+      <div class="product-lookup-title" id="product-lookup-title">Product Lookup</div>
+      <div class="product-lookup-row">
+        <label class="sr-only" for="product-number-lookup">Item Code</label>
+        <input
+          id="product-number-lookup"
+          class="product-lookup-input"
+          type="search"
+          inputmode="numeric"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="Enter item code"
+          aria-describedby="product-lookup-message"
+        >
+        <button class="product-lookup-button" id="product-lookup-button" type="button">Look Up</button>
+      </div>
+      <div class="product-lookup-message" id="product-lookup-message" aria-live="polite"></div>
+    </section>
+
+    <script>
+      (function () {
+        const products = {"143332":"chemical-products/Concentrated Rinse Aid.html","162002":"chemical-products/Ammoniated Glass Cleaner A.html","162012":"chemical-products/All Purpose Cleaner Degreaser B.html","162022":"chemical-products/Tub - Tile Cleaner C.html","162032":"chemical-products/Germicidal Cleaner - Disinfectant D.html","162041":"chemical-products/Odor Counteractant F.html","162052":"chemical-products/Neutral Floor Cleaner I.html","162061":"chemical-products/Quarry Grip Floor Cleaner L.html","162071":"chemical-products/No Rinse Floor Cleaner M.html","162081":"chemical-products/Non Acid Restroom Cleaner P.html","162092":"chemical-products/Ultimate Sanitizer Q.html","162102":"chemical-products/Ammoniated Floor Cleaner R.html","162273":"chemical-products/Premium Break.html","162282":"chemical-products/Premium Suds.html","162303":"chemical-products/Premium Built.html","162312":"chemical-products/Premium Softener.html","162322":"chemical-products/Premium Sour.html","162792":"chemical-products/Highly Concentrated Dish Machine Detergent.html","184438":"chemical-products/Lime Off.html","184519":"chemical-products/Pine Scrub.html","184551":"chemical-products/Oven - Grill Cleaner Concentrated.html","185264":"chemical-products/Quarry Grip Floor Cleaner.html","203998":"chemical-products/Neutral Floor Cleaner.html","219665":"chemical-products/Heavy Duty Rinse Aid.html","220264":"chemical-products/Low Foam Iodophor.html","239280":"chemical-products/Dock - Dumpster Treatment.html","241262":"chemical-products/Surface Cleaner - Degreaser.html","241318":"chemical-products/Crystal Dry Rinse Aid.html","245208":"chemical-products/Ultimate Sanitizer.html","255203":"chemical-products/Heavy Duty Degreaser.html","256463":"chemical-products/Crystal Dry Rinse Aid.html","259411":"chemical-products/More Suds Pot - Pan Detergent.html","260959":"chemical-products/Laundry Sour - Soft.html","260967":"chemical-products/Laundry Destainer.html","260975":"chemical-products/Laundry Break.html","260983":"chemical-products/Laundry Pre Spotter.html","275875":"chemical-products/Solid Pot - Pan Detergent.html","275945":"chemical-products/Solid Dish Machine Detergent.html","275966":"chemical-products/Lavender All Purpose Cleaner.html","280585":"chemical-products/Low Temp Dish Machine Detergent.html","310271":"chemical-products/Laundry Sour.html","314595":"chemical-products/Concentrated Rinse Aid.html","329436":"chemical-products/Jewel Pot - Pan Detergent.html","359556":"chemical-products/Opti-Dose Detergent.html","359557":"chemical-products/Opti-Dose Sanitizer.html","415330":"chemical-products/No Rinse Floor Cleaner.html","421766":"chemical-products/Heavy Duty Grease Release.html","421782":"chemical-products/Jewel Pot - Pan Detergent.html","426075":"chemical-products/Laundry Softener.html","431672":"chemical-products/Combo Laundry Detergent.html","438855":"chemical-products/Heavy Duty Grease Release.html","439479":"chemical-products/Bacterial Drain Digestant.html","439487":"chemical-products/Bacterial Odor - Grease Digestant.html","447622":"chemical-products/Snowbright Powdered Detergent.html","449407":"chemical-products/Liquid Oxygen Bleach (Hydrogen Peroxide).html","469950":"chemical-products/Clinging Delimer.html","469960":"chemical-products/Citrus Orange All Purpose Cleaner.html","469970":"chemical-products/Pot - Pan Detergent.html","477893":"chemical-products/Metal Safe Dish Machine Detergent.html","482901":"chemical-products/Liquid Fury Metal Safe Dish Machine Detergent.html","482931":"chemical-products/Ultra Temp Dish Machine Detergent.html","482941":"chemical-products/Ultra Temp Dish Machine Detergent.html","483721":"chemical-products/Premium Break.html","483731":"chemical-products/Premium Break.html","483791":"chemical-products/Array Laundry Suds HE.html","483811":"chemical-products/Array Premium Suds.html","483821":"chemical-products/Array Premium Suds.html","483901":"chemical-products/Array Liquid Sour - Soft Plus.html","483921":"chemical-products/Array Liquid Sour Plus.html","483930":"chemical-products/Array Liquid Sour Plus.html","484650":"chemical-products/Premium Pak Dish Machine Detergent.html","498726":"chemical-products/Softener (Soften It).html","508764":"chemical-products/LP Dish Machine Detergent.html","510304":"chemical-products/Produce Wash.html","519995":"chemical-products/Multi Purpose Spot - Stain Remover.html","528056":"chemical-products/Heavy Duty Laundry Detergent.html","539783":"chemical-products/Laundry Break.html","539805":"chemical-products/Laundry Destainer.html","550426":"chemical-products/Powdered Chlorine Bleach 16-.html","552739":"chemical-products/Carpet Extraction Cleaner.html","552763":"chemical-products/Citrus Spray - Wipe.html","554766":"chemical-products/Heavy Duty Laundry Detergent.html","558672":"chemical-products/Heavy Duty Plus Dish Machine Detergent.html","562122":"chemical-products/Laundry Softener.html","562149":"chemical-products/Laundry Sour.html","567035":"chemical-products/Acid D-Lime.html","570486":"chemical-products/Neutral Quat Disinfectant.html","571288":"chemical-products/More Suds Pot - Pan Detergent.html","571482":"chemical-products/Organic Stain Remover.html","583049":"chemical-products/Laundry Detergent All Temp Powdered.html","592595":"chemical-products/Tannin Stain Remover.html","593184":"chemical-products/Concentrated Deodorizer.html","600296":"chemical-products/Ultra Laundry Destainer.html","600326":"chemical-products/Ultra Laundry Suds Detergent.html","601918":"chemical-products/Liquid Fury Metal Safe Dish Machine Detergent.html","622762":"chemical-products/Liquid Oxygen Bleach (Hydrogen Peroxide).html","666807":"chemical-products/Quat Clean.html","666815":"chemical-products/Sanitizer ES.html","666823":"chemical-products/Sanitizer ES.html","666858":"chemical-products/Escort Liquid Dish Machine Detergent.html","666866":"chemical-products/Escort Liquid Dish Machine Detergent.html","666912":"chemical-products/Liquid Flatware Presoak.html","666939":"chemical-products/Powdered Flatware Presoak.html","666963":"chemical-products/Plastic - China Destainer.html","671444":"chemical-products/Low Temp Dish Machine Detergent.html","687014":"chemical-products/Heavy Duty Laundry Detergent.html","687860":"chemical-products/Surety All Purpose Cleaner Degreaser.html","687870":"chemical-products/Surety Glass - Surface Cleaner.html","687880":"chemical-products/Surety Hydrogen Peroxide Cleaner.html","705251":"chemical-products/Surface Cleaner - Degreaser H.html","705271":"chemical-products/Non Ammoniated Glass Cleaner N.html","739650":"chemical-products/More Suds Pot - Pan Detergent.html","775090":"chemical-products/Plastic - China Destainer.html","811651":"chemical-products/Shurguard HP Concentrated.html","846962":"chemical-products/Freezer Cleaner.html","903321":"chemical-products/Surety Delimer.html","925232":"chemical-products/Heavy Duty Grease Release.html"};
+        const input = document.getElementById('product-number-lookup');
+        const button = document.getElementById('product-lookup-button');
+        const message = document.getElementById('product-lookup-message');
+
+        function lookUpProduct() {
+          const entered = String(input.value || '').trim();
+          const key = entered.toUpperCase();
+
+          message.textContent = '';
+          input.classList.remove('lookup-not-found');
+
+          if (!key) {
+            message.textContent = 'Enter an item code.';
+            input.focus();
+            return;
+          }
+
+          const href = products[key];
+
+          if (!href) {
+            message.textContent = 'Item code not found.';
+            input.classList.add('lookup-not-found');
+            input.select();
+            return;
+          }
+
+          window.location.href = href;
+        }
+
+        button.addEventListener('click', lookUpProduct);
+        input.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter') {
+            event.preventDefault();
+            lookUpProduct();
+          }
+        });
+
+        input.addEventListener('input', function () {
+          message.textContent = '';
+          input.classList.remove('lookup-not-found');
+        });
+      })();
+    </script><section class="grid">
       <a class="block" href="chemical-product-categories/ready-to-use.html">
-        <img src="assets/chemical-category-images/ready-to-use.png" alt="Ready to Use">
+        <img src="assets/chemical-category-images/ready-to-use.png" alt="Ready to Use" loading="lazy" decoding="async">
         <div class="block-title">Ready to Use</div>
       </a>
       <a class="block" href="chemical-product-categories/laundry.html">
-        <img src="assets/chemical-category-images/laundry.png" alt="Laundry">
+        <img src="assets/chemical-category-images/laundry.png" alt="Laundry" loading="lazy" decoding="async">
         <div class="block-title">Laundry</div>
       </a>
       <a class="block" href="chemical-product-categories/housekeeping-kitchen.html">
-        <img src="assets/chemical-category-images/housekeeping-kitchen.png" alt="Housekeeping / Kitchen">
+        <img src="assets/chemical-category-images/housekeeping-kitchen.png" alt="Housekeeping / Kitchen" loading="lazy" decoding="async">
         <div class="block-title">Housekeeping / Kitchen</div>
       </a>
       <a class="block" href="chemical-product-categories/dish-machine.html">
-        <img src="assets/chemical-category-images/dish-machine.png" alt="Dish Machine">
+        <img src="assets/chemical-category-images/dish-machine.png" alt="Dish Machine" loading="lazy" decoding="async">
         <div class="block-title">Dish Machine</div>
       </a></section>
   </main>

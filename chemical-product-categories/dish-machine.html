@@ -88,6 +88,93 @@
       outline-offset: -3px;
     }
 
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .product-lookup {
+      margin: 0 0 8px 0;
+      padding: 10px;
+      background: var(--section);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .product-lookup-title {
+      margin: 0 0 7px 0;
+      color: var(--accent);
+      font-size: 1.05rem;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .product-lookup-row {
+      display: flex;
+      gap: 7px;
+      align-items: stretch;
+    }
+
+    .product-lookup-input {
+      flex: 1 1 auto;
+      min-width: 0;
+      min-height: 44px;
+      padding: 9px 11px;
+      background: #ffffff;
+      color: var(--ink);
+      border: 2px solid var(--line);
+      border-radius: 6px;
+      font: inherit;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .product-lookup-input:focus {
+      border-color: var(--accent);
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .product-lookup-input.lookup-not-found {
+      border-color: #b42318;
+    }
+
+    .product-lookup-button {
+      flex: 0 0 auto;
+      min-height: 44px;
+      padding: 9px 18px;
+      background: var(--accent);
+      color: #ffffff;
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .product-lookup-button:hover,
+    .product-lookup-button:focus {
+      background: #ffffff;
+      color: var(--accent);
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .product-lookup-message {
+      min-height: 1.2em;
+      margin-top: 5px;
+      color: #b42318;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -244,6 +331,14 @@
         margin: -6px -6px 8px -6px;
       }
 
+      .product-lookup-row {
+        flex-direction: column;
+      }
+
+      .product-lookup-button {
+        width: 100%;
+      }
+
       .grid {
         grid-template-columns: 1fr;
       }
@@ -260,103 +355,103 @@
     </nav>
     <section class="grid">
         <a class="block" href="../chemical-products/Acid D-Lime.html">
-          <img src="../assets/chemical-product-images/Acid D-Lime.png" alt="Acid D-Lime">
+          <img src="../assets/chemical-product-images/Acid D-Lime.png" alt="Acid D-Lime" loading="lazy" decoding="async">
           <div class="block-title">Acid D-Lime</div>
         </a>
         <a class="block" href="../chemical-products/Concentrated Rinse Aid.html">
-          <img src="../assets/chemical-product-images/Concentrated Rinse Aid.png" alt="Concentrated Rinse Aid">
+          <img src="../assets/chemical-product-images/Concentrated Rinse Aid.png" alt="Concentrated Rinse Aid" loading="lazy" decoding="async">
           <div class="block-title">Concentrated Rinse Aid</div>
         </a>
         <a class="block" href="../chemical-products/Crystal Dry Rinse Aid.html">
-          <img src="../assets/chemical-product-images/Crystal Dry Rinse Aid.jpg" alt="Crystal Dry Rinse Aid">
+          <img src="../assets/chemical-product-images/Crystal Dry Rinse Aid.jpg" alt="Crystal Dry Rinse Aid" loading="lazy" decoding="async">
           <div class="block-title">Crystal Dry Rinse Aid</div>
         </a>
         <a class="block" href="../chemical-products/Crystal Dry Rinse Aid.html">
-          <img src="../assets/chemical-product-images/Crystal Dry Rinse Aid.jpg" alt="Crystal Dry Rinse Aid">
+          <img src="../assets/chemical-product-images/Crystal Dry Rinse Aid.jpg" alt="Crystal Dry Rinse Aid" loading="lazy" decoding="async">
           <div class="block-title">Crystal Dry Rinse Aid</div>
         </a>
         <a class="block" href="../chemical-products/Escort Liquid Dish Machine Detergent.html">
-          <img src="../assets/chemical-product-images/Escort Liquid Dish Machine Detergent.png" alt="Escort Liquid Dish Machine Detergent">
+          <img src="../assets/chemical-product-images/Escort Liquid Dish Machine Detergent.png" alt="Escort Liquid Dish Machine Detergent" loading="lazy" decoding="async">
           <div class="block-title">Escort Liquid Dish Machine Detergent</div>
         </a>
         <a class="block" href="../chemical-products/Heavy Duty Plus Dish Machine Detergent.html">
-          <img src="../assets/chemical-product-images/Heavy Duty Plus Dish Machine Detergent.jpg" alt="Heavy Duty Plus Dish Machine Detergent">
+          <img src="../assets/chemical-product-images/Heavy Duty Plus Dish Machine Detergent.jpg" alt="Heavy Duty Plus Dish Machine Detergent" loading="lazy" decoding="async">
           <div class="block-title">Heavy Duty Plus Dish Machine Detergent</div>
         </a>
         <a class="block" href="../chemical-products/Heavy Duty Rinse Aid.html">
-          <img src="../assets/chemical-product-images/Heavy Duty Rinse Aid.png" alt="Heavy Duty Rinse Aid">
+          <img src="../assets/chemical-product-images/Heavy Duty Rinse Aid.png" alt="Heavy Duty Rinse Aid" loading="lazy" decoding="async">
           <div class="block-title">Heavy Duty Rinse Aid</div>
         </a>
         <a class="block" href="../chemical-products/Highly Concentrated Dish Machine Detergent.html">
-          <img src="../assets/chemical-product-images/Highly Concentrated Dish Machine Detergent.png" alt="Highly Concentrated Dish Machine Detergent">
+          <img src="../assets/chemical-product-images/Highly Concentrated Dish Machine Detergent.png" alt="Highly Concentrated Dish Machine Detergent" loading="lazy" decoding="async">
           <div class="block-title">Highly Concentrated Dish Machine Detergent</div>
         </a>
         <a class="block" href="../chemical-products/Jewel Pot - Pan Detergent.html">
-          <img src="../assets/chemical-product-images/Jewel Pot - Pan Detergent.png" alt="Jewel Pot &amp; Pan Detergent">
+          <img src="../assets/chemical-product-images/Jewel Pot - Pan Detergent.png" alt="Jewel Pot &amp; Pan Detergent" loading="lazy" decoding="async">
           <div class="block-title">Jewel Pot &amp; Pan Detergent</div>
         </a>
         <a class="block" href="../chemical-products/Lime Off.html">
-          <img src="../assets/chemical-product-images/Lime Off.png" alt="Lime Off">
+          <img src="../assets/chemical-product-images/Lime Off.png" alt="Lime Off" loading="lazy" decoding="async">
           <div class="block-title">Lime Off</div>
         </a>
         <a class="block" href="../chemical-products/Liquid Fury Metal Safe Dish Machine Detergent.html">
-          <img src="../assets/chemical-product-images/Liquid Fury Metal Safe Dish Machine Detergent.png" alt="Liquid Fury Metal Safe Dish Machine Detergent">
+          <img src="../assets/chemical-product-images/Liquid Fury Metal Safe Dish Machine Detergent.png" alt="Liquid Fury Metal Safe Dish Machine Detergent" loading="lazy" decoding="async">
           <div class="block-title">Liquid Fury Metal Safe Dish Machine Detergent</div>
         </a>
         <a class="block" href="../chemical-products/Low Foam Iodophor.html">
-          <img src="../assets/chemical-product-images/Low Foam Iodophor.png" alt="Low Foam Iodophor">
+          <img src="../assets/chemical-product-images/Low Foam Iodophor.png" alt="Low Foam Iodophor" loading="lazy" decoding="async">
           <div class="block-title">Low Foam Iodophor</div>
         </a>
         <a class="block" href="../chemical-products/Low Temp Dish Machine Detergent.html">
-          <img src="../assets/chemical-product-images/Low Temp Dish Machine Detergent.jpg" alt="Low Temp Dish Machine Detergent">
+          <img src="../assets/chemical-product-images/Low Temp Dish Machine Detergent.jpg" alt="Low Temp Dish Machine Detergent" loading="lazy" decoding="async">
           <div class="block-title">Low Temp Dish Machine Detergent</div>
         </a>
         <a class="block" href="../chemical-products/LP Dish Machine Detergent.html">
-          <img src="../assets/chemical-product-images/LP Dish Machine Detergent.png" alt="LP Dish Machine Detergent">
+          <img src="../assets/chemical-product-images/LP Dish Machine Detergent.png" alt="LP Dish Machine Detergent" loading="lazy" decoding="async">
           <div class="block-title">LP Dish Machine Detergent</div>
         </a>
         <a class="block" href="../chemical-products/Metal Safe Dish Machine Detergent.html">
-          <img src="../assets/chemical-product-images/Metal Safe Dish Machine Detergent.jpg" alt="Metal Safe Dish Machine Detergent">
+          <img src="../assets/chemical-product-images/Metal Safe Dish Machine Detergent.jpg" alt="Metal Safe Dish Machine Detergent" loading="lazy" decoding="async">
           <div class="block-title">Metal Safe Dish Machine Detergent</div>
         </a>
         <a class="block" href="../chemical-products/More Suds Pot - Pan Detergent.html">
-          <img src="../assets/chemical-product-images/More Suds Pot - Pan Detergent.jpg" alt="More Suds Pot &amp; Pan Detergent">
+          <img src="../assets/chemical-product-images/More Suds Pot - Pan Detergent.jpg" alt="More Suds Pot &amp; Pan Detergent" loading="lazy" decoding="async">
           <div class="block-title">More Suds Pot &amp; Pan Detergent</div>
         </a>
         <a class="block" href="../chemical-products/No Rinse Floor Cleaner.html">
-          <img src="../assets/chemical-product-images/No Rinse Floor Cleaner.jpg" alt="No Rinse Floor Cleaner">
+          <img src="../assets/chemical-product-images/No Rinse Floor Cleaner.jpg" alt="No Rinse Floor Cleaner" loading="lazy" decoding="async">
           <div class="block-title">No Rinse Floor Cleaner</div>
         </a>
         <a class="block" href="../chemical-products/No Rinse Floor Cleaner M.html">
-          <img src="../assets/chemical-product-images/No Rinse Floor Cleaner M.jpg" alt="No Rinse Floor Cleaner M">
+          <img src="../assets/chemical-product-images/No Rinse Floor Cleaner M.jpg" alt="No Rinse Floor Cleaner M" loading="lazy" decoding="async">
           <div class="block-title">No Rinse Floor Cleaner M</div>
         </a>
         <a class="block" href="../chemical-products/Pot - Pan Detergent.html">
-          <img src="../assets/chemical-product-images/Pot - Pan Detergent.png" alt="Pot &amp; Pan Detergent">
+          <img src="../assets/chemical-product-images/Pot - Pan Detergent.png" alt="Pot &amp; Pan Detergent" loading="lazy" decoding="async">
           <div class="block-title">Pot &amp; Pan Detergent</div>
         </a>
         <a class="block" href="../chemical-products/Premium Pak Dish Machine Detergent.html">
-          <img src="../assets/chemical-product-images/Premium Pak Dish Machine Detergent.png" alt="Premium Pak Dish Machine Detergent">
+          <img src="../assets/chemical-product-images/Premium Pak Dish Machine Detergent.png" alt="Premium Pak Dish Machine Detergent" loading="lazy" decoding="async">
           <div class="block-title">Premium Pak Dish Machine Detergent</div>
         </a>
         <a class="block" href="../chemical-products/Sanitizer ES.html">
-          <img src="../assets/chemical-product-images/Sanitizer ES.jpg" alt="Sanitizer ES">
+          <img src="../assets/chemical-product-images/Sanitizer ES.jpg" alt="Sanitizer ES" loading="lazy" decoding="async">
           <div class="block-title">Sanitizer ES</div>
         </a>
         <a class="block" href="../chemical-products/Solid Dish Machine Detergent.html">
-          <img src="../assets/chemical-product-images/Solid Dish Machine Detergent.png" alt="Solid Dish Machine Detergent">
+          <img src="../assets/chemical-product-images/Solid Dish Machine Detergent.png" alt="Solid Dish Machine Detergent" loading="lazy" decoding="async">
           <div class="block-title">Solid Dish Machine Detergent</div>
         </a>
         <a class="block" href="../chemical-products/Solid Pot - Pan Detergent.html">
-          <img src="../assets/chemical-product-images/Solid Pot - Pan Detergent.png" alt="Solid Pot &amp; Pan Detergent">
+          <img src="../assets/chemical-product-images/Solid Pot - Pan Detergent.png" alt="Solid Pot &amp; Pan Detergent" loading="lazy" decoding="async">
           <div class="block-title">Solid Pot &amp; Pan Detergent</div>
         </a>
         <a class="block" href="../chemical-products/Surety Delimer.html">
-          <img src="../assets/chemical-product-images/Surety Delimer.jpg" alt="Surety Delimer">
+          <img src="../assets/chemical-product-images/Surety Delimer.jpg" alt="Surety Delimer" loading="lazy" decoding="async">
           <div class="block-title">Surety Delimer</div>
         </a>
         <a class="block" href="../chemical-products/Ultra Temp Dish Machine Detergent.html">
-          <img src="../assets/chemical-product-images/Ultra Temp Dish Machine Detergent.png" alt="Ultra Temp Dish Machine Detergent">
+          <img src="../assets/chemical-product-images/Ultra Temp Dish Machine Detergent.png" alt="Ultra Temp Dish Machine Detergent" loading="lazy" decoding="async">
           <div class="block-title">Ultra Temp Dish Machine Detergent</div>
         </a></section>
   </main>

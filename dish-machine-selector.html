@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+  >
+  <title>Dish Machine Selector | Service Essentials</title>
+  <style>
+    
+    :root {
+      --bg: #ffffff;
+      --page: #ffffff;
+      --ink: #071426;
+      --muted: #4a5568;
+      --line: #c9d3df;
+      --section: #f4f8fb;
+      --accent: #061a33;
+      --accent-2: #e9f7a6;
+      --accent-soft: #f4f9d8;
+      --accent-soft-blue: #e8eef7;
+      --table-row-alt: #f2f7fc;
+      --radius: 8px;
+      --shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+
+      --tablet-page-height: 760px;
+      --tablet-page-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 17px;
+      line-height: 1.25;
+    }
+
+    body {
+      padding: 6px;
+    }
+
+    .page {
+      position: relative;
+      width: 100%;
+      max-width: var(--tablet-page-width);
+      height: var(--tablet-page-height);
+      max-height: var(--tablet-page-height);
+      margin: 0 auto 16px auto;
+      background: var(--page);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      padding: 8px;
+      overflow: visible;
+      page-break-after: always;
+      border: 2px solid var(--accent);
+    }
+
+    .online-mode .page {
+      height: auto;
+      max-height: none;
+      min-height: var(--tablet-page-height);
+    }
+
+    .home-strip {
+      display: block;
+      margin: -8px -8px 8px -8px;
+      padding: 0;
+      background: var(--accent);
+      border-radius: 8px 8px 0 0;
+      overflow: hidden;
+    }
+
+    .home-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 42px;
+      padding: 10px 14px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 900;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      border: 0;
+      border-bottom: 4px solid var(--accent-soft);
+      line-height: 1;
+    }
+
+    .home-button:hover,
+    .home-button:focus {
+      background: #ffffff;
+      color: var(--accent);
+      outline: 3px solid var(--accent);
+      outline-offset: -3px;
+    }
+
+    .hero {
+      display: block;
+      background: #ffffff;
+      border-bottom: 4px solid var(--accent);
+      padding: 7px 8px;
+      margin: 0 -8px 8px -8px;
+      border-radius: 0;
+    }
+
+    .hero-left {
+      min-width: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.75rem, 3vw, 2.45rem);
+      line-height: 1;
+      color: var(--accent);
+    }
+
+    h2 {
+      margin: 0 0 4px;
+      font-size: 1.12rem;
+      line-height: 1.08;
+      color: var(--accent);
+    }
+
+    .section-card h2,
+    .info-card h2 {
+      background: var(--accent);
+      color: #ffffff;
+      margin: -4px -4px 6px -4px;
+      padding: 5px 8px;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .top-grid {
+      display: grid !important;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 8px;
+      margin-bottom: 8px;
+      align-items: stretch;
+    }
+
+    .photo-card,
+    .spec-card,
+    .info-card,
+    .section-card,
+    .notice-card {
+      border: 1px solid var(--line);
+      background: var(--section);
+      border-radius: var(--radius);
+      padding: 4px;
+    }
+
+    .photo-card {
+      border: 0px;
+      height: 150px;
+      min-height: 150px;
+      max-height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .photo-card img {
+      height: 150px;
+      max-height: 150px;
+      max-width: 100%;
+      width: auto;
+      object-fit: contain;
+      object-position: left center;
+      border-radius: 4px;
+    }
+
+    .photo-placeholder {
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 700;
+      border: 1px dashed var(--line);
+      border-radius: 5px;
+      padding: 55px 4px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .spec-card {
+      border: 0px;
+      height: 150px;
+      min-height: 150px;
+      max-height: 150px;
+      overflow: hidden;
+      padding: 4px 6px;
+    }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(2, 1fr);
+      gap: 4px;
+      height: 100%;
+    }
+
+    .spec-item {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      padding: 6px 8px;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .manuals-spec-item,
+    .chemical-tech-spec-item {
+      padding: 4px 6px;
+    }
+
+    .manuals-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 4px;
+      height: calc(100% - 18px);
+      margin-top: 1px;
+    }
+
+    .manual-bucket {
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: var(--accent-soft-blue);
+      min-width: 0;
+      overflow: hidden;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    .manual-tile,
+    .tech-sheet-tile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: calc(100% - 18px);
+      min-height: 30px;
+      padding: 0;
+      margin: 1px 0 0 0;
+      color: var(--accent);
+      background: var(--accent-soft-blue);
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      font-weight: 900;
+      font-size: 10px;
+      line-height: 10px;
+      text-align: center;
+      text-decoration: none;
+      overflow: hidden;
+      word-break: break-word;
+    }
+
+    .manual-bucket .manual-tile {
+      height: 100%;
+      margin: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .manual-tile:hover,
+    .manual-tile:focus,
+    .tech-sheet-tile:hover,
+    .tech-sheet-tile:focus {
+      background: #ffffff;
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+    }
+
+    .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 1px;
+    }
+
+    .value {
+      display: block;
+      font-weight: 800;
+      color: var(--ink);
+      font-size: 1.02rem;
+      line-height: 1.1;
+      overflow-wrap: anywhere;
+    }
+
+    .summary-table {
+      margin-bottom: 8px;
+    }
+
+    .summary-table td,
+    .summary-table th {
+      text-align: left;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .info-card p,
+    .section-card p,
+    .notice-card p {
+      margin: 0;
+    }
+
+    .section-card,
+    .notice-card {
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 1.02rem;
+    }
+
+    th {
+      background: var(--accent-soft);
+      color: var(--accent);
+      text-align: left;
+      padding: 5px 6px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.08;
+      border-bottom: 1px solid var(--line);
+      font-weight: 900;
+    }
+
+    .soft-header th {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-bottom: 1px solid var(--line);
+      font-weight: 900;
+    }
+
+    tbody tr:nth-child(odd) td {
+      background: #ffffff;
+    }
+
+    tbody tr:nth-child(even) td {
+      background: var(--table-row-alt);
+    }
+
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 5px 6px;
+      vertical-align: top;
+      line-height: 1.18;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .summary-description-label {
+      background: var(--accent-soft) !important;
+      color: var(--accent);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .summary-description-value {
+      background: #ffffff !important;
+    }
+
+    .parts-table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
+
+    .parts-table th:nth-child(1),
+    .parts-table td:nth-child(1) {
+      width: calc(12ch + 10px);
+      white-space: nowrap;
+    }
+
+    .parts-table th:nth-child(2),
+    .parts-table td:nth-child(2) {
+      width: auto;
+    }
+
+    .parts-table th:nth-child(3),
+    .parts-table td:nth-child(3) {
+      width: 20ch;
+      white-space: nowrap;
+    }
+
+    .component-table,
+    .troubleshooting-table,
+    .chemical-packaging-table,
+    .chemical-materials-table {
+      table-layout: fixed;
+    }
+
+    .component-table th:nth-child(1),
+    .component-table td:nth-child(1) {
+      width: 40%;
+    }
+
+    .component-table th:nth-child(2),
+    .component-table td:nth-child(2) {
+      width: 60%;
+    }
+
+    .troubleshooting-table th:nth-child(1),
+    .troubleshooting-table td:nth-child(1) {
+      width: 35%;
+    }
+
+    .troubleshooting-table th:nth-child(2),
+    .troubleshooting-table td:nth-child(2) {
+      width: 65%;
+    }
+
+    .chemical-packaging-table th:nth-child(1),
+    .chemical-packaging-table td:nth-child(1) {
+      width: 24%;
+    }
+
+    .chemical-packaging-table th:nth-child(2),
+    .chemical-packaging-table td:nth-child(2) {
+      width: 34%;
+    }
+
+    .chemical-packaging-table th:nth-child(3),
+    .chemical-packaging-table td:nth-child(3) {
+      width: 42%;
+    }
+
+    .chemical-materials-table th:nth-child(1),
+    .chemical-materials-table td:nth-child(1) {
+      width: 40%;
+    }
+
+    .chemical-materials-table th:nth-child(2),
+    .chemical-materials-table td:nth-child(2) {
+      width: 60%;
+    }
+
+    a {
+      color: var(--accent);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    footer {
+      border-top: 2px solid var(--accent);
+      margin-top: 6px;
+      padding-top: 4px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .empty {
+      color: var(--muted);
+      font-style: italic;
+      margin: 0;
+      font-size: 1.02rem;
+    }
+
+    .used-on-equipment-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 8px;
+    }
+
+    .used-on-equipment-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 9px;
+      background: var(--accent-soft-blue);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--accent);
+      font-weight: 900;
+      text-decoration: none;
+      line-height: 1;
+    }
+
+    .used-on-equipment-link:hover,
+    .used-on-equipment-link:focus {
+      background: var(--accent-soft);
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    @media print {
+      .home-strip {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 650px) {
+      body {
+        padding: 5px;
+        font-size: 16px;
+      }
+
+      .page {
+        padding: 6px;
+        border-radius: 8px;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+      }
+
+      .home-strip {
+        margin: -6px -6px 8px -6px;
+      }
+
+      .hero {
+        margin: 0 -6px 8px -6px;
+      }
+
+      .top-grid {
+        grid-template-columns: 160px minmax(0, 1fr);
+      }
+
+      .photo-card,
+      .spec-card {
+        height: 120px;
+        min-height: 120px;
+        max-height: 120px;
+      }
+
+      .photo-card img {
+        height: 120px;
+        max-height: 120px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      table {
+        font-size: 0.95rem;
+      }
+
+      th,
+      td {
+        padding: 4px 5px;
+      }
+    }
+  
+    
+    body.online-mode {
+      min-height: 100vh;
+      padding: 6px;
+    }
+
+    .online-mode .page {
+      height: auto;
+      max-height: none;
+      min-height: var(--tablet-page-height);
+      overflow: visible;
+      page-break-after: auto;
+      margin-bottom: 0;
+    }
+
+    .online-mode footer {
+      margin-bottom: 0;
+    }
+  
+    
+    .selector-page {
+      max-width: 1080px;
+    }
+
+    .selector-subtitle {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .selector-panel {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .selector-filter-group {
+      padding: 9px;
+      background: var(--section);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .selector-filter-heading {
+      display: block;
+      margin: 0 0 6px;
+      color: var(--accent);
+      font-size: 0.83rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .selector-button-grid {
+      display: grid;
+      gap: 6px;
+    }
+
+    .selector-button-grid.four-up {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .selector-button-grid.three-up {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .selector-button-grid.two-up {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .selector-option,
+    .selector-clear-button {
+      min-height: 46px;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      background: #ffffff;
+      color: var(--accent);
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+      padding: 8px 10px;
+    }
+
+    .selector-option:hover,
+    .selector-option:focus,
+    .selector-clear-button:hover,
+    .selector-clear-button:focus {
+      outline: 3px solid var(--accent-soft);
+      outline-offset: 1px;
+    }
+
+    .selector-option.is-selected {
+      background: var(--accent-2);
+      box-shadow: inset 0 0 0 2px #72bf43;
+    }
+
+    .selector-option:disabled {
+      cursor: not-allowed;
+      opacity: 0.36;
+      border-color: var(--line);
+      color: var(--muted);
+      background: #f7f7f7;
+    }
+
+    .option-count {
+      display: inline-block;
+      margin-left: 3px;
+      font-size: 0.82em;
+      font-weight: 700;
+    }
+
+    .selector-height-group {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 10px;
+    }
+
+    .height-input-wrap {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      max-width: 270px;
+    }
+
+    #maxHeightInput {
+      width: 150px;
+      min-height: 46px;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      padding: 8px 10px;
+      color: var(--ink);
+      font: inherit;
+      font-weight: 900;
+      background: #ffffff;
+    }
+
+    .height-input-wrap span {
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .selector-clear-button {
+      background: var(--accent);
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    .selector-results-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding: 8px 10px;
+      margin-bottom: 8px;
+      background: var(--accent);
+      color: #ffffff;
+      border-radius: var(--radius);
+    }
+
+    .selector-results-heading strong {
+      font-size: 1.05rem;
+    }
+
+    .selector-results-heading span {
+      text-align: right;
+      font-size: 0.83rem;
+      font-weight: 700;
+      opacity: 0.9;
+    }
+
+    .selector-results {
+      display: grid;
+      gap: 8px;
+    }
+
+    .selector-result-card {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .selector-result-image {
+      min-height: 190px;
+      background: #ffffff;
+      border-right: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7px;
+    }
+
+    .selector-result-image img {
+      display: block;
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+    }
+
+    .selector-image-placeholder {
+      color: var(--muted);
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .selector-result-body {
+      min-width: 0;
+      padding: 10px;
+    }
+
+    .selector-result-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .selector-result-maker {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .selector-result-title-row h2 {
+      margin: 1px 0 0;
+      padding: 0;
+      background: transparent;
+      color: var(--accent);
+      font-size: 1.45rem;
+    }
+
+    .selector-details-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 7px 10px;
+      border-radius: 7px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 900;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .selector-details-link:hover,
+    .selector-details-link:focus {
+      background: #ffffff;
+      color: var(--accent);
+      outline: 2px solid var(--accent);
+    }
+
+    .selector-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .selector-badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 25px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid #d3dda7;
+      font-size: 0.76rem;
+      font-weight: 900;
+    }
+
+    .selector-spec-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 5px;
+      margin-bottom: 8px;
+    }
+
+    .selector-spec {
+      min-width: 0;
+      padding: 6px;
+      background: var(--section);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .selector-spec span,
+    .selector-spec strong {
+      display: block;
+    }
+
+    .selector-spec span {
+      color: var(--muted);
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .selector-spec strong {
+      margin-top: 2px;
+      color: var(--accent);
+      font-size: 0.92rem;
+      overflow-wrap: anywhere;
+    }
+
+    .selector-electrical {
+      padding-top: 7px;
+      border-top: 1px solid var(--line);
+    }
+
+    .selector-electrical-title {
+      margin-bottom: 5px;
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .selector-electrical-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .selector-electrical-chip,
+    .selector-empty-electrical {
+      display: inline-block;
+      padding: 4px 7px;
+      border-radius: 6px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .selector-electrical-chip.is-match {
+      background: var(--accent-2);
+      border-color: #72bf43;
+      color: var(--accent);
+    }
+
+    .selector-no-results {
+      padding: 12px;
+    }
+
+    @media (max-width: 720px) {
+      .selector-button-grid.four-up,
+      .selector-button-grid.three-up {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .selector-result-card {
+        grid-template-columns: 118px minmax(0, 1fr);
+      }
+
+      .selector-result-image {
+        min-height: 150px;
+      }
+
+      .selector-result-image img {
+        height: 138px;
+      }
+
+      .selector-spec-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .selector-result-title-row {
+        display: block;
+      }
+
+      .selector-details-link {
+        margin-top: 6px;
+      }
+    }
+
+    @media (max-width: 470px) {
+      .selector-button-grid.four-up,
+      .selector-button-grid.three-up,
+      .selector-button-grid.two-up {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .selector-height-group {
+        grid-template-columns: 1fr;
+      }
+
+      .selector-clear-button {
+        width: 100%;
+      }
+
+      .selector-results-heading {
+        display: block;
+      }
+
+      .selector-results-heading span {
+        display: block;
+        margin-top: 3px;
+        text-align: left;
+      }
+
+      .selector-result-card {
+        grid-template-columns: 1fr;
+      }
+
+      .selector-result-image {
+        min-height: 150px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .selector-result-image img {
+        height: 145px;
+      }
+    }
+  
+  </style>
+</head>
+
+<body class="online-mode selector-mode">
+  <main class="page online-page selector-page">
+    
+    <nav class="home-strip" aria-label="Page navigation">
+      <a class="home-button" href="index.html">HOME</a>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-left">
+        <h1>Dish Machine Selector</h1>
+        <p class="selector-subtitle">Choose what the location can support. Results narrow automatically.</p>
+      </div>
+    </header>
+
+    <section class="selector-panel" aria-label="Dish machine filters">
+      <div class="selector-filter-group" data-filter-group="style">
+        <div class="selector-filter-heading">Machine Style</div>
+        <div class="selector-button-grid four-up">
+          <button type="button" class="selector-option" data-group="style" data-value="Single Rack">Single Rack <span class="option-count"></span></button>
+          <button type="button" class="selector-option" data-group="style" data-value="Double Rack">Double Rack <span class="option-count"></span></button>
+          <button type="button" class="selector-option" data-group="style" data-value="Conveyor">Conveyor <span class="option-count"></span></button>
+          <button type="button" class="selector-option" data-group="style" data-value="Glasswasher">Glasswasher <span class="option-count"></span></button>
+        </div>
+      </div>
+
+      <div class="selector-filter-group" data-filter-group="sanitize">
+        <div class="selector-filter-heading">Sanitizing Method</div>
+        <div class="selector-button-grid two-up">
+          <button type="button" class="selector-option" data-group="sanitize" data-value="hotWater">Hot Water <span class="option-count"></span></button>
+          <button type="button" class="selector-option" data-group="sanitize" data-value="chlorine">Chlorine <span class="option-count"></span></button>
+        </div>
+      </div>
+
+      <div class="selector-filter-group" data-filter-group="install">
+        <div class="selector-filter-heading">Installation</div>
+        <div class="selector-button-grid two-up">
+          <button type="button" class="selector-option" data-group="install" data-value="straight">Straight <span class="option-count"></span></button>
+          <button type="button" class="selector-option" data-group="install" data-value="corner">Corner <span class="option-count"></span></button>
+        </div>
+      </div>
+
+      <div class="selector-filter-group" data-filter-group="electrical">
+        <div class="selector-filter-heading">Electrical Service</div>
+        <div class="selector-button-grid three-up">
+          <button type="button" class="selector-option" data-group="electrical" data-value="120V/1PH">120V / 1PH <span class="option-count"></span></button>
+          <button type="button" class="selector-option" data-group="electrical" data-value="208V/1PH">208V / 1PH <span class="option-count"></span></button>
+          <button type="button" class="selector-option" data-group="electrical" data-value="240V/1PH">240V / 1PH <span class="option-count"></span></button>
+          <button type="button" class="selector-option" data-group="electrical" data-value="208V/3PH">208V / 3PH <span class="option-count"></span></button>
+          <button type="button" class="selector-option" data-group="electrical" data-value="240V/3PH">240V / 3PH <span class="option-count"></span></button>
+          <button type="button" class="selector-option" data-group="electrical" data-value="480V/3PH">480V / 3PH <span class="option-count"></span></button>
+        </div>
+      </div>
+
+      <div class="selector-filter-group selector-height-group">
+        <div>
+          <label class="selector-filter-heading" for="maxHeightInput">Maximum Available Height</label>
+          <div class="height-input-wrap">
+            <input id="maxHeightInput" type="number" inputmode="decimal" min="0" step="0.5" placeholder="Any">
+            <span>inches</span>
+          </div>
+        </div>
+
+        <button type="button" id="clearSelectorFilters" class="selector-clear-button">Clear Filters</button>
+      </div>
+    </section>
+
+    <section class="selector-results-heading">
+      <strong id="selectorResultCount"></strong>
+      <span id="selectorFilterSummary">No filters selected</span>
+    </section>
+
+    <section id="selectorResults" class="selector-results"></section>
+  </main>
+
+  <script>
+    const MACHINE_DATA = [];
+
+    const state = {
+      style: new Set(),
+      sanitize: new Set(),
+      install: new Set(),
+      electrical: new Set(),
+      maxHeight: ''
+    };
+
+    const optionButtons = Array.from(document.querySelectorAll('.selector-option'));
+    const resultsElement = document.getElementById('selectorResults');
+    const resultCountElement = document.getElementById('selectorResultCount');
+    const filterSummaryElement = document.getElementById('selectorFilterSummary');
+    const maxHeightInput = document.getElementById('maxHeightInput');
+    const clearButton = document.getElementById('clearSelectorFilters');
+
+    function escapeHtml(value) {
+      return String(value == null ? '' : value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function formatNumber(value) {
+      if (value == null || value === '') {
+        return '';
+      }
+
+      const number = Number(value);
+
+      if (!Number.isFinite(number)) {
+        return String(value);
+      }
+
+      return Number.isInteger(number)
+        ? String(number)
+        : String(Math.round(number * 100) / 100);
+    }
+
+    function machineHasOption(machine, group, value) {
+      if (group === 'style') {
+        return machine.machineStyle === value;
+      }
+
+      if (group === 'sanitize') {
+        return value === 'hotWater'
+          ? machine.hotWater === true
+          : machine.chlorine === true;
+      }
+
+      if (group === 'install') {
+        return value === 'straight'
+          ? machine.straightInstall === true
+          : machine.cornerInstall === true;
+      }
+
+      if (group === 'electrical') {
+        return machine.electrical.some(option => option.key === value);
+      }
+
+      return true;
+    }
+
+    function matchesSelectedGroup(machine, group) {
+      const selected = state[group];
+
+      if (!selected || selected.size === 0) {
+        return true;
+      }
+
+      return Array.from(selected).some(value =>
+        machineHasOption(machine, group, value)
+      );
+    }
+
+    function machineMatches(machine, ignoredGroup) {
+      if (ignoredGroup !== 'style' && !matchesSelectedGroup(machine, 'style')) {
+        return false;
+      }
+
+      if (ignoredGroup !== 'sanitize' && !matchesSelectedGroup(machine, 'sanitize')) {
+        return false;
+      }
+
+      if (ignoredGroup !== 'install' && !matchesSelectedGroup(machine, 'install')) {
+        return false;
+      }
+
+      if (ignoredGroup !== 'electrical' && !matchesSelectedGroup(machine, 'electrical')) {
+        return false;
+      }
+
+      const maxHeight = Number(state.maxHeight);
+
+      if (
+        Number.isFinite(maxHeight) &&
+        maxHeight > 0 &&
+        machine.maxHeight != null &&
+        Number(machine.maxHeight) > maxHeight
+      ) {
+        return false;
+      }
+
+      if (
+        Number.isFinite(maxHeight) &&
+        maxHeight > 0 &&
+        machine.maxHeight == null
+      ) {
+        return false;
+      }
+
+      return true;
+    }
+
+    function getFacetCount(group, value) {
+      return MACHINE_DATA.filter(machine =>
+        machineMatches(machine, group) &&
+        machineHasOption(machine, group, value)
+      ).length;
+    }
+
+    function updateOptionButtons() {
+      optionButtons.forEach(button => {
+        const group = button.dataset.group;
+        const value = button.dataset.value;
+        const selected = state[group].has(value);
+        const count = getFacetCount(group, value);
+        const countElement = button.querySelector('.option-count');
+
+        button.classList.toggle('is-selected', selected);
+        button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+        button.disabled = count === 0 && !selected;
+
+        if (countElement) {
+          countElement.textContent = '(' + count + ')';
+        }
+      });
+    }
+
+    function buildBadges(machine) {
+      const badges = [machine.machineStyle];
+
+      if (machine.hotWater) {
+        badges.push('Hot Water');
+      }
+
+      if (machine.chlorine) {
+        badges.push('Chlorine');
+      }
+
+      if (machine.straightInstall) {
+        badges.push('Straight');
+      }
+
+      if (machine.cornerInstall) {
+        badges.push('Corner');
+      }
+
+      return badges.map(badge =>
+        '<span class="selector-badge">' + escapeHtml(badge) + '</span>'
+      ).join('');
+    }
+
+    function buildSpec(label, value, suffix) {
+      if (value == null || value === '') {
+        return '';
+      }
+
+      return '<div class="selector-spec">' +
+        '<span>' + escapeHtml(label) + '</span>' +
+        '<strong>' + escapeHtml(formatNumber(value) + (suffix || '')) + '</strong>' +
+      '</div>';
+    }
+
+    function buildElectrical(machine) {
+      if (!machine.electrical || machine.electrical.length === 0) {
+        return '<div class="selector-empty-electrical">Electrical data not entered</div>';
+      }
+
+      return machine.electrical.map(option => {
+        const amps = option.amps == null
+          ? ''
+          : ' — ' + formatNumber(option.amps) + 'A';
+
+        const selected = state.electrical.has(option.key);
+
+        return '<span class="selector-electrical-chip' +
+          (selected ? ' is-match' : '') +
+          '">' +
+          escapeHtml(option.label + amps) +
+          '</span>';
+      }).join('');
+    }
+
+    function renderResults() {
+      const filtered = MACHINE_DATA.filter(machine =>
+        machineMatches(machine)
+      );
+
+      resultCountElement.textContent =
+        filtered.length + ' matching machine' +
+        (filtered.length === 1 ? '' : 's');
+
+      const summaryParts = [];
+
+      ['style', 'sanitize', 'install', 'electrical'].forEach(group => {
+        if (state[group].size > 0) {
+          summaryParts.push(Array.from(state[group]).join(' or '));
+        }
+      });
+
+      if (state.maxHeight) {
+        summaryParts.push('Max ' + state.maxHeight + '" high');
+      }
+
+      filterSummaryElement.textContent =
+        summaryParts.length > 0
+          ? summaryParts.join(' • ')
+          : 'No filters selected';
+
+      if (filtered.length === 0) {
+        resultsElement.innerHTML =
+          '<section class="section-card selector-no-results">' +
+            '<h2>No Exact Matches</h2>' +
+            '<p>Clear or change one of the filters to see additional machines.</p>' +
+          '</section>';
+        return;
+      }
+
+      resultsElement.innerHTML = filtered.map(machine => {
+        const image = machine.imageUrl
+          ? '<img src="' + escapeHtml(machine.imageUrl) + '" alt="' + escapeHtml(machine.displayName) + '" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML=\'<div class=&quot;selector-image-placeholder&quot;>No Image</div>\';">'
+          : '<div class="selector-image-placeholder">No Image</div>';
+
+        const dimensions = [
+          machine.width,
+          machine.depth,
+          machine.height
+        ].every(value => value != null)
+          ? formatNumber(machine.width) + '" × ' +
+            formatNumber(machine.depth) + '" × ' +
+            formatNumber(machine.height) + '"'
+          : '';
+
+        return '<article class="selector-result-card">' +
+          '<div class="selector-result-image">' + image + '</div>' +
+          '<div class="selector-result-body">' +
+            '<div class="selector-result-title-row">' +
+              '<div>' +
+                '<div class="selector-result-maker">' + escapeHtml(machine.manufacturer) + '</div>' +
+                '<h2>' + escapeHtml(machine.model || machine.displayName) + '</h2>' +
+              '</div>' +
+              '<a class="selector-details-link" href="' + escapeHtml(machine.detailsHref) + '">View Equipment</a>' +
+            '</div>' +
+            '<div class="selector-badges">' + buildBadges(machine) + '</div>' +
+            '<div class="selector-spec-grid">' +
+              buildSpec('Racks / Hour', machine.racksPerHour, '') +
+              buildSpec('Max Height', machine.maxHeight, '"') +
+              buildSpec('Water / Rack', machine.waterPerRack, ' gal') +
+              (dimensions
+                ? '<div class="selector-spec"><span>W × D × H</span><strong>' + escapeHtml(dimensions) + '</strong></div>'
+                : '') +
+            '</div>' +
+            '<div class="selector-electrical">' +
+              '<div class="selector-electrical-title">Available Electrical</div>' +
+              '<div class="selector-electrical-list">' + buildElectrical(machine) + '</div>' +
+            '</div>' +
+          '</div>' +
+        '</article>';
+      }).join('');
+    }
+
+    function render() {
+      updateOptionButtons();
+      renderResults();
+    }
+
+    optionButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const group = button.dataset.group;
+        const value = button.dataset.value;
+
+        if (state[group].has(value)) {
+          state[group].delete(value);
+        } else {
+          state[group].add(value);
+        }
+
+        render();
+      });
+    });
+
+    maxHeightInput.addEventListener('input', () => {
+      state.maxHeight = maxHeightInput.value.trim();
+      render();
+    });
+
+    clearButton.addEventListener('click', () => {
+      state.style.clear();
+      state.sanitize.clear();
+      state.install.clear();
+      state.electrical.clear();
+      state.maxHeight = '';
+      maxHeightInput.value = '';
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>

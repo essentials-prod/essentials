@@ -88,6 +88,93 @@
       outline-offset: -3px;
     }
 
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .product-lookup {
+      margin: 0 0 8px 0;
+      padding: 10px;
+      background: var(--section);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .product-lookup-title {
+      margin: 0 0 7px 0;
+      color: var(--accent);
+      font-size: 1.05rem;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .product-lookup-row {
+      display: flex;
+      gap: 7px;
+      align-items: stretch;
+    }
+
+    .product-lookup-input {
+      flex: 1 1 auto;
+      min-width: 0;
+      min-height: 44px;
+      padding: 9px 11px;
+      background: #ffffff;
+      color: var(--ink);
+      border: 2px solid var(--line);
+      border-radius: 6px;
+      font: inherit;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .product-lookup-input:focus {
+      border-color: var(--accent);
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .product-lookup-input.lookup-not-found {
+      border-color: #b42318;
+    }
+
+    .product-lookup-button {
+      flex: 0 0 auto;
+      min-height: 44px;
+      padding: 9px 18px;
+      background: var(--accent);
+      color: #ffffff;
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .product-lookup-button:hover,
+    .product-lookup-button:focus {
+      background: #ffffff;
+      color: var(--accent);
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .product-lookup-message {
+      min-height: 1.2em;
+      margin-top: 5px;
+      color: #b42318;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -244,6 +331,14 @@
         margin: -6px -6px 8px -6px;
       }
 
+      .product-lookup-row {
+        flex-direction: column;
+      }
+
+      .product-lookup-button {
+        width: 100%;
+      }
+
       .grid {
         grid-template-columns: 1fr;
       }
@@ -260,11 +355,11 @@
     </nav>
     <section class="grid">
       <a class="block" href="equipment/JDF2S.html">
-        <img src="assets/equipment-images/JDF2S.jpg" alt="JDF2S">
+        <img src="assets/equipment-images/JDF2S.jpg" alt="JDF2S" loading="lazy" decoding="async">
         <div class="block-title">JDF2S</div>
       </a>
       <a class="block" href="equipment/JDF4S.html">
-        <img src="assets/equipment-images/JDF4S.jpg" alt="JDF4S">
+        <img src="assets/equipment-images/JDF4S.jpg" alt="JDF4S" loading="lazy" decoding="async">
         <div class="block-title">JDF4S</div>
       </a>
       <a class="block" href="equipment/JDF2SVPDS.html">
@@ -272,19 +367,19 @@
         <div class="block-title">JDF2SVPDS</div>
       </a>
       <a class="block" href="equipment/TB3.html">
-        <img src="assets/equipment-images/TB3.jpg" alt="TB3">
+        <img src="assets/equipment-images/TB3.jpg" alt="TB3" loading="lazy" decoding="async">
         <div class="block-title">TB3</div>
       </a>
       <a class="block" href="equipment/TB6.html">
-        <img src="assets/equipment-images/TB6.jpg" alt="TB6">
+        <img src="assets/equipment-images/TB6.jpg" alt="TB6" loading="lazy" decoding="async">
         <div class="block-title">TB6</div>
       </a>
       <a class="block" href="equipment/iMix-3.html">
-        <img src="assets/equipment-images/iMix-3.jpg" alt="iMix-3">
+        <img src="assets/equipment-images/iMix-3.jpg" alt="iMix-3" loading="lazy" decoding="async">
         <div class="block-title">iMix-3</div>
       </a>
       <a class="block" href="equipment/FMD1.html">
-        <img src="assets/equipment-images/FMD1.jpg" alt="FMD1">
+        <img src="assets/equipment-images/FMD1.jpg" alt="FMD1" loading="lazy" decoding="async">
         <div class="block-title">FMD1</div>
       </a></section>
   </main>

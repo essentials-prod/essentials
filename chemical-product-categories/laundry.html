@@ -88,6 +88,93 @@
       outline-offset: -3px;
     }
 
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .product-lookup {
+      margin: 0 0 8px 0;
+      padding: 10px;
+      background: var(--section);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .product-lookup-title {
+      margin: 0 0 7px 0;
+      color: var(--accent);
+      font-size: 1.05rem;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .product-lookup-row {
+      display: flex;
+      gap: 7px;
+      align-items: stretch;
+    }
+
+    .product-lookup-input {
+      flex: 1 1 auto;
+      min-width: 0;
+      min-height: 44px;
+      padding: 9px 11px;
+      background: #ffffff;
+      color: var(--ink);
+      border: 2px solid var(--line);
+      border-radius: 6px;
+      font: inherit;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .product-lookup-input:focus {
+      border-color: var(--accent);
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .product-lookup-input.lookup-not-found {
+      border-color: #b42318;
+    }
+
+    .product-lookup-button {
+      flex: 0 0 auto;
+      min-height: 44px;
+      padding: 9px 18px;
+      background: var(--accent);
+      color: #ffffff;
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .product-lookup-button:hover,
+    .product-lookup-button:focus {
+      background: #ffffff;
+      color: var(--accent);
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .product-lookup-message {
+      min-height: 1.2em;
+      margin-top: 5px;
+      color: #b42318;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -244,6 +331,14 @@
         margin: -6px -6px 8px -6px;
       }
 
+      .product-lookup-row {
+        flex-direction: column;
+      }
+
+      .product-lookup-button {
+        width: 100%;
+      }
+
       .grid {
         grid-template-columns: 1fr;
       }
@@ -260,55 +355,55 @@
     </nav>
     <section class="grid">
         <a class="block" href="../chemical-products/Array Laundry Suds HE.html">
-          <img src="../assets/chemical-product-images/Array Laundry Suds HE.png" alt="Array Laundry Suds HE">
+          <img src="../assets/chemical-product-images/Array Laundry Suds HE.png" alt="Array Laundry Suds HE" loading="lazy" decoding="async">
           <div class="block-title">Array Laundry Suds HE</div>
         </a>
         <a class="block" href="../chemical-products/Array Liquid Sour - Soft Plus.html">
-          <img src="../assets/chemical-product-images/Array Liquid Sour - Soft Plus.png" alt="Array Liquid Sour &amp; Soft Plus">
+          <img src="../assets/chemical-product-images/Array Liquid Sour - Soft Plus.png" alt="Array Liquid Sour &amp; Soft Plus" loading="lazy" decoding="async">
           <div class="block-title">Array Liquid Sour &amp; Soft Plus</div>
         </a>
         <a class="block" href="../chemical-products/Array Liquid Sour Plus.html">
-          <img src="../assets/chemical-product-images/Array Liquid Sour Plus.png" alt="Array Liquid Sour Plus">
+          <img src="../assets/chemical-product-images/Array Liquid Sour Plus.png" alt="Array Liquid Sour Plus" loading="lazy" decoding="async">
           <div class="block-title">Array Liquid Sour Plus</div>
         </a>
         <a class="block" href="../chemical-products/Array Premium Break.html">
-          <img src="../assets/chemical-product-images/Array Premium Break.jpg" alt="Array Premium Break">
+          <img src="../assets/chemical-product-images/Array Premium Break.jpg" alt="Array Premium Break" loading="lazy" decoding="async">
           <div class="block-title">Array Premium Break</div>
         </a>
         <a class="block" href="../chemical-products/Array Premium Suds.html">
-          <img src="../assets/chemical-product-images/Array Premium Suds.png" alt="Array Premium Suds">
+          <img src="../assets/chemical-product-images/Array Premium Suds.png" alt="Array Premium Suds" loading="lazy" decoding="async">
           <div class="block-title">Array Premium Suds</div>
         </a>
         <a class="block" href="../chemical-products/Combo Laundry Detergent.html">
-          <img src="../assets/chemical-product-images/Combo Laundry Detergent.png" alt="Combo Laundry Detergent">
+          <img src="../assets/chemical-product-images/Combo Laundry Detergent.png" alt="Combo Laundry Detergent" loading="lazy" decoding="async">
           <div class="block-title">Combo Laundry Detergent</div>
         </a>
         <a class="block" href="../chemical-products/Heavy Duty Laundry Detergent.html">
-          <img src="../assets/chemical-product-images/Heavy Duty Laundry Detergent.png" alt="Heavy Duty Laundry Detergent">
+          <img src="../assets/chemical-product-images/Heavy Duty Laundry Detergent.png" alt="Heavy Duty Laundry Detergent" loading="lazy" decoding="async">
           <div class="block-title">Heavy Duty Laundry Detergent</div>
         </a>
         <a class="block" href="../chemical-products/Laundry Break.html">
-          <img src="../assets/chemical-product-images/Laundry Break.png" alt="Laundry Break">
+          <img src="../assets/chemical-product-images/Laundry Break.png" alt="Laundry Break" loading="lazy" decoding="async">
           <div class="block-title">Laundry Break</div>
         </a>
         <a class="block" href="../chemical-products/Laundry Destainer.html">
-          <img src="../assets/chemical-product-images/Laundry Destainer.jpg" alt="Laundry Destainer">
+          <img src="../assets/chemical-product-images/Laundry Destainer.jpg" alt="Laundry Destainer" loading="lazy" decoding="async">
           <div class="block-title">Laundry Destainer</div>
         </a>
         <a class="block" href="../chemical-products/Laundry Detergent All Temp Powdered.html">
-          <img src="../assets/chemical-product-images/Laundry Detergent All Temp Powdered.png" alt="Laundry Detergent All Temp Powdered">
+          <img src="../assets/chemical-product-images/Laundry Detergent All Temp Powdered.png" alt="Laundry Detergent All Temp Powdered" loading="lazy" decoding="async">
           <div class="block-title">Laundry Detergent All Temp Powdered</div>
         </a>
         <a class="block" href="../chemical-products/Laundry Pre Spotter.html">
-          <img src="../assets/chemical-product-images/Laundry Pre Spotter.jpg" alt="Laundry Pre Spotter">
+          <img src="../assets/chemical-product-images/Laundry Pre Spotter.jpg" alt="Laundry Pre Spotter" loading="lazy" decoding="async">
           <div class="block-title">Laundry Pre Spotter</div>
         </a>
         <a class="block" href="../chemical-products/Laundry Softener.html">
-          <img src="../assets/chemical-product-images/Laundry Softener.png" alt="Laundry Softener">
+          <img src="../assets/chemical-product-images/Laundry Softener.png" alt="Laundry Softener" loading="lazy" decoding="async">
           <div class="block-title">Laundry Softener</div>
         </a>
         <a class="block" href="../chemical-products/Laundry Sour.html">
-          <img src="../assets/chemical-product-images/Laundry Sour.png" alt="Laundry Sour">
+          <img src="../assets/chemical-product-images/Laundry Sour.png" alt="Laundry Sour" loading="lazy" decoding="async">
           <div class="block-title">Laundry Sour</div>
         </a>
         <a class="block" href="../chemical-products/Laundry Sour - Soft.html">
@@ -316,11 +411,11 @@
           <div class="block-title">Laundry Sour / Soft</div>
         </a>
         <a class="block" href="../chemical-products/Liquid Oxygen Bleach (Hydrogen Peroxide).html">
-          <img src="../assets/chemical-product-images/Liquid Oxygen Bleach (Hydrogen Peroxide).png" alt="Liquid Oxygen Bleach (Hydrogen Peroxide)">
+          <img src="../assets/chemical-product-images/Liquid Oxygen Bleach (Hydrogen Peroxide).png" alt="Liquid Oxygen Bleach (Hydrogen Peroxide)" loading="lazy" decoding="async">
           <div class="block-title">Liquid Oxygen Bleach (Hydrogen Peroxide)</div>
         </a>
         <a class="block" href="../chemical-products/Powdered Chlorine Bleach 16-.html">
-          <img src="../assets/chemical-product-images/Powdered Chlorine Bleach 16-.png" alt="Powdered Chlorine Bleach 16%">
+          <img src="../assets/chemical-product-images/Powdered Chlorine Bleach 16-.png" alt="Powdered Chlorine Bleach 16%" loading="lazy" decoding="async">
           <div class="block-title">Powdered Chlorine Bleach 16%</div>
         </a>
         <a class="block" href="../chemical-products/Premium Break.html">
@@ -328,27 +423,27 @@
           <div class="block-title">Premium Break</div>
         </a>
         <a class="block" href="../chemical-products/Premium Built.html">
-          <img src="../assets/chemical-product-images/Premium Built.png" alt="Premium Built">
+          <img src="../assets/chemical-product-images/Premium Built.png" alt="Premium Built" loading="lazy" decoding="async">
           <div class="block-title">Premium Built</div>
         </a>
         <a class="block" href="../chemical-products/Premium Softener.html">
-          <img src="../assets/chemical-product-images/Premium Softener.jpg" alt="Premium Softener">
+          <img src="../assets/chemical-product-images/Premium Softener.jpg" alt="Premium Softener" loading="lazy" decoding="async">
           <div class="block-title">Premium Softener</div>
         </a>
         <a class="block" href="../chemical-products/Premium Sour.html">
-          <img src="../assets/chemical-product-images/Premium Sour.jpg" alt="Premium Sour">
+          <img src="../assets/chemical-product-images/Premium Sour.jpg" alt="Premium Sour" loading="lazy" decoding="async">
           <div class="block-title">Premium Sour</div>
         </a>
         <a class="block" href="../chemical-products/Premium Suds.html">
-          <img src="../assets/chemical-product-images/Premium Suds.jpg" alt="Premium Suds">
+          <img src="../assets/chemical-product-images/Premium Suds.jpg" alt="Premium Suds" loading="lazy" decoding="async">
           <div class="block-title">Premium Suds</div>
         </a>
         <a class="block" href="../chemical-products/Snowbright Powdered Detergent.html">
-          <img src="../assets/chemical-product-images/Snowbright Powdered Detergent.png" alt="Snowbright Powdered Detergent">
+          <img src="../assets/chemical-product-images/Snowbright Powdered Detergent.png" alt="Snowbright Powdered Detergent" loading="lazy" decoding="async">
           <div class="block-title">Snowbright Powdered Detergent</div>
         </a>
         <a class="block" href="../chemical-products/Softener (Soften It).html">
-          <img src="../assets/chemical-product-images/Softener (Soften It).png" alt="Softener (Soften It)">
+          <img src="../assets/chemical-product-images/Softener (Soften It).png" alt="Softener (Soften It)" loading="lazy" decoding="async">
           <div class="block-title">Softener (Soften It)</div>
         </a>
         <a class="block" href="../chemical-products/Ultra Laundry Destainer.html">
@@ -356,7 +451,7 @@
           <div class="block-title">Ultra Laundry Destainer</div>
         </a>
         <a class="block" href="../chemical-products/Ultra Laundry Suds Detergent.html">
-          <img src="../assets/chemical-product-images/Ultra Laundry Suds Detergent.png" alt="Ultra Laundry Suds Detergent">
+          <img src="../assets/chemical-product-images/Ultra Laundry Suds Detergent.png" alt="Ultra Laundry Suds Detergent" loading="lazy" decoding="async">
           <div class="block-title">Ultra Laundry Suds Detergent</div>
         </a></section>
   </main>

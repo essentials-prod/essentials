@@ -88,6 +88,93 @@
       outline-offset: -3px;
     }
 
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .product-lookup {
+      margin: 0 0 8px 0;
+      padding: 10px;
+      background: var(--section);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .product-lookup-title {
+      margin: 0 0 7px 0;
+      color: var(--accent);
+      font-size: 1.05rem;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .product-lookup-row {
+      display: flex;
+      gap: 7px;
+      align-items: stretch;
+    }
+
+    .product-lookup-input {
+      flex: 1 1 auto;
+      min-width: 0;
+      min-height: 44px;
+      padding: 9px 11px;
+      background: #ffffff;
+      color: var(--ink);
+      border: 2px solid var(--line);
+      border-radius: 6px;
+      font: inherit;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .product-lookup-input:focus {
+      border-color: var(--accent);
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .product-lookup-input.lookup-not-found {
+      border-color: #b42318;
+    }
+
+    .product-lookup-button {
+      flex: 0 0 auto;
+      min-height: 44px;
+      padding: 9px 18px;
+      background: var(--accent);
+      color: #ffffff;
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .product-lookup-button:hover,
+    .product-lookup-button:focus {
+      background: #ffffff;
+      color: var(--accent);
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .product-lookup-message {
+      min-height: 1.2em;
+      margin-top: 5px;
+      color: #b42318;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -244,6 +331,14 @@
         margin: -6px -6px 8px -6px;
       }
 
+      .product-lookup-row {
+        flex-direction: column;
+      }
+
+      .product-lookup-button {
+        width: 100%;
+      }
+
       .grid {
         grid-template-columns: 1fr;
       }
@@ -258,39 +353,45 @@
     <section class="grid">
       <a class="site-card" href="coffee.html">
         <div class="site-card-image">
-          <img src="assets/section-images/coffee.png" alt="Coffee">
+          <img src="assets/section-images/coffee.png" alt="Coffee" loading="lazy" decoding="async">
         </div>
         <div class="site-card-title">Coffee</div>
       </a>
       <a class="site-card" href="juice-cocoa-tea.html">
         <div class="site-card-image">
-          <img src="assets/section-images/juice-cocoa-tea.png" alt="Juice / Cocoa / Tea">
+          <img src="assets/section-images/juice-cocoa-tea.png" alt="Juice / Cocoa / Tea" loading="lazy" decoding="async">
         </div>
         <div class="site-card-title">Juice / Cocoa / Tea</div>
       </a>
       <a class="site-card" href="laundry.html">
         <div class="site-card-image">
-          <img src="assets/chemical-category-images/laundry.png" alt="Laundry">
+          <img src="assets/chemical-category-images/laundry.png" alt="Laundry" loading="lazy" decoding="async">
         </div>
         <div class="site-card-title">Laundry</div>
       </a>
       <a class="site-card" href="chemical-dispensers.html">
         <div class="site-card-image">
-          <img src="assets/section-images/chemical-dispensers.png" alt="Chemical Dispensers">
+          <img src="assets/section-images/chemical-dispensers.png" alt="Chemical Dispensers" loading="lazy" decoding="async">
         </div>
         <div class="site-card-title">Chemical Dispensers</div>
       </a>
       <a class="site-card" href="chemical-products.html">
         <div class="site-card-image">
-          <img src="assets/section-images/chemical-products.png" alt="Chemical Products">
+          <img src="assets/section-images/chemical-products.png" alt="Chemical Products" loading="lazy" decoding="async">
         </div>
         <div class="site-card-title">Chemical Products</div>
       </a>
       <a class="site-card" href="part-search.html">
         <div class="site-card-image">
-          <img src="assets/section-images/parts-search.png" alt="Part Search">
+          <img src="assets/section-images/parts-search.png" alt="Part Search" loading="lazy" decoding="async">
         </div>
         <div class="site-card-title">Part Search</div>
+      </a>
+      <a class="site-card" href="dish-machine-selector.html">
+        <div class="site-card-image">
+          <img src="assets/section-images/dish-machine-selector.svg" alt="Dish Machine Selector" loading="lazy" decoding="async">
+        </div>
+        <div class="site-card-title">Dish Machine Selector</div>
       </a></section>
   </main>
 </body>

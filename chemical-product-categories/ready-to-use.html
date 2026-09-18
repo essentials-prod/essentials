@@ -88,6 +88,93 @@
       outline-offset: -3px;
     }
 
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .product-lookup {
+      margin: 0 0 8px 0;
+      padding: 10px;
+      background: var(--section);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .product-lookup-title {
+      margin: 0 0 7px 0;
+      color: var(--accent);
+      font-size: 1.05rem;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .product-lookup-row {
+      display: flex;
+      gap: 7px;
+      align-items: stretch;
+    }
+
+    .product-lookup-input {
+      flex: 1 1 auto;
+      min-width: 0;
+      min-height: 44px;
+      padding: 9px 11px;
+      background: #ffffff;
+      color: var(--ink);
+      border: 2px solid var(--line);
+      border-radius: 6px;
+      font: inherit;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .product-lookup-input:focus {
+      border-color: var(--accent);
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .product-lookup-input.lookup-not-found {
+      border-color: #b42318;
+    }
+
+    .product-lookup-button {
+      flex: 0 0 auto;
+      min-height: 44px;
+      padding: 9px 18px;
+      background: var(--accent);
+      color: #ffffff;
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .product-lookup-button:hover,
+    .product-lookup-button:focus {
+      background: #ffffff;
+      color: var(--accent);
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .product-lookup-message {
+      min-height: 1.2em;
+      margin-top: 5px;
+      color: #b42318;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -244,6 +331,14 @@
         margin: -6px -6px 8px -6px;
       }
 
+      .product-lookup-row {
+        flex-direction: column;
+      }
+
+      .product-lookup-button {
+        width: 100%;
+      }
+
       .grid {
         grid-template-columns: 1fr;
       }
@@ -260,55 +355,55 @@
     </nav>
     <section class="grid">
         <a class="block" href="../chemical-products/Bacterial Odor - Grease Digestant.html">
-          <img src="../assets/chemical-product-images/Bacterial Odor - Grease Digestant.png" alt="Bacterial Odor &amp; Grease Digestant">
+          <img src="../assets/chemical-product-images/Bacterial Odor - Grease Digestant.png" alt="Bacterial Odor &amp; Grease Digestant" loading="lazy" decoding="async">
           <div class="block-title">Bacterial Odor &amp; Grease Digestant</div>
         </a>
         <a class="block" href="../chemical-products/Citrus Spray - Wipe.html">
-          <img src="../assets/chemical-product-images/Citrus Spray - Wipe.jpg" alt="Citrus Spray &amp; Wipe">
+          <img src="../assets/chemical-product-images/Citrus Spray - Wipe.jpg" alt="Citrus Spray &amp; Wipe" loading="lazy" decoding="async">
           <div class="block-title">Citrus Spray &amp; Wipe</div>
         </a>
         <a class="block" href="../chemical-products/Clinging Delimer.html">
-          <img src="../assets/chemical-product-images/Clinging Delimer.png" alt="Clinging Delimer">
+          <img src="../assets/chemical-product-images/Clinging Delimer.png" alt="Clinging Delimer" loading="lazy" decoding="async">
           <div class="block-title">Clinging Delimer</div>
         </a>
         <a class="block" href="../chemical-products/Dock - Dumpster Treatment.html">
-          <img src="../assets/chemical-product-images/Dock - Dumpster Treatment.png" alt="Dock &amp; Dumpster Treatment">
+          <img src="../assets/chemical-product-images/Dock - Dumpster Treatment.png" alt="Dock &amp; Dumpster Treatment" loading="lazy" decoding="async">
           <div class="block-title">Dock &amp; Dumpster Treatment</div>
         </a>
         <a class="block" href="../chemical-products/Freezer Cleaner.html">
-          <img src="../assets/chemical-product-images/Freezer Cleaner.png" alt="Freezer Cleaner">
+          <img src="../assets/chemical-product-images/Freezer Cleaner.png" alt="Freezer Cleaner" loading="lazy" decoding="async">
           <div class="block-title">Freezer Cleaner</div>
         </a>
         <a class="block" href="../chemical-products/Heavy Duty Degreaser.html">
-          <img src="../assets/chemical-product-images/Heavy Duty Degreaser.jpg" alt="Heavy Duty Degreaser">
+          <img src="../assets/chemical-product-images/Heavy Duty Degreaser.jpg" alt="Heavy Duty Degreaser" loading="lazy" decoding="async">
           <div class="block-title">Heavy Duty Degreaser</div>
         </a>
         <a class="block" href="../chemical-products/Multi Purpose Spot - Stain Remover.html">
-          <img src="../assets/chemical-product-images/Multi Purpose Spot - Stain Remover.jpg" alt="Multi Purpose Spot &amp; Stain Remover">
+          <img src="../assets/chemical-product-images/Multi Purpose Spot - Stain Remover.jpg" alt="Multi Purpose Spot &amp; Stain Remover" loading="lazy" decoding="async">
           <div class="block-title">Multi Purpose Spot &amp; Stain Remover</div>
         </a>
         <a class="block" href="../chemical-products/Opti-Dose Detergent.html">
-          <img src="../assets/chemical-product-images/Opti-Dose Detergent.png" alt="Opti-Dose Detergent">
+          <img src="../assets/chemical-product-images/Opti-Dose Detergent.png" alt="Opti-Dose Detergent" loading="lazy" decoding="async">
           <div class="block-title">Opti-Dose Detergent</div>
         </a>
         <a class="block" href="../chemical-products/Opti-Dose Sanitizer.html">
-          <img src="../assets/chemical-product-images/Opti-Dose Sanitizer.png" alt="Opti-Dose Sanitizer">
+          <img src="../assets/chemical-product-images/Opti-Dose Sanitizer.png" alt="Opti-Dose Sanitizer" loading="lazy" decoding="async">
           <div class="block-title">Opti-Dose Sanitizer</div>
         </a>
         <a class="block" href="../chemical-products/Organic Stain Remover.html">
-          <img src="../assets/chemical-product-images/Organic Stain Remover.png" alt="Organic Stain Remover">
+          <img src="../assets/chemical-product-images/Organic Stain Remover.png" alt="Organic Stain Remover" loading="lazy" decoding="async">
           <div class="block-title">Organic Stain Remover</div>
         </a>
         <a class="block" href="../chemical-products/Plastic - China Destainer.html">
-          <img src="../assets/chemical-product-images/Plastic - China Destainer.png" alt="Plastic &amp; China Destainer">
+          <img src="../assets/chemical-product-images/Plastic - China Destainer.png" alt="Plastic &amp; China Destainer" loading="lazy" decoding="async">
           <div class="block-title">Plastic &amp; China Destainer</div>
         </a>
         <a class="block" href="../chemical-products/Powdered Flatware Presoak.html">
-          <img src="../assets/chemical-product-images/Powdered Flatware Presoak.png" alt="Powdered Flatware Presoak">
+          <img src="../assets/chemical-product-images/Powdered Flatware Presoak.png" alt="Powdered Flatware Presoak" loading="lazy" decoding="async">
           <div class="block-title">Powdered Flatware Presoak</div>
         </a>
         <a class="block" href="../chemical-products/Tannin Stain Remover.html">
-          <img src="../assets/chemical-product-images/Tannin Stain Remover.png" alt="Tannin Stain Remover">
+          <img src="../assets/chemical-product-images/Tannin Stain Remover.png" alt="Tannin Stain Remover" loading="lazy" decoding="async">
           <div class="block-title">Tannin Stain Remover</div>
         </a></section>
   </main>
