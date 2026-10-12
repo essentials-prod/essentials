@@ -593,6 +593,196 @@
       margin-bottom: 0;
     }
   
+    
+    .part-link {
+      color: var(--accent);
+      font-weight: 900;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(6, 26, 51, 0.35);
+    }
+
+    .part-link:hover,
+    .part-link:focus {
+      color: #2f7d20;
+      border-bottom-color: #2f7d20;
+    }
+
+    .parts-db-mode .page {
+      max-width: 1080px;
+    }
+
+    .parts-search-card {
+      border: 1px solid var(--line);
+      background: var(--section);
+      border-radius: var(--radius);
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .parts-search-card label {
+      display: block;
+      color: var(--accent);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.03em;
+      margin-bottom: 6px;
+    }
+
+    #partsSearchInput {
+      width: 100%;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--ink);
+      background: #ffffff;
+    }
+
+    #partsSearchInput:focus {
+      outline: 3px solid var(--accent-soft);
+      outline-offset: 1px;
+    }
+
+    .parts-search-count {
+      margin-top: 6px;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .parts-results {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .part-result-card {
+      border: 1px solid var(--line);
+      background: #ffffff;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .part-result-link {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 10px;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 8px;
+    }
+
+    .part-result-link:hover,
+    .part-result-link:focus {
+      background: var(--accent-soft);
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+    }
+
+    .part-result-image {
+      width: 150px;
+      height: 110px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .part-result-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .part-result-placeholder {
+      color: var(--muted);
+      font-weight: 900;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .part-result-body h2 {
+      margin: 0 0 6px 0;
+      color: var(--accent);
+      font-size: 1.3rem;
+      line-height: 1.1;
+    }
+
+    .part-result-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 4px 12px;
+      font-size: 0.98rem;
+    }
+
+    .part-used-on {
+      margin: 6px 0 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .part-detail-top-grid {
+      grid-template-columns: 300px minmax(0, 1fr);
+    }
+
+    .part-photo-card {
+      height: 220px;
+      min-height: 220px;
+      max-height: 220px;
+    }
+
+    .part-photo-card img {
+      height: 220px;
+      max-height: 220px;
+    }
+
+    .part-spec-card {
+      height: 220px;
+      min-height: 220px;
+      max-height: 220px;
+    }
+
+    .part-spec-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 650px) {
+      .part-result-link {
+        grid-template-columns: 95px minmax(0, 1fr);
+      }
+
+      .part-result-image {
+        width: 95px;
+        height: 90px;
+      }
+
+      .part-result-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .part-detail-top-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .part-photo-card,
+      .part-spec-card {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+      }
+
+      .part-photo-card img {
+        height: auto;
+        max-height: 240px;
+      }
+    }
+  
   </style>
 </head>
 <body class="online-mode">
@@ -706,6 +896,10 @@
         <tbody><tr><td>44&quot;</td><td>25.25&quot;</td><td>73&quot;</td><td>73</td><td>662</td><td>Straight</td></tr></tbody>
       </table>
     </section>
+    
+    
+    
+    
   </main>
 </body>
 </html>

@@ -593,6 +593,196 @@
       margin-bottom: 0;
     }
   
+    
+    .part-link {
+      color: var(--accent);
+      font-weight: 900;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(6, 26, 51, 0.35);
+    }
+
+    .part-link:hover,
+    .part-link:focus {
+      color: #2f7d20;
+      border-bottom-color: #2f7d20;
+    }
+
+    .parts-db-mode .page {
+      max-width: 1080px;
+    }
+
+    .parts-search-card {
+      border: 1px solid var(--line);
+      background: var(--section);
+      border-radius: var(--radius);
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .parts-search-card label {
+      display: block;
+      color: var(--accent);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.03em;
+      margin-bottom: 6px;
+    }
+
+    #partsSearchInput {
+      width: 100%;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--ink);
+      background: #ffffff;
+    }
+
+    #partsSearchInput:focus {
+      outline: 3px solid var(--accent-soft);
+      outline-offset: 1px;
+    }
+
+    .parts-search-count {
+      margin-top: 6px;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .parts-results {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .part-result-card {
+      border: 1px solid var(--line);
+      background: #ffffff;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .part-result-link {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 10px;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 8px;
+    }
+
+    .part-result-link:hover,
+    .part-result-link:focus {
+      background: var(--accent-soft);
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+    }
+
+    .part-result-image {
+      width: 150px;
+      height: 110px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .part-result-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .part-result-placeholder {
+      color: var(--muted);
+      font-weight: 900;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .part-result-body h2 {
+      margin: 0 0 6px 0;
+      color: var(--accent);
+      font-size: 1.3rem;
+      line-height: 1.1;
+    }
+
+    .part-result-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 4px 12px;
+      font-size: 0.98rem;
+    }
+
+    .part-used-on {
+      margin: 6px 0 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .part-detail-top-grid {
+      grid-template-columns: 300px minmax(0, 1fr);
+    }
+
+    .part-photo-card {
+      height: 220px;
+      min-height: 220px;
+      max-height: 220px;
+    }
+
+    .part-photo-card img {
+      height: 220px;
+      max-height: 220px;
+    }
+
+    .part-spec-card {
+      height: 220px;
+      min-height: 220px;
+      max-height: 220px;
+    }
+
+    .part-spec-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 650px) {
+      .part-result-link {
+        grid-template-columns: 95px minmax(0, 1fr);
+      }
+
+      .part-result-image {
+        width: 95px;
+        height: 90px;
+      }
+
+      .part-result-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .part-detail-top-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .part-photo-card,
+      .part-spec-card {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+      }
+
+      .part-photo-card img {
+        height: auto;
+        max-height: 240px;
+      }
+    }
+  
   </style>
 </head>
 <body class="online-mode">
@@ -690,6 +880,472 @@
         <tbody><tr><td>25.75&quot;</td><td>25.75&quot;</td><td>74&quot;</td><td>74</td><td>260</td><td>Straight</td></tr></tbody>
       </table>
     </section>
+    
+    <section class="section-card">
+      <h2>Common Replacement Parts</h2>
+      <table class="parts-table">
+        <thead>
+          <tr>
+            <th>Part #</th>
+            <th>Part Description</th>
+            <th>Part Bin</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr>
+      <td><strong><a class="part-link" href="../parts/092-1058.html">092-1058</a></strong></td>
+      <td>1/2&quot; MPT X 5/8 COMP FITTING</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/4204.00.html">4204.00</a></strong></td>
+      <td>2.5&quot; COMPRESSION NUT</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/292-1028.html">292-1028</a></strong></td>
+      <td>2&quot; DRAIN BOOT</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00304.06.html">00304.06</a></strong></td>
+      <td>22-3/4&quot; Spray Arm</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13029.00.html">13029.00</a></strong></td>
+      <td>3/4&quot; BALL VALVE</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/3226.00.html">3226.00</a></strong></td>
+      <td>4-3/4&quot; O RING</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00613.32.html">00613.32</a></strong></td>
+      <td>AH2 HANDLE</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00208.20.html">00208.20</a></strong></td>
+      <td>ANTI-FRICTION RING</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/705.20.html">705.20</a></strong></td>
+      <td>BONNET (INLET VALVE)</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/1310.00.html">1310.00</a></strong></td>
+      <td>BULLET FOOT</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/099-1004.html">099-1004</a></strong></td>
+      <td>CAM TIMER KEY</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/1558.20.html">1558.20</a></strong></td>
+      <td>CHEMICAL TUBE CLIP</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/6202.00.html">6202.00</a></strong></td>
+      <td>CLEANING DECAL</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/6451.00.html">6451.00</a></strong></td>
+      <td>COMPLETE DECAL SET</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/096-1006.html">096-1006</a></strong></td>
+      <td>CONTROL BOX KEY</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/096-1002.html">096-1002</a></strong></td>
+      <td>CONTROL BOX LOCK/KEY</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00900.00.html">00900.00</a></strong></td>
+      <td>COTTER PIN(S)</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/6202.61.html">6202.61</a></strong></td>
+      <td>DANGER DECAL</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/6202.80.html">6202.80</a></strong></td>
+      <td>DET / RINSE / SANI DECALS</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13146.html">13146</a></strong></td>
+      <td>Dish Machine Solenoid Drain Chain Tubing</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00605.30.html">00605.30</a></strong></td>
+      <td>DOOR EXT ROD SPACER</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/636.10.html">636.10</a></strong></td>
+      <td>DOOR GUIDES</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/607.04.html">607.04</a></strong></td>
+      <td>DOOR HANDLE CAP</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/611.00.html">611.00</a></strong></td>
+      <td>DOOR HANDLE SPACER</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00562.00.html">00562.00</a></strong></td>
+      <td>DOOR SAFETY SWITCH</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00602.00.html">00602.00</a></strong></td>
+      <td>DOOR SPRING</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13288.html">13288</a></strong></td>
+      <td>DRAIN BALL ASSEMBLY</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/1318.00.html">1318.00</a></strong></td>
+      <td>DRAIN DRIP GASKET</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/11001.html">11001</a></strong></td>
+      <td>DRAIN SCREEN</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/6221.00.html">6221.00</a></strong></td>
+      <td>DRAIN SCREEN DECAL</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/421.40.html">421.40</a></strong></td>
+      <td>FILL / START SWITCH</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/04206.00.html">04206.00</a></strong></td>
+      <td>FRONT PUMP HOUSING</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00631.00.html">00631.00</a></strong></td>
+      <td>ICE CUBE RELAY</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/3222.05.html">3222.05</a></strong></td>
+      <td>IMPELLER</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/705.00.html">705.00</a></strong></td>
+      <td>INLET VALVE ASSEMBLY</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/715.00.html">715.00</a></strong></td>
+      <td>MOTOR CHECK VALVE</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00404.82.html">00404.82</a></strong></td>
+      <td>MOTOR CONTACTOR</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00475.00.html">00475.00</a></strong></td>
+      <td>NORMAL / DELIME SWITCH</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/6204.10.html">6204.10</a></strong></td>
+      <td>NSF DECAL</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/417.00.html">417.00</a></strong></td>
+      <td>PERISTALTIC PUMP BLOCK</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/418.00.html">418.00</a></strong></td>
+      <td>PERISTALTIC PUMP COVER</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/416.00.html">416.00</a></strong></td>
+      <td>PERISTALTIC PUMP MOTOR</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/419.00.html">419.00</a></strong></td>
+      <td>PERISTALTIC PUMP ROLLER</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/3470.00.html">3470.00</a></strong></td>
+      <td>PRIME SWITCH</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/200.10.html">200.10</a></strong></td>
+      <td>PUMP MOTOR ASSEMBLY</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00422.10.html">00422.10</a></strong></td>
+      <td>PUMP SPACERS</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/3408.50.html">3408.50</a></strong></td>
+      <td>RACK COUNTER</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/3224.00.html">3224.00</a></strong></td>
+      <td>REAR PUMP HOUSING</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00105.20.html">00105.20</a></strong></td>
+      <td>Rubber Drain Linkage Washer</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/01577.10.html">01577.10</a></strong></td>
+      <td>SCRAP TRAP BODY</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/01577.20.html">01577.20</a></strong></td>
+      <td>SCRAP TRAP COVER</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/208.00.html">208.00</a></strong></td>
+      <td>SLIP JOINT GASKET</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/092-5017.html">092-5017</a></strong></td>
+      <td>SOLENOID (INLET VALVE)</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/706.00.html">706.00</a></strong></td>
+      <td>Solenoid Rebuild Kit W/ Plunger, 3/4&quot;</td>
+      <td>Water Inlet / PRV</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14340.html">14340</a></strong></td>
+      <td>Spray Arm Bearing</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/01506.30.html">01506.30</a></strong></td>
+      <td>Spray Arm End Plugs, S/S</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/363.00.html">363.00</a></strong></td>
+      <td>SPRAY ARM LOCK PIN</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/10700.html">10700</a></strong></td>
+      <td>Squeeze Tube, Santoprene, 10&quot;</td>
+      <td>Chemical Pump Tube</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/11960.html">11960</a></strong></td>
+      <td>Standpipe Tube Guide W/Cap, 1/4&quot; Compression Connector</td>
+      <td>Standpipe / Dip Tube</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/6201.00.html">6201.00</a></strong></td>
+      <td>START / FILL DECAL</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00603.07.html">00603.07</a></strong></td>
+      <td>STRAIGHT EXTENSION ROD</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/120.00.html">120.00</a></strong></td>
+      <td>TEMPERATURE GAUGE</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/1577.50.html">1577.50</a></strong></td>
+      <td>TRAP HOLD DOWN BRACKET</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00606.50.html">00606.50</a></strong></td>
+      <td>TURNBUCKLE</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/710.50.html">710.50</a></strong></td>
+      <td>VACUUM BRK ASSEMBLY</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/735.00.html">735.00</a></strong></td>
+      <td>VACUUM BRK REPAIR KIT</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/206.00.html">206.00</a></strong></td>
+      <td>WASH MOTOR PUMP SEAL</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/201.00.html">201.00</a></strong></td>
+      <td>WASH PUMP MOTOR</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00748.00.html">00748.00</a></strong></td>
+      <td>WATER INLET SPRINKLER</td>
+      <td></td>
+    </tr>
+  
+        </tbody>
+      </table>
+    </section>
+    
+    <section class="section-card">
+      <h2>Common Installation Parts</h2>
+      <table class="parts-table">
+        <thead>
+          <tr>
+            <th>Part #</th>
+            <th>Part Description</th>
+            <th>Part Bin</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14135.html">14135</a></strong></td>
+      <td>1/4&quot; Blue Poly Tubing, 100&#039; Roll</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13999.html">13999</a></strong></td>
+      <td>1/4&quot; Clear Poly Tubing, 100&#039; Roll</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14136.html">14136</a></strong></td>
+      <td>1/4&quot; Red Poly Tubing, 100&#039; Roll</td>
+      <td></td>
+    </tr>
+  
+        </tbody>
+      </table>
+    </section>
+    
+    
   </main>
 </body>
 </html>
