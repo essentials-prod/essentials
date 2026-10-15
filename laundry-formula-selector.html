@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#011540">
+<title>Laundry Formula Selector | Essentials</title>
+
+<style>
+:root{
+  --navy:#061a33;
+  --accent-2:#e9f7a6;
+  --accent-soft:#f4f9d8;
+  --accent-soft-blue:#e8eef7;
+  --table-row-alt:#f2f7fc;
+  --navy2:#0b2851;
+  --lime:#72bf43;
+  --lime-light:#eff8e8;
+  --ink:#102342;
+  --muted:#5d718d;
+  --line:#d8e1eb;
+  --bg:#ffffff;
+  --white:#fff;
+  --radius:8px;
+  --shadow:0 3px 12px rgba(1,21,64,.05);
+}
+*{box-sizing:border-box}
+html{font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
+body{margin:0;padding:6px}
+button,input,select{font:inherit}
+button,select{cursor:pointer}
+main{max-width:1080px;margin:0 auto 16px;padding:0}
+.page-shell{
+  background:var(--white);
+  border:2px solid #061a33;
+  border-radius:10px;
+  box-shadow:0 3px 10px rgba(0,0,0,.12);
+  padding:8px;
+  min-height:760px;
+  overflow:visible;
+}
+.home-strip{display:block;margin:-8px -8px 8px;padding:0;background:#061a33;border-radius:8px 8px 0 0;overflow:hidden}
+.home-button{display:flex;align-items:center;justify-content:center;width:100%;min-height:42px;padding:10px 14px;background:#061a33;color:#fff;font-weight:900;text-decoration:none;letter-spacing:.08em;border:0;border-bottom:4px solid var(--accent-soft);line-height:1}
+.home-button:hover,.home-button:focus{background:#fff;color:#061a33;outline:3px solid #061a33;outline-offset:-3px}
+.hero{padding:12px 10px 13px;background:#fff}
+.hero h1{
+  margin:0;
+  color:var(--navy);
+  font-size:clamp(30px,4vw,44px);
+  line-height:1.05;
+}
+.hero p{
+  margin:10px 0 0;
+  color:var(--muted);
+  font-size:clamp(15px,1.8vw,18px);
+  max-width:760px;
+  line-height:1.45;
+}
+.content{padding:8px 2px 12px}
+.section{
+  background:#f4f8fb;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  margin:0 0 16px;
+  overflow:hidden;
+}
+.section-title{
+  margin:0;
+  background:var(--navy);
+  color:#fff;
+  border-left:0;
+  padding:9px 11px;
+  font-size:clamp(19px,2.1vw,24px);
+  font-weight:800;
+}
+.section-body{padding:16px}
+.product-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.field label{display:block;font-weight:800;margin-bottom:7px;font-size:15px;color:var(--navy)}
+.field select,.field input{
+  width:100%;
+  border:2px solid #c5d1df;
+  background:#fff;
+  border-radius:8px;
+  min-height:52px;
+  padding:10px 12px;
+  color:var(--navy);
+  font-size:17px;
+}
+.field select:focus,.field input:focus{outline:3px solid rgba(114,191,67,.25);border-color:var(--lime)}
+.washer-layout{display:flex;align-items:center;flex-wrap:wrap;gap:18px}
+.washer-layout .field{width:240px;max-width:100%}
+.hint{font-size:15px;color:var(--muted);max-width:560px;line-height:1.5}
+.hint strong{color:var(--navy)}
+.results-heading{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.units{font-size:13px;text-transform:uppercase;letter-spacing:.04em;font-weight:800;color:var(--lime);background:var(--navy);padding:6px 10px;border-radius:999px}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.dose-table{width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed}
+.dose-table th,.dose-table td{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 9px;text-align:center}
+.dose-table tr>*:last-child{border-right:0}
+.dose-table tbody tr:last-child>*{border-bottom:0}
+.dose-table thead th{font-size:clamp(13px,1.65vw,17px);background:var(--accent-soft);color:var(--navy);vertical-align:middle}
+.dose-table thead th:first-child{width:18%;background:var(--accent-soft);color:var(--navy);text-align:left}
+.dose-table tbody th{text-align:left;background:var(--accent-soft-blue);font-size:clamp(14px,1.7vw,17px);color:var(--navy)}
+.dose-table tbody td{font-size:clamp(15px,2.1vw,21px);font-weight:800;color:var(--navy)}
+.dose-table tbody tr:nth-child(even) td{background:var(--table-row-alt)}
+.dose-table .zero{color:#95a1af;font-weight:600}
+.dose-table .missing{color:#ba572f}
+.oz{font-weight:500;font-size:.76em}
+.selected-products{padding:10px 2px 0;font-size:13px;color:var(--muted);line-height:1.5}
+.footer{text-align:center;font-size:12px;color:var(--muted);padding:2px 10px 0}
+@media(max-width:850px){
+  .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .dose-table{min-width:700px}
+  .section-body{padding:13px}
+}
+@media(max-width:580px){
+  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero h1{font-size:28px}
+  .home-strip{margin:-6px -6px 8px}
+  .washer-layout .field{width:100%}
+  .dose-table{min-width:710px}
+  .dose-table th,.dose-table td{padding:14px 8px}
+  .content{padding:6px 0}
+  .page-shell{min-height:0;padding:6px}
+}
+@media(min-width:851px) and (max-width:1250px){
+  .dose-table th,.dose-table td{padding:17px 6px}
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="page-shell">
+    <nav class="home-strip" aria-label="Page navigation">
+      <a class="home-button" href="index.html">HOME</a>
+    </nav>
+    <div class="hero">
+      <h1>Laundry Formula Selector</h1>
+      <p>Select your products and washer size to view chemical doses for each formula.</p>
+    </div>
+
+    <div class="content">
+      <section class="section" aria-labelledby="products-title">
+        <h2 class="section-title" id="products-title">1. Select Your Products</h2>
+        <div class="section-body"><div class="product-grid" id="productGrid"></div></div>
+      </section>
+
+      <section class="section" aria-labelledby="size-title">
+        <h2 class="section-title" id="size-title">2. Enter Washer Size</h2>
+        <div class="section-body washer-layout">
+          <div class="field">
+            <label for="washerSize">Washer Capacity (lb)</label>
+            <input id="washerSize" type="number" min="1" max="1000" step="1" inputmode="numeric" value="60">
+          </div>
+          <div class="hint">Dosages are based on a <strong>50 lb washer</strong> and scale automatically to the capacity entered. All amounts are shown in <strong>ounces (oz)</strong>.</div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="results-title">
+        <h2 class="section-title results-heading" id="results-title">
+          <span>3. Formula Dosages</span>
+          
+        </h2>
+        <div class="section-body">
+          <div class="table-scroll" role="region" tabindex="0" aria-label="Formula dosages table; scroll horizontally if needed">
+            <table class="dose-table">
+              <thead>
+                <tr>
+                  <th scope="col">Chemical</th>
+                  <th scope="col">White Towels</th>
+                  <th scope="col">White Sheets</th>
+                  <th scope="col">Personals (Color)</th>
+                  <th scope="col">Rags &amp; Mops</th>
+                  <th scope="col">Reclaim</th>
+                </tr>
+              </thead>
+              <tbody id="doseBody"></tbody>
+            </table>
+          </div>
+          <div class="selected-products" id="selectedSummary"></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+<script>
+'use strict';
+
+
+
+
+const LAUNDRY_DATA = {"baseWasherLb":50,"formulas":["White Towels","White Sheets","Personals","Rags & Mops","Reclaim"],"products":[{"type":"Break","product":"Array Premium Break","active":true,"doses":[0.75,0.75,0.75,0.75,0.75]},{"type":"Break","product":"Laundry Break","active":true,"doses":[3,3,3,3,3]},{"type":"Break","product":"Premium Break","active":true,"doses":[0.75,0.75,0.75,0.75,0.75]},{"type":"Suds","product":"Array Laundry Suds HE","active":true,"doses":[2.5,2.5,2.5,2.5,2.5]},{"type":"Suds","product":"Array Premium Suds","active":true,"doses":[2,2,2,2,2]},{"type":"Suds","product":"Premium Suds","active":true,"doses":[0.7,0.7,0.7,0.7,0.7]},{"type":"Suds","product":"Ultra Laundry Suds Detergent","active":true,"doses":[1.5,1.5,1.5,1.5,1.5]},{"type":"Destainer","product":"Laundry Destainer","active":true,"doses":[3,3,3,3,3]},{"type":"Destainer","product":"Ultra Laundry Destainer","active":true,"doses":[2,2,2,2,2]},{"type":"Destainer","product":"Liquid Oxygen Bleach (Hydrogen Peroxide)","active":true,"doses":[3,3,3,3,3]},{"type":"Softener","product":"Array Liquid Sour & Soft Plus","active":true,"doses":[1,1,1,1,1]},{"type":"Softener","product":"Laundry Softener","active":true,"doses":[1,1,1,1,1]},{"type":"Softener","product":"Laundry Sour Soft","active":true,"doses":[2,2,2,2,2]},{"type":"Softener","product":"Premium Softener","active":true,"doses":[0.3,0.3,0.3,0.3,0.3]},{"type":"Softener","product":"Softener (Soften It)","active":true,"doses":[2,2,2,2,2]},{"type":"Sour","product":"Array Liquid Sour & Soft Plus","active":true,"doses":[1,1,1,1,1]},{"type":"Sour","product":"Array Liquid Sour Plus","active":true,"doses":[1,1,1,1,1]},{"type":"Sour","product":"Laundry Sour","active":true,"doses":[1,1,1,1,1]},{"type":"Sour","product":"Laundry Sour Soft","active":true,"doses":[2,2,2,2,2]},{"type":"Sour","product":"Premium Sour","active":true,"doses":[0.3,0.3,0.3,0.3,0.3]}]};
+
+
+const PREVIEW_DATA = {
+  "baseWasherLb": 50,
+  "formulas": [
+    "White Towels",
+    "White Sheets",
+    "Personals",
+    "Rags & Mops",
+    "Reclaim"
+  ],
+  "products": [
+    {
+      "type": "Break",
+      "product": "Array Premium Break",
+      "active": true,
+      "doses": [
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75
+      ]
+    },
+    {
+      "type": "Break",
+      "product": "Laundry Break",
+      "active": true,
+      "doses": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "type": "Break",
+      "product": "Premium Break",
+      "active": true,
+      "doses": [
+        0.75,
+        0.75,
+        0.75,
+        0.75,
+        0.75
+      ]
+    },
+    {
+      "type": "Suds",
+      "product": "Array Laundry Suds HE",
+      "active": true,
+      "doses": [
+        2.5,
+        2.5,
+        2.5,
+        2.5,
+        2.5
+      ]
+    },
+    {
+      "type": "Suds",
+      "product": "Array Premium Suds",
+      "active": true,
+      "doses": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "type": "Suds",
+      "product": "Premium Suds",
+      "active": true,
+      "doses": [
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "type": "Suds",
+      "product": "Ultra Laundry Suds Detergent",
+      "active": true,
+      "doses": [
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5
+      ]
+    },
+    {
+      "type": "Destainer",
+      "product": "Laundry Destainer",
+      "active": true,
+      "doses": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "type": "Destainer",
+      "product": "Ultra Laundry Destainer",
+      "active": true,
+      "doses": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "type": "Destainer",
+      "product": "Liquid Oxygen Bleach (Hydrogen Peroxide)",
+      "active": true,
+      "doses": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "type": "Softener",
+      "product": "Array Liquid Sour & Soft Plus",
+      "active": true,
+      "doses": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "type": "Softener",
+      "product": "Laundry Softener",
+      "active": true,
+      "doses": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "type": "Softener",
+      "product": "Laundry Sour Soft",
+      "active": true,
+      "doses": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "type": "Softener",
+      "product": "Premium Softener",
+      "active": true,
+      "doses": [
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.3
+      ]
+    },
+    {
+      "type": "Softener",
+      "product": "Softener (Soften It)",
+      "active": true,
+      "doses": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "type": "Sour",
+      "product": "Array Liquid Sour & Soft Plus",
+      "active": true,
+      "doses": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "type": "Sour",
+      "product": "Array Liquid Sour Plus",
+      "active": true,
+      "doses": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "type": "Sour",
+      "product": "Laundry Sour",
+      "active": true,
+      "doses": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "type": "Sour",
+      "product": "Laundry Sour Soft",
+      "active": true,
+      "doses": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "type": "Sour",
+      "product": "Premium Sour",
+      "active": true,
+      "doses": [
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.3
+      ]
+    }
+  ]
+};
+
+const DATA = LAUNDRY_DATA || PREVIEW_DATA;
+const FORMULAS = Array.isArray(DATA.formulas) && DATA.formulas.length === 5
+  ? DATA.formulas : ['White Towels','White Sheets','Personals','Rags & Mops','Reclaim'];
+const TYPES = ['Break','Suds','Destainer','Softener','Sour'];
+const BASE_WASHER_LB = Number(DATA.baseWasherLb) > 0 ? Number(DATA.baseWasherLb) : 50;
+const grid = document.getElementById('productGrid');
+const tbody = document.getElementById('doseBody');
+const washer = document.getElementById('washerSize');
+const summary = document.getElementById('selectedSummary');
+const groups = TYPES.map(type => ({
+  type,
+  products: (DATA.products || []).filter(item =>
+    String(item.type || '').trim().toLowerCase() === type.toLowerCase() &&
+    (item.active === true || String(item.active).trim().toLowerCase() === 'yes' || String(item.active).trim().toLowerCase() === 'true')
+  )
+}));
+
+function buildSelectors() {
+  groups.forEach(group => {
+    const field = document.createElement('div');
+    field.className = 'field';
+    const label = document.createElement('label');
+    const id = 'product-' + group.type.toLowerCase();
+    label.htmlFor = id;
+    label.textContent = group.type;
+    const select = document.createElement('select');
+    select.id = id;
+    const none = document.createElement('option');
+    none.value = '';
+    none.textContent = 'Not Used';
+    select.appendChild(none);
+    group.products.forEach((product, index) => {
+      const option = document.createElement('option');
+      option.value = String(index);
+      option.textContent = product.product;
+      select.appendChild(option);
+    });
+    if (group.products.length) select.value = '0';
+    select.addEventListener('change', render);
+    field.append(label, select);
+    grid.appendChild(field);
+  });
+}
+
+function formatOz(amount) {
+  return Number(amount.toFixed(2)).toFixed(amount !== 0 && Math.abs(amount) < 1 ? 2 : 1);
+}
+
+function render() {
+  const capacity = Number(washer.value);
+  const valid = washer.value.trim() !== '' && Number.isFinite(capacity) && capacity > 0 && capacity <= 1000;
+  tbody.replaceChildren();
+  const picked = [];
+  groups.forEach(group => {
+    const selected = document.getElementById('product-' + group.type.toLowerCase()).value;
+    const product = selected === '' ? null : group.products[Number(selected)];
+    picked.push(group.type + ': ' + (product ? product.product : 'Not Used'));
+    const tr = document.createElement('tr');
+    const th = document.createElement('th');
+    th.scope = 'row';
+    th.textContent = group.type;
+    tr.appendChild(th);
+    FORMULAS.forEach((_, index) => {
+      const td = document.createElement('td');
+      if (!valid) {
+        td.textContent = '—';
+        td.className = 'missing';
+      } else if (!product) {
+        td.textContent = '—';
+        td.className = 'zero';
+      } else {
+        
+        const dose = product.doses && product.doses[index];
+        if (dose === '' || dose === null || dose === undefined || !Number.isFinite(Number(dose)) || Number(dose) < 0) {
+          td.textContent = 'N/A';
+          td.className = 'missing';
+        } else {
+          const value = Number(dose) * capacity / BASE_WASHER_LB;
+          const number = document.createElement('span');
+          number.textContent = formatOz(value);
+          const unit = document.createElement('span');
+          unit.textContent = ' oz';
+          unit.className = 'oz';
+          td.append(number, unit);
+          if (Number(dose) === 0) td.className = 'zero';
+        }
+      }
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+  summary.textContent = 'Selected products: ' + picked.join(' • ') +
+    (valid ? '' : ' • Enter a washer capacity between 1 and 1000 lb.');
+}
+
+
+const headingCells = document.querySelectorAll('.dose-table thead th');
+FORMULAS.forEach((name, i) => { if (headingCells[i + 1]) headingCells[i + 1].textContent = name; });
+buildSelectors();
+washer.addEventListener('input', render);
+render();
+</script>
+</body>
+</html>
