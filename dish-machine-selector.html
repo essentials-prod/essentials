@@ -691,7 +691,7 @@
 
     .selector-height-group {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
       align-items: end;
       gap: 10px;
     }
@@ -703,7 +703,8 @@
       max-width: 270px;
     }
 
-    #maxHeightInput {
+    #maxHeightInput,
+    #maxAmpsInput {
       width: 150px;
       min-height: 46px;
       border: 2px solid var(--accent);
@@ -933,6 +934,12 @@
     }
 
     @media (max-width: 720px) {
+      .selector-height-group {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .selector-height-group .selector-clear-button {
+        grid-column: 1 / -1;
+      }
       .selector-button-grid.four-up,
       .selector-button-grid.three-up {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1067,6 +1074,13 @@
             <span>inches</span>
           </div>
         </div>
+        <div>
+          <label class="selector-filter-heading" for="maxAmpsInput">Maximum Amp Rating</label>
+          <div class="height-input-wrap">
+            <input id="maxAmpsInput" type="number" inputmode="decimal" min="0" step="0.1" placeholder="Any">
+            <span>amps</span>
+          </div>
+        </div>
 
         <button type="button" id="clearSelectorFilters" class="selector-clear-button">Clear Filters</button>
       </div>
@@ -1088,7 +1102,8 @@
       sanitize: new Set(),
       install: new Set(),
       electrical: new Set(),
-      maxHeight: ''
+      maxHeight: '',
+      maxAmps: ''
     };
 
     const optionButtons = Array.from(document.querySelectorAll('.selector-option'));
@@ -1096,6 +1111,7 @@
     const resultCountElement = document.getElementById('selectorResultCount');
     const filterSummaryElement = document.getElementById('selectorFilterSummary');
     const maxHeightInput = document.getElementById('maxHeightInput');
+    const maxAmpsInput = document.getElementById('maxAmpsInput');
     const clearButton = document.getElementById('clearSelectorFilters');
 
     function escapeHtml(value) {
@@ -1193,6 +1209,22 @@
         machine.maxHeight == null
       ) {
         return false;
+      }
+
+      const maxAmps = Number(state.maxAmps);
+      if (state.maxAmps !== '' && Number.isFinite(maxAmps) && maxAmps > 0) {
+        // If a service is selected, only compare ratings for that service.
+        // Otherwise, any rated electrical option at or below the limit qualifies.
+        const relevant = (machine.electrical || []).filter(option =>
+          state.electrical.size === 0 || state.electrical.has(option.key)
+        );
+        if (!relevant.some(option =>
+          option.amps != null &&
+          Number.isFinite(Number(option.amps)) &&
+          Number(option.amps) <= maxAmps
+        )) {
+          return false;
+        }
       }
 
       return true;
@@ -1298,6 +1330,9 @@
       if (state.maxHeight) {
         summaryParts.push('Max ' + state.maxHeight + '" high');
       }
+      if (state.maxAmps) {
+        summaryParts.push('Max ' + state.maxAmps + ' amps');
+      }
 
       filterSummaryElement.textContent =
         summaryParts.length > 0
@@ -1381,13 +1416,20 @@
       render();
     });
 
+    maxAmpsInput.addEventListener('input', () => {
+      state.maxAmps = maxAmpsInput.value.trim();
+      render();
+    });
+
     clearButton.addEventListener('click', () => {
       state.style.clear();
       state.sanitize.clear();
       state.install.clear();
       state.electrical.clear();
       state.maxHeight = '';
+      state.maxAmps = '';
       maxHeightInput.value = '';
+      maxAmpsInput.value = '';
       render();
     });
 

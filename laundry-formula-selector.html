@@ -93,24 +93,32 @@ main{max-width:1080px;margin:0 auto 16px;padding:0}
 .hint strong{color:var(--navy)}
 .results-heading{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
 .units{font-size:13px;text-transform:uppercase;letter-spacing:.04em;font-weight:800;color:var(--lime);background:var(--navy);padding:6px 10px;border-radius:999px}
-.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.dose-table{width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed}
-.dose-table th,.dose-table td{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 9px;text-align:center}
+.table-scroll{width:100%;max-width:100%;overflow-x:hidden}
+.dose-table{width:100%;min-width:0;border-collapse:separate;border-spacing:0;table-layout:fixed}
+.dose-table th,.dose-table td{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 5px;text-align:center;overflow-wrap:anywhere;word-break:normal}
 .dose-table tr>*:last-child{border-right:0}
 .dose-table tbody tr:last-child>*{border-bottom:0}
-.dose-table thead th{font-size:clamp(13px,1.65vw,17px);background:var(--accent-soft);color:var(--navy);vertical-align:middle}
-.dose-table thead th:first-child{width:18%;background:var(--accent-soft);color:var(--navy);text-align:left}
+.dose-table thead th{font-size:clamp(12px,1.5vw,16px);background:var(--accent-soft);color:var(--navy);vertical-align:middle}
+.dose-table thead th:first-child{width:22%;background:var(--accent-soft);color:var(--navy);text-align:left}
 .dose-table tbody th{text-align:left;background:var(--accent-soft-blue);font-size:clamp(14px,1.7vw,17px);color:var(--navy)}
-.dose-table tbody td{font-size:clamp(15px,2.1vw,21px);font-weight:800;color:var(--navy)}
+.dose-table tbody td{font-size:clamp(14px,1.8vw,19px);font-weight:800;color:var(--navy)}
 .dose-table tbody tr:nth-child(even) td{background:var(--table-row-alt)}
+ 
+.dose-table .chemical-link{display:block;color:var(--navy);font-weight:900;text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:2px;text-underline-offset:4px;min-height:32px}
+.dose-table .chemical-link:hover,.dose-table .chemical-link:focus{color:#236b1d;outline:2px solid var(--lime);outline-offset:2px;border-radius:3px}
+.dose-table .chemical-link.unavailable{color:var(--muted);text-decoration:none;outline:0;cursor:default}
+.dose-table .chemical-choice{display:block;margin-top:3px;font-size:clamp(10px,1.2vw,12px);line-height:1.2;font-weight:600;color:var(--muted);overflow-wrap:anywhere;hyphens:auto}
 .dose-table .zero{color:#95a1af;font-weight:600}
 .dose-table .missing{color:#ba572f}
 .oz{font-weight:500;font-size:.76em}
 .selected-products{padding:10px 2px 0;font-size:13px;color:var(--muted);line-height:1.5}
 .footer{text-align:center;font-size:12px;color:var(--muted);padding:2px 10px 0}
 @media(max-width:850px){
+  .dose-table .chemical-link{font-size:13px;min-height:0}
+  .dose-table .chemical-choice{font-size:10px}
+  .dose-table th,.dose-table td{padding:11px 4px}
   .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .dose-table{min-width:700px}
+  .dose-table{min-width:0}
   .section-body{padding:13px}
 }
 @media(max-width:580px){
@@ -118,13 +126,17 @@ main{max-width:1080px;margin:0 auto 16px;padding:0}
   .hero h1{font-size:28px}
   .home-strip{margin:-6px -6px 8px}
   .washer-layout .field{width:100%}
-  .dose-table{min-width:710px}
-  .dose-table th,.dose-table td{padding:14px 8px}
+  .dose-table{min-width:0}
+  .dose-table th,.dose-table td{padding:10px 3px;font-size:12px}
+  .dose-table thead th:first-child{width:24%}
+  .dose-table .chemical-link{min-height:0;font-size:12px}
+  .dose-table .chemical-choice{font-size:10px}
+  .oz{font-size:.7em}
   .content{padding:6px 0}
   .page-shell{min-height:0;padding:6px}
 }
 @media(min-width:851px) and (max-width:1250px){
-  .dose-table th,.dose-table td{padding:17px 6px}
+  .dose-table th,.dose-table td{padding:12px 5px}
 }
 </style>
 </head>
@@ -162,16 +174,11 @@ main{max-width:1080px;margin:0 auto 16px;padding:0}
           
         </h2>
         <div class="section-body">
-          <div class="table-scroll" role="region" tabindex="0" aria-label="Formula dosages table; scroll horizontally if needed">
+          <div class="table-scroll" role="region" tabindex="0" aria-label="Formula dosages table">
             <table class="dose-table">
               <thead>
-                <tr>
-                  <th scope="col">Chemical</th>
-                  <th scope="col">White Towels</th>
-                  <th scope="col">White Sheets</th>
-                  <th scope="col">Personals (Color)</th>
-                  <th scope="col">Rags &amp; Mops</th>
-                  <th scope="col">Reclaim</th>
+                <tr id="doseHead">
+                  <th scope="col">Formula</th>
                 </tr>
               </thead>
               <tbody id="doseBody"></tbody>
@@ -190,7 +197,7 @@ main{max-width:1080px;margin:0 auto 16px;padding:0}
 
 
 
-const LAUNDRY_DATA = {"baseWasherLb":50,"formulas":["White Towels","White Sheets","Personals","Rags & Mops","Reclaim"],"products":[{"type":"Break","product":"Array Premium Break","active":true,"doses":[0.75,0.75,0.75,0.75,0.75]},{"type":"Break","product":"Laundry Break","active":true,"doses":[3,3,3,3,3]},{"type":"Break","product":"Premium Break","active":true,"doses":[0.75,0.75,0.75,0.75,0.75]},{"type":"Suds","product":"Array Laundry Suds HE","active":true,"doses":[2.5,2.5,2.5,2.5,2.5]},{"type":"Suds","product":"Array Premium Suds","active":true,"doses":[2,2,2,2,2]},{"type":"Suds","product":"Premium Suds","active":true,"doses":[0.7,0.7,0.7,0.7,0.7]},{"type":"Suds","product":"Ultra Laundry Suds Detergent","active":true,"doses":[1.5,1.5,1.5,1.5,1.5]},{"type":"Destainer","product":"Laundry Destainer","active":true,"doses":[3,3,3,3,3]},{"type":"Destainer","product":"Ultra Laundry Destainer","active":true,"doses":[2,2,2,2,2]},{"type":"Destainer","product":"Liquid Oxygen Bleach (Hydrogen Peroxide)","active":true,"doses":[3,3,3,3,3]},{"type":"Softener","product":"Array Liquid Sour & Soft Plus","active":true,"doses":[1,1,1,1,1]},{"type":"Softener","product":"Laundry Softener","active":true,"doses":[1,1,1,1,1]},{"type":"Softener","product":"Laundry Sour Soft","active":true,"doses":[2,2,2,2,2]},{"type":"Softener","product":"Premium Softener","active":true,"doses":[0.3,0.3,0.3,0.3,0.3]},{"type":"Softener","product":"Softener (Soften It)","active":true,"doses":[2,2,2,2,2]},{"type":"Sour","product":"Array Liquid Sour & Soft Plus","active":true,"doses":[1,1,1,1,1]},{"type":"Sour","product":"Array Liquid Sour Plus","active":true,"doses":[1,1,1,1,1]},{"type":"Sour","product":"Laundry Sour","active":true,"doses":[1,1,1,1,1]},{"type":"Sour","product":"Laundry Sour Soft","active":true,"doses":[2,2,2,2,2]},{"type":"Sour","product":"Premium Sour","active":true,"doses":[0.3,0.3,0.3,0.3,0.3]}]};
+const LAUNDRY_DATA = {"baseWasherLb":50,"formulas":["White Towels","White Sheets","Personals","Rags & Mops","Reclaim"],"products":[{"type":"Break","product":"Array Premium Break","active":true,"doses":[1.2,1,0.5,0.8,2],"pageUrl":"chemical-products/Array%20Premium%20Break.html"},{"type":"Break","product":"Laundry Break","active":true,"doses":[3,2.5,2,2,4.5],"pageUrl":"chemical-products/Laundry%20Break.html"},{"type":"Break","product":"Combo Laundry Detergent","active":true,"doses":[5,4.5,3.5,4,7.5],"pageUrl":"chemical-products/Combo%20Laundry%20Detergent.html"},{"type":"Suds","product":"Array Laundry Suds HE","active":true,"doses":[3.5,3,2.5,2,4],"pageUrl":"chemical-products/Array%20Laundry%20Suds%20HE.html"},{"type":"Suds","product":"Array Premium Suds","active":true,"doses":[1.2,1,0.8,0.8,2],"pageUrl":"chemical-products/Array%20Premium%20Suds.html"},{"type":"Suds","product":"Premium Suds","active":true,"doses":[0.7,0.7,0.7,0.7,0.7],"pageUrl":"chemical-products/Premium%20Suds.html"},{"type":"Suds","product":"Ultra Laundry Suds Detergent","active":true,"doses":[2,1.75,2,2,2],"pageUrl":"chemical-products/Ultra%20Laundry%20Suds%20Detergent.html"},{"type":"Destainer","product":"Laundry Destainer","active":true,"doses":[3,3,0,3,5],"pageUrl":"chemical-products/Laundry%20Destainer.html"},{"type":"Destainer","product":"Ultra Laundry Destainer","active":true,"doses":[3,3,0,3,5],"pageUrl":"chemical-products/Ultra%20Laundry%20Destainer.html"},{"type":"Destainer","product":"Liquid Oxygen Bleach (Hydrogen Peroxide)","active":true,"doses":[3.5,3.5,3,3.5,5.5],"pageUrl":"chemical-products/Liquid%20Oxygen%20Bleach%20(Hydrogen%20Peroxide).html"},{"type":"Softener","product":"Array Liquid Sour & Soft Plus","active":true,"doses":[2,2,1.5,0,2.5],"pageUrl":"chemical-products/Array%20Liquid%20Sour%20%26%20Soft%20Plus.html"},{"type":"Softener","product":"Laundry Softener","active":true,"doses":[1,1,1,0,1],"pageUrl":"chemical-products/Laundry%20Softener.html"},{"type":"Softener","product":"Laundry Sour Soft","active":true,"doses":[2,2,1.8,0,2],"pageUrl":"chemical-products/Laundry%20Sour%20Soft.html"},{"type":"Softener","product":"Premium Softener","active":true,"doses":[0.5,0.5,0.4,0,0.5],"pageUrl":"chemical-products/Premium%20Softener.html"},{"type":"Softener","product":"Softener (Soften It)","active":true,"doses":[1.3,1.3,1.3,0,1.3],"pageUrl":"chemical-products/Softener%20(Soften%20It).html"},{"type":"Sour","product":"Array Liquid Sour & Soft Plus","active":true,"doses":[2,2,1.5,0,2.5],"pageUrl":"chemical-products/Array%20Liquid%20Sour%20%26%20Soft%20Plus.html"},{"type":"Sour","product":"Array Liquid Sour Plus","active":true,"doses":[1,1,1,1,1],"pageUrl":"chemical-products/Array%20Liquid%20Sour%20Plus.html"},{"type":"Sour","product":"Laundry Sour","active":true,"doses":[1.3,1.3,1,0,1.3],"pageUrl":"chemical-products/Laundry%20Sour.html"},{"type":"Sour","product":"Premium Sour","active":true,"doses":[0.5,0.5,0.5,0,0.5],"pageUrl":"chemical-products/Premium%20Sour.html"}]};
 
 
 const PREVIEW_DATA = {
@@ -446,6 +453,10 @@ const PREVIEW_DATA = {
   ]
 };
 
+
+if (!LAUNDRY_DATA) PREVIEW_DATA.products.forEach(product => {
+  product.pageUrl = 'chemical-products/' + encodeURIComponent(product.product + '.html');
+});
 const DATA = LAUNDRY_DATA || PREVIEW_DATA;
 const FORMULAS = Array.isArray(DATA.formulas) && DATA.formulas.length === 5
   ? DATA.formulas : ['White Towels','White Sheets','Personals','Rags & Mops','Reclaim'];
@@ -453,6 +464,7 @@ const TYPES = ['Break','Suds','Destainer','Softener','Sour'];
 const BASE_WASHER_LB = Number(DATA.baseWasherLb) > 0 ? Number(DATA.baseWasherLb) : 50;
 const grid = document.getElementById('productGrid');
 const tbody = document.getElementById('doseBody');
+const thead = document.getElementById('doseHead');
 const washer = document.getElementById('washerSize');
 const summary = document.getElementById('selectedSummary');
 const groups = TYPES.map(type => ({
@@ -498,17 +510,48 @@ function render() {
   const capacity = Number(washer.value);
   const valid = washer.value.trim() !== '' && Number.isFinite(capacity) && capacity > 0 && capacity <= 1000;
   tbody.replaceChildren();
-  const picked = [];
-  groups.forEach(group => {
-    const selected = document.getElementById('product-' + group.type.toLowerCase()).value;
-    const product = selected === '' ? null : group.products[Number(selected)];
-    picked.push(group.type + ': ' + (product ? product.product : 'Not Used'));
+  thead.replaceChildren();
+
+  const formulaHeading = document.createElement('th');
+  formulaHeading.scope = 'col';
+  formulaHeading.textContent = 'Formula';
+  thead.appendChild(formulaHeading);
+
+  const choices = groups.map(group => {
+    const value = document.getElementById('product-' + group.type.toLowerCase()).value;
+    return {
+      group,
+      product: value === '' ? null : group.products[Number(value)]
+    };
+  });
+
+  choices.forEach(({group, product}) => {
+    const th = document.createElement('th');
+    th.scope = 'col';
+    const heading = document.createElement(product && product.pageUrl ? 'a' : 'span');
+    heading.className = 'chemical-link' + (!product || !product.pageUrl ? ' unavailable' : '');
+    heading.textContent = group.type;
+    if (product && product.pageUrl) {
+      heading.href = product.pageUrl;
+      heading.title = 'Open ' + product.product + ' chemical page';
+    } else if (product) {
+      heading.title = 'No matching Essentials chemical page was found for ' + product.product;
+    }
+    const chosen = document.createElement('span');
+    chosen.className = 'chemical-choice';
+    chosen.textContent = product ? product.product : 'Not Used';
+    th.append(heading, chosen);
+    thead.appendChild(th);
+  });
+
+  FORMULAS.forEach((formulaName, formulaIndex) => {
     const tr = document.createElement('tr');
     const th = document.createElement('th');
     th.scope = 'row';
-    th.textContent = group.type;
+    th.textContent = formulaName;
     tr.appendChild(th);
-    FORMULAS.forEach((_, index) => {
+
+    choices.forEach(({product}) => {
       const td = document.createElement('td');
       if (!valid) {
         td.textContent = '—';
@@ -517,8 +560,7 @@ function render() {
         td.textContent = '—';
         td.className = 'zero';
       } else {
-        
-        const dose = product.doses && product.doses[index];
+        const dose = product.doses && product.doses[formulaIndex];
         if (dose === '' || dose === null || dose === undefined || !Number.isFinite(Number(dose)) || Number(dose) < 0) {
           td.textContent = 'N/A';
           td.className = 'missing';
@@ -537,13 +579,11 @@ function render() {
     });
     tbody.appendChild(tr);
   });
-  summary.textContent = 'Selected products: ' + picked.join(' • ') +
+  summary.textContent = 'Selected products: ' + choices.map(({group,product}) =>
+    group.type + ': ' + (product ? product.product : 'Not Used')).join(' • ') +
     (valid ? '' : ' • Enter a washer capacity between 1 and 1000 lb.');
 }
 
-
-const headingCells = document.querySelectorAll('.dose-table thead th');
-FORMULAS.forEach((name, i) => { if (headingCells[i + 1]) headingCells[i + 1].textContent = name; });
 buildSelectors();
 washer.addEventListener('input', render);
 render();
