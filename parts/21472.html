@@ -597,6 +597,19 @@
     }
   
     
+    .photo-card.detail-photo-thumbnail { height: 112px; min-height: 112px; max-height: 112px; justify-content: flex-start; }
+    .detail-photo-thumbnail .detail-photo-button { border: 0; padding: 4px; background: #fff; cursor: zoom-in; display: flex; align-items: center; justify-content: center; width: 108px; height: 108px; border-radius: 5px; }
+    .detail-photo-thumbnail .detail-photo-button img { width: auto; height: auto; max-width: 96px; max-height: 96px; object-fit: contain; border: 0; }
+    .detail-photo-button:focus-visible { outline: 3px solid #72bf43; outline-offset: 1px; }
+    .detail-image-overlay[hidden] { display: none !important; }
+    .detail-image-overlay { position: fixed; inset: 0; z-index: 10000; background: rgba(1, 14, 35, .52); -webkit-backdrop-filter: blur(9px); backdrop-filter: blur(9px); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15px; }
+    .detail-image-panel { display: flex; flex-direction: column; align-items: center; background: #fff; border-radius: 9px; padding: 14px; max-width: min(95vw, 440px); max-height: 90dvh; box-shadow: 0 8px 35px #0006; }
+    .detail-image-large { max-width: min(240px, 80vw); max-height: min(240px, 60dvh); width: auto; height: auto; object-fit: contain; }
+    .detail-image-close { margin-top: 12px; width: 100%; min-height: 48px; background: #061a33; color: white; font: 900 17px Arial, sans-serif; letter-spacing: .08em; border: none; border-bottom: 4px solid #e9f7a6; border-radius: 5px; cursor: pointer; }
+    .detail-image-close:focus-visible { outline: 3px solid #72bf43; }
+    @media print { .detail-image-overlay { display: none !important; } }
+  
+    
     .part-link {
       color: var(--accent);
       font-weight: 900;
@@ -805,8 +818,8 @@
     </header>
 
     <section class="top-grid part-detail-top-grid">
-      <div class="photo-card part-photo-card">
-        <img src="../assets/part-images/21472.png" alt="Yellow Pump Cover Large" loading="lazy" decoding="async">
+      <div class="photo-card part-photo-card detail-photo-thumbnail">
+        <button class="detail-photo-button" type="button" data-detail-photo-open aria-label="Enlarge Yellow Pump Cover Large"><img src="../assets/part-images/21472.png" alt="Yellow Pump Cover Large" loading="lazy" decoding="async"></button>
       </div>
 
       <div class="spec-card part-spec-card">
@@ -863,6 +876,32 @@
     </section>
 
   </main>
+  <div id="detailImageOverlay" class="detail-image-overlay" role="dialog" aria-modal="true" aria-label="Expanded image" hidden>
+    <div class="detail-image-panel">
+      <img class="detail-image-large" id="detailImageLarge" alt="">
+      <button class="detail-image-close" id="detailImageClose" type="button">CLOSE</button>
+    </div>
+  </div>
+  <script>
+(function(){
+  var overlay=document.getElementById('detailImageOverlay');
+  var large=document.getElementById('detailImageLarge');
+  var close=document.getElementById('detailImageClose');
+  var previousFocus=null;
+  if(!overlay || !large || !close) return;
+  function hide(){overlay.hidden=true;large.removeAttribute('src');document.body.style.overflow='';if(previousFocus)previousFocus.focus();}
+  document.querySelectorAll('[data-detail-photo-open]').forEach(function(button){
+    button.addEventListener('click',function(){
+      var thumbnail=button.querySelector('img');if(!thumbnail)return;
+      previousFocus=button;large.src=thumbnail.currentSrc||thumbnail.src;large.alt=thumbnail.alt;
+      overlay.hidden=false;document.body.style.overflow='hidden';close.focus();
+    });
+  });
+  close.addEventListener('click',hide);
+  overlay.addEventListener('click',function(event){if(event.target===overlay)hide();});
+  document.addEventListener('keydown',function(event){if(overlay.hidden)return;if(event.key==='Escape')hide();if(event.key==='Tab'){event.preventDefault();close.focus();}});
+})();
+</script>
 
 </body>
 </html>
