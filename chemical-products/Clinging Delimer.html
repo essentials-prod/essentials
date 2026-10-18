@@ -597,9 +597,11 @@
     }
   
     
-    .photo-card.detail-photo-thumbnail { height: 208px; min-height: 208px; max-height: 208px; justify-content: flex-start; }
-    .detail-photo-thumbnail .detail-photo-button { border: 0; padding: 4px; background: #fff; cursor: zoom-in; display: flex; align-items: center; justify-content: center; width: 200px; height: 200px; border-radius: 5px; }
-    .detail-photo-thumbnail .detail-photo-button img { width: auto; height: auto; max-width: 192px; max-height: 192px; object-fit: contain; border: 0; }
+    /* Detail thumbnails fill the entire existing photo card, without cropping.
+       This is limited to equipment, chemical product and part detail pages. */
+    .photo-card.detail-photo-thumbnail { justify-content: stretch; align-items: stretch; }
+    .detail-photo-thumbnail .detail-photo-button { border: 0; padding: 4px; background: #fff; cursor: zoom-in; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; min-width: 0; min-height: 0; border-radius: 5px; }
+    .detail-photo-thumbnail .detail-photo-button img { display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; object-position: center; border: 0; }
     .detail-photo-button:focus-visible { outline: 3px solid #72bf43; outline-offset: 1px; }
     .detail-image-overlay[hidden] { display: none !important; }
     .detail-image-overlay { position: fixed; inset: 0; z-index: 10000; background: rgba(1, 14, 35, .52); -webkit-backdrop-filter: blur(9px); backdrop-filter: blur(9px); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15px; }
