@@ -783,6 +783,21 @@
       }
     }
   
+    
+    /* Detail thumbnails fill the entire existing photo card, without cropping.
+       This is limited to equipment, chemical product and part detail pages. */
+    .photo-card.detail-photo-thumbnail { justify-content: stretch; align-items: stretch; }
+    .detail-photo-thumbnail .detail-photo-button { border: 0; padding: 4px; background: #fff; cursor: zoom-in; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; min-width: 0; min-height: 0; border-radius: 5px; }
+    .detail-photo-thumbnail .detail-photo-button img { display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; object-position: center; border: 0; }
+    .detail-photo-button:focus-visible { outline: 3px solid #72bf43; outline-offset: 1px; }
+    .detail-image-overlay[hidden] { display: none !important; }
+    .detail-image-overlay { position: fixed; inset: 0; z-index: 10000; background: rgba(1, 14, 35, .52); -webkit-backdrop-filter: blur(9px); backdrop-filter: blur(9px); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15px; }
+    .detail-image-panel { display: flex; flex-direction: column; align-items: center; background: #fff; border-radius: 9px; padding: 14px; max-width: min(95vw, 540px); max-height: 90dvh; box-shadow: 0 8px 35px #0006; }
+    .detail-image-large { max-width: min(480px, 85vw); max-height: min(480px, 68dvh); width: auto; height: auto; object-fit: contain; }
+    .detail-image-close { margin-top: 12px; width: 100%; min-height: 48px; background: #061a33; color: white; font: 900 17px Arial, sans-serif; letter-spacing: .08em; border: none; border-bottom: 4px solid #e9f7a6; border-radius: 5px; cursor: pointer; }
+    .detail-image-close:focus-visible { outline: 3px solid #72bf43; }
+    @media print { .detail-image-overlay { display: none !important; } }
+  
   </style>
 </head>
 <body class="online-mode">
@@ -799,8 +814,8 @@
     </header>
 
     <section class="top-grid">
-      <div class="photo-card">
-        <img src="https://cmadishmachines.com/wp-content/uploads/2020/02/180-SB-853x1024-1-853x1024.jpg" alt="CMA - 180-S-B" loading="lazy" decoding="async">
+      <div class="photo-card detail-photo-thumbnail">
+        <button class="detail-photo-button" type="button" data-detail-photo-open aria-label="Enlarge CMA - 180-S-B"><img src="https://cmadishmachines.com/wp-content/uploads/2020/02/180-SB-853x1024-1-853x1024.jpg" alt="CMA - 180-S-B" loading="lazy" decoding="async"></button>
       </div>
       <div class="spec-card">
         <div class="spec-grid">
@@ -901,5 +916,31 @@
     
     
   </main>
+  <div id="detailImageOverlay" class="detail-image-overlay" role="dialog" aria-modal="true" aria-label="Expanded image" hidden>
+    <div class="detail-image-panel">
+      <img class="detail-image-large" id="detailImageLarge" alt="">
+      <button class="detail-image-close" id="detailImageClose" type="button">CLOSE</button>
+    </div>
+  </div>
+  <script>
+(function(){
+  var overlay=document.getElementById('detailImageOverlay');
+  var large=document.getElementById('detailImageLarge');
+  var close=document.getElementById('detailImageClose');
+  var previousFocus=null;
+  if(!overlay || !large || !close) return;
+  function hide(){overlay.hidden=true;large.removeAttribute('src');document.body.style.overflow='';if(previousFocus)previousFocus.focus();}
+  document.querySelectorAll('[data-detail-photo-open]').forEach(function(button){
+    button.addEventListener('click',function(){
+      var thumbnail=button.querySelector('img');if(!thumbnail)return;
+      previousFocus=button;large.src=thumbnail.currentSrc||thumbnail.src;large.alt=thumbnail.alt;
+      overlay.hidden=false;document.body.style.overflow='hidden';close.focus();
+    });
+  });
+  close.addEventListener('click',hide);
+  overlay.addEventListener('click',function(event){if(event.target===overlay)hide();});
+  document.addEventListener('keydown',function(event){if(overlay.hidden)return;if(event.key==='Escape')hide();if(event.key==='Tab'){event.preventDefault();close.focus();}});
+})();
+</script>
 </body>
 </html>
