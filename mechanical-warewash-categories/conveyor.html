@@ -295,6 +295,67 @@
       border-bottom: 1px solid var(--line);
     }
 
+    /* Equipment card image states; does not alter the original photo files. */
+    .equipment-image-wrap {
+      position: relative;
+      width: 100%;
+      height: 150px;
+      background: #fff;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .equipment-image-wrap img,
+    .equipment-image-wrap .image-placeholder {
+      width: 100%;
+      height: 100%;
+      max-height: none;
+      border-bottom: 0;
+    }
+
+    .equipment-image-wrap .equipment-photo-muted {
+      filter: grayscale(100%);
+    }
+
+    /* Compact transparent Preferred award, overlaid on the equipment image. */
+    .preferred-ribbon {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+      height: 32px;
+      width: 85px;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      color: #72bf43;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .035em;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .preferred-ribbon svg {
+      display: block;
+      width: 19px;
+      height: 19px;
+      flex: 0 0 19px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.25;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .preferred-ribbon .preferred-label { white-space: nowrap; }
+
+
     .site-card-image {
       width: 100%;
       height: 150px;
@@ -446,22 +507,30 @@
       <a class="home-button" href="../mechanical-warewash.html">HOME</a>
     </nav>
     <section class="grid">
-      <a class="block" href="../mechanical-warewash/EST44.html">
-        <img src="https://cmadishmachines.com/wp-content/uploads/2020/02/EST-44-Tall-853x1024-1-853x1024.jpg" alt="CMA EST-44" loading="lazy" decoding="async">
-        <div class="block-title">CMA EST-44</div>
-      </a>
-      <a class="block" href="../mechanical-warewash/EST44-EXT.html">
-        <img src="https://cmadishmachines.com/wp-content/uploads/2020/02/EST-44-Tall-853x1024-1-853x1024.jpg" alt="CMA EST-44-EXT" loading="lazy" decoding="async">
-        <div class="block-title">CMA EST-44-EXT</div>
-      </a>
-      <a class="block" href="../mechanical-warewash/EST66.html">
-        <img src="https://cmadishmachines.com/wp-content/uploads/2020/02/EST-66-Tall-853x1024-1-853x1024.jpg" alt="CMA EST-66" loading="lazy" decoding="async">
-        <div class="block-title">CMA EST-66</div>
-      </a>
-      <a class="block" href="../mechanical-warewash/EST66-EXT.html">
-        <img src="https://cmadishmachines.com/wp-content/uploads/2020/02/EST-66-Tall-853x1024-1-853x1024.jpg" alt="CMA EST-66-EXT" loading="lazy" decoding="async">
-        <div class="block-title">CMA EST-66-EXT</div>
-      </a></section>
+        <a class="block" href="../mechanical-warewash/ADC44.html">
+          <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="https://drive.google.com/file/d/1IEG81DB6OwxsoH13e_qzBndnQzQSvteF/view?usp=sharing" alt="ADS ADC44" loading="lazy" decoding="async"></div>
+          <div class="block-title">ADS ADC44</div>
+        </a>
+        <a class="block" href="../mechanical-warewash/ADC66.html">
+          <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="https://www.americandish.com/wp-content/uploads/2026/05/ADC-66-scaled.png?_gl=1*8f90rl*_up*MQ..*_ga*OTczNzEzMDcxLjE3OTMyODkyODA.*_ga_GETSYEKNLS*czE3OTMyODkyODAkbzEkZzEkdDE3OTMyODkzMjQkajE2JGwwJGgw" alt="ADS ADC66" loading="lazy" decoding="async"></div>
+          <div class="block-title">ADS ADC66</div>
+        </a>
+        <a class="block" href="../mechanical-warewash/EST44.html">
+          <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="https://cmadishmachines.com/wp-content/uploads/2020/02/EST-44-Tall-853x1024-1-853x1024.jpg" alt="CMA EST-44" loading="lazy" decoding="async"></div>
+          <div class="block-title">CMA EST-44</div>
+        </a>
+        <a class="block" href="../mechanical-warewash/EST44-EXT.html">
+          <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="https://cmadishmachines.com/wp-content/uploads/2020/02/EST-44-Tall-853x1024-1-853x1024.jpg" alt="CMA EST-44-EXT" loading="lazy" decoding="async"></div>
+          <div class="block-title">CMA EST-44-EXT</div>
+        </a>
+        <a class="block" href="../mechanical-warewash/EST66.html">
+          <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="https://cmadishmachines.com/wp-content/uploads/2020/02/EST-66-Tall-853x1024-1-853x1024.jpg" alt="CMA EST-66" loading="lazy" decoding="async"></div>
+          <div class="block-title">CMA EST-66</div>
+        </a>
+        <a class="block" href="../mechanical-warewash/EST66-EXT.html">
+          <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="https://cmadishmachines.com/wp-content/uploads/2020/02/EST-66-Tall-853x1024-1-853x1024.jpg" alt="CMA EST-66-EXT" loading="lazy" decoding="async"></div>
+          <div class="block-title">CMA EST-66-EXT</div>
+        </a></section>
   </main>
 </body>
 </html>

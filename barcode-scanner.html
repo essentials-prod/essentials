@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -52,10 +53,21 @@
     .optrow label{margin:0}
     #log{max-height:220px;overflow:auto;background:#101e35;color:#d6e5f6;border-radius:8px;padding:10px;font:11px/1.5 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
     .diag{display:none}
+     
+    body{padding:6px}
+    .essentials-page{position:relative;width:100%;max-width:1080px;margin:0 auto 16px;background:#fff;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,.12);padding:8px;border:2px solid #061a33;min-height:760px}
+    .home-strip{display:block;margin:-8px -8px 8px -8px;padding:0;background:#061a33;border-radius:8px 8px 0 0;overflow:hidden}
+    .home-button{display:flex;align-items:center;justify-content:center;width:100%;min-height:42px;padding:10px 14px;background:#061a33;color:#fff;font-weight:900;text-decoration:none;letter-spacing:.08em;border:0;border-bottom:4px solid #f4f9d8;line-height:1}
+    .home-button:hover,.home-button:focus{background:#fff;color:#061a33;outline:3px solid #061a33;outline-offset:-3px}
   </style>
 </head>
 <body>
-<main><section class="panel">
+<div class="essentials-page">
+<nav class="home-strip" aria-label="Page navigation">
+  <a class="home-button" href="index.html">HOME</a>
+</nav>
+<main>
+  <section class="panel">
   <h1>Bunn Equipment Barcode Scanner</h1>
   <p>Scan the barcode on the equipment dataplate.</p>
   <div id="camera" class="camera">
@@ -109,11 +121,12 @@
   </div>
 
 </section></main>
+</div>
 
 <script>
 'use strict';
 const UNKNOWN_BARCODE_ENDPOINT='https://script.google.com/macros/s/AKfycby8CzZHjTV1yrYlgHoAXRrtPZRTDwC7PXo6oi_XwWPMCcUr9WxxhgjIkR4Mv0q_OHUDkg/exec';
-const EQUIPMENT = Object.freeze({"00072504057255":{"model":"VPR","url":"equipment/VPR.html"},"00072504072135":{"model":"VPS","url":"equipment/VPS.html"},"00072504018768":{"model":"VP173U","url":"equipment/VP173U.html"},"00072504012209":{"model":"VP173","url":"equipment/VP173.html"},"00072504078663":{"model":"CWTF15","url":"equipment/CWTF15.html"},"00072504067766":{"model":"CWTF153","url":"equipment/CWTF153.html"},"00072504079479":{"model":"Axiom153U","url":"equipment/Axiom153U.html"},"00072504079493":{"model":"Axiom153L","url":"equipment/Axiom153L.html"},"00072504038865":{"model":"CWTFAPS","url":"equipment/CWTFAPS.html"},"00072504081458":{"model":"AxiomDVAPS","url":"equipment/AxiomDVAPS.html"},"00072504015408":{"model":"G92T","url":"equipment/G92T.html"},"00072504134536":{"model":"ICBDVT3.0","url":"equipment/ICBDVT3.0.html"},"00072504134994":{"model":"ICBTwinT3.0","url":"equipment/ICBTwinT3.0.html"},"00072504095066":{"model":"ITCB-DV","url":"equipment/ITCB-DV.html"}});
+const EQUIPMENT = Object.freeze({"00072504079493":{"model":"Axiom153L","url":"equipment/Axiom153L.html"},"00072504079479":{"model":"Axiom153U","url":"equipment/Axiom153U.html"},"00072504081458":{"model":"AxiomDVAPS","url":"equipment/AxiomDVAPS.html"},"00072504078663":{"model":"CWTF15","url":"equipment/CWTF15.html"},"00072504067766":{"model":"CWTF153","url":"equipment/CWTF153.html"},"00072504038865":{"model":"CWTFAPS","url":"equipment/CWTFAPS.html"},"00072504015408":{"model":"G92T","url":"equipment/G92T.html"},"00072504134536":{"model":"ICBDVT3.0","url":"equipment/ICBDVT3.0.html"},"00072504134994":{"model":"ICBTwinT3.0","url":"equipment/ICBTwinT3.0.html"},"00072504095066":{"model":"ITCB-DV","url":"equipment/ITCB-DV.html"},"00072504012209":{"model":"VP173","url":"equipment/VP173.html"},"00072504018768":{"model":"VP173U","url":"equipment/VP173U.html"},"00072504057255":{"model":"VPR","url":"equipment/VPR.html"},"00072504072135":{"model":"VPS","url":"equipment/VPS.html"},"00072504124360":{"model":"Sure Immersion 220","url":"equipment/Sure Immersion 220.html"}});
 const $=id=>document.getElementById(id);
 const video=$('preview'),camera=$('camera'),start=$('start'),activeActions=$('activeActions');
 let reader=null,controls=null,nativeStream=null,nativeLoop=false,session=0,busy=false,redirecting=false,torchOn=false,lastLive=null;

@@ -295,6 +295,67 @@
       border-bottom: 1px solid var(--line);
     }
 
+    /* Equipment card image states; does not alter the original photo files. */
+    .equipment-image-wrap {
+      position: relative;
+      width: 100%;
+      height: 150px;
+      background: #fff;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .equipment-image-wrap img,
+    .equipment-image-wrap .image-placeholder {
+      width: 100%;
+      height: 100%;
+      max-height: none;
+      border-bottom: 0;
+    }
+
+    .equipment-image-wrap .equipment-photo-muted {
+      filter: grayscale(100%);
+    }
+
+    /* Compact transparent Preferred award, overlaid on the equipment image. */
+    .preferred-ribbon {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+      height: 32px;
+      width: 85px;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      color: #72bf43;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .035em;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .preferred-ribbon svg {
+      display: block;
+      width: 19px;
+      height: 19px;
+      flex: 0 0 19px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.25;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .preferred-ribbon .preferred-label { white-space: nowrap; }
+
+
     .site-card-image {
       width: 100%;
       height: 150px;
@@ -446,14 +507,18 @@
       <a class="home-button" href="../mechanical-warewash.html">HOME</a>
     </nav>
     <section class="grid">
-      <a class="block" href="../mechanical-warewash/B.html">
-        <img src="https://cmadishmachines.com/wp-content/uploads/2020/02/b-853x1024-1-853x1024.jpg" alt="CMA B" loading="lazy" decoding="async">
-        <div class="block-title">CMA B</div>
-      </a>
-      <a class="block" href="../mechanical-warewash/CB.html">
-        <img src="https://cmadishmachines.com/wp-content/uploads/2019/12/CB-853x1024-1-853x1024.jpg" alt="CMA CB" loading="lazy" decoding="async">
-        <div class="block-title">CMA CB</div>
-      </a></section>
+        <a class="block" href="../mechanical-warewash/5AG-ES.html">
+          <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="https://drive.google.com/file/d/1KT3fpfVDdSdTjwKQOTAYQCyPKv_coyKN/view?usp=sharing" alt="ADS 5AG-ES" loading="lazy" decoding="async"></div>
+          <div class="block-title">ADS 5AG-ES</div>
+        </a>
+        <a class="block" href="../mechanical-warewash/B2.html">
+          <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="https://cmadishmachines.com/wp-content/uploads/2020/02/b-853x1024-1-853x1024.jpg" alt="CMA B2" loading="lazy" decoding="async"></div>
+          <div class="block-title">CMA B2</div>
+        </a>
+        <a class="block" href="../mechanical-warewash/CB.html">
+          <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="https://cmadishmachines.com/wp-content/uploads/2019/12/CB-853x1024-1-853x1024.jpg" alt="CMA CB" loading="lazy" decoding="async"></div>
+          <div class="block-title">CMA CB</div>
+        </a></section>
   </main>
 </body>
 </html>

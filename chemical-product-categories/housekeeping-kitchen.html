@@ -295,6 +295,67 @@
       border-bottom: 1px solid var(--line);
     }
 
+    /* Equipment card image states; does not alter the original photo files. */
+    .equipment-image-wrap {
+      position: relative;
+      width: 100%;
+      height: 150px;
+      background: #fff;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .equipment-image-wrap img,
+    .equipment-image-wrap .image-placeholder {
+      width: 100%;
+      height: 100%;
+      max-height: none;
+      border-bottom: 0;
+    }
+
+    .equipment-image-wrap .equipment-photo-muted {
+      filter: grayscale(100%);
+    }
+
+    /* Compact transparent Preferred award, overlaid on the equipment image. */
+    .preferred-ribbon {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+      height: 32px;
+      width: 85px;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      color: #72bf43;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .035em;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .preferred-ribbon svg {
+      display: block;
+      width: 19px;
+      height: 19px;
+      flex: 0 0 19px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.25;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .preferred-ribbon .preferred-label { white-space: nowrap; }
+
+
     .site-card-image {
       width: 100%;
       height: 150px;
@@ -531,7 +592,7 @@
           <div class="block-title">Non Acid Restroom Cleaner P</div>
         </a>
         <a class="block" href="../chemical-products/Non Ammoniated Glass Cleaner N.html">
-          <img src="../assets/chemical-product-images/Non Ammoniated Glass Cleaner N.jpg" alt="Non Ammoniated Glass Cleaner N" loading="lazy" decoding="async">
+          <img src="../assets/chemical-product-images/Non Ammoniated Glass Cleaner N.png" alt="Non Ammoniated Glass Cleaner N" loading="lazy" decoding="async">
           <div class="block-title">Non Ammoniated Glass Cleaner N</div>
         </a>
         <a class="block" href="../chemical-products/Odor Counteractant F.html">
@@ -559,7 +620,7 @@
           <div class="block-title">Produce Wash</div>
         </a>
         <a class="block" href="../chemical-products/Quarry Grip Floor Cleaner.html">
-          <img src="../assets/chemical-product-images/Quarry Grip Floor Cleaner.png" alt="Quarry Grip Floor Cleaner" loading="lazy" decoding="async">
+          <div class="image-placeholder">Product Image Not Added</div>
           <div class="block-title">Quarry Grip Floor Cleaner</div>
         </a>
         <a class="block" href="../chemical-products/Quarry Grip Floor Cleaner L.html">

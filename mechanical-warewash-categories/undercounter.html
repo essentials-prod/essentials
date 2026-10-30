@@ -295,6 +295,67 @@
       border-bottom: 1px solid var(--line);
     }
 
+    /* Equipment card image states; does not alter the original photo files. */
+    .equipment-image-wrap {
+      position: relative;
+      width: 100%;
+      height: 150px;
+      background: #fff;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .equipment-image-wrap img,
+    .equipment-image-wrap .image-placeholder {
+      width: 100%;
+      height: 100%;
+      max-height: none;
+      border-bottom: 0;
+    }
+
+    .equipment-image-wrap .equipment-photo-muted {
+      filter: grayscale(100%);
+    }
+
+    /* Compact transparent Preferred award, overlaid on the equipment image. */
+    .preferred-ribbon {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+      height: 32px;
+      width: 85px;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      color: #72bf43;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .035em;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .preferred-ribbon svg {
+      display: block;
+      width: 19px;
+      height: 19px;
+      flex: 0 0 19px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.25;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .preferred-ribbon .preferred-label { white-space: nowrap; }
+
+
     .site-card-image {
       width: 100%;
       height: 150px;
@@ -446,22 +507,22 @@
       <a class="home-button" href="../mechanical-warewash.html">HOME</a>
     </nav>
     <section class="grid">
-      <a class="block" href="../mechanical-warewash/180UC-3.html">
-        <img src="https://cmadishmachines.com/wp-content/uploads/2024/06/180UC.png" alt="CMA 180UC-3" loading="lazy" decoding="async">
-        <div class="block-title">CMA 180UC-3</div>
-      </a>
-      <a class="block" href="../mechanical-warewash/GLC.html">
-        <img src="https://cmadishmachines.com/wp-content/uploads/2020/02/GL-C-1-853x1024.jpg" alt="CMA GL-C" loading="lazy" decoding="async">
-        <div class="block-title">CMA GL-C</div>
-      </a>
-      <a class="block" href="../mechanical-warewash/GW100.html">
-        <img src="https://cmadishmachines.com/wp-content/uploads/2020/02/GW-100-1-853x1024.jpg" alt="CMA GW-100" loading="lazy" decoding="async">
-        <div class="block-title">CMA GW-100</div>
-      </a>
-      <a class="block" href="../mechanical-warewash/UC65E-M3.html">
-        <img src="https://cmadishmachines.com/wp-content/uploads/2022/01/UC65_m3-PIC-ADJUSTED-796x1024.png" alt="CMA UC65e-M3" loading="lazy" decoding="async">
-        <div class="block-title">CMA UC65e-M3</div>
-      </a></section>
+        <a class="block" href="../mechanical-warewash/180UC-3.html">
+          <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="https://cmadishmachines.com/wp-content/uploads/2024/06/180UC.png" alt="CMA 180UC-3" loading="lazy" decoding="async"></div>
+          <div class="block-title">CMA 180UC-3</div>
+        </a>
+        <a class="block" href="../mechanical-warewash/GLC.html">
+          <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="https://cmadishmachines.com/wp-content/uploads/2020/02/GL-C-1-853x1024.jpg" alt="CMA GL-C" loading="lazy" decoding="async"></div>
+          <div class="block-title">CMA GL-C</div>
+        </a>
+        <a class="block" href="../mechanical-warewash/GW100.html">
+          <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="https://cmadishmachines.com/wp-content/uploads/2020/02/GW-100-1-853x1024.jpg" alt="CMA GW-100" loading="lazy" decoding="async"></div>
+          <div class="block-title">CMA GW-100</div>
+        </a>
+        <a class="block" href="../mechanical-warewash/UC65E-M3.html">
+          <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="https://cmadishmachines.com/wp-content/uploads/2022/01/UC65_m3-PIC-ADJUSTED-796x1024.png" alt="CMA UC65e-M3" loading="lazy" decoding="async"></div>
+          <div class="block-title">CMA UC65e-M3</div>
+        </a></section>
   </main>
 </body>
 </html>

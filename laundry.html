@@ -295,6 +295,67 @@
       border-bottom: 1px solid var(--line);
     }
 
+    /* Equipment card image states; does not alter the original photo files. */
+    .equipment-image-wrap {
+      position: relative;
+      width: 100%;
+      height: 150px;
+      background: #fff;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .equipment-image-wrap img,
+    .equipment-image-wrap .image-placeholder {
+      width: 100%;
+      height: 100%;
+      max-height: none;
+      border-bottom: 0;
+    }
+
+    .equipment-image-wrap .equipment-photo-muted {
+      filter: grayscale(100%);
+    }
+
+    /* Compact transparent Preferred award, overlaid on the equipment image. */
+    .preferred-ribbon {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+      height: 32px;
+      width: 85px;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      color: #72bf43;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .035em;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .preferred-ribbon svg {
+      display: block;
+      width: 19px;
+      height: 19px;
+      flex: 0 0 19px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.25;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .preferred-ribbon .preferred-label { white-space: nowrap; }
+
+
     .site-card-image {
       width: 100%;
       height: 150px;
@@ -454,24 +515,24 @@
         </div>
       </a><section class="grid">
       <a class="block" href="equipment/LS100.html">
-        <img src="assets/equipment-images/LS100.png" alt="LS100" loading="lazy" decoding="async">
+        <div class="equipment-image-wrap"><img class="equipment-photo" src="assets/equipment-images/LS100.png" alt="LS100" loading="lazy" decoding="async"><span class="preferred-ribbon" aria-label="Preferred equipment"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="6"/><path d="m8.4 12.8-1 8 4.6-2.8 4.6 2.8-1-8"/></svg><span class="preferred-label">PREFERRED</span></span></div>
         <div class="block-title">LS100</div>
       </a>
-      <a class="block" href="equipment/LM250TE.html">
-        <img src="assets/equipment-images/LM250TE.png" alt="LM250TE" loading="lazy" decoding="async">
-        <div class="block-title">LM250TE</div>
-      </a>
-      <a class="block" href="equipment/Evoclean.html">
-        <img src="assets/equipment-images/Evoclean.png" alt="Evoclean" loading="lazy" decoding="async">
-        <div class="block-title">Evoclean</div>
+      <a class="block" href="equipment/OPLMINI.html">
+        <div class="equipment-image-wrap"><img class="equipment-photo" src="assets/equipment-images/OPLMINI.png" alt="OPLMINI" loading="lazy" decoding="async"><span class="preferred-ribbon" aria-label="Preferred equipment"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="6"/><path d="m8.4 12.8-1 8 4.6-2.8 4.6 2.8-1-8"/></svg><span class="preferred-label">PREFERRED</span></span></div>
+        <div class="block-title">OPLMINI</div>
       </a>
       <a class="block" href="equipment/SpriteTL.html">
-        <img src="assets/equipment-images/SpriteTL.png" alt="SpriteTL" loading="lazy" decoding="async">
+        <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="assets/equipment-images/SpriteTL.png" alt="SpriteTL" loading="lazy" decoding="async"></div>
         <div class="block-title">SpriteTL</div>
       </a>
-      <a class="block" href="equipment/OPLMINI.html">
-        <img src="assets/equipment-images/OPLMINI.png" alt="OPLMINI" loading="lazy" decoding="async">
-        <div class="block-title">OPLMINI</div>
+      <a class="block" href="equipment/Evoclean.html">
+        <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="assets/equipment-images/Evoclean.png" alt="Evoclean" loading="lazy" decoding="async"></div>
+        <div class="block-title">Evoclean</div>
+      </a>
+      <a class="block" href="equipment/LM250TE.html">
+        <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="assets/equipment-images/LM250TE.png" alt="LM250TE" loading="lazy" decoding="async"></div>
+        <div class="block-title">LM250TE</div>
       </a></section>
   </main>
 </body>
