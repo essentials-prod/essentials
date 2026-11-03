@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Laundry - Essentials</title>
   <style>
-    
     :root {
       --bg: #ffffff;
       --page: #ffffff;
@@ -314,7 +313,7 @@
     }
 
     .equipment-image-wrap .equipment-photo-muted {
-      filter: grayscale(100%);
+      opacity: 0.8;
     }
 
     /* Compact transparent Preferred award, overlaid on the equipment image. */
@@ -342,6 +341,7 @@
       line-height: 1;
       pointer-events: none;
     }
+
     .preferred-ribbon svg {
       display: block;
       width: 19px;
@@ -353,7 +353,10 @@
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-    .preferred-ribbon .preferred-label { white-space: nowrap; }
+
+    .preferred-ribbon .preferred-label {
+      white-space: nowrap;
+    }
 
 
     .site-card-image {
@@ -496,44 +499,60 @@
         height: 155px;
       }
     }
-  
   </style>
 </head>
 
 <body>
   <main class="page">
-    
+
     <nav class="home-strip" aria-label="Page navigation">
       <a class="home-button" href="index.html">HOME</a>
     </nav>
-    
-      <a class="mw-selector-feature" href="laundry-formula-selector.html">
-        <div class="mw-selector-image"><img src="assets/section-images/basic-laundry-formulas.png" alt="Basic Laundry Formulas" loading="lazy" decoding="async"></div>
-        <div class="mw-selector-copy">
-          <strong>Basic Laundry Formulas</strong>
-          <span>Choose laundry products and washer size to calculate formula dosages.</span>
-        </div>
-      </a><section class="grid">
+
+    <a class="mw-selector-feature" href="laundry-formula-selector.html">
+      <div class="mw-selector-image"><img src="assets/section-images/basic-laundry-formulas.png"
+          alt="Basic Laundry Formulas" loading="lazy" decoding="async"></div>
+      <div class="mw-selector-copy">
+        <strong>Basic Laundry Formulas</strong>
+        <span>Choose laundry products and washer size to calculate formula dosages.</span>
+      </div>
+    </a>
+    <section class="grid">
       <a class="block" href="equipment/LS100.html">
-        <div class="equipment-image-wrap"><img class="equipment-photo" src="assets/equipment-images/LS100.png" alt="LS100" loading="lazy" decoding="async"><span class="preferred-ribbon" aria-label="Preferred equipment"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="6"/><path d="m8.4 12.8-1 8 4.6-2.8 4.6 2.8-1-8"/></svg><span class="preferred-label">PREFERRED</span></span></div>
+        <div class="equipment-image-wrap"><img class="equipment-photo" src="assets/equipment-images/LS100.png"
+            alt="LS100" loading="lazy" decoding="async"><span class="preferred-ribbon"
+            aria-label="Preferred equipment"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="8" r="6" />
+              <path d="m8.4 12.8-1 8 4.6-2.8 4.6 2.8-1-8" />
+            </svg><span class="preferred-label">PREFERRED</span></span></div>
         <div class="block-title">LS100</div>
       </a>
       <a class="block" href="equipment/OPLMINI.html">
-        <div class="equipment-image-wrap"><img class="equipment-photo" src="assets/equipment-images/OPLMINI.png" alt="OPLMINI" loading="lazy" decoding="async"><span class="preferred-ribbon" aria-label="Preferred equipment"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="6"/><path d="m8.4 12.8-1 8 4.6-2.8 4.6 2.8-1-8"/></svg><span class="preferred-label">PREFERRED</span></span></div>
+        <div class="equipment-image-wrap"><img class="equipment-photo" src="assets/equipment-images/OPLMINI.png"
+            alt="OPLMINI" loading="lazy" decoding="async"><span class="preferred-ribbon"
+            aria-label="Preferred equipment"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="8" r="6" />
+              <path d="m8.4 12.8-1 8 4.6-2.8 4.6 2.8-1-8" />
+            </svg><span class="preferred-label">PREFERRED</span></span></div>
         <div class="block-title">OPLMINI</div>
       </a>
       <a class="block" href="equipment/SpriteTL.html">
-        <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="assets/equipment-images/SpriteTL.png" alt="SpriteTL" loading="lazy" decoding="async"></div>
+        <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted"
+            src="assets/equipment-images/SpriteTL.png" alt="SpriteTL" loading="lazy" decoding="async"></div>
         <div class="block-title">SpriteTL</div>
       </a>
       <a class="block" href="equipment/Evoclean.html">
-        <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="assets/equipment-images/Evoclean.png" alt="Evoclean" loading="lazy" decoding="async"></div>
+        <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted"
+            src="assets/equipment-images/Evoclean.png" alt="Evoclean" loading="lazy" decoding="async"></div>
         <div class="block-title">Evoclean</div>
       </a>
       <a class="block" href="equipment/LM250TE.html">
-        <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted" src="assets/equipment-images/LM250TE.png" alt="LM250TE" loading="lazy" decoding="async"></div>
+        <div class="equipment-image-wrap"><img class="equipment-photo equipment-photo-muted"
+            src="assets/equipment-images/LM250TE.png" alt="LM250TE" loading="lazy" decoding="async"></div>
         <div class="block-title">LM250TE</div>
-      </a></section>
+      </a>
+    </section>
   </main>
 </body>
+
 </html>

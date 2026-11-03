@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mechanical Warewash - Essentials</title>
   <style>
-    
     :root {
       --bg: #ffffff;
       --page: #ffffff;
@@ -314,7 +313,7 @@
     }
 
     .equipment-image-wrap .equipment-photo-muted {
-      filter: grayscale(100%);
+      opacity: 0.8;
     }
 
     /* Compact transparent Preferred award, overlaid on the equipment image. */
@@ -342,6 +341,7 @@
       line-height: 1;
       pointer-events: none;
     }
+
     .preferred-ribbon svg {
       display: block;
       width: 19px;
@@ -353,7 +353,10 @@
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-    .preferred-ribbon .preferred-label { white-space: nowrap; }
+
+    .preferred-ribbon .preferred-label {
+      white-space: nowrap;
+    }
 
 
     .site-card-image {
@@ -496,21 +499,21 @@
         height: 155px;
       }
     }
-  
   </style>
 </head>
 
 <body>
   <main class="page">
-    
+
     <nav class="home-strip" aria-label="Page navigation">
       <a class="home-button" href="index.html">HOME</a>
     </nav>
-    
-    
+
+
     <a class="mw-selector-feature" href="dish-machine-selector.html">
       <div class="mw-selector-image">
-        <img src="assets/section-images/dish-machine-selector.png" alt="Dish Machine Selector" loading="lazy" decoding="async">
+        <img src="assets/section-images/dish-machine-selector.png" alt="Dish Machine Selector" loading="lazy"
+          decoding="async">
       </div>
       <div class="mw-selector-copy">
         <strong>Dish Machine Selector</strong>
@@ -534,7 +537,9 @@
       <a class="block" href="mechanical-warewash-categories/undercounter.html">
         <img src="assets/section-images/undercounter.png" alt="Undercounter" loading="lazy" decoding="async">
         <div class="block-title">Undercounter</div>
-      </a></section>
+      </a>
+    </section>
   </main>
 </body>
+
 </html>

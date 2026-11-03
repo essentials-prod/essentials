@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Essentials - Essentials</title>
   <style>
-    
     :root {
       --bg: #ffffff;
       --page: #ffffff;
@@ -314,7 +313,7 @@
     }
 
     .equipment-image-wrap .equipment-photo-muted {
-      filter: grayscale(100%);
+      opacity: 0.8;
     }
 
     /* Compact transparent Preferred award, overlaid on the equipment image. */
@@ -342,6 +341,7 @@
       line-height: 1;
       pointer-events: none;
     }
+
     .preferred-ribbon svg {
       display: block;
       width: 19px;
@@ -353,7 +353,10 @@
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-    .preferred-ribbon .preferred-label { white-space: nowrap; }
+
+    .preferred-ribbon .preferred-label {
+      white-space: nowrap;
+    }
 
 
     .site-card-image {
@@ -496,13 +499,12 @@
         height: 155px;
       }
     }
-  
   </style>
 </head>
 
 <body>
   <main class="page">
-    
+
     <section class="grid">
       <a class="site-card" href="coffee.html">
         <div class="site-card-image">
@@ -512,7 +514,8 @@
       </a>
       <a class="site-card" href="juice-cocoa-tea.html">
         <div class="site-card-image">
-          <img src="assets/section-images/juice-cocoa-tea.png" alt="Juice / Cocoa / Tea" loading="lazy" decoding="async">
+          <img src="assets/section-images/juice-cocoa-tea.png" alt="Juice / Cocoa / Tea" loading="lazy"
+            decoding="async">
         </div>
         <div class="site-card-title">Juice / Cocoa / Tea</div>
       </a>
@@ -524,19 +527,22 @@
       </a>
       <a class="site-card" href="chemical-dispensers.html">
         <div class="site-card-image">
-          <img src="assets/section-images/chemical-dispensers.png" alt="Chemical Dispensers" loading="lazy" decoding="async">
+          <img src="assets/section-images/chemical-dispensers.png" alt="Chemical Dispensers" loading="lazy"
+            decoding="async">
         </div>
         <div class="site-card-title">Chemical Dispensers</div>
       </a>
       <a class="site-card" href="mechanical-warewash.html">
         <div class="site-card-image">
-          <img src="assets/section-images/mechanical-warewash.png" alt="Mechanical Warewash" loading="lazy" decoding="async">
+          <img src="assets/section-images/mechanical-warewash.png" alt="Mechanical Warewash" loading="lazy"
+            decoding="async">
         </div>
         <div class="site-card-title">Mechanical Warewash</div>
       </a>
       <a class="site-card" href="chemical-products.html">
         <div class="site-card-image">
-          <img src="assets/section-images/chemical-products.png" alt="Chemical Products" loading="lazy" decoding="async">
+          <img src="assets/section-images/chemical-products.png" alt="Chemical Products" loading="lazy"
+            decoding="async">
         </div>
         <div class="site-card-title">Chemical Products</div>
       </a>
@@ -551,7 +557,9 @@
           <img src="assets/section-images/barcode-scanner.png" alt="Barcode Scanner" loading="lazy" decoding="async">
         </div>
         <div class="site-card-title">Barcode Scanner</div>
-      </a></section>
+      </a>
+    </section>
   </main>
 </body>
+
 </html>
