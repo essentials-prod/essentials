@@ -5,800 +5,7 @@
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>CMA - 180UC-3 | Service Essentials</title>
-  <style>
-    
-    :root {
-      --bg: #ffffff;
-      --page: #ffffff;
-      --ink: #071426;
-      --muted: #4a5568;
-      --line: #c9d3df;
-      --section: #f4f8fb;
-      --accent: #061a33;
-      --accent-2: #e9f7a6;
-      --accent-soft: #f4f9d8;
-      --accent-soft-blue: #e8eef7;
-      --table-row-alt: #f2f7fc;
-      --radius: 8px;
-      --shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
-
-      --tablet-page-height: 760px;
-      --tablet-page-width: 1080px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 17px;
-      line-height: 1.25;
-    }
-
-    body {
-      padding: 6px;
-    }
-
-    .page {
-      position: relative;
-      width: 100%;
-      max-width: var(--tablet-page-width);
-      height: var(--tablet-page-height);
-      max-height: var(--tablet-page-height);
-      margin: 0 auto 16px auto;
-      background: var(--page);
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-      padding: 8px;
-      overflow: visible;
-      page-break-after: always;
-      border: 2px solid var(--accent);
-    }
-
-    .online-mode .page {
-      height: auto;
-      max-height: none;
-      min-height: var(--tablet-page-height);
-    }
-
-    .home-strip {
-      display: block;
-      margin: -8px -8px 8px -8px;
-      padding: 0;
-      background: var(--accent);
-      border-radius: 8px 8px 0 0;
-      overflow: hidden;
-    }
-
-    .home-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 42px;
-      padding: 10px 14px;
-      background: var(--accent);
-      color: #ffffff;
-      font-weight: 900;
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      border: 0;
-      border-bottom: 4px solid var(--accent-soft);
-      line-height: 1;
-    }
-
-    .home-button:hover,
-    .home-button:focus {
-      background: #ffffff;
-      color: var(--accent);
-      outline: 3px solid var(--accent);
-      outline-offset: -3px;
-    }
-
-    .hero {
-      display: block;
-      background: #ffffff;
-      border-bottom: 4px solid var(--accent);
-      padding: 7px 8px;
-      margin: 0 -8px 8px -8px;
-      border-radius: 0;
-    }
-
-    .hero-left {
-      min-width: 0;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(1.75rem, 3vw, 2.45rem);
-      line-height: 1;
-      color: var(--accent);
-    }
-
-    h2 {
-      margin: 0 0 4px;
-      font-size: 1.12rem;
-      line-height: 1.08;
-      color: var(--accent);
-    }
-
-    .section-card h2,
-    .info-card h2 {
-      background: var(--accent);
-      color: #ffffff;
-      margin: -4px -4px 6px -4px;
-      padding: 5px 8px;
-      border-radius: 6px 6px 0 0;
-    }
-
-    .top-grid {
-      display: grid !important;
-      grid-template-columns: 240px minmax(0, 1fr);
-      gap: 8px;
-      margin-bottom: 8px;
-      align-items: stretch;
-    }
-
-    .photo-card,
-    .spec-card,
-    .info-card,
-    .section-card,
-    .notice-card {
-      border: 1px solid var(--line);
-      background: var(--section);
-      border-radius: var(--radius);
-      padding: 4px;
-    }
-
-    .photo-card {
-      border: 0px;
-      height: 150px;
-      min-height: 150px;
-      max-height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #ffffff;
-      overflow: hidden;
-    }
-
-    .photo-card img {
-      height: 150px;
-      max-height: 150px;
-      max-width: 100%;
-      width: auto;
-      object-fit: contain;
-      object-position: left center;
-      border-radius: 4px;
-    }
-
-    .photo-placeholder {
-      color: var(--muted);
-      font-size: 1rem;
-      font-weight: 700;
-      border: 1px dashed var(--line);
-      border-radius: 5px;
-      padding: 55px 4px;
-      width: 100%;
-      text-align: center;
-    }
-
-    .spec-card {
-      border: 0px;
-      height: 150px;
-      min-height: 150px;
-      max-height: 150px;
-      overflow: hidden;
-      padding: 4px 6px;
-    }
-
-    .spec-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      grid-template-rows: repeat(2, 1fr);
-      gap: 4px;
-      height: 100%;
-    }
-
-    .spec-item {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 5px;
-      padding: 6px 8px;
-      min-height: 0;
-      overflow: hidden;
-    }
-
-    .manuals-spec-item,
-    .chemical-tech-spec-item {
-      padding: 4px 6px;
-    }
-
-    .manuals-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 4px;
-      height: calc(100% - 18px);
-      margin-top: 1px;
-    }
-
-    .manual-bucket {
-      border: 1px solid var(--line);
-      border-radius: 5px;
-      background: var(--accent-soft-blue);
-      min-width: 0;
-      overflow: hidden;
-      height: 100%;
-      padding: 0;
-      margin: 0;
-      display: flex;
-    }
-
-    .manual-tile,
-    .tech-sheet-tile {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: calc(100% - 18px);
-      min-height: 30px;
-      padding: 0;
-      margin: 1px 0 0 0;
-      color: var(--accent);
-      background: var(--accent-soft-blue);
-      border: 1px solid var(--line);
-      border-radius: 5px;
-      font-weight: 900;
-      font-size: 10px;
-      line-height: 10px;
-      text-align: center;
-      text-decoration: none;
-      overflow: hidden;
-      word-break: break-word;
-    }
-
-    .manual-bucket .manual-tile {
-      height: 100%;
-      margin: 0;
-      border: 0;
-      border-radius: 0;
-      background: transparent;
-    }
-
-    .manual-tile:hover,
-    .manual-tile:focus,
-    .tech-sheet-tile:hover,
-    .tech-sheet-tile:focus {
-      background: #ffffff;
-      outline: 2px solid var(--accent);
-      outline-offset: -2px;
-    }
-
-    .label {
-      display: block;
-      color: var(--muted);
-      font-size: 0.8rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      margin-bottom: 1px;
-    }
-
-    .value {
-      display: block;
-      font-weight: 800;
-      color: var(--ink);
-      font-size: 1.02rem;
-      line-height: 1.1;
-      overflow-wrap: anywhere;
-    }
-
-    .summary-table {
-      margin-bottom: 8px;
-    }
-
-    .summary-table td,
-    .summary-table th {
-      text-align: left;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-
-    .info-card p,
-    .section-card p,
-    .notice-card p {
-      margin: 0;
-    }
-
-    .section-card,
-    .notice-card {
-      margin-bottom: 8px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      border-radius: 6px;
-      overflow: hidden;
-      font-size: 1.02rem;
-    }
-
-    th {
-      background: var(--accent-soft);
-      color: var(--accent);
-      text-align: left;
-      padding: 5px 6px;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      line-height: 1.08;
-      border-bottom: 1px solid var(--line);
-      font-weight: 900;
-    }
-
-    .soft-header th {
-      background: var(--accent-soft);
-      color: var(--accent);
-      border-bottom: 1px solid var(--line);
-      font-weight: 900;
-    }
-
-    tbody tr:nth-child(odd) td {
-      background: #ffffff;
-    }
-
-    tbody tr:nth-child(even) td {
-      background: var(--table-row-alt);
-    }
-
-    td {
-      border-bottom: 1px solid var(--line);
-      padding: 5px 6px;
-      vertical-align: top;
-      line-height: 1.18;
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    .summary-description-label {
-      background: var(--accent-soft) !important;
-      color: var(--accent);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    .summary-description-value {
-      background: #ffffff !important;
-    }
-
-    .parts-table {
-      width: 100%;
-      table-layout: fixed;
-      border-collapse: collapse;
-    }
-
-    .parts-table th:nth-child(1),
-    .parts-table td:nth-child(1) {
-      width: calc(12ch + 10px);
-      white-space: nowrap;
-    }
-
-    .parts-table th:nth-child(2),
-    .parts-table td:nth-child(2) {
-      width: auto;
-    }
-
-    .parts-table th:nth-child(3),
-    .parts-table td:nth-child(3) {
-      width: 20ch;
-      white-space: nowrap;
-    }
-
-    .component-table,
-    .troubleshooting-table,
-    .chemical-packaging-table,
-    .chemical-materials-table {
-      table-layout: fixed;
-    }
-
-    .component-table th:nth-child(1),
-    .component-table td:nth-child(1) {
-      width: 40%;
-    }
-
-    .component-table th:nth-child(2),
-    .component-table td:nth-child(2) {
-      width: 60%;
-    }
-
-    .troubleshooting-table th:nth-child(1),
-    .troubleshooting-table td:nth-child(1) {
-      width: 35%;
-    }
-
-    .troubleshooting-table th:nth-child(2),
-    .troubleshooting-table td:nth-child(2) {
-      width: 65%;
-    }
-
-    .chemical-packaging-table th:nth-child(1),
-    .chemical-packaging-table td:nth-child(1) {
-      width: 24%;
-    }
-
-    .chemical-packaging-table th:nth-child(2),
-    .chemical-packaging-table td:nth-child(2) {
-      width: 34%;
-    }
-
-    .chemical-packaging-table th:nth-child(3),
-    .chemical-packaging-table td:nth-child(3) {
-      width: 42%;
-    }
-
-    .chemical-materials-table th:nth-child(1),
-    .chemical-materials-table td:nth-child(1) {
-      width: 40%;
-    }
-
-    .chemical-materials-table th:nth-child(2),
-    .chemical-materials-table td:nth-child(2) {
-      width: 60%;
-    }
-
-    a {
-      color: var(--accent);
-      font-weight: 800;
-      text-decoration: none;
-    }
-
-    footer {
-      border-top: 2px solid var(--accent);
-      margin-top: 6px;
-      padding-top: 4px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-    }
-
-    .empty {
-      color: var(--muted);
-      font-style: italic;
-      margin: 0;
-      font-size: 1.02rem;
-    }
-
-    .used-on-equipment-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      background: #ffffff;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      padding: 8px;
-    }
-
-    .used-on-equipment-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6px 9px;
-      background: var(--accent-soft-blue);
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      color: var(--accent);
-      font-weight: 900;
-      text-decoration: none;
-      line-height: 1;
-    }
-
-    .used-on-equipment-link:hover,
-    .used-on-equipment-link:focus {
-      background: var(--accent-soft);
-      outline: 2px solid var(--accent);
-      outline-offset: 1px;
-    }
-
-    @media print {
-      .home-strip {
-        display: none;
-      }
-    }
-
-    @media screen and (max-width: 650px) {
-      body {
-        padding: 5px;
-        font-size: 16px;
-      }
-
-      .page {
-        padding: 6px;
-        border-radius: 8px;
-        height: auto;
-        max-height: none;
-        overflow: visible;
-      }
-
-      .home-strip {
-        margin: -6px -6px 8px -6px;
-      }
-
-      .hero {
-        margin: 0 -6px 8px -6px;
-      }
-
-      .top-grid {
-        grid-template-columns: 160px minmax(0, 1fr);
-      }
-
-      .photo-card,
-      .spec-card {
-        height: 120px;
-        min-height: 120px;
-        max-height: 120px;
-      }
-
-      .photo-card img {
-        height: 120px;
-        max-height: 120px;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      table {
-        font-size: 0.95rem;
-      }
-
-      th,
-      td {
-        padding: 4px 5px;
-      }
-    }
-  
-    
-    body.online-mode {
-      min-height: 100vh;
-      padding: 6px;
-    }
-
-    .online-mode .page {
-      height: auto;
-      max-height: none;
-      min-height: var(--tablet-page-height);
-      overflow: visible;
-      page-break-after: auto;
-      margin-bottom: 0;
-    }
-
-    .online-mode footer {
-      margin-bottom: 0;
-    }
-  
-    
-    .part-link {
-      color: var(--accent);
-      font-weight: 900;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(6, 26, 51, 0.35);
-    }
-
-    .part-link:hover,
-    .part-link:focus {
-      color: #2f7d20;
-      border-bottom-color: #2f7d20;
-    }
-
-    .parts-db-mode .page {
-      max-width: 1080px;
-    }
-
-    .parts-search-card {
-      border: 1px solid var(--line);
-      background: var(--section);
-      border-radius: var(--radius);
-      padding: 10px;
-      margin-bottom: 10px;
-    }
-
-    .parts-search-card label {
-      display: block;
-      color: var(--accent);
-      font-weight: 900;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      letter-spacing: 0.03em;
-      margin-bottom: 6px;
-    }
-
-    #partsSearchInput {
-      width: 100%;
-      border: 2px solid var(--accent);
-      border-radius: 8px;
-      padding: 10px 12px;
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--ink);
-      background: #ffffff;
-    }
-
-    #partsSearchInput:focus {
-      outline: 3px solid var(--accent-soft);
-      outline-offset: 1px;
-    }
-
-    .parts-search-count {
-      margin-top: 6px;
-      color: var(--muted);
-      font-weight: 800;
-      font-size: 0.95rem;
-    }
-
-    .parts-results {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 8px;
-    }
-
-    .part-result-card {
-      border: 1px solid var(--line);
-      background: #ffffff;
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .part-result-link {
-      display: grid;
-      grid-template-columns: 150px minmax(0, 1fr);
-      gap: 10px;
-      color: var(--ink);
-      text-decoration: none;
-      padding: 8px;
-    }
-
-    .part-result-link:hover,
-    .part-result-link:focus {
-      background: var(--accent-soft);
-      outline: 2px solid var(--accent);
-      outline-offset: -2px;
-    }
-
-    .part-result-image {
-      width: 150px;
-      height: 110px;
-      background: #ffffff;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .part-result-image img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-
-    .part-result-placeholder {
-      color: var(--muted);
-      font-weight: 900;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-
-    .part-result-body h2 {
-      margin: 0 0 6px 0;
-      color: var(--accent);
-      font-size: 1.3rem;
-      line-height: 1.1;
-    }
-
-    .part-result-meta {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 4px 12px;
-      font-size: 0.98rem;
-    }
-
-    .part-used-on {
-      margin: 6px 0 0 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .part-detail-top-grid {
-      grid-template-columns: 300px minmax(0, 1fr);
-    }
-
-    .part-photo-card {
-      height: 220px;
-      min-height: 220px;
-      max-height: 220px;
-    }
-
-    .part-photo-card img {
-      height: 220px;
-      max-height: 220px;
-    }
-
-    .part-spec-card {
-      height: 220px;
-      min-height: 220px;
-      max-height: 220px;
-    }
-
-    .part-spec-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      grid-template-rows: repeat(2, 1fr);
-    }
-
-    @media screen and (max-width: 650px) {
-      .part-result-link {
-        grid-template-columns: 95px minmax(0, 1fr);
-      }
-
-      .part-result-image {
-        width: 95px;
-        height: 90px;
-      }
-
-      .part-result-meta {
-        grid-template-columns: 1fr;
-      }
-
-      .part-detail-top-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .part-photo-card,
-      .part-spec-card {
-        height: auto;
-        min-height: 0;
-        max-height: none;
-      }
-
-      .part-photo-card img {
-        height: auto;
-        max-height: 240px;
-      }
-    }
-  
-    
-    /* Detail thumbnails fill the entire existing photo card, without cropping.
-       This is limited to equipment, chemical product and part detail pages. */
-    .photo-card.detail-photo-thumbnail { justify-content: stretch; align-items: stretch; }
-    .detail-photo-thumbnail .detail-photo-button { border: 0; padding: 4px; background: #fff; cursor: zoom-in; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; min-width: 0; min-height: 0; border-radius: 5px; }
-    .detail-photo-thumbnail .detail-photo-button img { display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; object-position: center; border: 0; }
-    .detail-photo-button:focus-visible { outline: 3px solid #72bf43; outline-offset: 1px; }
-    .detail-image-overlay[hidden] { display: none !important; }
-    .detail-image-overlay { position: fixed; inset: 0; z-index: 10000; background: rgba(1, 14, 35, .52); -webkit-backdrop-filter: blur(9px); backdrop-filter: blur(9px); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15px; }
-    .detail-image-panel { display: flex; flex-direction: column; align-items: center; background: #fff; border-radius: 9px; padding: 14px; max-width: min(95vw, 540px); max-height: 90dvh; box-shadow: 0 8px 35px #0006; }
-    .detail-image-large { max-width: min(480px, 85vw); max-height: min(480px, 68dvh); width: auto; height: auto; object-fit: contain; }
-    .detail-image-close { margin-top: 12px; width: 100%; min-height: 48px; background: #061a33; color: white; font: 900 17px Arial, sans-serif; letter-spacing: .08em; border: none; border-bottom: 4px solid #e9f7a6; border-radius: 5px; cursor: pointer; }
-    .detail-image-close:focus-visible { outline: 3px solid #72bf43; }
-    @media print { .detail-image-overlay { display: none !important; } }
-  
-  </style>
+  <link rel="stylesheet" href="../assets/css/warewash.64da8de94946.css">
 </head>
 <body class="online-mode">
   <main class="page online-page">
@@ -815,7 +22,7 @@
 
     <section class="top-grid">
       <div class="photo-card detail-photo-thumbnail">
-        <button class="detail-photo-button" type="button" data-detail-photo-open aria-label="Enlarge CMA - 180UC-3"><img src="https://cmadishmachines.com/wp-content/uploads/2024/06/180UC.png" alt="CMA - 180UC-3" loading="lazy" decoding="async"></button>
+        <button class="detail-photo-button" type="button" data-detail-photo-open aria-label="Enlarge CMA - 180UC-3"><img src="../assets/equipment-images/180UC-3.png" alt="CMA - 180UC-3" loading="lazy" decoding="async"></button>
       </div>
       <div class="spec-card">
         <div class="spec-grid">
@@ -836,17 +43,17 @@
       <span class="label">Documents</span>
       <div class="manuals-grid">
       <div class="manual-bucket">
-        <a class="manual-tile" href="../assets/pdfs/mechanical-warewash/cma-180uc-3-spec-sheet.pdf" target="_blank" rel="noopener">
+        <a class="manual-tile" href="https://cmadishmachines.com/wp-content/uploads/2024/06/180UC-3_Spec_Sheet_09-2024.pdf" target="_blank" rel="noopener">
           SPEC
         </a>
       </div>
       <div class="manual-bucket">
-        <a class="manual-tile" href="../assets/pdfs/mechanical-warewash/cma-180uc-3-document.pdf" target="_blank" rel="noopener">
+        <a class="manual-tile" href="https://cmadishmachines.com/wp-content/uploads/2024/06/180UC-3_Installation_Operation_Manual_Rev_1.00BC_10-01-2025.pdf" target="_blank" rel="noopener">
           INSTRUCTION
         </a>
       </div>
       <div class="manual-bucket">
-        <a class="manual-tile" href="../assets/pdfs/mechanical-warewash/cma-180uc-3-parts-manual.pdf" target="_blank" rel="noopener">
+        <a class="manual-tile" href="https://cmadishmachines.com/wp-content/uploads/2024/06/180UC-3_Parts_Manual_12-05-2025.pdf" target="_blank" rel="noopener">
           PARTS
         </a>
       </div></div>
@@ -900,6 +107,621 @@
       </table>
     </section>
     
+    <section class="section-card">
+      <h2>Common Replacement Parts</h2>
+      <table class="parts-table">
+        <thead>
+          <tr>
+            <th>Part #</th>
+            <th>Part Description</th>
+            <th>Part Bin</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13669.45.html">13669.45</a></strong></td>
+      <td>1-3/8″ SINGLE PORT S/S MIXING CHAMBER</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/41062.00.html">41062.00</a></strong></td>
+      <td>1/2″ BALL VALVE W/STRAINER, L1X, L1X16, 180UC</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/03614.00.html">03614.00</a></strong></td>
+      <td>1/2″ BRASS CLOSE NIPPLE</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13628.00.html">13628.00</a></strong></td>
+      <td>1/2″ S/S 90 DEGREE ELBOW, CMA44</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13618.00.html">13618.00</a></strong></td>
+      <td>1/2″ S/S COUPLING, CMA44</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00745.00.html">00745.00</a></strong></td>
+      <td>1/2″ STREET ELBOW, AH, B, C</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/919.00.html">919.00</a></strong></td>
+      <td>10-32 X 1-1/2″ PAN HEAD SCREW</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/966.10.html">966.10</a></strong></td>
+      <td>10-32 X 1/4″ HEX HEAD SCREW</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/01310.60.html">01310.60</a></strong></td>
+      <td>2″ NYLON LEG BOLT ADJUSTER, 180UC, L1X16</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/15602.00.html">15602.00</a></strong></td>
+      <td>20″ S/S BRAIDED TUBE HOSE, CMA180UC</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/17523.51.html">17523.51</a></strong></td>
+      <td>250 DEGREE HIGH LIMIT SWITCH, 180</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/705.05.html">705.05</a></strong></td>
+      <td>3/4″  220V INLET SOLENOID VALVE ASSY</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00739.50.html">00739.50</a></strong></td>
+      <td>3/4″ VACUUM BREAKER CAP, LOW TEMP</td>
+      <td>Vacuum Breaker / Backflow</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/238.00.html">238.00</a></strong></td>
+      <td>3/8″ MPT PIPE PLUG W/SQUARE HEAD</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00907.00.html">00907.00</a></strong></td>
+      <td>6-32  X 1/2″ PAN HEAD SCREW, CMA44</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/15518.00.html">15518.00</a></strong></td>
+      <td>6KW, 208V, TRIANGLE FLANGE ELEMENT W/GASKET, EST44, BOOSTER, 180HT</td>
+      <td>Elements</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/17499.html">17499</a></strong></td>
+      <td>7 CAM, 120 SECOND 220V TIMER ASSY, 180UC-3</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00970.60.html">00970.60</a></strong></td>
+      <td>8-32 X 1/2″ PHILLIPS FLAT SCREW, L1X16, 180UC</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13418.25.html">13418.25</a></strong></td>
+      <td>AUTO FILL BLACK RECTANGLE TIMER, CMA44</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00470.10.html">00470.10</a></strong></td>
+      <td>BLACK RUBBER TOGGLE SWITCH BOOT, 180UC</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/12283.html">12283</a></strong></td>
+      <td>BODY MAGNET HOLDER, L1X, L1X16</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/705.20.html">705.20</a></strong></td>
+      <td>BONNET ASSY, J &amp; E VALVE, 3/4″, A, B, C</td>
+      <td>Water Inlet / PRV</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00798.00.html">00798.00</a></strong></td>
+      <td>BRAIDED HOSE, SS, 20″, 3/8″ FPT X 1/2″ MPT</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/03416.10.html">03416.10</a></strong></td>
+      <td>BULKHEAD RUBBER WASHER, GLX, L1X</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13940.html">13940</a></strong></td>
+      <td>BUSHING, 3/4″ X 1/2″</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/04919.00.html">04919.00</a></strong></td>
+      <td>CHEESE HEAD DOOR SCREW, CMA180UC</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/10205.html">10205</a></strong></td>
+      <td>CHEMICAL TUBE BULKHEAD</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/4204.00.html">4204.00</a></strong></td>
+      <td>COMPRESSION NUT FOR CAST PUMP HOUSING, 2.5 INCH</td>
+      <td>CMA Gasket</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00404.81.html">00404.81</a></strong></td>
+      <td>CONTACTOR, HOOD VENT FAN, CMA44</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/03203.66.html">03203.66</a></strong></td>
+      <td>DIGITAL DISPLAY THERMISTER, L1X, L1X16</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/17677.html">17677</a></strong></td>
+      <td>DIGITAL THERMOSTAT CMA-180UC-3</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/17648.html">17648</a></strong></td>
+      <td>DIGITAL THERMOSTAT PROBE 180UC-3</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14506.60.html">14506.60</a></strong></td>
+      <td>DOOR GASKET, RM, L1X, UC180</td>
+      <td>CMA Gasket</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14898.html">14898</a></strong></td>
+      <td>DOOR HANDLE BUTTON, UNDERCOUNTERS, UC180, L1X, L1X16</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00557.80.html">00557.80</a></strong></td>
+      <td>DOOR MAGNET, L1X16, 180UC, GLX</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14506.00.html">14506.00</a></strong></td>
+      <td>DOOR ONLY, L1X16, 180UC</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00605.30.html">00605.30</a></strong></td>
+      <td>DOOR ROD SPACER, CMA180UC, CMA DUMP AND FILLS</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/04517.15.html">04517.15</a></strong></td>
+      <td>DOOR STOP, BUMPER, ORANGE, CMA180UC, EST-FL</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/04517.60.html">04517.60</a></strong></td>
+      <td>DOOR SUPPORT ROD BRACKET, L1X16</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/10508.html">10508</a></strong></td>
+      <td>DRAIN DISCHARGE PUMP, 230 VOLT, UC50E</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/03203.00.html">03203.00</a></strong></td>
+      <td>DUAL TEMP. DISPLAY KIT, 180UC</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00308.20.html">00308.20</a></strong></td>
+      <td>END CAP, 180UC</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00308.17.html">00308.17</a></strong></td>
+      <td>END CAP, RINSE ARM, 180UC</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14158.html">14158</a></strong></td>
+      <td>FITTING, 1/2 MPT X 1/2 BARB, CMA</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13631.html">13631</a></strong></td>
+      <td>FITTING, TEE, ANTI-SIPHON BODY, UC65E, CMA</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/04206.00.html">04206.00</a></strong></td>
+      <td>FRONT WASH PUMP HOUSING, AH, B, C</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14506.45.html">14506.45</a></strong></td>
+      <td>GASKET BRACKET FOR CMA L1X16</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/15518.10.html">15518.10</a></strong></td>
+      <td>GASKET FOR TRIANGLE FLANGE HEAT ELEMENT, CMA</td>
+      <td>CMA Gasket</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/11690.html">11690</a></strong></td>
+      <td>GAUGE, THERMOWELL ASSY, WASH, CMA180UC</td>
+      <td>ADS Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00631.05.html">00631.05</a></strong></td>
+      <td>ICE CUBE RELAY, 220V, 12AMP</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/04919.50.html">04919.50</a></strong></td>
+      <td>LEFT DOOR SUPPORT ROD, L1X16, GLX</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14570.50.html">14570.50</a></strong></td>
+      <td>LEFT SIDE DOOR HINGE, L1X, 180UC</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/12053.html">12053</a></strong></td>
+      <td>LEFT SIDE PANEL, CMA180UC</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00411.00.html">00411.00</a></strong></td>
+      <td>MICROSWITCH FOR CAM TIMER, AH, B, C</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/421.89.html">421.89</a></strong></td>
+      <td>MOMENTARY FILL ROCKER SWITCH, CMA180, CMA44</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13012.26.html">13012.26</a></strong></td>
+      <td>MOTOR CONTACTOR, 220V, CMA44P, EST44, ESTCMA66, 180UC-3</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13417.92.html">13417.92</a></strong></td>
+      <td>N/S THERMOSTAT, CMA44, EST44, 180HT, GLC</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00927.00.html">00927.00</a></strong></td>
+      <td>NYLON LOCK NUT</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/3226.00.html">3226.00</a></strong></td>
+      <td>O-RING, 4-3/4″ OD, CAST PUMP HOUSING</td>
+      <td>CMA Gasket</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/208.00.html">208.00</a></strong></td>
+      <td>O-RING, PUMP INLET PIPE, ALL CMA MODELS</td>
+      <td>CMA Gasket</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/417.00.html">417.00</a></strong></td>
+      <td>PERISTALTIC PUMP BLOCK, AH, B, C, CB, GLX, L1X</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/10860.html">10860</a></strong></td>
+      <td>PLUMBING SUPPORT BRACKET, CMA</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/786.00.html">786.00</a></strong></td>
+      <td>PLUNGER KIT, J &amp; E VALVE, G STYLE</td>
+      <td>Water Inlet / PRV</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/12533.html">12533</a></strong></td>
+      <td>POWER BLOCK, 3 POSITION, CMA UC</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13605.45.html">13605.45</a></strong></td>
+      <td>PRESSURE GAUGE, UC180, CMA180 CENTER MOUNTED</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13870.html">13870</a></strong></td>
+      <td>PRESSURE REGULATOR VALVE, 1/2″ 180UC</td>
+      <td>Water Inlet / PRV</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/17090.html">17090</a></strong></td>
+      <td>PRESSURE SWITCH, UC50E</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/206.00.html">206.00</a></strong></td>
+      <td>PUMP ″PAC SEAL″ KIT, ALL CMA MACHINES</td>
+      <td>CMA Gasket</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00421.83.html">00421.83</a></strong></td>
+      <td>RED POWER ROCKER SWITCH, CMA44, EST44</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/4305.17.html">4305.17</a></strong></td>
+      <td>RED SILICONE RINSE ARM GASKET, CMA180</td>
+      <td>CMA Gasket</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14558.61.html">14558.61</a></strong></td>
+      <td>REED SWITCH DOOR MAGNET BRACKET, L1X16, 180UC</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00557.55.html">00557.55</a></strong></td>
+      <td>REED SWITCH, DOOR SAFETY, 3&#039; CABLE, L1X16</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/04918.60.html">04918.60</a></strong></td>
+      <td>RIGHT DOOR SUPPORT ROD, L1X16, GLX</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14570.00.html">14570.00</a></strong></td>
+      <td>RIGHT SIDE DOOR HINGE, L1X, 180UC</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14502.84.html">14502.84</a></strong></td>
+      <td>RIGHT SIDE PANEL, CMA180UC</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00304.19.html">00304.19</a></strong></td>
+      <td>RINSE ARM W/BEARING, 180, UC180</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00422.50.html">00422.50</a></strong></td>
+      <td>ROCKER ARM ROLLER SPACER, EST44</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14510.00.html">14510.00</a></strong></td>
+      <td>SCRAP BASKET, CMA180UC</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/17678.html">17678</a></strong></td>
+      <td>SEPARATE BOOSTER TANK CMA-180UC-3</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/10658.html">10658</a></strong></td>
+      <td>SET SCREW FOR SHUT OFF ROD, GLC</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/03485.00.html">03485.00</a></strong></td>
+      <td>SHORT ″U″ SHAPE SWITCH COVER BAR GUARD W/HRDWR, L1X16</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/738.15.html">738.15</a></strong></td>
+      <td>SOLENOID COIL, J &amp; E, 220V</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/706.00.html">706.00</a></strong></td>
+      <td>SOLENOID REBUILD KIT W/ PLUNGER, 3/4″, PARKER</td>
+      <td>Water Inlet / PRV</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00422.10.html">00422.10</a></strong></td>
+      <td>SPACER WASHER FOR PERISTALTIC PUMP BLOCK, AH, B</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13798.html">13798</a></strong></td>
+      <td>SPLASH GUARD FOR DOOR, CMA180UC, GLX, L1X, L1X16</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14662.html">14662</a></strong></td>
+      <td>SPLASH SHIELD, HEATER, MYLAR, CMA180UC</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14503.50.html">14503.50</a></strong></td>
+      <td>SS TOP UPPER CABINET, GLX ,180UC</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/17857.html">17857</a></strong></td>
+      <td>START/FILL ROCKER SWITCH AMBER 250V, 180UC-3</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/12582.html">12582</a></strong></td>
+      <td>SWITCH COVER, RUBBER BOOT, PUSH STYLE, L1X</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14885.html">14885</a></strong></td>
+      <td>SWITCH, ROCKER, DUAL MOMENTARY, PRIME, ROUND, 180UC, UC65E</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/15520.00.html">15520.00</a></strong></td>
+      <td>TERMINAL BLOCK, GLC, CMA180UC-3</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/03202.66.html">03202.66</a></strong></td>
+      <td>THERMOCOUPLER, CMA180UC, L1X, L1X16, 3 wire</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/214.60.html">214.60</a></strong></td>
+      <td>THERMOSTAT BUSHING FOR T-STAT 13417.89 O/S, U180, L1X16</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/16302.html">16302</a></strong></td>
+      <td>THERMOSTAT, THERMOWELL</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/17335.html">17335</a></strong></td>
+      <td>TOGGLE SWITCH DPST 20A</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/3624.25.html">3624.25</a></strong></td>
+      <td>VACUUM BREAKER, BRASS BONNET, 1/2&#039;&#039;, A, B, C</td>
+      <td>Vacuum Breaker / Backflow</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/3624.00.html">3624.00</a></strong></td>
+      <td>VACUUM BREAKER, WATTS, 1/2″, 180, UC180, EST44</td>
+      <td>Vacuum Breaker / Backflow</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/00304.45.html">00304.45</a></strong></td>
+      <td>WASH ARM, UC180</td>
+      <td>CMA Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/17673.html">17673</a></strong></td>
+      <td>WASH PUMP MOTOR CMA-180UC-3</td>
+      <td>CMA Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/17837.html">17837</a></strong></td>
+      <td>WASH TANK HEAT ELEMENT, CMA180UC-3</td>
+      <td>Elements</td>
+    </tr>
+  
+        </tbody>
+      </table>
+    </section>
     
     
     
@@ -910,25 +732,6 @@
       <button class="detail-image-close" id="detailImageClose" type="button">CLOSE</button>
     </div>
   </div>
-  <script>
-(function(){
-  var overlay=document.getElementById('detailImageOverlay');
-  var large=document.getElementById('detailImageLarge');
-  var close=document.getElementById('detailImageClose');
-  var previousFocus=null;
-  if(!overlay || !large || !close) return;
-  function hide(){overlay.hidden=true;large.removeAttribute('src');document.body.style.overflow='';if(previousFocus)previousFocus.focus();}
-  document.querySelectorAll('[data-detail-photo-open]').forEach(function(button){
-    button.addEventListener('click',function(){
-      var thumbnail=button.querySelector('img');if(!thumbnail)return;
-      previousFocus=button;large.src=thumbnail.currentSrc||thumbnail.src;large.alt=thumbnail.alt;
-      overlay.hidden=false;document.body.style.overflow='hidden';close.focus();
-    });
-  });
-  close.addEventListener('click',hide);
-  overlay.addEventListener('click',function(event){if(event.target===overlay)hide();});
-  document.addEventListener('keydown',function(event){if(overlay.hidden)return;if(event.key==='Escape')hide();if(event.key==='Tab'){event.preventDefault();close.focus();}});
-})();
-</script>
+  <script src="../assets/js/image-overlay.5a28a87ac476.js"></script>
 </body>
 </html>

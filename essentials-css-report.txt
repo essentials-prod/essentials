@@ -1,0 +1,20 @@
+Essentials v2.4 Shared CSS Report
+CSS is moved without altering original CSS text or page HTML structure.
+The scanner and laundry template CSS remain inline.
+Each content-hashed filename changes automatically when the CSS changes.
+Note: a CSS change updates linked HTML pages so they reference the new hash.
+
+HTML pages using shared CSS: 11882
+Unique CSS files used in this build: 6
+Total inline CSS bytes replaced: 209349034
+Unique CSS bytes: 95826
+Approximate uncompressed bytes saved: 209253208
+Obsolete generated CSS files removed: 0
+Skipped CSS blocks: 0
+
+part-search.f0ccd0af3b64.css | 1 pages | 15790 bytes
+parts.9eb2b1c6fd37.css | 11713 pages | 17670 bytes
+navigation.1252c1753797.css | 15 pages | 10182 bytes
+chemicals.8609b7b91bd0.css | 129 pages | 13835 bytes
+warewash.64da8de94946.css | 23 pages | 17670 bytes
+selectors.9b021602864c.css | 1 pages | 20679 bytes

@@ -6,709 +6,176 @@
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Housekeeping / Kitchen - Essentials</title>
-  <style>
-    :root {
-      --bg: #ffffff;
-      --page: #ffffff;
-      --ink: #071426;
-      --muted: #4a5568;
-      --line: #c9d3df;
-      --section: #f4f8fb;
-      --accent: #061a33;
-      --radius: 8px;
-      --shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
-      --tablet-page-width: 1080px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 17px;
-      line-height: 1.25;
-    }
-
-    body {
-      padding: 6px;
-    }
-
-    .page {
-      position: relative;
-      width: 100%;
-      max-width: var(--tablet-page-width);
-      min-height: 760px;
-      margin: 0 auto 16px auto;
-      background: var(--page);
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-      padding: 8px;
-      overflow: visible;
-      border: 2px solid var(--accent);
-    }
-
-    .home-strip {
-      display: block;
-      margin: -8px -8px 8px -8px;
-      padding: 0;
-      background: var(--accent);
-      border-radius: 8px 8px 0 0;
-      overflow: hidden;
-    }
-
-    .home-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 42px;
-      padding: 10px 14px;
-      background: var(--accent);
-      color: #ffffff;
-      font-weight: 900;
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      border: 0;
-      border-bottom: 4px solid var(--accent-soft);
-      line-height: 1;
-    }
-
-    .home-button:hover,
-    .home-button:focus {
-      background: #ffffff;
-      color: var(--accent);
-      outline: 3px solid var(--accent);
-      outline-offset: -3px;
-    }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    .product-lookup {
-      margin: 0 0 8px 0;
-      padding: 10px;
-      background: var(--section);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-    }
-
-    .product-lookup-title {
-      margin: 0 0 7px 0;
-      color: var(--accent);
-      font-size: 1.05rem;
-      font-weight: 900;
-      line-height: 1.1;
-    }
-
-    .product-lookup-row {
-      display: flex;
-      gap: 7px;
-      align-items: stretch;
-    }
-
-    .product-lookup-input {
-      flex: 1 1 auto;
-      min-width: 0;
-      min-height: 44px;
-      padding: 9px 11px;
-      background: #ffffff;
-      color: var(--ink);
-      border: 2px solid var(--line);
-      border-radius: 6px;
-      font: inherit;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    .product-lookup-input:focus {
-      border-color: var(--accent);
-      outline: 2px solid var(--accent);
-      outline-offset: 1px;
-    }
-
-    .product-lookup-input.lookup-not-found {
-      border-color: #b42318;
-    }
-
-    .product-lookup-button {
-      flex: 0 0 auto;
-      min-height: 44px;
-      padding: 9px 18px;
-      background: var(--accent);
-      color: #ffffff;
-      border: 2px solid var(--accent);
-      border-radius: 6px;
-      font: inherit;
-      font-weight: 900;
-      cursor: pointer;
-    }
-
-    .product-lookup-button:hover,
-    .product-lookup-button:focus {
-      background: #ffffff;
-      color: var(--accent);
-      outline: 2px solid var(--accent);
-      outline-offset: 1px;
-    }
-
-    .product-lookup-message {
-      min-height: 1.2em;
-      margin-top: 5px;
-      color: #b42318;
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    .mw-selector-feature {
-      display: grid;
-      grid-template-columns: minmax(220px, 34%) minmax(0, 1fr);
-      min-height: 190px;
-      margin-bottom: 10px;
-      overflow: hidden;
-      text-decoration: none;
-      color: var(--ink);
-      background: var(--section);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-    }
-
-    .mw-selector-feature:hover,
-    .mw-selector-feature:focus {
-      outline: 3px solid var(--accent);
-      outline-offset: 2px;
-    }
-
-    .mw-selector-image {
-      min-height: 190px;
-      background: #ffffff;
-      border-right: 1px solid var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6px;
-    }
-
-    .mw-selector-image img {
-      width: 100%;
-      height: 185px;
-      object-fit: contain;
-    }
-
-    .mw-selector-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 18px;
-      background: var(--accent);
-      color: #ffffff;
-    }
-
-    .mw-selector-copy strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 1.65rem;
-      line-height: 1;
-      font-weight: 900;
-    }
-
-    .mw-selector-copy span {
-      display: block;
-      font-size: 1rem;
-      line-height: 1.25;
-      font-weight: 700;
-    }
-
-    .mw-section-title {
-      margin: 0 0 8px;
-      padding: 8px 10px;
-      background: var(--accent);
-      color: #ffffff;
-      border-radius: 6px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .mw-category-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
-      align-items: stretch;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 8px;
-      align-items: stretch;
-    }
-
-    .block,
-    .site-card {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: var(--ink);
-      background: var(--section);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-      min-height: 210px;
-      box-shadow: none;
-    }
-
-    .block:hover,
-    .block:focus,
-    .site-card:hover,
-    .site-card:focus {
-      outline: 3px solid var(--accent);
-      outline-offset: 2px;
-    }
-
-    .block img,
-    .site-card-image img,
-    .image-placeholder {
-      width: 100%;
-      height: 150px;
-      max-height: 150px;
-      object-fit: contain;
-      object-position: center center;
-      background: #ffffff;
-      padding: 6px;
-      border: 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    /* Equipment card image states; does not alter the original photo files. */
-    .equipment-image-wrap {
-      position: relative;
-      width: 100%;
-      height: 150px;
-      background: #fff;
-      overflow: hidden;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .equipment-image-wrap img,
-    .equipment-image-wrap .image-placeholder {
-      width: 100%;
-      height: 100%;
-      max-height: none;
-      border-bottom: 0;
-    }
-
-    .equipment-image-wrap .equipment-photo-muted {
-      opacity: 0.8;
-    }
-
-    /* Compact transparent Preferred award, overlaid on the equipment image. */
-    .preferred-ribbon {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1px;
-      height: 32px;
-      width: 85px;
-      padding: 0;
-      background: transparent;
-      border: 0;
-      border-radius: 0;
-      box-shadow: none;
-      color: #72bf43;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: .035em;
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    .preferred-ribbon svg {
-      display: block;
-      width: 19px;
-      height: 19px;
-      flex: 0 0 19px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2.25;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .preferred-ribbon .preferred-label {
-      white-space: nowrap;
-    }
-
-
-    .site-card-image {
-      width: 100%;
-      height: 150px;
-      max-height: 150px;
-      background: #ffffff;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .site-card-image img {
-      height: 100%;
-      max-height: 100%;
-      border-bottom: 0;
-    }
-
-    .image-placeholder {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--muted);
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
-    .block-title,
-    .site-card-title {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex: 1;
-      padding: 8px;
-      text-align: center;
-      font-size: 1rem;
-      font-weight: 900;
-      line-height: 1.08;
-      color: #ffffff;
-      background: var(--accent);
-      overflow-wrap: anywhere;
-    }
-
-    .note {
-      margin-top: 8px;
-      padding: 8px;
-      background: var(--section);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      color: var(--ink);
-      font-size: 0.95rem;
-    }
-
-    .note p {
-      margin: 0;
-    }
-
-    @media print {
-      @page {
-        size: Letter landscape;
-        margin: 0.25in;
-      }
-
-      html,
-      body {
-        background: white;
-        font-size: 15px;
-      }
-
-      body {
-        padding: 0;
-      }
-
-      .page {
-        width: 100%;
-        max-width: none;
-        min-height: 0;
-        box-shadow: none;
-        border-radius: 0;
-        padding: 8px;
-        margin: 0;
-      }
-
-      .home-strip {
-        display: none;
-      }
-
-      .block,
-      .site-card {
-        break-inside: avoid;
-        box-shadow: none;
-      }
-    }
-
-    @media screen and (max-width: 850px) {
-      .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media screen and (max-width: 560px) {
-      body {
-        padding: 5px;
-        font-size: 16px;
-      }
-
-      .page {
-        min-height: 0;
-        padding: 6px;
-        border-radius: 8px;
-      }
-
-      .home-strip {
-        margin: -6px -6px 8px -6px;
-      }
-
-      .product-lookup-row {
-        flex-direction: column;
-      }
-
-      .product-lookup-button {
-        width: 100%;
-      }
-
-      .grid,
-      .mw-category-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .mw-selector-feature {
-        grid-template-columns: 1fr;
-      }
-
-      .mw-selector-image {
-        min-height: 160px;
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .mw-selector-image img {
-        height: 155px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/css/navigation.1252c1753797.css">
 </head>
 
 <body>
   <main class="page">
-
+    
     <nav class="home-strip" aria-label="Page navigation">
       <a class="home-button" href="../index.html">HOME</a>
     </nav>
     <section class="grid">
-      <a class="block" href="../chemical-products/All Purpose Cleaner Degreaser B.html">
-        <img src="../assets/chemical-product-images/All Purpose Cleaner Degreaser B.jpg"
-          alt="All Purpose Cleaner Degreaser B" loading="lazy" decoding="async">
-        <div class="block-title">All Purpose Cleaner Degreaser B</div>
-      </a>
-      <a class="block" href="../chemical-products/Ammoniated Floor Cleaner R.html">
-        <img src="../assets/chemical-product-images/Ammoniated Floor Cleaner R.png" alt="Ammoniated Floor Cleaner R"
-          loading="lazy" decoding="async">
-        <div class="block-title">Ammoniated Floor Cleaner R</div>
-      </a>
-      <a class="block" href="../chemical-products/Ammoniated Glass Cleaner A.html">
-        <img src="../assets/chemical-product-images/Ammoniated Glass Cleaner A.png" alt="Ammoniated Glass Cleaner A"
-          loading="lazy" decoding="async">
-        <div class="block-title">Ammoniated Glass Cleaner A</div>
-      </a>
-      <a class="block" href="../chemical-products/Array Quarry Chlor.html">
-        <img src="../assets/chemical-product-images/Array Quarry Chlor.png" alt="Array Quarry Chlor" loading="lazy"
-          decoding="async">
-        <div class="block-title">Array Quarry Chlor</div>
-      </a>
-      <a class="block" href="../chemical-products/Bacterial Drain Digestant.html">
-        <img src="../assets/chemical-product-images/Bacterial Drain Digestant.jpg" alt="Bacterial Drain Digestant"
-          loading="lazy" decoding="async">
-        <div class="block-title">Bacterial Drain Digestant</div>
-      </a>
-      <a class="block" href="../chemical-products/Carpet Extraction Cleaner.html">
-        <img src="../assets/chemical-product-images/Carpet Extraction Cleaner.jpg" alt="Carpet Extraction Cleaner"
-          loading="lazy" decoding="async">
-        <div class="block-title">Carpet Extraction Cleaner</div>
-      </a>
-      <a class="block" href="../chemical-products/Citrus Orange All Purpose Cleaner.html">
-        <img src="../assets/chemical-product-images/Citrus Orange All Purpose Cleaner.png"
-          alt="Citrus Orange All Purpose Cleaner" loading="lazy" decoding="async">
-        <div class="block-title">Citrus Orange All Purpose Cleaner</div>
-      </a>
-      <a class="block" href="../chemical-products/Concentrated Deodorizer.html">
-        <img src="../assets/chemical-product-images/Concentrated Deodorizer.png" alt="Concentrated Deodorizer"
-          loading="lazy" decoding="async">
-        <div class="block-title">Concentrated Deodorizer</div>
-      </a>
-      <a class="block" href="../chemical-products/Fruit ＆ Vegetable Cleaner.html">
-        <img src="../assets/chemical-product-images/Fruit ＆ Vegetable Cleaner.jpg" alt="Fruit ＆ Vegetable Cleaner"
-          loading="lazy" decoding="async">
-        <div class="block-title">Fruit ＆ Vegetable Cleaner</div>
-      </a>
-      <a class="block" href="../chemical-products/Germicidal Cleaner &amp; Disinfectant D.html">
-        <img src="../assets/chemical-product-images/Germicidal Cleaner &amp; Disinfectant D.png"
-          alt="Germicidal Cleaner &amp; Disinfectant D" loading="lazy" decoding="async">
-        <div class="block-title">Germicidal Cleaner &amp; Disinfectant D</div>
-      </a>
-      <a class="block" href="../chemical-products/H C Flatware Presoak.html">
-        <img src="../assets/chemical-product-images/H C Flatware Presoak.png" alt="H C Flatware Presoak" loading="lazy"
-          decoding="async">
-        <div class="block-title">H C Flatware Presoak</div>
-      </a>
-      <a class="block" href="../chemical-products/H C Pot &amp; Pan Detergent.html">
-        <img src="../assets/chemical-product-images/H C Pot &amp; Pan Detergent.jpg" alt="H C Pot &amp; Pan Detergent"
-          loading="lazy" decoding="async">
-        <div class="block-title">H C Pot &amp; Pan Detergent</div>
-      </a>
-      <a class="block" href="../chemical-products/Heavy Duty Grease Release.html">
-        <img src="../assets/chemical-product-images/Heavy Duty Grease Release.jpg" alt="Heavy Duty Grease Release"
-          loading="lazy" decoding="async">
-        <div class="block-title">Heavy Duty Grease Release</div>
-      </a>
-      <a class="block" href="../chemical-products/Jewel Pot &amp; Pan Detergent.html">
-        <img src="../assets/chemical-product-images/Jewel Pot &amp; Pan Detergent.png"
-          alt="Jewel Pot &amp; Pan Detergent" loading="lazy" decoding="async">
-        <div class="block-title">Jewel Pot &amp; Pan Detergent</div>
-      </a>
-      <a class="block" href="../chemical-products/Lavender All Purpose Cleaner.html">
-        <img src="../assets/chemical-product-images/Lavender All Purpose Cleaner.png" alt="Lavender All Purpose Cleaner"
-          loading="lazy" decoding="async">
-        <div class="block-title">Lavender All Purpose Cleaner</div>
-      </a>
-      <a class="block" href="../chemical-products/Liquid Flatware Presoak.html">
-        <img src="../assets/chemical-product-images/Liquid Flatware Presoak.png" alt="Liquid Flatware Presoak"
-          loading="lazy" decoding="async">
-        <div class="block-title">Liquid Flatware Presoak</div>
-      </a>
-      <a class="block" href="../chemical-products/More Suds Pot &amp; Pan Detergent.html">
-        <img src="../assets/chemical-product-images/More Suds Pot &amp; Pan Detergent.jpg"
-          alt="More Suds Pot &amp; Pan Detergent" loading="lazy" decoding="async">
-        <div class="block-title">More Suds Pot &amp; Pan Detergent</div>
-      </a>
-      <a class="block" href="../chemical-products/Neutral Floor Cleaner.html">
-        <img src="../assets/chemical-product-images/Neutral Floor Cleaner.jpg" alt="Neutral Floor Cleaner"
-          loading="lazy" decoding="async">
-        <div class="block-title">Neutral Floor Cleaner</div>
-      </a>
-      <a class="block" href="../chemical-products/Neutral Floor Cleaner I.html">
-        <img src="../assets/chemical-product-images/Neutral Floor Cleaner I.jpg" alt="Neutral Floor Cleaner I"
-          loading="lazy" decoding="async">
-        <div class="block-title">Neutral Floor Cleaner I</div>
-      </a>
-      <a class="block" href="../chemical-products/Neutral Quat Disinfectant.html">
-        <img src="../assets/chemical-product-images/Neutral Quat Disinfectant.png" alt="Neutral Quat Disinfectant"
-          loading="lazy" decoding="async">
-        <div class="block-title">Neutral Quat Disinfectant</div>
-      </a>
-      <a class="block" href="../chemical-products/Non Acid Restroom Cleaner P.html">
-        <img src="../assets/chemical-product-images/Non Acid Restroom Cleaner P.png" alt="Non Acid Restroom Cleaner P"
-          loading="lazy" decoding="async">
-        <div class="block-title">Non Acid Restroom Cleaner P</div>
-      </a>
-      <a class="block" href="../chemical-products/Non Ammoniated Glass Cleaner N.html">
-        <img src="../assets/chemical-product-images/Non Ammoniated Glass Cleaner N.png"
-          alt="Non Ammoniated Glass Cleaner N" loading="lazy" decoding="async">
-        <div class="block-title">Non Ammoniated Glass Cleaner N</div>
-      </a>
-      <a class="block" href="../chemical-products/Odor Counteractant F.html">
-        <img src="../assets/chemical-product-images/Odor Counteractant F.jpg" alt="Odor Counteractant F" loading="lazy"
-          decoding="async">
-        <div class="block-title">Odor Counteractant F</div>
-      </a>
-      <a class="block" href="../chemical-products/Oven &amp; Grill Cleaner Concentrated.html">
-        <img src="../assets/chemical-product-images/Oven &amp; Grill Cleaner Concentrated.png"
-          alt="Oven &amp; Grill Cleaner Concentrated" loading="lazy" decoding="async">
-        <div class="block-title">Oven &amp; Grill Cleaner Concentrated</div>
-      </a>
-      <a class="block" href="../chemical-products/Pine Scrub.html">
-        <img src="../assets/chemical-product-images/Pine Scrub.png" alt="Pine Scrub" loading="lazy" decoding="async">
-        <div class="block-title">Pine Scrub</div>
-      </a>
-      <a class="block" href="../chemical-products/Pot &amp; Pan Detergent.html">
-        <img src="../assets/chemical-product-images/Pot &amp; Pan Detergent.png" alt="Pot &amp; Pan Detergent"
-          loading="lazy" decoding="async">
-        <div class="block-title">Pot &amp; Pan Detergent</div>
-      </a>
-      <a class="block" href="../chemical-products/Powdered Presoak Plus.html">
-        <img src="../assets/chemical-product-images/Powdered Presoak Plus.png" alt="Powdered Presoak Plus"
-          loading="lazy" decoding="async">
-        <div class="block-title">Powdered Presoak Plus</div>
-      </a>
-      <a class="block" href="../chemical-products/Produce Wash.html">
-        <img src="../assets/chemical-product-images/Produce Wash.jpg" alt="Produce Wash" loading="lazy"
-          decoding="async">
-        <div class="block-title">Produce Wash</div>
-      </a>
-      <a class="block" href="../chemical-products/Quarry Grip Floor Cleaner.html">
-        <img src="../assets/chemical-product-images/Quarry Grip Floor Cleaner.png" alt="Quarry Grip Floor Cleaner"
-          loading="lazy" decoding="async">
-        <div class="block-title">Quarry Grip Floor Cleaner</div>
-      </a>
-      <a class="block" href="../chemical-products/Quarry Grip Floor Cleaner L.html">
-        <img src="../assets/chemical-product-images/Quarry Grip Floor Cleaner L.png" alt="Quarry Grip Floor Cleaner L"
-          loading="lazy" decoding="async">
-        <div class="block-title">Quarry Grip Floor Cleaner L</div>
-      </a>
-      <a class="block" href="../chemical-products/Quat Clean.html">
-        <img src="../assets/chemical-product-images/Quat Clean.png" alt="Quat Clean" loading="lazy" decoding="async">
-        <div class="block-title">Quat Clean</div>
-      </a>
-      <a class="block" href="../chemical-products/Shurguard HP Concentrated.html">
-        <img src="../assets/chemical-product-images/Shurguard HP Concentrated.png" alt="Shurguard HP Concentrated"
-          loading="lazy" decoding="async">
-        <div class="block-title">Shurguard HP Concentrated</div>
-      </a>
-      <a class="block" href="../chemical-products/Solid Flatware Presoak.html">
-        <img src="../assets/chemical-product-images/Solid Flatware Presoak.png" alt="Solid Flatware Presoak"
-          loading="lazy" decoding="async">
-        <div class="block-title">Solid Flatware Presoak</div>
-      </a>
-      <a class="block" href="../chemical-products/Solid Pot &amp; Pan Detergent.html">
-        <img src="../assets/chemical-product-images/Solid Pot &amp; Pan Detergent.png"
-          alt="Solid Pot &amp; Pan Detergent" loading="lazy" decoding="async">
-        <div class="block-title">Solid Pot &amp; Pan Detergent</div>
-      </a>
-      <a class="block" href="../chemical-products/Super Duty Pot &amp; Pan Detergent.html">
-        <img src="../assets/chemical-product-images/Super Duty Pot &amp; Pan Detergent.png"
-          alt="Super Duty Pot &amp; Pan Detergent" loading="lazy" decoding="async">
-        <div class="block-title">Super Duty Pot &amp; Pan Detergent</div>
-      </a>
-      <a class="block" href="../chemical-products/Surface Cleaner &amp; Degreaser.html">
-        <img src="../assets/chemical-product-images/Surface Cleaner &amp; Degreaser.jpg"
-          alt="Surface Cleaner &amp; Degreaser" loading="lazy" decoding="async">
-        <div class="block-title">Surface Cleaner &amp; Degreaser</div>
-      </a>
-      <a class="block" href="../chemical-products/Surface Cleaner &amp; Degreaser H.html">
-        <img src="../assets/chemical-product-images/Surface Cleaner &amp; Degreaser H.png"
-          alt="Surface Cleaner &amp; Degreaser H" loading="lazy" decoding="async">
-        <div class="block-title">Surface Cleaner &amp; Degreaser H</div>
-      </a>
-      <a class="block" href="../chemical-products/Tub &amp; Tile Cleaner C.html">
-        <img src="../assets/chemical-product-images/Tub &amp; Tile Cleaner C.jpg" alt="Tub &amp; Tile Cleaner C"
-          loading="lazy" decoding="async">
-        <div class="block-title">Tub &amp; Tile Cleaner C</div>
-      </a>
-      <a class="block" href="../chemical-products/Ultimate Sanitizer.html">
-        <img src="../assets/chemical-product-images/Ultimate Sanitizer.png" alt="Ultimate Sanitizer" loading="lazy"
-          decoding="async">
-        <div class="block-title">Ultimate Sanitizer</div>
-      </a>
-      <a class="block" href="../chemical-products/Ultimate Sanitizer Q.html">
-        <img src="../assets/chemical-product-images/Ultimate Sanitizer Q.png" alt="Ultimate Sanitizer Q" loading="lazy"
-          decoding="async">
-        <div class="block-title">Ultimate Sanitizer Q</div>
-      </a>
-    </section>
+        <a class="block" href="../chemical-products/All Purpose Cleaner Degreaser B.html">
+          <img src="../assets/chemical-product-images/All Purpose Cleaner Degreaser B.jpg" alt="All Purpose Cleaner Degreaser B" loading="lazy" decoding="async">
+          <div class="block-title">All Purpose Cleaner Degreaser B</div>
+        </a>
+        <a class="block" href="../chemical-products/Ammoniated Floor Cleaner R.html">
+          <img src="../assets/chemical-product-images/Ammoniated Floor Cleaner R.png" alt="Ammoniated Floor Cleaner R" loading="lazy" decoding="async">
+          <div class="block-title">Ammoniated Floor Cleaner R</div>
+        </a>
+        <a class="block" href="../chemical-products/Ammoniated Glass Cleaner A.html">
+          <img src="../assets/chemical-product-images/Ammoniated Glass Cleaner A.png" alt="Ammoniated Glass Cleaner A" loading="lazy" decoding="async">
+          <div class="block-title">Ammoniated Glass Cleaner A</div>
+        </a>
+        <a class="block" href="../chemical-products/Array Quarry Chlor.html">
+          <img src="../assets/chemical-product-images/Array Quarry Chlor.png" alt="Array Quarry Chlor" loading="lazy" decoding="async">
+          <div class="block-title">Array Quarry Chlor</div>
+        </a>
+        <a class="block" href="../chemical-products/Bacterial Drain Digestant.html">
+          <img src="../assets/chemical-product-images/Bacterial Drain Digestant.jpg" alt="Bacterial Drain Digestant" loading="lazy" decoding="async">
+          <div class="block-title">Bacterial Drain Digestant</div>
+        </a>
+        <a class="block" href="../chemical-products/Carpet Extraction Cleaner.html">
+          <img src="../assets/chemical-product-images/Carpet Extraction Cleaner.jpg" alt="Carpet Extraction Cleaner" loading="lazy" decoding="async">
+          <div class="block-title">Carpet Extraction Cleaner</div>
+        </a>
+        <a class="block" href="../chemical-products/Citrus Orange All Purpose Cleaner.html">
+          <img src="../assets/chemical-product-images/Citrus Orange All Purpose Cleaner.png" alt="Citrus Orange All Purpose Cleaner" loading="lazy" decoding="async">
+          <div class="block-title">Citrus Orange All Purpose Cleaner</div>
+        </a>
+        <a class="block" href="../chemical-products/Concentrated Deodorizer.html">
+          <img src="../assets/chemical-product-images/Concentrated Deodorizer.png" alt="Concentrated Deodorizer" loading="lazy" decoding="async">
+          <div class="block-title">Concentrated Deodorizer</div>
+        </a>
+        <a class="block" href="../chemical-products/Fruit ＆ Vegetable Cleaner.html">
+          <img src="../assets/chemical-product-images/Fruit ＆ Vegetable Cleaner.jpg" alt="Fruit ＆ Vegetable Cleaner" loading="lazy" decoding="async">
+          <div class="block-title">Fruit ＆ Vegetable Cleaner</div>
+        </a>
+        <a class="block" href="../chemical-products/Germicidal Cleaner &amp; Disinfectant D.html">
+          <img src="../assets/chemical-product-images/Germicidal Cleaner &amp; Disinfectant D.png" alt="Germicidal Cleaner &amp; Disinfectant D" loading="lazy" decoding="async">
+          <div class="block-title">Germicidal Cleaner &amp; Disinfectant D</div>
+        </a>
+        <a class="block" href="../chemical-products/H C Flatware Presoak.html">
+          <img src="../assets/chemical-product-images/H C Flatware Presoak.png" alt="H C Flatware Presoak" loading="lazy" decoding="async">
+          <div class="block-title">H C Flatware Presoak</div>
+        </a>
+        <a class="block" href="../chemical-products/H C Pot &amp; Pan Detergent.html">
+          <img src="../assets/chemical-product-images/H C Pot &amp; Pan Detergent.jpg" alt="H C Pot &amp; Pan Detergent" loading="lazy" decoding="async">
+          <div class="block-title">H C Pot &amp; Pan Detergent</div>
+        </a>
+        <a class="block" href="../chemical-products/Heavy Duty Grease Release.html">
+          <img src="../assets/chemical-product-images/Heavy Duty Grease Release.jpg" alt="Heavy Duty Grease Release" loading="lazy" decoding="async">
+          <div class="block-title">Heavy Duty Grease Release</div>
+        </a>
+        <a class="block" href="../chemical-products/Jewel Pot &amp; Pan Detergent.html">
+          <img src="../assets/chemical-product-images/Jewel Pot &amp; Pan Detergent.png" alt="Jewel Pot &amp; Pan Detergent" loading="lazy" decoding="async">
+          <div class="block-title">Jewel Pot &amp; Pan Detergent</div>
+        </a>
+        <a class="block" href="../chemical-products/Lavender All Purpose Cleaner.html">
+          <img src="../assets/chemical-product-images/Lavender All Purpose Cleaner.png" alt="Lavender All Purpose Cleaner" loading="lazy" decoding="async">
+          <div class="block-title">Lavender All Purpose Cleaner</div>
+        </a>
+        <a class="block" href="../chemical-products/Liquid Flatware Presoak.html">
+          <img src="../assets/chemical-product-images/Liquid Flatware Presoak.png" alt="Liquid Flatware Presoak" loading="lazy" decoding="async">
+          <div class="block-title">Liquid Flatware Presoak</div>
+        </a>
+        <a class="block" href="../chemical-products/More Suds Pot &amp; Pan Detergent.html">
+          <img src="../assets/chemical-product-images/More Suds Pot &amp; Pan Detergent.jpg" alt="More Suds Pot &amp; Pan Detergent" loading="lazy" decoding="async">
+          <div class="block-title">More Suds Pot &amp; Pan Detergent</div>
+        </a>
+        <a class="block" href="../chemical-products/Neutral Floor Cleaner.html">
+          <img src="../assets/chemical-product-images/Neutral Floor Cleaner.jpg" alt="Neutral Floor Cleaner" loading="lazy" decoding="async">
+          <div class="block-title">Neutral Floor Cleaner</div>
+        </a>
+        <a class="block" href="../chemical-products/Neutral Floor Cleaner I.html">
+          <img src="../assets/chemical-product-images/Neutral Floor Cleaner I.jpg" alt="Neutral Floor Cleaner I" loading="lazy" decoding="async">
+          <div class="block-title">Neutral Floor Cleaner I</div>
+        </a>
+        <a class="block" href="../chemical-products/Neutral Quat Disinfectant.html">
+          <img src="../assets/chemical-product-images/Neutral Quat Disinfectant.png" alt="Neutral Quat Disinfectant" loading="lazy" decoding="async">
+          <div class="block-title">Neutral Quat Disinfectant</div>
+        </a>
+        <a class="block" href="../chemical-products/Non Acid Restroom Cleaner P.html">
+          <img src="../assets/chemical-product-images/Non Acid Restroom Cleaner P.png" alt="Non Acid Restroom Cleaner P" loading="lazy" decoding="async">
+          <div class="block-title">Non Acid Restroom Cleaner P</div>
+        </a>
+        <a class="block" href="../chemical-products/Non Ammoniated Glass Cleaner N.html">
+          <img src="../assets/chemical-product-images/Non Ammoniated Glass Cleaner N.jpg" alt="Non Ammoniated Glass Cleaner N" loading="lazy" decoding="async">
+          <div class="block-title">Non Ammoniated Glass Cleaner N</div>
+        </a>
+        <a class="block" href="../chemical-products/Odor Counteractant F.html">
+          <img src="../assets/chemical-product-images/Odor Counteractant F.jpg" alt="Odor Counteractant F" loading="lazy" decoding="async">
+          <div class="block-title">Odor Counteractant F</div>
+        </a>
+        <a class="block" href="../chemical-products/Oven &amp; Grill Cleaner Concentrated.html">
+          <img src="../assets/chemical-product-images/Oven &amp; Grill Cleaner Concentrated.png" alt="Oven &amp; Grill Cleaner Concentrated" loading="lazy" decoding="async">
+          <div class="block-title">Oven &amp; Grill Cleaner Concentrated</div>
+        </a>
+        <a class="block" href="../chemical-products/Pine Scrub.html">
+          <img src="../assets/chemical-product-images/Pine Scrub.png" alt="Pine Scrub" loading="lazy" decoding="async">
+          <div class="block-title">Pine Scrub</div>
+        </a>
+        <a class="block" href="../chemical-products/Pot &amp; Pan Detergent.html">
+          <img src="../assets/chemical-product-images/Pot &amp; Pan Detergent.png" alt="Pot &amp; Pan Detergent" loading="lazy" decoding="async">
+          <div class="block-title">Pot &amp; Pan Detergent</div>
+        </a>
+        <a class="block" href="../chemical-products/Powdered Presoak Plus.html">
+          <img src="../assets/chemical-product-images/Powdered Presoak Plus.png" alt="Powdered Presoak Plus" loading="lazy" decoding="async">
+          <div class="block-title">Powdered Presoak Plus</div>
+        </a>
+        <a class="block" href="../chemical-products/Produce Wash.html">
+          <img src="../assets/chemical-product-images/Produce Wash.jpg" alt="Produce Wash" loading="lazy" decoding="async">
+          <div class="block-title">Produce Wash</div>
+        </a>
+        <a class="block" href="../chemical-products/Quarry Grip Floor Cleaner.html">
+          <img src="../assets/chemical-product-images/Quarry Grip Floor Cleaner.png" alt="Quarry Grip Floor Cleaner" loading="lazy" decoding="async">
+          <div class="block-title">Quarry Grip Floor Cleaner</div>
+        </a>
+        <a class="block" href="../chemical-products/Quarry Grip Floor Cleaner L.html">
+          <img src="../assets/chemical-product-images/Quarry Grip Floor Cleaner L.png" alt="Quarry Grip Floor Cleaner L" loading="lazy" decoding="async">
+          <div class="block-title">Quarry Grip Floor Cleaner L</div>
+        </a>
+        <a class="block" href="../chemical-products/Quat Clean.html">
+          <img src="../assets/chemical-product-images/Quat Clean.png" alt="Quat Clean" loading="lazy" decoding="async">
+          <div class="block-title">Quat Clean</div>
+        </a>
+        <a class="block" href="../chemical-products/Shurguard HP Concentrated.html">
+          <img src="../assets/chemical-product-images/Shurguard HP Concentrated.png" alt="Shurguard HP Concentrated" loading="lazy" decoding="async">
+          <div class="block-title">Shurguard HP Concentrated</div>
+        </a>
+        <a class="block" href="../chemical-products/Solid Flatware Presoak.html">
+          <img src="../assets/chemical-product-images/Solid Flatware Presoak.png" alt="Solid Flatware Presoak" loading="lazy" decoding="async">
+          <div class="block-title">Solid Flatware Presoak</div>
+        </a>
+        <a class="block" href="../chemical-products/Solid Pot &amp; Pan Detergent.html">
+          <img src="../assets/chemical-product-images/Solid Pot &amp; Pan Detergent.png" alt="Solid Pot &amp; Pan Detergent" loading="lazy" decoding="async">
+          <div class="block-title">Solid Pot &amp; Pan Detergent</div>
+        </a>
+        <a class="block" href="../chemical-products/Super Duty Pot &amp; Pan Detergent.html">
+          <img src="../assets/chemical-product-images/Super Duty Pot &amp; Pan Detergent.png" alt="Super Duty Pot &amp; Pan Detergent" loading="lazy" decoding="async">
+          <div class="block-title">Super Duty Pot &amp; Pan Detergent</div>
+        </a>
+        <a class="block" href="../chemical-products/Surface Cleaner &amp; Degreaser.html">
+          <img src="../assets/chemical-product-images/Surface Cleaner &amp; Degreaser.jpg" alt="Surface Cleaner &amp; Degreaser" loading="lazy" decoding="async">
+          <div class="block-title">Surface Cleaner &amp; Degreaser</div>
+        </a>
+        <a class="block" href="../chemical-products/Surface Cleaner &amp; Degreaser H.html">
+          <img src="../assets/chemical-product-images/Surface Cleaner &amp; Degreaser H.png" alt="Surface Cleaner &amp; Degreaser H" loading="lazy" decoding="async">
+          <div class="block-title">Surface Cleaner &amp; Degreaser H</div>
+        </a>
+        <a class="block" href="../chemical-products/Tub &amp; Tile Cleaner C.html">
+          <img src="../assets/chemical-product-images/Tub &amp; Tile Cleaner C.jpg" alt="Tub &amp; Tile Cleaner C" loading="lazy" decoding="async">
+          <div class="block-title">Tub &amp; Tile Cleaner C</div>
+        </a>
+        <a class="block" href="../chemical-products/Ultimate Sanitizer.html">
+          <img src="../assets/chemical-product-images/Ultimate Sanitizer.png" alt="Ultimate Sanitizer" loading="lazy" decoding="async">
+          <div class="block-title">Ultimate Sanitizer</div>
+        </a>
+        <a class="block" href="../chemical-products/Ultimate Sanitizer Q.html">
+          <img src="../assets/chemical-product-images/Ultimate Sanitizer Q.png" alt="Ultimate Sanitizer Q" loading="lazy" decoding="async">
+          <div class="block-title">Ultimate Sanitizer Q</div>
+        </a></section>
   </main>
 </body>
-
 </html>

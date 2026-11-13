@@ -1,0 +1,14 @@
+Essentials v2.5 Shared JavaScript Report
+Exact original image-overlay script text extracted to content-hashed files.
+Original script timing and position preserved: synchronous, before </body>.
+Page-specific scripts, barcode scanner, laundry calculator stay inline.
+
+Pages using shared JavaScript: 11865
+Unique shared JavaScript files in this build: 1
+Total inline JavaScript bytes replaced: 13027770
+Unique JavaScript bytes: 1098
+Approximate uncompressed bytes saved: 13026672
+Obsolete generated JavaScript files removed: 0
+Skipped scripts: 0
+
+image-overlay.5a28a87ac476.js | 11865 pages | 1098 bytes

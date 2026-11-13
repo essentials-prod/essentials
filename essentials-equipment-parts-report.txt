@@ -1,0 +1,49 @@
+Equipment parts association report
+Source: Parts CSV Equipment ID column; multiple IDs may be comma-separated.
+Linked parts without Part Category are displayed under Common Replacement Parts.
+Missing CSV associations are restored from original HTML pages when available.
+Equipment with matching parts: 38/41
+Linked part placements: 1148
+No links are invented for rows with blank/nonmatching Equipment ID.
+
+AXIOM153L | Axiom153L | Replacement: 28 | Installation: 2
+AXIOM153U | Axiom153U | Replacement: 32 | Installation: 2
+AXIOMDVAPS | AxiomDVAPS | Replacement: 34 | Installation: 2
+CWTF15 | CWTF15 | Replacement: 39 | Installation: 2
+CWTF35 | CWTF35 | Replacement: 36 | Installation: 2
+CWTF153 | CWTF153 | Replacement: 16 | Installation: 2
+CWTFAPS | CWTFAPS | Replacement: 36 | Installation: 2
+G92T | G92T | Replacement: 12 | Installation: 0
+ICBDVT30 | ICBDVT3.0 | Replacement: 34 | Installation: 2
+ICBTWINT30 | ICBTwinT3.0 | Replacement: 32 | Installation: 2
+ITCBDV | ITCB-DV | Replacement: 35 | Installation: 1
+LS100 | LS100 | Replacement: 24 | Installation: 0
+PINNACLEPRO | Pinnacle Pro | Replacement: 21 | Installation: 5
+VP173 | VP173 | Replacement: 21 | Installation: 0
+VP173U | VP173U | Replacement: 22 | Installation: 0
+VPR | VPR | Replacement: 21 | Installation: 0
+VPS | VPS | Replacement: 20 | Installation: 0
+BISTROTOUCH | Bistro - Touch | Replacement: 51 | Installation: 0
+LCA2 | LCA2 | Replacement: 26 | Installation: 2
+LCA2LP | LCA2LP | Replacement: 32 | Installation: 2
+LCD2 | LCD2 | Replacement: 46 | Installation: 2
+OPLMINI | OPLMINI | Replacement: 9 | Installation: 0
+JDF2S | JDF2S | Replacement: 39 | Installation: 2
+JDF4S | JDF4S | Replacement: 37 | Installation: 2
+TB3 | TB3 | Replacement: 28 | Installation: 0
+TB6 | TB6 | Replacement: 24 | Installation: 0
+FMD1 | FMD1 | Replacement: 42 | Installation: 2
+IMIX3 | iMix-3 | Replacement: 46 | Installation: 2
+HYDRO1170 | Hydro1170 | Replacement: 9 | Installation: 0
+PROSINK1 | Prosink 1 | Replacement: 13 | Installation: 2
+PROSINK2 | Prosink 2 | Replacement: 13 | Installation: 2
+PXB1-4 | PXB 1-4 | Replacement: 23 | Installation: 5
+PXB4-1 | PXB 4-1 | Replacement: 23 | Installation: 5
+SPRITETL | SpriteTL | Replacement: 14 | Installation: 0
+DM711 | DM711 | Replacement: 40 | Installation: 5
+EVOCLEAN | Evoclean | Replacement: 36 | Installation: 2
+LM250 | LM250TE | Replacement: 39 | Installation: 2
+SUREIMMERSION312 | Sure Immersion 312 | Replacement: 0 | Installation: 0 | NO MATCHING PARTS IN CSV
+DUALD | Dual D | Replacement: 0 | Installation: 0 | NO MATCHING PARTS IN CSV
+JDF2SVPDS | JDF2SVPDS | Replacement: 32 | Installation: 2
+SUREIMMERSION220 | Sure Immersion 220 | Replacement: 0 | Installation: 0 | NO MATCHING PARTS IN CSV

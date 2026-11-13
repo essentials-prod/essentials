@@ -53,7 +53,7 @@
     .optrow label{margin:0}
     #log{max-height:220px;overflow:auto;background:#101e35;color:#d6e5f6;border-radius:8px;padding:10px;font:11px/1.5 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
     .diag{display:none}
-     
+    /* Matches the Essentials equipment landing-page HOME navigation. */
     body{padding:6px}
     .essentials-page{position:relative;width:100%;max-width:1080px;margin:0 auto 16px;background:#fff;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,.12);padding:8px;border:2px solid #061a33;min-height:760px}
     .home-strip{display:block;margin:-8px -8px 8px -8px;padding:0;background:#061a33;border-radius:8px 8px 0 0;overflow:hidden}
@@ -126,7 +126,7 @@
 <script>
 'use strict';
 const UNKNOWN_BARCODE_ENDPOINT='https://script.google.com/macros/s/AKfycby8CzZHjTV1yrYlgHoAXRrtPZRTDwC7PXo6oi_XwWPMCcUr9WxxhgjIkR4Mv0q_OHUDkg/exec';
-const EQUIPMENT = Object.freeze({"00072504079493":{"model":"Axiom153L","url":"equipment/Axiom153L.html"},"00072504079479":{"model":"Axiom153U","url":"equipment/Axiom153U.html"},"00072504081458":{"model":"AxiomDVAPS","url":"equipment/AxiomDVAPS.html"},"00072504078663":{"model":"CWTF15","url":"equipment/CWTF15.html"},"00072504067766":{"model":"CWTF153","url":"equipment/CWTF153.html"},"00072504038865":{"model":"CWTFAPS","url":"equipment/CWTFAPS.html"},"00072504015408":{"model":"G92T","url":"equipment/G92T.html"},"00072504134536":{"model":"ICBDVT3.0","url":"equipment/ICBDVT3.0.html"},"00072504134994":{"model":"ICBTwinT3.0","url":"equipment/ICBTwinT3.0.html"},"00072504095066":{"model":"ITCB-DV","url":"equipment/ITCB-DV.html"},"00072504012209":{"model":"VP173","url":"equipment/VP173.html"},"00072504018768":{"model":"VP173U","url":"equipment/VP173U.html"},"00072504057255":{"model":"VPR","url":"equipment/VPR.html"},"00072504072135":{"model":"VPS","url":"equipment/VPS.html"},"00072504124360":{"model":"Sure Immersion 220","url":"equipment/Sure Immersion 220.html"}});
+const EQUIPMENT=Object.freeze({"00072504057255":{"model":"VPR","url":"equipment/VPR.html"},"00072504072135":{"model":"VPS","url":"equipment/VPS.html"},"00072504018768":{"model":"VP173U","url":"equipment/VP173U.html"},"00072504012209":{"model":"VP173","url":"equipment/VP173.html"},"00072504078663":{"model":"CWTF15","url":"equipment/CWTF15.html"},"00072504067766":{"model":"CWTF153","url":"equipment/CWTF153.html"},"00072504079479":{"model":"Axiom153U","url":"equipment/Axiom153U.html"},"00072504079493":{"model":"Axiom153L","url":"equipment/Axiom153L.html"},"00072504038865":{"model":"CWTFAPS","url":"equipment/CWTFAPS.html"},"00072504081458":{"model":"AxiomDVAPS","url":"equipment/AxiomDVAPS.html"},"00072504015408":{"model":"G92T","url":"equipment/G92T.html"},"00072504134536":{"model":"ICBDVT3.0","url":"equipment/ICBDVT3.0.html"},"00072504134994":{"model":"ICBTwinT3.0","url":"equipment/ICBTwinT3.0.html"},"00072504122557":{"model":"JDF2S","url":"equipment/JDF2S.html"},"00072504081717":{"model":"TB3","url":"equipment/TB3.html"},"00072504095066":{"model":"ITCB-DV","url":"equipment/ITCB-DV.html"},"00072504124360":{"model":"Sure Immersion 220","url":"equipment/Sure Immersion 220.html"},"00072504373201":{"model":"Sure Immersion 312","url":"equipment/Sure Immersion 312.html"},"00072504296654":{"model":"Sure Immersion 312","url":"equipment/Sure Immersion 312.html"}});
 const $=id=>document.getElementById(id);
 const video=$('preview'),camera=$('camera'),start=$('start'),activeActions=$('activeActions');
 let reader=null,controls=null,nativeStream=null,nativeLoop=false,session=0,busy=false,redirecting=false,torchOn=false,lastLive=null;
@@ -159,7 +159,7 @@ function updateGuidance(candidate, source, sharp){
   const center={x:(r.x+r.width/2)/source.width,y:(r.y+r.height/2)/source.height};
   const motion=lastGuideCenter&&now-lastGuideTime<1800?Math.hypot(center.x-lastGuideCenter.x,center.y-lastGuideCenter.y):0;
   lastGuideCenter=center;lastGuideTime=now;
-  
+  // Approximate lighting from sparse samples of the detected barcode band.
   const c=document.createElement('canvas');c.width=72;c.height=28;
   const ctx=c.getContext('2d',{willReadFrequently:true});
   ctx.drawImage(source,r.x,r.y,r.width,r.height,0,0,72,28);
@@ -279,8 +279,8 @@ function halt(){
 function handleScan(raw,format='manual'){
  if(redirecting)return false;
  const value=String(raw||'').trim();
- 
- 
+ // A detected barcode must be Code 128. GS1 AI (01) or a valid standalone
+ // 12–14 digit GTIN is required; never stop on unrelated or false decodes.
  if(format!=='manual'&&format!==ZXingCode128()&&format!=='code_128'){
   rejectRead(value,format,'not Code 128');return false;
  }
@@ -302,8 +302,8 @@ function extractSerial(raw){
  return match?match[1].trim():'';
 }
 function reportUnknownBarcode(gtin,serial,rawBarcode){
- 
- 
+ // Best effort: cross-origin Apps Script cannot provide a readable response
+ // from a static GitHub Pages site using no-cors mode.
  const body=new URLSearchParams({gtin,serial,rawBarcode});
  log('Unknown GTIN report requested: '+gtin);
  try{
@@ -325,7 +325,7 @@ function onDecode(decoded,err,which){
  attempts++;
  const name=err.name||err.constructor?.name||'UnknownError';
  const msg=err.message||'';
- 
+ // ZXing commonly returns NotFoundException, ChecksumException or FormatException on ordinary frames.
  if(/NotFound|Checksum|Format/i.test(name)||/No MultiFormat Readers were able to detect/i.test(msg)){
   notFound++;
   if(attempts===1||attempts%60===0)log('Decode attempts '+attempts+'; ordinary non-decodes '+notFound+'; last '+name);
@@ -335,7 +335,7 @@ function onDecode(decoded,err,which){
 async function applyChange(obj,label){
  const t=track();if(!t){log(label+': no camera track');return}
  try{
-  
+  // Replace advanced constraints, never append: stale zoom/focus values can override later changes.
   const old=t.getConstraints?.()||{};
   const next={...old,advanced:[obj]};
   if('zoom' in obj)delete next.zoom;
@@ -410,7 +410,7 @@ function updateMagnifier(){
  if(video.readyState<2||!video.videoWidth)return;
  const c=$('magnified'),ctx=c.getContext('2d');
  const w=video.videoWidth,h=video.videoHeight;
- 
+ // Preserve center of image; show a magnified horizontal band, with portrait orientation corrected.
  const raw=document.createElement('canvas');raw.width=w;raw.height=h;
  raw.getContext('2d').drawImage(video,0,0,w,h);
  const aligned=w<h?transformedCanvas(raw,90,'original'):raw;
@@ -473,11 +473,11 @@ function decodeStillCanvas(c){
  if(hints)decoder.setHints(hints);
  return decoder.decodeWithState(bitmap);
 }
-
-
+// V4: targeted barcode band. Capture only a thin strip and keep the complete
+// horizontal field; variants cycle to keep the tablet responsive.
 function barcodeRegion(source,variant){
  const w=source.width,h=source.height;
- 
+ // For portrait camera frames, rotate the source so a landscape barcode can be decoded.
  const angle=w<h?90:0;
  const base=angle?transformedCanvas(source,angle,'original'):source;
  const bw=base.width,bh=base.height;
@@ -594,7 +594,7 @@ async function begin(){
   const hints=makeHints();
   reader=hints?new ZXingBrowser.BrowserMultiFormatReader(hints,{delayBetweenScanAttempts:120}):new ZXingBrowser.BrowserMultiFormatReader();
   decoderName=hints?'ZXing: Code 128 ONLY, TRY_HARDER':'ZXing: Code 128 only (default hints unavailable)';
-  
+  // Crucial: decode the existing video; do NOT allow ZXing to reopen the camera at 480x640.
   log('Starting decodeFromVideoElement on PRE-OPENED stream');
   controls=await reader.decodeFromVideoElement(video,(decoded,err)=>{if(token===session)onDecode(decoded,err,'ZXing')});
   if(token!==session){controls?.stop();return}
@@ -614,8 +614,8 @@ async function startNativeOnOpenStream(token){
  }
 }
 
-
-
+// V8: locate the barcode before decoding. Work on a small grayscale analysis
+// image; crop the ORIGINAL camera pixels, never the downsampled detector pixels.
 let regionTimer=null,regionBusy=false,regionPasses=0,regionCandidates=0,regionHits=0;
 let regionLast='Not run',regionHistory=[],regionCache=[],regionCacheAttempts=0,regionCacheHits=0,regionFullPasses=0,regionLastFullAt=0,scanDurationMs=null,scanGtin=null,scanMethod='—';
 let lastSuccessfulBand=null,regionLocateMs=0,regionDecodeMs=0,regionSkippedBlurry=0,regionQuickPasses=0,regionSharpnessLast=0,regionFrames=0;
@@ -630,9 +630,9 @@ function locateBarcode(source){
  const cx=tiny.getContext('2d',{willReadFrequently:true});cx.drawImage(source,0,0,w,h);
  const rgba=cx.getImageData(0,0,w,h).data,gray=new Uint8Array(w*h);
  for(let i=0,j=0;i<rgba.length;i+=4,j++)gray[j]=(rgba[i]*77+rgba[i+1]*150+rgba[i+2]*29)>>8;
- 
- 
- 
+ // Edge response along X: vertical barcode bars create many repeated edges.
+ // Two orientations cover both portrait and landscape handling without rotating
+ // the full-resolution source or creating 4K processed canvases.
  const candidates=[];
  for(const orientation of [0,90]){
   const ow=orientation?w:h,oh=orientation?h:w;
@@ -649,7 +649,7 @@ function locateBarcode(source){
    }
    scores[y]=scores[y+1]=count/Math.ceil(ow/stride)+transitions/Math.ceil(ow/stride)*30;
   }
-  
+  // Smooth the edge response and select distinct high-scoring horizontal bands.
   const smooth=new Float32Array(oh),radius=Math.max(3,Math.round(oh*.012));
   for(let y=radius;y<oh-radius;y++){
    let total=0;for(let k=-radius;k<=radius;k+=2)total+=scores[y+k];
@@ -664,7 +664,7 @@ function locateBarcode(source){
   }
   for(const y of picked){
    const bandH=Math.max(36,Math.round(oh*.13)),top=Math.max(0,Math.min(oh-bandH,Math.round(y-bandH/2)));
-   
+   // Edge-density by column in the candidate band, used to trim background.
    const col=new Float32Array(ow);
    for(let x=2;x<ow-2;x+=2){let sum=0;for(let yy=top+3;yy<top+bandH-3;yy+=3){sum+=Math.abs(sample(x+1,yy)-sample(x-1,yy))>22?1:0}col[x]=col[x+1]=sum}
    const block=Math.max(8,Math.floor(ow*.025)),activity=[];
@@ -674,7 +674,7 @@ function locateBarcode(source){
    if(active.length>=4){left=Math.max(0,(active[0]-2)*block);right=Math.min(ow-1,(active.at(-1)+3)*block)}
    if(right-left<ow*.22){left=0;right=ow-1}
    const margin=Math.round(ow*.035);left=Math.max(0,left-margin);right=Math.min(ow,right+margin);
-   
+   // Convert oriented detector coordinates back into original image coordinates.
    let rect;
    if(!orientation)rect={x:Math.floor(left/scale),y:Math.floor(top/scale),width:Math.ceil((right-left)/scale),height:Math.ceil(bandH/scale)};
    else rect={x:Math.floor((w-(top+bandH))/scale),y:Math.floor(left/scale),width:Math.ceil(bandH/scale),height:Math.ceil((right-left)/scale)};
@@ -691,9 +691,9 @@ function cropCandidate(source,candidate){
  raw.getContext('2d',{willReadFrequently:true}).drawImage(source,x,y,width,height,0,0,width,height);
  return candidate.orientation?transformedCanvas(raw,90,'original'):raw;
 }
-
-
-
+// V9: re-check promising regions quickly; periodically rediscover across the
+// whole frame so moving the tablet never leaves the decoder stuck on old ROI.
+// V8's successful Code128 row decoder and fallback remain unchanged.
 async function regionScan(token){
  if(regionBusy||analyzing||token!==session||redirecting||video.readyState<2||!window.ZXing)return;
  regionBusy=true;
@@ -712,7 +712,7 @@ async function regionScan(token){
    regionHistory=detected.map(c=>({orientation:c.orientation,score:c.score,rect:c.rect}));
    candidates.push(...detected);
   }else{regionCacheAttempts++;candidates.push(...regionCache)}
-  
+  // De-duplicate overlapping bands so the decoder doesn't repeat expensive work.
   const unique=[];
   for(const c of candidates){if(unique.some(a=>a.orientation===c.orientation && Math.abs(a.rect.y-c.rect.y)<Math.min(a.rect.height,c.rect.height)*.42 && Math.abs(a.rect.x-c.rect.x)<Math.min(a.rect.width,c.rect.width)*.42))continue;unique.push(c)}
   regionLast=`${source.width}x${source.height}; ${unique.length} regions; ${full?'full search':'cached search'}`;
@@ -721,7 +721,7 @@ async function regionScan(token){
    if(token!==session||redirecting)break;
    regionCandidates++;
    const sharp=bandSharpness(source,candidate);regionSharpnessLast=sharp;updateQuality(sharp);
-   
+   // Skip only nearly featureless regions. A low threshold avoids dropping real labels.
    if(sharp<2.5){regionSkippedBlurry++;continue}
    const crop=cropCandidate(source,candidate);
    const decodeStart=performance.now();
@@ -736,7 +736,7 @@ async function regionScan(token){
     if(valid){lastSuccessfulBand={y:(candidate.rect.y+candidate.rect.height/2)/source.height,landscape:source.width/source.height>1.2};}
     if(handleScan(r.raw,r.format))break;
    }
-   
+   // Keep V9's known-good ZXing fallback, but time it separately.
    try{
     const t=performance.now();const decoded=decodeStillCanvas(crop);regionDecodeMs+=performance.now()-t;
     scanMethod=full?'region ZXing':'cached region ZXing';regionHits++;if(!full)regionCacheHits++;
@@ -745,7 +745,7 @@ async function regionScan(token){
     if(extractGtin(decoded.getText()))lastSuccessfulBand={y:(candidate.rect.y+candidate.rect.height/2)/source.height,landscape:source.width/source.height>1.2};
     if(handleScan(decoded.getText(),decoded.getBarcodeFormat()))break;
    }catch(e){}
-   
+   // Guidance runs only after decoding has had first priority.
    if(candidate===unique[0] && !redirecting)updateGuidance(candidate,source,sharp);
   }
   if(regionPasses===1||regionPasses%8===0)log('V11 region pass '+regionPasses+'; '+regionLast+'; full='+regionFullPasses+' cached='+regionCacheAttempts+'; timing '+JSON.stringify(regionStats()));
@@ -759,8 +759,8 @@ function startRegions(token){
  regionScan(token);
  regionTimer=setInterval(()=>{if(token===session)regionScan(token)},REGION_INTERVAL_MS);
 }
-
-
+// V9 multi-row Code 128 sampling. Sample tilted horizontal lines at varying
+// thresholds; avoid enlarging pixels, which cannot recover blurred bars.
 function decodeRowsFromCanvas(source,fullTest=false,alreadyHorizontal=false){
  const Z=window.ZXing;
  if(!Z?.Code128Reader||!Z?.BitArray)throw Error('Code128Reader/BitArray unavailable');
@@ -774,7 +774,7 @@ function decodeRowsFromCanvas(source,fullTest=false,alreadyHorizontal=false){
   const data=canvas.getContext('2d',{willReadFrequently:true}).getImageData(0,0,w,h).data;
   const gray=new Uint8Array(w*h);
   for(let i=0,j=0;i<data.length;i+=4,j++)gray[j]=(data[i]*77+data[i+1]*150+data[i+2]*29)>>8;
-  
+  // Sample the whole width, including the barcode's quiet zones.
   for(const pos of positions)for(const slope of slopes){
    const samples=new Uint8Array(w);let sum=0;
    for(let x=0;x<w;x++){

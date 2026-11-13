@@ -5,800 +5,7 @@
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>ADS - 5AG-ES | Service Essentials</title>
-  <style>
-    
-    :root {
-      --bg: #ffffff;
-      --page: #ffffff;
-      --ink: #071426;
-      --muted: #4a5568;
-      --line: #c9d3df;
-      --section: #f4f8fb;
-      --accent: #061a33;
-      --accent-2: #e9f7a6;
-      --accent-soft: #f4f9d8;
-      --accent-soft-blue: #e8eef7;
-      --table-row-alt: #f2f7fc;
-      --radius: 8px;
-      --shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
-
-      --tablet-page-height: 760px;
-      --tablet-page-width: 1080px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 17px;
-      line-height: 1.25;
-    }
-
-    body {
-      padding: 6px;
-    }
-
-    .page {
-      position: relative;
-      width: 100%;
-      max-width: var(--tablet-page-width);
-      height: var(--tablet-page-height);
-      max-height: var(--tablet-page-height);
-      margin: 0 auto 16px auto;
-      background: var(--page);
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-      padding: 8px;
-      overflow: visible;
-      page-break-after: always;
-      border: 2px solid var(--accent);
-    }
-
-    .online-mode .page {
-      height: auto;
-      max-height: none;
-      min-height: var(--tablet-page-height);
-    }
-
-    .home-strip {
-      display: block;
-      margin: -8px -8px 8px -8px;
-      padding: 0;
-      background: var(--accent);
-      border-radius: 8px 8px 0 0;
-      overflow: hidden;
-    }
-
-    .home-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 42px;
-      padding: 10px 14px;
-      background: var(--accent);
-      color: #ffffff;
-      font-weight: 900;
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      border: 0;
-      border-bottom: 4px solid var(--accent-soft);
-      line-height: 1;
-    }
-
-    .home-button:hover,
-    .home-button:focus {
-      background: #ffffff;
-      color: var(--accent);
-      outline: 3px solid var(--accent);
-      outline-offset: -3px;
-    }
-
-    .hero {
-      display: block;
-      background: #ffffff;
-      border-bottom: 4px solid var(--accent);
-      padding: 7px 8px;
-      margin: 0 -8px 8px -8px;
-      border-radius: 0;
-    }
-
-    .hero-left {
-      min-width: 0;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(1.75rem, 3vw, 2.45rem);
-      line-height: 1;
-      color: var(--accent);
-    }
-
-    h2 {
-      margin: 0 0 4px;
-      font-size: 1.12rem;
-      line-height: 1.08;
-      color: var(--accent);
-    }
-
-    .section-card h2,
-    .info-card h2 {
-      background: var(--accent);
-      color: #ffffff;
-      margin: -4px -4px 6px -4px;
-      padding: 5px 8px;
-      border-radius: 6px 6px 0 0;
-    }
-
-    .top-grid {
-      display: grid !important;
-      grid-template-columns: 240px minmax(0, 1fr);
-      gap: 8px;
-      margin-bottom: 8px;
-      align-items: stretch;
-    }
-
-    .photo-card,
-    .spec-card,
-    .info-card,
-    .section-card,
-    .notice-card {
-      border: 1px solid var(--line);
-      background: var(--section);
-      border-radius: var(--radius);
-      padding: 4px;
-    }
-
-    .photo-card {
-      border: 0px;
-      height: 150px;
-      min-height: 150px;
-      max-height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #ffffff;
-      overflow: hidden;
-    }
-
-    .photo-card img {
-      height: 150px;
-      max-height: 150px;
-      max-width: 100%;
-      width: auto;
-      object-fit: contain;
-      object-position: left center;
-      border-radius: 4px;
-    }
-
-    .photo-placeholder {
-      color: var(--muted);
-      font-size: 1rem;
-      font-weight: 700;
-      border: 1px dashed var(--line);
-      border-radius: 5px;
-      padding: 55px 4px;
-      width: 100%;
-      text-align: center;
-    }
-
-    .spec-card {
-      border: 0px;
-      height: 150px;
-      min-height: 150px;
-      max-height: 150px;
-      overflow: hidden;
-      padding: 4px 6px;
-    }
-
-    .spec-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      grid-template-rows: repeat(2, 1fr);
-      gap: 4px;
-      height: 100%;
-    }
-
-    .spec-item {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 5px;
-      padding: 6px 8px;
-      min-height: 0;
-      overflow: hidden;
-    }
-
-    .manuals-spec-item,
-    .chemical-tech-spec-item {
-      padding: 4px 6px;
-    }
-
-    .manuals-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 4px;
-      height: calc(100% - 18px);
-      margin-top: 1px;
-    }
-
-    .manual-bucket {
-      border: 1px solid var(--line);
-      border-radius: 5px;
-      background: var(--accent-soft-blue);
-      min-width: 0;
-      overflow: hidden;
-      height: 100%;
-      padding: 0;
-      margin: 0;
-      display: flex;
-    }
-
-    .manual-tile,
-    .tech-sheet-tile {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: calc(100% - 18px);
-      min-height: 30px;
-      padding: 0;
-      margin: 1px 0 0 0;
-      color: var(--accent);
-      background: var(--accent-soft-blue);
-      border: 1px solid var(--line);
-      border-radius: 5px;
-      font-weight: 900;
-      font-size: 10px;
-      line-height: 10px;
-      text-align: center;
-      text-decoration: none;
-      overflow: hidden;
-      word-break: break-word;
-    }
-
-    .manual-bucket .manual-tile {
-      height: 100%;
-      margin: 0;
-      border: 0;
-      border-radius: 0;
-      background: transparent;
-    }
-
-    .manual-tile:hover,
-    .manual-tile:focus,
-    .tech-sheet-tile:hover,
-    .tech-sheet-tile:focus {
-      background: #ffffff;
-      outline: 2px solid var(--accent);
-      outline-offset: -2px;
-    }
-
-    .label {
-      display: block;
-      color: var(--muted);
-      font-size: 0.8rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      margin-bottom: 1px;
-    }
-
-    .value {
-      display: block;
-      font-weight: 800;
-      color: var(--ink);
-      font-size: 1.02rem;
-      line-height: 1.1;
-      overflow-wrap: anywhere;
-    }
-
-    .summary-table {
-      margin-bottom: 8px;
-    }
-
-    .summary-table td,
-    .summary-table th {
-      text-align: left;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-
-    .info-card p,
-    .section-card p,
-    .notice-card p {
-      margin: 0;
-    }
-
-    .section-card,
-    .notice-card {
-      margin-bottom: 8px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      border-radius: 6px;
-      overflow: hidden;
-      font-size: 1.02rem;
-    }
-
-    th {
-      background: var(--accent-soft);
-      color: var(--accent);
-      text-align: left;
-      padding: 5px 6px;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      line-height: 1.08;
-      border-bottom: 1px solid var(--line);
-      font-weight: 900;
-    }
-
-    .soft-header th {
-      background: var(--accent-soft);
-      color: var(--accent);
-      border-bottom: 1px solid var(--line);
-      font-weight: 900;
-    }
-
-    tbody tr:nth-child(odd) td {
-      background: #ffffff;
-    }
-
-    tbody tr:nth-child(even) td {
-      background: var(--table-row-alt);
-    }
-
-    td {
-      border-bottom: 1px solid var(--line);
-      padding: 5px 6px;
-      vertical-align: top;
-      line-height: 1.18;
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    .summary-description-label {
-      background: var(--accent-soft) !important;
-      color: var(--accent);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    .summary-description-value {
-      background: #ffffff !important;
-    }
-
-    .parts-table {
-      width: 100%;
-      table-layout: fixed;
-      border-collapse: collapse;
-    }
-
-    .parts-table th:nth-child(1),
-    .parts-table td:nth-child(1) {
-      width: calc(12ch + 10px);
-      white-space: nowrap;
-    }
-
-    .parts-table th:nth-child(2),
-    .parts-table td:nth-child(2) {
-      width: auto;
-    }
-
-    .parts-table th:nth-child(3),
-    .parts-table td:nth-child(3) {
-      width: 20ch;
-      white-space: nowrap;
-    }
-
-    .component-table,
-    .troubleshooting-table,
-    .chemical-packaging-table,
-    .chemical-materials-table {
-      table-layout: fixed;
-    }
-
-    .component-table th:nth-child(1),
-    .component-table td:nth-child(1) {
-      width: 40%;
-    }
-
-    .component-table th:nth-child(2),
-    .component-table td:nth-child(2) {
-      width: 60%;
-    }
-
-    .troubleshooting-table th:nth-child(1),
-    .troubleshooting-table td:nth-child(1) {
-      width: 35%;
-    }
-
-    .troubleshooting-table th:nth-child(2),
-    .troubleshooting-table td:nth-child(2) {
-      width: 65%;
-    }
-
-    .chemical-packaging-table th:nth-child(1),
-    .chemical-packaging-table td:nth-child(1) {
-      width: 24%;
-    }
-
-    .chemical-packaging-table th:nth-child(2),
-    .chemical-packaging-table td:nth-child(2) {
-      width: 34%;
-    }
-
-    .chemical-packaging-table th:nth-child(3),
-    .chemical-packaging-table td:nth-child(3) {
-      width: 42%;
-    }
-
-    .chemical-materials-table th:nth-child(1),
-    .chemical-materials-table td:nth-child(1) {
-      width: 40%;
-    }
-
-    .chemical-materials-table th:nth-child(2),
-    .chemical-materials-table td:nth-child(2) {
-      width: 60%;
-    }
-
-    a {
-      color: var(--accent);
-      font-weight: 800;
-      text-decoration: none;
-    }
-
-    footer {
-      border-top: 2px solid var(--accent);
-      margin-top: 6px;
-      padding-top: 4px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-    }
-
-    .empty {
-      color: var(--muted);
-      font-style: italic;
-      margin: 0;
-      font-size: 1.02rem;
-    }
-
-    .used-on-equipment-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      background: #ffffff;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      padding: 8px;
-    }
-
-    .used-on-equipment-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6px 9px;
-      background: var(--accent-soft-blue);
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      color: var(--accent);
-      font-weight: 900;
-      text-decoration: none;
-      line-height: 1;
-    }
-
-    .used-on-equipment-link:hover,
-    .used-on-equipment-link:focus {
-      background: var(--accent-soft);
-      outline: 2px solid var(--accent);
-      outline-offset: 1px;
-    }
-
-    @media print {
-      .home-strip {
-        display: none;
-      }
-    }
-
-    @media screen and (max-width: 650px) {
-      body {
-        padding: 5px;
-        font-size: 16px;
-      }
-
-      .page {
-        padding: 6px;
-        border-radius: 8px;
-        height: auto;
-        max-height: none;
-        overflow: visible;
-      }
-
-      .home-strip {
-        margin: -6px -6px 8px -6px;
-      }
-
-      .hero {
-        margin: 0 -6px 8px -6px;
-      }
-
-      .top-grid {
-        grid-template-columns: 160px minmax(0, 1fr);
-      }
-
-      .photo-card,
-      .spec-card {
-        height: 120px;
-        min-height: 120px;
-        max-height: 120px;
-      }
-
-      .photo-card img {
-        height: 120px;
-        max-height: 120px;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      table {
-        font-size: 0.95rem;
-      }
-
-      th,
-      td {
-        padding: 4px 5px;
-      }
-    }
-  
-    
-    body.online-mode {
-      min-height: 100vh;
-      padding: 6px;
-    }
-
-    .online-mode .page {
-      height: auto;
-      max-height: none;
-      min-height: var(--tablet-page-height);
-      overflow: visible;
-      page-break-after: auto;
-      margin-bottom: 0;
-    }
-
-    .online-mode footer {
-      margin-bottom: 0;
-    }
-  
-    
-    .part-link {
-      color: var(--accent);
-      font-weight: 900;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(6, 26, 51, 0.35);
-    }
-
-    .part-link:hover,
-    .part-link:focus {
-      color: #2f7d20;
-      border-bottom-color: #2f7d20;
-    }
-
-    .parts-db-mode .page {
-      max-width: 1080px;
-    }
-
-    .parts-search-card {
-      border: 1px solid var(--line);
-      background: var(--section);
-      border-radius: var(--radius);
-      padding: 10px;
-      margin-bottom: 10px;
-    }
-
-    .parts-search-card label {
-      display: block;
-      color: var(--accent);
-      font-weight: 900;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      letter-spacing: 0.03em;
-      margin-bottom: 6px;
-    }
-
-    #partsSearchInput {
-      width: 100%;
-      border: 2px solid var(--accent);
-      border-radius: 8px;
-      padding: 10px 12px;
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--ink);
-      background: #ffffff;
-    }
-
-    #partsSearchInput:focus {
-      outline: 3px solid var(--accent-soft);
-      outline-offset: 1px;
-    }
-
-    .parts-search-count {
-      margin-top: 6px;
-      color: var(--muted);
-      font-weight: 800;
-      font-size: 0.95rem;
-    }
-
-    .parts-results {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 8px;
-    }
-
-    .part-result-card {
-      border: 1px solid var(--line);
-      background: #ffffff;
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .part-result-link {
-      display: grid;
-      grid-template-columns: 150px minmax(0, 1fr);
-      gap: 10px;
-      color: var(--ink);
-      text-decoration: none;
-      padding: 8px;
-    }
-
-    .part-result-link:hover,
-    .part-result-link:focus {
-      background: var(--accent-soft);
-      outline: 2px solid var(--accent);
-      outline-offset: -2px;
-    }
-
-    .part-result-image {
-      width: 150px;
-      height: 110px;
-      background: #ffffff;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .part-result-image img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-
-    .part-result-placeholder {
-      color: var(--muted);
-      font-weight: 900;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-
-    .part-result-body h2 {
-      margin: 0 0 6px 0;
-      color: var(--accent);
-      font-size: 1.3rem;
-      line-height: 1.1;
-    }
-
-    .part-result-meta {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 4px 12px;
-      font-size: 0.98rem;
-    }
-
-    .part-used-on {
-      margin: 6px 0 0 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .part-detail-top-grid {
-      grid-template-columns: 300px minmax(0, 1fr);
-    }
-
-    .part-photo-card {
-      height: 220px;
-      min-height: 220px;
-      max-height: 220px;
-    }
-
-    .part-photo-card img {
-      height: 220px;
-      max-height: 220px;
-    }
-
-    .part-spec-card {
-      height: 220px;
-      min-height: 220px;
-      max-height: 220px;
-    }
-
-    .part-spec-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      grid-template-rows: repeat(2, 1fr);
-    }
-
-    @media screen and (max-width: 650px) {
-      .part-result-link {
-        grid-template-columns: 95px minmax(0, 1fr);
-      }
-
-      .part-result-image {
-        width: 95px;
-        height: 90px;
-      }
-
-      .part-result-meta {
-        grid-template-columns: 1fr;
-      }
-
-      .part-detail-top-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .part-photo-card,
-      .part-spec-card {
-        height: auto;
-        min-height: 0;
-        max-height: none;
-      }
-
-      .part-photo-card img {
-        height: auto;
-        max-height: 240px;
-      }
-    }
-  
-    
-    /* Detail thumbnails fill the entire existing photo card, without cropping.
-       This is limited to equipment, chemical product and part detail pages. */
-    .photo-card.detail-photo-thumbnail { justify-content: stretch; align-items: stretch; }
-    .detail-photo-thumbnail .detail-photo-button { border: 0; padding: 4px; background: #fff; cursor: zoom-in; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; min-width: 0; min-height: 0; border-radius: 5px; }
-    .detail-photo-thumbnail .detail-photo-button img { display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; object-position: center; border: 0; }
-    .detail-photo-button:focus-visible { outline: 3px solid #72bf43; outline-offset: 1px; }
-    .detail-image-overlay[hidden] { display: none !important; }
-    .detail-image-overlay { position: fixed; inset: 0; z-index: 10000; background: rgba(1, 14, 35, .52); -webkit-backdrop-filter: blur(9px); backdrop-filter: blur(9px); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15px; }
-    .detail-image-panel { display: flex; flex-direction: column; align-items: center; background: #fff; border-radius: 9px; padding: 14px; max-width: min(95vw, 540px); max-height: 90dvh; box-shadow: 0 8px 35px #0006; }
-    .detail-image-large { max-width: min(480px, 85vw); max-height: min(480px, 68dvh); width: auto; height: auto; object-fit: contain; }
-    .detail-image-close { margin-top: 12px; width: 100%; min-height: 48px; background: #061a33; color: white; font: 900 17px Arial, sans-serif; letter-spacing: .08em; border: none; border-bottom: 4px solid #e9f7a6; border-radius: 5px; cursor: pointer; }
-    .detail-image-close:focus-visible { outline: 3px solid #72bf43; }
-    @media print { .detail-image-overlay { display: none !important; } }
-  
-  </style>
+  <link rel="stylesheet" href="../assets/css/warewash.64da8de94946.css">
 </head>
 <body class="online-mode">
   <main class="page online-page">
@@ -836,17 +43,17 @@
       <span class="label">Documents</span>
       <div class="manuals-grid">
       <div class="manual-bucket">
-        <a class="manual-tile" href="../assets/pdfs/mechanical-warewash/ads-5ag-es-spec-sheet.pdf" target="_blank" rel="noopener">
+        <a class="manual-tile" href="https://drive.google.com/file/d/14tsTu6MSJ6M3dCi0bMj8upiAsgjWaV14/view?usp=sharing" target="_blank" rel="noopener">
           SPEC
         </a>
       </div>
       <div class="manual-bucket">
-        <a class="manual-tile" href="../assets/pdfs/mechanical-warewash/ads-5ag-es-document.pdf" target="_blank" rel="noopener">
+        <a class="manual-tile" href="https://drive.google.com/file/d/1qzTiHQzZFgINlWZTOl9Ug5_Ukcrj89vG/view?usp=sharing" target="_blank" rel="noopener">
           INSTRUCTION
         </a>
       </div>
       <div class="manual-bucket">
-        <a class="manual-tile" href="../assets/pdfs/mechanical-warewash/ads-5ag-es-parts-manual.pdf" target="_blank" rel="noopener">
+        <a class="manual-tile" href="https://drive.google.com/file/d/1OwHMrWQC2LKZCXpuTREKMagtvueFABx7/view?usp=sharing" target="_blank" rel="noopener">
           PARTS
         </a>
       </div></div>
@@ -909,386 +116,812 @@
         <tbody>
           
     <tr>
-      <td><strong><a class="part-link" href="../parts/092-1022.html">092-1022</a></strong></td>
-      <td>1/2&quot; Comp X 3/8&quot; Mpt Brass Elbow</td>
+      <td><strong><a class="part-link" href="../parts/086-6601.html">086-6601</a></strong></td>
+      <td>1-1/2″ DRAIN SEAT, AF3D, 5AG, ETAF</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/092-5019.html">092-5019</a></strong></td>
-      <td>1/2&quot; J &amp; E Valve Bonnet Assy</td>
-      <td>Water Inlet / PRV</td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/092-5015.html">092-5015</a></strong></td>
-      <td>1/2&quot; J &amp; E Water Valve</td>
+      <td><strong><a class="part-link" href="../parts/098-1431.html">098-1431</a></strong></td>
+      <td>1/4″-20 THREAD X 1 3/8″ HH BOLT</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/092-1062.html">092-1062</a></strong></td>
-      <td>1/2&quot; Mpt X 1/2&quot; Comp 90 Degree Elbow</td>
+      <td><strong><a class="part-link" href="../parts/292-1028.html">292-1028</a></strong></td>
+      <td>2″ NO HUB RUBBER DRAIN FIT W/CLAMPS</td>
+      <td>Plumbing</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/098-2505.html">098-2505</a></strong></td>
+      <td>5/16″ X 18 CAP NUT</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/092-1002.html">092-1002</a></strong></td>
-      <td>1/8 Pipe Plug</td>
+      <td><strong><a class="part-link" href="../parts/098-2301.html">098-2301</a></strong></td>
+      <td>8-32 NUT FOR ETAF HINGE</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/092-5017.html">092-5017</a></strong></td>
-      <td>120V J &amp; E Water Valve Coil</td>
+      <td><strong><a class="part-link" href="../parts/099-4501.html">099-4501</a></strong></td>
+      <td>ACTUATOR, ROLLER DOOR SWITCH ONLY, AF3D, 5AG, ADC44, HT25</td>
       <td>ADS Electrical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/00304.06.html">00304.06</a></strong></td>
-      <td>22-3/4&quot; Spray Arm</td>
-      <td>CMA Mechanical</td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/096-1006.html">096-1006</a></strong></td>
-      <td>Ad251 Key</td>
-      <td>ADS Mechanical</td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/389-6603.html">389-6603</a></strong></td>
-      <td>Air Gap</td>
-      <td>ADS Gasket</td>
-    </tr>
-  
-    <tr>
       <td><strong><a class="part-link" href="../parts/385-6124.html">385-6124</a></strong></td>
-      <td>Air Gap Flanged Outlet Elbow Wldmt</td>
+      <td>AIR GAP FLANGED OUTLET ELBOW WLDMT, AF3DS</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/11103.html">11103</a></strong></td>
-      <td>Air Gap Weldment</td>
+      <td><strong><a class="part-link" href="../parts/16957.html">16957</a></strong></td>
+      <td>AIR GAP, MODEL 5AG-S, 5CD, 5AG-ES</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/085-6703.html">085-6703</a></strong></td>
+      <td>ARM SUPPORT BRACKET, LH, AF SERIES</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/085-6707.html">085-6707</a></strong></td>
+      <td>ARM SUPPORT BRACKET, RH, AF3D</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/091-3059.html">091-3059</a></strong></td>
+      <td>AUTO START RELAY, 120V, 5 SEC.TIME DELAY, BLACK, AF3D, 5AG, AF3DS</td>
+      <td>ADS Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/16288.html">16288</a></strong></td>
+      <td>BOLT, 1⁄4-20 x 1”, HH, SS</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/098-1607.html">098-1607</a></strong></td>
+      <td>BOLT, 3/8″-16 X 7/8″ HH</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/21478.html">21478</a></strong></td>
+      <td>Bolt, 5/16-18 X 1/2″, HH SS</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/98-1426.html">98-1426</a></strong></td>
+      <td>BOLT, ASQ</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13835.html">13835</a></strong></td>
+      <td>BRACKET, SOLENOID MOUNTING, AF3DS</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/084-6703.html">084-6703</a></strong></td>
+      <td>BUSHING (DOWEL), 3/8″, AF3D, 5AG</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/098-4002.html">098-4002</a></strong></td>
+      <td>BUSHING, EXTENSION ROD, BRONZE, 5AG, AF SERIES</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
       <td><strong><a class="part-link" href="../parts/091-3001.html">091-3001</a></strong></td>
-      <td>Black Fill Switch Button</td>
+      <td>BUTTON, BLACK FILL SWITCH, AF3D, 5AG, ETAF</td>
       <td>ADS Electrical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/098-4002.html">098-4002</a></strong></td>
-      <td>Bronze Bushing</td>
-      <td>ADS Mechanical</td>
+      <td><strong><a class="part-link" href="../parts/091-3002.html">091-3002</a></strong></td>
+      <td>BUTTON, START, RED, AF3D, 5AG, ETAF</td>
+      <td>ADS Electrical</td>
     </tr>
   
     <tr>
       <td><strong><a class="part-link" href="../parts/099-1004.html">099-1004</a></strong></td>
-      <td>Cam Timer Adjustment Tool</td>
+      <td>CAM TIMER ADJUSTMENT TOOL, AF3D, 5AG, ETAF, ASQ, HT25</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13809.html">13809</a></strong></td>
+      <td>CHEMICAL DISCHARGE BRKT 5AGS ONLY</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
       <td><strong><a class="part-link" href="../parts/083-6707.html">083-6707</a></strong></td>
-      <td>Chemical Pump Cover</td>
+      <td>CHEMICAL PUMP COVER, EXTERNAL, AF3D</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
       <td><strong><a class="part-link" href="../parts/083-6703.html">083-6703</a></strong></td>
-      <td>Chemical Pump Housing</td>
+      <td>CHEMICAL PUMP HOUSING, EXTERNAL, AF3D</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
       <td><strong><a class="part-link" href="../parts/091-1002.html">091-1002</a></strong></td>
-      <td>Chemical Pump Motor</td>
+      <td>CHEMICAL PUMP MOTOR, AF3D, 5AG, ETAF</td>
       <td>ADS Electrical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/082-6303.html">082-6303</a></strong></td>
-      <td>Closed Wash Pump Impeller</td>
+      <td><strong><a class="part-link" href="../parts/098-1605.html">098-1605</a></strong></td>
+      <td>CLAMP, HOSE, AF3D</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/096-1002.html">096-1002</a></strong></td>
-      <td>Control Box Lock</td>
+      <td><strong><a class="part-link" href="../parts/14508.html">14508</a></strong></td>
+      <td>CLAMP, INSIDE MANIFOLD, SS, WELDED CLAMP, AF3DS</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/98-9037.html">98-9037</a></strong></td>
+      <td>CLAMP, MEDIUM SLEEVE, AF3DS</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14272.html">14272</a></strong></td>
+      <td>CONNECTOR, NO-HUB, SUMP TO DRAIN, 2″ BY 2″, HT25, ADC44, ADC66</td>
+      <td>Bunn Coffee</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/10486.html">10486</a></strong></td>
+      <td>CONTACTOR, MOTOR, AF3DS, AFC3DS, ETAF, 5AG</td>
+      <td>ADS Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/091-2001.html">091-2001</a></strong></td>
+      <td>CONTINUOUS USE DRAIN SOLENOID, AF, 5AG, CMA SERIES</td>
+      <td>ADS Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/11979.html">11979</a></strong></td>
+      <td>CONTROL BOX END PANEL, LEFT SIDE, ES, 3DS, 5AG-S</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/11776.html">11776</a></strong></td>
+      <td>CONTROL BOX, END PANEL, RIGHT SIDE, ES, 3DS, 5AGS</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/098-2503.html">098-2503</a></strong></td>
+      <td>COPPER WASHER, 5/16″</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/11885.html">11885</a></strong></td>
+      <td>COVER ONLY, CONTROL BOX, TACKLE STYLE, AF3DS AF3CDS</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/12009.html">12009</a></strong></td>
+      <td>COVER, ″CONTORL BOX″, 3-D SERIES</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14262.html">14262</a></strong></td>
+      <td>COVER, DRAIN SOLENOID, MODEL 5AG &amp; 5AG-S LH TOP MOUNT</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14263.html">14263</a></strong></td>
+      <td>COVER, DRAIN SOLENOID, MODEL 5AG &amp; 5AG-S RH TOP MOUNT</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13840.html">13840</a></strong></td>
+      <td>DECAL, CAUTION DELIME / SANITIZER GASES, AF3, 5AGES, 5CDR</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/11650.html">11650</a></strong></td>
+      <td>DECAL, PRIME SWITCHES, N/S, AF3DS AFC3DS</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/11110.html">11110</a></strong></td>
+      <td>DECAL, WATER LEVEL, AF3DS, AFC3DS</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
       <td><strong><a class="part-link" href="../parts/091-3060.html">091-3060</a></strong></td>
-      <td>Delime/Wash Extender Switch</td>
+      <td>DELIME/WASH EXTENDER SWITCH, AF3D</td>
       <td>ADS Electrical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/13146.html">13146</a></strong></td>
-      <td>Dish Machine Solenoid Drain Chain Tubing</td>
-      <td>CMA Mechanical</td>
+      <td><strong><a class="part-link" href="../parts/086-6702.html">086-6702</a></strong></td>
+      <td>DOOR LINK, STANDARD, ADS</td>
+      <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/083-6107.html">083-6107</a></strong></td>
-      <td>Door Guide, 25&quot;</td>
+      <td><strong><a class="part-link" href="../parts/086-6166.html">086-6166</a></strong></td>
+      <td>DOOR SAFETY SWITCH BRACKET, AF3D, 5AG</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
       <td><strong><a class="part-link" href="../parts/084-6702.html">084-6702</a></strong></td>
-      <td>Door Spacer</td>
+      <td>DOOR SPACER, AF3D, 5AG, AFC3D</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
       <td><strong><a class="part-link" href="../parts/098-3003.html">098-3003</a></strong></td>
-      <td>Door Spring, Straight</td>
+      <td>DOOR SPRING, STRAIGHT, AF3D, 5AG</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
       <td><strong><a class="part-link" href="../parts/086-6701.html">086-6701</a></strong></td>
-      <td>Door Stop Bracket</td>
+      <td>DOOR STOP BRACKET, AF3D, 5AG</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
       <td><strong><a class="part-link" href="../parts/099-4500.html">099-4500</a></strong></td>
-      <td>Door Switch Full Assy</td>
+      <td>DOOR SWITCH FULL ASSY, AF3D, 5AG, ADC44, HT25</td>
       <td>ADS Electrical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/083-6601.html">083-6601</a></strong></td>
-      <td>Drain Ball, 1-1/2&quot;</td>
+      <td><strong><a class="part-link" href="../parts/13607.html">13607</a></strong></td>
+      <td>DOOR, 5AG-ES</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/085-6602.html">085-6602</a></strong></td>
-      <td>Drain Screen</td>
+      <td><strong><a class="part-link" href="../parts/083-6601.html">083-6601</a></strong></td>
+      <td>DRAIN BALL, 1-1/2″, ADS</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14180.html">14180</a></strong></td>
+      <td>DRAIN CASTING, WITH TAIL PIECE FOR 3DS &amp; ES SERIES, 5AG-S &amp; 5CD</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/086-6605.html">086-6605</a></strong></td>
+      <td>DRAIN LINK, EXTERNAL SUMP, AF3D, 5AG, AH2, C2,</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/098-3001.html">098-3001</a></strong></td>
+      <td>DRAIN SOLENOID SPRING, AF3D, 5AG</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
       <td><strong><a class="part-link" href="../parts/11377.html">11377</a></strong></td>
-      <td>Drain Tube</td>
+      <td>DRAIN TUBE, ES, 5AG-ES, WS2</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14794.html">14794</a></strong></td>
+      <td>Drain, Chain Pre-Cut</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
       <td><strong><a class="part-link" href="../parts/091-3049.html">091-3049</a></strong></td>
-      <td>Electronic Rack Counter</td>
+      <td>ELECTRONIC RACK COUNTER, AF3D, 5AG, ETAF</td>
+      <td>ADS Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/089-9204.html">089-9204</a></strong></td>
+      <td>EXTERNAL SUMP CLEANING INSTRUCTIONS DECAL, AF3D, 5AG</td>
       <td>ADS Electrical</td>
     </tr>
   
     <tr>
       <td><strong><a class="part-link" href="../parts/098-1581.html">098-1581</a></strong></td>
-      <td>Eye Bolt, 5/16&quot;-18 X 6&quot;</td>
+      <td>EYE BOLT, 5/16″-18 X 6″, ADS ONLY,AF3D, 5AG, HT25</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/092-1001.html">092-1001</a></strong></td>
-      <td>Ford Elbow</td>
+      <td><strong><a class="part-link" href="../parts/14071.html">14071</a></strong></td>
+      <td>FITTING, PLUMBING ″LF″ 3/4″ MPT X 5/8″ 90° ELBOW, 5AGES</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/11102.html">11102</a></strong></td>
-      <td>Fresh Water Supply Tube</td>
+      <td><strong><a class="part-link" href="../parts/14320.html">14320</a></strong></td>
+      <td>FITTING, PLUMBING 3/8″ COMPRESSION X 1/2″ FPT 90 ELBOW, ADS</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/086-6623.html">086-6623</a></strong></td>
-      <td>Lever Arm Cut-Off Bracket</td>
+      <td><strong><a class="part-link" href="../parts/13518.html">13518</a></strong></td>
+      <td>FITTING, TUBE ″HOSE BARB CONNECTS 1/4″ VINYL  TUBE AT END OF DISCHARGE″</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/11800.html">11800</a></strong></td>
-      <td>Mounting For Fresh Water Plumbing Bracket</td>
+      <td><strong><a class="part-link" href="../parts/13222.html">13222</a></strong></td>
+      <td>FRAME STAND, 5AG-ES</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/17039.html">17039</a></strong></td>
+      <td>GROMMET, SWITCH HOLE ( CHEMICAL ALARM)</td>
+      <td>ADS Gasket</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/17437.html">17437</a></strong></td>
+      <td>HARNESS, WIRING, 5AG-S</td>
+      <td>ADS Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/091-4015.html">091-4015</a></strong></td>
+      <td>HEYCO GROMMET FOR CHEMICAL FEED AREA, ETAF</td>
+      <td>ADS Gasket</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14778.html">14778</a></strong></td>
+      <td>HINGE, CONTROL BOX SHELF</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
       <td><strong><a class="part-link" href="../parts/12539.html">12539</a></strong></td>
-      <td>Open Vaine Impeller</td>
+      <td>IMPELLER, OPEN VAINE, 5AG-ES, AF-ES</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/091-3009.html">091-3009</a></strong></td>
-      <td>Prime Switch</td>
-      <td>ADS Electrical</td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/099-1028.html">099-1028</a></strong></td>
-      <td>Quick Bayonet Spray Pin</td>
+      <td><strong><a class="part-link" href="../parts/091-4004.html">091-4004</a></strong></td>
+      <td>JUNCTION BOX COVER, AF3D, 5AG, ETAF</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/091-3002.html">091-3002</a></strong></td>
-      <td>Red Start Button</td>
-      <td>ADS Electrical</td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/067-6702.html">067-6702</a></strong></td>
-      <td>Rotor (Roller) Assy, External Chemical Pump</td>
+      <td><strong><a class="part-link" href="../parts/096-1006.html">096-1006</a></strong></td>
+      <td>KEY, AD251, AF3D, 5AG, ETAF, HT25, ADC44</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/00105.20.html">00105.20</a></strong></td>
-      <td>Rubber Drain Linkage Washer</td>
-      <td>CMA Mechanical</td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/11105.html">11105</a></strong></td>
-      <td>Secondary Spring Extension</td>
-      <td>ADS Mechanical</td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/098-2405.html">098-2405</a></strong></td>
-      <td>Self Lock Cap Nut, 1/4-20</td>
-      <td>ADS Mechanical</td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/11107.html">11107</a></strong></td>
-      <td>Set Screw, 10-32 X 1/4&quot;</td>
-      <td>ADS Mechanical</td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/092-2002.html">092-2002</a></strong></td>
-      <td>Slip-Nut Gasket, 1-1/2&quot;</td>
-      <td>ADS Mechanical</td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/93-1041.html">93-1041</a></strong></td>
-      <td>Small Sleeve, Manifold Tube</td>
-      <td>ADS Mechanical</td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/706.00.html">706.00</a></strong></td>
-      <td>Solenoid Rebuild Kit W/ Plunger, 3/4&quot;</td>
-      <td>Water Inlet / PRV</td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/14340.html">14340</a></strong></td>
-      <td>Spray Arm Bearing</td>
-      <td>ADS Mechanical</td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/01506.30.html">01506.30</a></strong></td>
-      <td>Spray Arm End Plugs, S/S</td>
-      <td>CMA Mechanical</td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/085-6701.html">085-6701</a></strong></td>
-      <td>Spring Extension, 18&quot;, Straight</td>
-      <td>ADS Mechanical</td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/10700.html">10700</a></strong></td>
-      <td>Squeeze Tube, Santoprene, 10&quot;</td>
-      <td>Chemical Pump Tube</td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/086-6702.html">086-6702</a></strong></td>
-      <td>Standard Door Link</td>
-      <td>ADS Mechanical</td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/11960.html">11960</a></strong></td>
-      <td>Standpipe Tube Guide W/Cap, 1/4&quot; Compression Connector</td>
-      <td>Standpipe / Dip Tube</td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/099-1018.html">099-1018</a></strong></td>
-      <td>Straight Lever Arm Cap, 3/4&quot;</td>
+      <td><strong><a class="part-link" href="../parts/86-6623.html">86-6623</a></strong></td>
+      <td>L BRACKET</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
       <td><strong><a class="part-link" href="../parts/93-1039.html">93-1039</a></strong></td>
-      <td>Suction Tube Large Sleeve</td>
+      <td>LARGE SLEEVE, SUCTION TUBE, AF3DS, 5AGS</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/099-1001.html">099-1001</a></strong></td>
-      <td>Temp Gauge</td>
+      <td><strong><a class="part-link" href="../parts/292-1013.html">292-1013</a></strong></td>
+      <td>LARGE WASH PUMP PETCOCK VALVE, HT25 ONLY</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/98-9027.html">98-9027</a></strong></td>
-      <td>U-Bolt, 1/2&quot;</td>
+      <td><strong><a class="part-link" href="../parts/17390.html">17390</a></strong></td>
+      <td>LATCH, CONTROL BOX SHELF SAFETY</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/13823.html">13823</a></strong></td>
-      <td>Valve, Shut Off, 3/4&quot;</td>
+      <td><strong><a class="part-link" href="../parts/086-6623.html">086-6623</a></strong></td>
+      <td>LEVER ARM CUT-OFF BRACKET, AF3D, 5AG</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/085-6706.html">085-6706</a></strong></td>
+      <td>LEVER ARM, 5AG</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/10200.html">10200</a></strong></td>
+      <td>LIGHT, CYCLE, AF SERIES, ADS</td>
+      <td>ADS Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/096-1002.html">096-1002</a></strong></td>
+      <td>LOCK, CONTROL BOX, AF3D, 5AG, ETAF, HT25, ADC44</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/16715.html">16715</a></strong></td>
+      <td>LOCKNUT 1/2 FPT, ADC44</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/089-6602.html">089-6602</a></strong></td>
+      <td>LOWER GASKET, DRAIN ELBOW, AF3D, 5AG, ETAF, AH2, C2</td>
+      <td>ADS Gasket</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/091-3008.html">091-3008</a></strong></td>
+      <td>MASTER POWER SWITCH, AF3D, 5AG, ETAF, ADC44, HT25</td>
+      <td>ADS Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/93-1040.html">93-1040</a></strong></td>
+      <td>MEDIUM SLEEVE, DISCHARGE TUBE, AF3DS, 5AGS</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/099-1003.html">099-1003</a></strong></td>
+      <td>METAL BULLET FOOT, AF3DS, 5AG-ES</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
       <td><strong><a class="part-link" href="../parts/12538.html">12538</a></strong></td>
-      <td>Wash Pump Motor, 1-1/2Hp</td>
+      <td>MOTOR, WASH PUMP, 1HP, 120 OR 240, 1 PHASE, 5AG-ES</td>
       <td>ADS Electrical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/089-6309.html">089-6309</a></strong></td>
-      <td>Wash Pump O-Ring, 5-3/4&quot;</td>
+      <td><strong><a class="part-link" href="../parts/292-3003.html">292-3003</a></strong></td>
+      <td>NIPPLE, CLOSE, 1/2″ MPT X 1″, AF3D, 5AG, ETAF</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13307.html">13307</a></strong></td>
+      <td>NSF DECAL, 5AG-ES, WS2</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/16048.html">16048</a></strong></td>
+      <td>O-RING FOR SPRAY ARM BEARING, AF3DS, 5AGES.</td>
       <td>ADS Gasket</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/089-6309.html">089-6309</a></strong></td>
+      <td>O-RING, WASH PUMP, 5-3/4″ OD,, ES AND L-SERIES</td>
+      <td>ADS Gasket</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/086-6615.html">086-6615</a></strong></td>
+      <td>PAN FIN BRACKET FOR DRAIN AREA, 5AG, AF SERIES</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/15660.html">15660</a></strong></td>
+      <td>PAN, CABINET ASSY, 5AG-ES</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13164.html">13164</a></strong></td>
+      <td>PETCOCK, PIPE, 1/8, SS, ADS</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/092-1002.html">092-1002</a></strong></td>
+      <td>PIPE PLUG, 1/8, SS, ADS</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/092-114.html">092-114</a></strong></td>
+      <td>PIPE PLUG, 1/8″, SS, AFC3D-S</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14746.html">14746</a></strong></td>
+      <td>PIPE, DISCHARGE WELDMENT, 5AG-ES</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/292-1012.html">292-1012</a></strong></td>
+      <td>PLUG, 1/2″ MPT, SS, ADC44</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/11869.html">11869</a></strong></td>
+      <td>PLUG, SS PIPE, 1/4″</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/092-1029.html">092-1029</a></strong></td>
+      <td>PLUMBING FITTING, ASQ</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/091-3009.html">091-3009</a></strong></td>
+      <td>PRIME SWITCH, AF3D, 5AG, ETAF</td>
+      <td>ADS Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/099-1028.html">099-1028</a></strong></td>
+      <td>QUICK BAYONET SPRAY PIN</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/067-6702.html">067-6702</a></strong></td>
+      <td>ROTOR (ROLLER) ASSY, EXTERNAL CHEMICAL PUMP, AF3D</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/091-7006.html">091-7006</a></strong></td>
+      <td>RUN INDICATOR LAMP, ETAF, HT25, ADC44</td>
+      <td>ADS Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/087-6114.html">087-6114</a></strong></td>
+      <td>S/S DOOR GUIDE, AF3DS, AFC3DS</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/098-1583.html">098-1583</a></strong></td>
+      <td>S/S THUMB SCREW 5/16″ X 1/2″, AF3D, 5AG, ETAF</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/089-9078.html">089-9078</a></strong></td>
+      <td>SCRAP TRAY, 8.75 X 21 X 1.5, AF3DS, AFC3DS</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/11957.html">11957</a></strong></td>
+      <td>SCRAP TRAY, WS2 (W/O TRAY OR LID), REAR EXIT, 5AG-ES</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14531.html">14531</a></strong></td>
+      <td>SCREEN, DRAIN, 5CD, 5AG-ES &amp; WS2</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/17040.html">17040</a></strong></td>
+      <td>SCREW, 4-40 X 1⁄4” RH SLOTTED SS</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/85-6160.html">85-6160</a></strong></td>
+      <td>SECONDARY PUMP DRAIN SCREEN, L, AF3DS, AFC3DS</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/098-2405.html">098-2405</a></strong></td>
+      <td>SELF LOCK CAP NUT, 1/4-20</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/11107.html">11107</a></strong></td>
+      <td>SET SCREW, 10-32 X 1/4″</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13698.html">13698</a></strong></td>
+      <td>SLEEVE ONLY, SUCTION TUBE (PART OF 093-1039)</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/086-6607.html">086-6607</a></strong></td>
+      <td>SLOTTED WASHER, 1-1/16″, AF3D, 5AG, ETAF</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/086-6606.html">086-6606</a></strong></td>
+      <td>SLOTTED WASHER, 7/8″, AF3D, 5AG, ETAF</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/12892.html">12892</a></strong></td>
+      <td>SPRAY ARM, 6 JETS, 5AG-ES</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13156.html">13156</a></strong></td>
+      <td>SPRAY BASE, UPPER, SS,  BAYONET TYPE, 3DS, 5AG-S,</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13948.html">13948</a></strong></td>
+      <td>SPRING EXTENSION ROD, 5AG-ES</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/085-6701.html">085-6701</a></strong></td>
+      <td>SPRING EXTENSION, 18″, STRAIGHT, AF3D, 5AG, HT25</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/089-9237.html">089-9237</a></strong></td>
+      <td>START/FILL DECAL, AF3D, 5AG, ETAF</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/091-4141.html">091-4141</a></strong></td>
+      <td>STRAIGHT CONDUIT FITTING, 1/2″, AF3D, 5AG, ETAF</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/099-1018.html">099-1018</a></strong></td>
+      <td>STRAIGHT LEVER ARM CAP, 3/4″, AF3D, 5AG</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/092-9008.html">092-9008</a></strong></td>
+      <td>STRAINER SCREEN, 3/4″</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/098-1512.html">098-1512</a></strong></td>
+      <td>STUD, S/S</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/15903.html">15903</a></strong></td>
+      <td>SUCTION TUBE ELBOW, 5AG-ES, LH</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/15902.html">15902</a></strong></td>
+      <td>SUCTION TUBE ELBOW, 5AG-ES, RH</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/14745.html">14745</a></strong></td>
+      <td>SUCTION TUBE, ADS</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/10426.html">10426</a></strong></td>
+      <td>SWITCH, DOOR CUT-OFF, ADS</td>
+      <td>ADS Electrical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/099-1001.html">099-1001</a></strong></td>
+      <td>TEMP GAUGE, AF3D, 5AG, ETAF, 5CD SUMP GAUGE, CAPILLARY GAUGE USE P# 299-1005</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/089-9227.html">089-9227</a></strong></td>
+      <td>TIMER CAM ADJUSTMENT DECAL, AF3 SERIES</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/085-6191.html">085-6191</a></strong></td>
+      <td>TRACK ASSY, 5AG</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/092-1146.html">092-1146</a></strong></td>
+      <td>TUBING ADAPTER, 1/4″ X 1/8″ BARBED CONNECTOR</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/98-9027.html">98-9027</a></strong></td>
+      <td>U-BOLT, 1/2″, L SERIES, 3DS, AF/AFCES, HT</td>
+      <td>ADS Mechanical</td>
+    </tr>
+  
+    <tr>
+      <td><strong><a class="part-link" href="../parts/13823.html">13823</a></strong></td>
+      <td>VALVE, SHUT OFF, 3/4″ ADS DISH MACHINE</td>
+      <td>ADS Mechanical</td>
     </tr>
   
     <tr>
       <td><strong><a class="part-link" href="../parts/092-2001.html">092-2001</a></strong></td>
-      <td>Wash Pump Seal</td>
+      <td>WASH PUMP SEAL, AF3D, 5AG, ETAF</td>
       <td>ADS Gasket</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/092-1006.html">092-1006</a></strong></td>
-      <td>Water Inlet Elbow, Brass 1/2&quot; Fpt X 1/2&quot; Mpt</td>
+      <td><strong><a class="part-link" href="../parts/082-6307.html">082-6307</a></strong></td>
+      <td>WATER PUMP COVER, L SERIES</td>
       <td>ADS Mechanical</td>
     </tr>
   
     <tr>
-      <td><strong><a class="part-link" href="../parts/092-9002.html">092-9002</a></strong></td>
-      <td>Y Strainer Screen</td>
-      <td>ADS Mechanical</td>
+      <td><strong><a class="part-link" href="../parts/092-5017.html">092-5017</a></strong></td>
+      <td>WATER VALVE COIL, J &amp; E, 120V, ADS SERIES</td>
+      <td>ADS Electrical</td>
     </tr>
   
     <tr>
       <td><strong><a class="part-link" href="../parts/092-9006.html">092-9006</a></strong></td>
-      <td>Y Type Strainer, 3/4&quot;</td>
+      <td>Y TYPE STRAINER, 3/4″</td>
       <td>ADS Mechanical</td>
     </tr>
   
@@ -1296,39 +929,6 @@
       </table>
     </section>
     
-    <section class="section-card">
-      <h2>Common Installation Parts</h2>
-      <table class="parts-table">
-        <thead>
-          <tr>
-            <th>Part #</th>
-            <th>Part Description</th>
-            <th>Part Bin</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-    <tr>
-      <td><strong><a class="part-link" href="../parts/14135.html">14135</a></strong></td>
-      <td>1/4&quot; Blue Poly Tubing, 100&#039; Roll</td>
-      <td></td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/13999.html">13999</a></strong></td>
-      <td>1/4&quot; Clear Poly Tubing, 100&#039; Roll</td>
-      <td></td>
-    </tr>
-  
-    <tr>
-      <td><strong><a class="part-link" href="../parts/14136.html">14136</a></strong></td>
-      <td>1/4&quot; Red Poly Tubing, 100&#039; Roll</td>
-      <td></td>
-    </tr>
-  
-        </tbody>
-      </table>
-    </section>
     
     
   </main>
@@ -1338,25 +938,6 @@
       <button class="detail-image-close" id="detailImageClose" type="button">CLOSE</button>
     </div>
   </div>
-  <script>
-(function(){
-  var overlay=document.getElementById('detailImageOverlay');
-  var large=document.getElementById('detailImageLarge');
-  var close=document.getElementById('detailImageClose');
-  var previousFocus=null;
-  if(!overlay || !large || !close) return;
-  function hide(){overlay.hidden=true;large.removeAttribute('src');document.body.style.overflow='';if(previousFocus)previousFocus.focus();}
-  document.querySelectorAll('[data-detail-photo-open]').forEach(function(button){
-    button.addEventListener('click',function(){
-      var thumbnail=button.querySelector('img');if(!thumbnail)return;
-      previousFocus=button;large.src=thumbnail.currentSrc||thumbnail.src;large.alt=thumbnail.alt;
-      overlay.hidden=false;document.body.style.overflow='hidden';close.focus();
-    });
-  });
-  close.addEventListener('click',hide);
-  overlay.addEventListener('click',function(event){if(event.target===overlay)hide();});
-  document.addEventListener('keydown',function(event){if(overlay.hidden)return;if(event.key==='Escape')hide();if(event.key==='Tab'){event.preventDefault();close.focus();}});
-})();
-</script>
+  <script src="../assets/js/image-overlay.5a28a87ac476.js"></script>
 </body>
 </html>
