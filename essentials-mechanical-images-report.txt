@@ -1,0 +1,10 @@
+Essentials Mechanical Warewash Image Download Report
+Existing local images: 15
+Downloaded images: 5
+Images unavailable: 3
+Images are saved to assets/equipment-images/ and linked locally.
+
+Failures:
+UC65E-M2: no valid manufacturer image URL
+HT25: no valid manufacturer image URL
+HT25-C-B: no valid manufacturer image URL
