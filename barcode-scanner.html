@@ -1,10 +1,10 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#011540">
+  
   <title>Essentials | Barcode Scanner</title>
   <style>
     :root{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#14213d;background:#f3f6fa}
@@ -62,71 +62,76 @@
   </style>
 </head>
 <body>
+
+
 <div class="essentials-page">
-<nav class="home-strip" aria-label="Page navigation">
-  <a class="home-button" href="index.html">HOME</a>
+<nav aria-label="Page navigation" class="home-strip">
+<a class="home-button" href="index.html">HOME</a>
 </nav>
 <main>
-  <section class="panel">
-  <h1>Bunn Equipment Barcode Scanner</h1>
-  <p>Scan the barcode on the equipment dataplate.</p>
-  <div id="camera" class="camera">
-    <video id="preview" autoplay muted playsinline></video>
-    <div class="placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7V5a2 2 0 0 1 2-2h3M15 3h3a2 2 0 0 1 2 2v2M20 17v2a2 2 0 0 1-2 2h-3M9 21H6a2 2 0 0 1-2-2v-2M3 12h18M7 9v6m3-6v6m4-6v6m3-6v6"/></svg>Camera preview appears here</div>
-    <div class="target"></div>
-    <div id="cameraQuality" class="cameraQuality" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><rect class="rail" x="1.4" y="2.5" width="97.2" height="95" rx="2" ry="4" vector-effect="non-scaling-stroke"/><rect id="qualityOutline" class="progress" x="1.4" y="2.5" width="97.2" height="95" rx="2" ry="4" pathLength="100" vector-effect="non-scaling-stroke"/></svg></div>
-  </div>
-  <button id="start" class="primary">Scan Barcode</button>
-  <div id="activeActions" class="actions hidden"><button id="stop" class="secondary">Stop Camera</button><button id="torch" class="secondary hidden">Toggle Flashlight</button></div>
-  <div id="scanGuide" class="scanGuide hidden" role="status" aria-live="polite">POSITION BARCODE IN FRAME</div>
-  <div id="qualityPanel" class="qualityPanel hidden" aria-live="off"><span id="qualityText">Image quality: waiting for camera</span><small id="qualityHint">Hold the barcode steady and fill the target.</small></div>
-  <div id="cameraTune" class="actions hidden"><button id="refocusNow" class="secondary" type="button">🎯 Refocus</button><button id="exposureToggle" class="secondary" type="button">☀️ Exposure: Auto</button></div>
-  <div id="status" role="status" aria-live="polite">Ready to scan.</div>
-  <div id="result" class="result hidden" aria-live="polite"></div>
-  <details class="diag" id="advancedDiag">
-    <summary>🔧 Advanced diagnostics (automatically recorded)</summary>
-    <div class="diagbody">
-      <div class="stats">
-        <div class="stat"><small>Decoder / format</small><b id="dDecoder">Not started</b></div>
-        <div class="stat"><small>Decode attempts</small><b id="dAttempts">0</b></div>
-        <div class="stat"><small>Video resolution</small><b id="dResolution">—</b></div>
-        <div class="stat"><small>Video / track state</small><b id="dState">—</b></div>
-        <div class="stat"><small>Successful decodes</small><b id="dSuccess">0</b></div>
-        <div class="stat"><small>Not found / other errors</small><b id="dErrors">0 / 0</b></div>
-        <div class="stat"><small>Frame updates / estimated FPS</small><b id="dFrames">—</b></div>
-        <div class="stat"><small>Last decoder message</small><b id="dLast">—</b></div>
-      </div>
-      <div class="optrow"><label for="resolutionChoice">Resolution</label><select id="resolutionChoice"><option value="2560x1440" selected>2560 × 1440 (high-res test)</option><option value="1920x1080">1920 × 1080</option><option value="1280x720">1280 × 720</option><option value="640x480">640 × 480</option><option value="auto">Auto (browser chooses)</option></select></div>
-      <div class="optrow"><label for="cameraMode">Camera capture mode</label><select id="cameraMode"><option value="native">Prefer native pixels (resizeMode: none)</option><option value="standard">Standard browser scaling</option></select></div>
-      <div class="optrow"><label for="focusPreset">Close focus preset</label><select id="focusPreset"><option value="auto">Continuous autofocus (default)</option><option value="1.5">Manual 1.5 diopters (~67 cm)</option><option value="2.5">Manual 2.5 diopters (~40 cm)</option><option value="3.5">Manual 3.5 diopters (~29 cm)</option></select><button id="applyFocusPreset" class="secondary" type="button">Apply focus</button></div>
-      <label>Live barcode detail (magnified center strip)</label><canvas id="magnified" width="720" height="180" style="display:block;width:100%;height:auto;max-height:180px;background:#111;border:1px solid #536675;border-radius:8px"></canvas>
-      <div class="optrow"><label for="cameraChoice">Camera</label><select id="cameraChoice"><option value="">Automatic rear camera</option></select><button id="refreshCameras" class="secondary" type="button">Refresh list</button></div>
-      <div class="optrow"><label for="zoomPreset">Startup zoom</label><select id="zoomPreset"><option value="2">2× (default)</option><option value="1">1× (wide view)</option><option value="3">3×</option></select><button id="zoomTwo" type="button" class="secondary">Set 2× now</button></div>
-      <input type="hidden" id="roiMode" value="on">
-      <div class="optrow"><label for="zoomRange">Camera zoom</label><input id="zoomRange" type="range" min="1" max="1" step=".1" value="1" disabled><span id="zoomLabel">Unsupported / unknown</span></div>
-      <div class="optrow"><label for="focusRange">Manual focus</label><input id="focusRange" type="range" min="0.1" max="3.6" step="0.01" value="1" disabled><span id="focusLabel">Not measured</span></div>
-      <div class="optrow"><label for="decodeRotation">Still-frame first orientation</label><select id="decodeRotation"><option value="0">Normal</option><option value="90">Rotate 90°</option><option value="180">Rotate 180°</option><option value="270">Rotate 270°</option></select></div>
-      <div class="optrow"><button id="analyzeFrame" class="secondary" type="button">Analyze still frame (all rotations)</button><button id="downloadAnalyzed" class="secondary" type="button" disabled>Download analyzed frame</button></div>
-      <div class="optrow"><button id="focusContinuous" class="secondary" type="button">Try continuous focus</button><button id="focusSingle" class="secondary" type="button">Try single focus</button><button id="resolutionBtn" class="secondary" type="button">Request 1080p</button></div>
-      <div class="diagbuttons"><button id="snapshot" class="secondary" type="button">Capture frame</button><button id="refreshDiag" class="secondary" type="button">Refresh diagnostics</button><button id="copyDiag" class="secondary" type="button">Copy report</button><button id="saveDiag" class="secondary" type="button">Download report</button><button id="clearLog" class="secondary" type="button">Clear log</button></div>
-      <label>Device, camera capabilities, active settings and constraints</label>
-      <pre id="cameraDetails">Waiting for camera…</pre>
-      <label>Extra decoder diagnostics</label><pre id="roiDetails">Not started.</pre><label>Still-frame analysis</label><pre id="frameAnalysis">No analysis yet.</pre><label>Timestamped event log</label>
-      <div id="log" aria-live="off">Ready.</div>
-    </div>
-  </details>
-  <div class="manual" style="display:none">
-    <label for="manualCode">Manual barcode entry / testing</label>
-    <div class="manualrow"><input id="manualCode" type="text" inputmode="text" autocomplete="off" placeholder="Enter GTIN or full barcode text"><button id="lookup" class="secondary">Look Up</button></div>
-  </div>
-
+<section class="panel">
+<h1>Bunn Equipment Barcode Scanner</h1>
+<p>Scan the barcode on the equipment dataplate.</p>
+<div class="camera" id="camera">
+<video autoplay="" id="preview" muted="" playsinline=""></video>
+<div class="placeholder"><svg fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M4 7V5a2 2 0 0 1 2-2h3M15 3h3a2 2 0 0 1 2 2v2M20 17v2a2 2 0 0 1-2 2h-3M9 21H6a2 2 0 0 1-2-2v-2M3 12h18M7 9v6m3-6v6m4-6v6m3-6v6"></path></svg>Camera preview appears here</div>
+<div class="target"></div>
+<div aria-hidden="true" class="cameraQuality" id="cameraQuality"><svg preserveaspectratio="none" viewbox="0 0 100 100"><rect class="rail" height="95" rx="2" ry="4" vector-effect="non-scaling-stroke" width="97.2" x="1.4" y="2.5"></rect><rect class="progress" height="95" id="qualityOutline" pathlength="100" rx="2" ry="4" vector-effect="non-scaling-stroke" width="97.2" x="1.4" y="2.5"></rect></svg></div>
+</div>
+<button class="primary" id="start">Scan Barcode</button>
+<div class="actions hidden" id="activeActions"><button class="secondary" id="stop">Stop Camera</button><button class="secondary hidden" id="torch">Toggle Flashlight</button></div>
+<div aria-live="polite" class="scanGuide hidden" id="scanGuide" role="status">POSITION BARCODE IN FRAME</div>
+<div aria-live="off" class="qualityPanel hidden" id="qualityPanel"><span id="qualityText">Image quality: waiting for camera</span><small id="qualityHint">Hold the barcode steady and fill the target.</small></div>
+<div class="actions hidden" id="cameraTune"><button class="secondary" id="refocusNow" type="button">🎯 Refocus</button><button class="secondary" id="exposureToggle" type="button">☀️ Exposure: Auto</button></div>
+<div aria-live="polite" id="status" role="status">Ready to scan.</div>
+<div aria-live="polite" class="result hidden" id="result"></div>
+<details class="diag" id="advancedDiag">
+<summary>🔧 Advanced diagnostics (automatically recorded)</summary>
+<div class="diagbody">
+<div class="stats">
+<div class="stat"><small>Decoder / format</small><b id="dDecoder">Not started</b></div>
+<div class="stat"><small>Decode attempts</small><b id="dAttempts">0</b></div>
+<div class="stat"><small>Video resolution</small><b id="dResolution">—</b></div>
+<div class="stat"><small>Video / track state</small><b id="dState">—</b></div>
+<div class="stat"><small>Successful decodes</small><b id="dSuccess">0</b></div>
+<div class="stat"><small>Not found / other errors</small><b id="dErrors">0 / 0</b></div>
+<div class="stat"><small>Frame updates / estimated FPS</small><b id="dFrames">—</b></div>
+<div class="stat"><small>Last decoder message</small><b id="dLast">—</b></div>
+</div>
+<div class="optrow"><label for="resolutionChoice">Resolution</label><select id="resolutionChoice"><option selected="" value="2560x1440">2560 × 1440 (high-res test)</option><option value="1920x1080">1920 × 1080</option><option value="1280x720">1280 × 720</option><option value="640x480">640 × 480</option><option value="auto">Auto (browser chooses)</option></select></div>
+<div class="optrow"><label for="cameraMode">Camera capture mode</label><select id="cameraMode"><option value="native">Prefer native pixels (resizeMode: none)</option><option value="standard">Standard browser scaling</option></select></div>
+<div class="optrow"><label for="focusPreset">Close focus preset</label><select id="focusPreset"><option value="auto">Continuous autofocus (default)</option><option value="1.5">Manual 1.5 diopters (~67 cm)</option><option value="2.5">Manual 2.5 diopters (~40 cm)</option><option value="3.5">Manual 3.5 diopters (~29 cm)</option></select><button class="secondary" id="applyFocusPreset" type="button">Apply focus</button></div>
+<label>Live barcode detail (magnified center strip)</label><canvas height="180" id="magnified" style="display:block;width:100%;height:auto;max-height:180px;background:#111;border:1px solid #536675;border-radius:8px" width="720"></canvas>
+<div class="optrow"><label for="cameraChoice">Camera</label><select id="cameraChoice"><option value="">Automatic rear camera</option></select><button class="secondary" id="refreshCameras" type="button">Refresh list</button></div>
+<div class="optrow"><label for="zoomPreset">Startup zoom</label><select id="zoomPreset"><option value="2">2× (default)</option><option value="1">1× (wide view)</option><option value="3">3×</option></select><button class="secondary" id="zoomTwo" type="button">Set 2× now</button></div>
+<input id="roiMode" type="hidden" value="on"/>
+<div class="optrow"><label for="zoomRange">Camera zoom</label><input disabled="" id="zoomRange" max="1" min="1" step=".1" type="range" value="1"/><span id="zoomLabel">Unsupported / unknown</span></div>
+<div class="optrow"><label for="focusRange">Manual focus</label><input disabled="" id="focusRange" max="3.6" min="0.1" step="0.01" type="range" value="1"/><span id="focusLabel">Not measured</span></div>
+<div class="optrow"><label for="decodeRotation">Still-frame first orientation</label><select id="decodeRotation"><option value="0">Normal</option><option value="90">Rotate 90°</option><option value="180">Rotate 180°</option><option value="270">Rotate 270°</option></select></div>
+<div class="optrow"><button class="secondary" id="analyzeFrame" type="button">Analyze still frame (all rotations)</button><button class="secondary" disabled="" id="downloadAnalyzed" type="button">Download analyzed frame</button></div>
+<div class="optrow"><button class="secondary" id="focusContinuous" type="button">Try continuous focus</button><button class="secondary" id="focusSingle" type="button">Try single focus</button><button class="secondary" id="resolutionBtn" type="button">Request 1080p</button></div>
+<div class="diagbuttons"><button class="secondary" id="snapshot" type="button">Capture frame</button><button class="secondary" id="refreshDiag" type="button">Refresh diagnostics</button><button class="secondary" id="copyDiag" type="button">Copy report</button><button class="secondary" id="saveDiag" type="button">Download report</button><button class="secondary" id="clearLog" type="button">Clear log</button></div>
+<label>Device, camera capabilities, active settings and constraints</label>
+<pre id="cameraDetails">Waiting for camera…</pre>
+<label>Extra decoder diagnostics</label><pre id="roiDetails">Not started.</pre><label>Still-frame analysis</label><pre id="frameAnalysis">No analysis yet.</pre><label>Timestamped event log</label>
+<div aria-live="off" id="log">Ready.</div>
+</div>
+</details>
+<div class="manual" style="display:none">
+<label for="manualCode">Manual barcode entry / testing</label>
+<div class="manualrow"><input autocomplete="off" id="manualCode" inputmode="text" placeholder="Enter GTIN or full barcode text" type="text"/><button class="secondary" id="lookup">Look Up</button></div>
+</div>
 </section></main>
 </div>
 
+
+
+
 <script>
 'use strict';
-const UNKNOWN_BARCODE_ENDPOINT='https://script.google.com/macros/s/AKfycby8CzZHjTV1yrYlgHoAXRrtPZRTDwC7PXo6oi_XwWPMCcUr9WxxhgjIkR4Mv0q_OHUDkg/exec';
-const EQUIPMENT=Object.freeze({"00072504057255":{"model":"VPR","url":"equipment/VPR.html"},"00072504072135":{"model":"VPS","url":"equipment/VPS.html"},"00072504018768":{"model":"VP173U","url":"equipment/VP173U.html"},"00072504012209":{"model":"VP173","url":"equipment/VP173.html"},"00072504078663":{"model":"CWTF15","url":"equipment/CWTF15.html"},"00072504067766":{"model":"CWTF153","url":"equipment/CWTF153.html"},"00072504079479":{"model":"Axiom153U","url":"equipment/Axiom153U.html"},"00072504079493":{"model":"Axiom153L","url":"equipment/Axiom153L.html"},"00072504038865":{"model":"CWTFAPS","url":"equipment/CWTFAPS.html"},"00072504081458":{"model":"AxiomDVAPS","url":"equipment/AxiomDVAPS.html"},"00072504015408":{"model":"G92T","url":"equipment/G92T.html"},"00072504134536":{"model":"ICBDVT3.0","url":"equipment/ICBDVT3.0.html"},"00072504134994":{"model":"ICBTwinT3.0","url":"equipment/ICBTwinT3.0.html"},"00072504122557":{"model":"JDF2S","url":"equipment/JDF2S.html"},"00072504081717":{"model":"TB3","url":"equipment/TB3.html"},"00072504095066":{"model":"ITCB-DV","url":"equipment/ITCB-DV.html"},"00072504124360":{"model":"Sure Immersion 220","url":"equipment/Sure Immersion 220.html"},"00072504373201":{"model":"Sure Immersion 312","url":"equipment/Sure Immersion 312.html"},"00072504296654":{"model":"Sure Immersion 312","url":"equipment/Sure Immersion 312.html"}});
+
+const EQUIPMENT=Object.freeze({"00072504012209":{"model":"VP173","url":"equipment/VP173.html"},"00072504015408":{"model":"G92T","url":"equipment/G92T.html"},"00072504018768":{"model":"VP173U","url":"equipment/VP173U.html"},"00072504038865":{"model":"CWTFAPS","url":"equipment/CWTFAPS.html"},"00072504057255":{"model":"VPR","url":"equipment/VPR.html"},"00072504067766":{"model":"CWTF153","url":"equipment/CWTF153.html"},"00072504070728":{"model":"TB3","url":"equipment/TB3.html"},"00072504072135":{"model":"VPS","url":"equipment/VPS.html"},"00072504078663":{"model":"CWTF15","url":"equipment/CWTF15.html"},"00072504079479":{"model":"Axiom153U","url":"equipment/Axiom153U.html"},"00072504079493":{"model":"Axiom153L","url":"equipment/Axiom153L.html"},"00072504081458":{"model":"AxiomDVAPS","url":"equipment/AxiomDVAPS.html"},"00072504081717":{"model":"TB3","url":"equipment/TB3.html"},"00072504095066":{"model":"ITCB-DV","url":"equipment/ITCB-DV.html"},"00072504122557":{"model":"JDF2S","url":"equipment/JDF2S.html"},"00072504124360":{"model":"Sure Immersion 220","url":"equipment/Sure Immersion 220.html"},"00072504134536":{"model":"ICBDVT3.0","url":"equipment/ICBDVT3.0.html"},"00072504134994":{"model":"ICBTwinT3.0","url":"equipment/ICBTwinT3.0.html"},"00072504296654":{"model":"Sure Immersion 312","url":"equipment/Sure Immersion 312.html"},"00072504373201":{"model":"Sure Immersion 312","url":"equipment/Sure Immersion 312.html"}});
+const AMBIGUOUS_EQUIPMENT=Object.freeze({});
 const $=id=>document.getElementById(id);
 const video=$('preview'),camera=$('camera'),start=$('start'),activeActions=$('activeActions');
 let reader=null,controls=null,nativeStream=null,nativeLoop=false,session=0,busy=false,redirecting=false,torchOn=false,lastLive=null;
@@ -246,13 +251,13 @@ async function cameras(){
 }
 async function loadZXing(){
  if(!window.ZXingBrowser?.BrowserMultiFormatReader){
-  for(const url of ['https://cdn.jsdelivr.net/npm/@zxing/browser@0.1.5/umd/zxing-browser.min.js','https://unpkg.com/@zxing/browser@0.1.5/umd/zxing-browser.min.js']){
+  for(const url of ['assets/vendor/zxing-browser-0.1.5.min.js']){
    try{await loadScript(url);if(window.ZXingBrowser?.BrowserMultiFormatReader){log('ZXing browser loaded: '+url);break}}catch(e){log('Browser library failed: '+cleanError(e))}
   }
  }
  if(!window.ZXingBrowser?.BrowserMultiFormatReader)return false;
  if(!window.ZXing?.DecodeHintType){
-  for(const url of ['https://cdn.jsdelivr.net/npm/@zxing/library@0.21.3/umd/index.min.js','https://unpkg.com/@zxing/library@0.21.3/umd/index.min.js']){
+  for(const url of ['assets/vendor/zxing-library-0.21.3.min.js']){
    try{await loadScript(url);if(window.ZXing?.DecodeHintType){log('ZXing core hint enums loaded: '+url);break}}catch(e){log('Core library failed: '+cleanError(e))}
   }
  }
@@ -290,6 +295,7 @@ function handleScan(raw,format='manual'){
  log('VALID EQUIPMENT GTIN: '+gtin+' | raw '+value+' | format '+format+' | elapsed '+scanDurationMs+'ms');
  const item=EQUIPMENT[gtin];halt();
  $('result').classList.remove('hidden');$('result').classList.add('valid');
+ if(AMBIGUOUS_EQUIPMENT[gtin]){$('result').textContent='This GTIN matches multiple equipment records. Contact your administrator to resolve it.';message('Equipment mapping needs administrator review.',true);return false}
  if(item){redirecting=true;$('result').innerHTML='<strong>✓ Barcode scanned successfully!</strong><div class="value">GTIN: '+escapeHtml(gtin)+'</div><div>Equipment: '+escapeHtml(item.model)+'</div><div>Opening equipment page…</div><p style="margin:8px 0 0"><a href="'+escapeHtml(item.url)+'">Tap here if it does not open</a></p>';message('✓ Valid barcode — equipment matched!',false,true);window.location.assign(item.url);return true}
  $('result').innerHTML='<strong>✓ Barcode scanned successfully!</strong><div>Valid GTIN:</div><div class="value">'+escapeHtml(gtin)+'</div><div style="margin-top:8px">Equipment Model Not Found</div>';
  reportUnknownBarcode(gtin,extractSerial(value),value);
@@ -302,16 +308,11 @@ function extractSerial(raw){
  return match?match[1].trim():'';
 }
 function reportUnknownBarcode(gtin,serial,rawBarcode){
- // Best effort: cross-origin Apps Script cannot provide a readable response
- // from a static GitHub Pages site using no-cors mode.
- const body=new URLSearchParams({gtin,serial,rawBarcode});
- log('Unknown GTIN report requested: '+gtin);
- try{
-  fetch(UNKNOWN_BARCODE_ENDPOINT,{
-   method:'POST',mode:'no-cors',body,keepalive:true,redirect:'follow'
-  }).then(()=>log('Unknown GTIN report dispatched (delivery unconfirmed): '+gtin))
-    .catch(e=>log('Unknown GTIN report request failed: '+cleanError(e)));
- }catch(e){log('Unknown GTIN report could not start: '+cleanError(e))}
+ try { const rows=JSON.parse(localStorage.getItem('essentialsUnknownBarcodes')||'[]');
+ rows.push({gtin,serial,rawBarcode,time:new Date().toISOString()});
+ localStorage.setItem('essentialsUnknownBarcodes',JSON.stringify(rows.slice(-250)));
+ log('Unknown barcode saved on this device: '+gtin);
+ } catch(e) { log('Could not save unknown barcode: '+cleanError(e)); }
 }
 function ZXingCode128(){return window.ZXing?.BarcodeFormat?.CODE_128}
 function rejectRead(value,format,reason){

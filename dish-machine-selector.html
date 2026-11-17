@@ -3,97 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  
   <title>Dish Machine Selector | Service Essentials</title>
-  <link rel="stylesheet" href="assets/css/selectors.9b021602864c.css">
+  <link href="assets/css/selectors.9b021602864c.css" rel="stylesheet"/>
 </head>
-
 <body class="online-mode selector-mode">
-  <main class="page online-page selector-page">
-    
-    <nav class="home-strip" aria-label="Page navigation">
-      <a class="home-button" href="mechanical-warewash.html">HOME</a>
-    </nav>
 
-    <header class="hero">
-      <div class="hero-left">
-        <h1>Dish Machine Selector</h1>
-        <p class="selector-subtitle">Choose what the location can support. Results narrow automatically.</p>
-      </div>
-    </header>
 
-    <section class="selector-panel" aria-label="Dish machine filters">
-      <div class="selector-filter-group" data-filter-group="style">
-        <div class="selector-filter-heading">Machine Type</div>
-        <div class="selector-button-grid four-up">
-          <button type="button" class="selector-option" data-group="style" data-value="Single Rack">Single Rack <span class="option-count"></span></button>
-          <button type="button" class="selector-option" data-group="style" data-value="Double Rack">Double Rack <span class="option-count"></span></button>
-          <button type="button" class="selector-option" data-group="style" data-value="Conveyor">Conveyor <span class="option-count"></span></button>
-          <button type="button" class="selector-option" data-group="style" data-value="Undercounter">Undercounter <span class="option-count"></span></button>
-        </div>
-      </div>
+<main class="page online-page selector-page">
+<nav aria-label="Page navigation" class="home-strip">
+<a class="home-button" href="mechanical-warewash.html">HOME</a>
+</nav>
+<header class="hero">
+<div class="hero-left">
+<h1>Dish Machine Selector</h1>
+<p class="selector-subtitle">Choose what the location can support. Results narrow automatically.</p>
+</div>
+</header>
+<section aria-label="Dish machine filters" class="selector-panel">
+<div class="selector-filter-group" data-filter-group="style">
+<div class="selector-filter-heading">Machine Type</div>
+<div class="selector-button-grid four-up">
+<button class="selector-option" data-group="style" data-value="Single Rack" type="button">Single Rack <span class="option-count"></span></button>
+<button class="selector-option" data-group="style" data-value="Double Rack" type="button">Double Rack <span class="option-count"></span></button>
+<button class="selector-option" data-group="style" data-value="Conveyor" type="button">Conveyor <span class="option-count"></span></button>
+<button class="selector-option" data-group="style" data-value="Undercounter" type="button">Undercounter <span class="option-count"></span></button>
+</div>
+</div>
+<div class="selector-filter-group" data-filter-group="install">
+<div class="selector-filter-heading">Installation</div>
+<div class="selector-button-grid two-up">
+<button class="selector-option" data-group="install" data-value="straight" type="button">Straight <span class="option-count"></span></button>
+<button class="selector-option" data-group="install" data-value="corner" type="button">Corner <span class="option-count"></span></button>
+</div>
+</div>
+<div class="selector-filter-group" data-filter-group="electrical">
+<div class="selector-filter-heading">Electrical Service</div>
+<div class="selector-button-grid three-up">
+<button class="selector-option" data-group="electrical" data-value="120V/1PH" type="button">120V / 1PH <span class="option-count"></span></button>
+<button class="selector-option" data-group="electrical" data-value="208V/1PH" type="button">208V / 1PH <span class="option-count"></span></button>
+<button class="selector-option" data-group="electrical" data-value="240V/1PH" type="button">240V / 1PH <span class="option-count"></span></button>
+<button class="selector-option" data-group="electrical" data-value="208V/3PH" type="button">208V / 3PH <span class="option-count"></span></button>
+<button class="selector-option" data-group="electrical" data-value="240V/3PH" type="button">240V / 3PH <span class="option-count"></span></button>
+<button class="selector-option" data-group="electrical" data-value="480V/3PH" type="button">480V / 3PH <span class="option-count"></span></button>
+</div>
+</div>
+<div class="selector-filter-group" data-filter-group="sanitize">
+<div class="selector-filter-heading">Sanitizing Method</div>
+<div class="selector-button-grid two-up">
+<button class="selector-option" data-group="sanitize" data-value="hotWater" type="button">Hot Water <span class="option-count"></span></button>
+<button class="selector-option" data-group="sanitize" data-value="chemical" type="button">Chemical <span class="option-count"></span></button>
+</div>
+</div>
+<div class="selector-filter-group selector-height-group">
+<div>
+<label class="selector-filter-heading" for="maxHeightInput">Maximum Available Height</label>
+<div class="height-input-wrap">
+<input id="maxHeightInput" inputmode="decimal" min="0" placeholder="Any" step="0.5" type="number"/>
+<span>inches</span>
+</div>
+</div>
+<div>
+<label class="selector-filter-heading" for="maxAmpsInput">Maximum Amp Rating</label>
+<div class="height-input-wrap">
+<input id="maxAmpsInput" inputmode="decimal" min="0" placeholder="Any" step="0.1" type="number"/>
+<span>amps</span>
+</div>
+</div>
+<button class="selector-clear-button" id="clearSelectorFilters" type="button">Clear Filters</button>
+</div>
+</section>
+<section class="selector-results-heading">
+<strong id="selectorResultCount"></strong>
+<span id="selectorFilterSummary">No filters selected</span>
+</section>
+<section class="selector-results" id="selectorResults"></section>
+</main>
 
-      <div class="selector-filter-group" data-filter-group="install">
-        <div class="selector-filter-heading">Installation</div>
-        <div class="selector-button-grid two-up">
-          <button type="button" class="selector-option" data-group="install" data-value="straight">Straight <span class="option-count"></span></button>
-          <button type="button" class="selector-option" data-group="install" data-value="corner">Corner <span class="option-count"></span></button>
-        </div>
-      </div>
 
-      <div class="selector-filter-group" data-filter-group="electrical">
-        <div class="selector-filter-heading">Electrical Service</div>
-        <div class="selector-button-grid three-up">
-          <button type="button" class="selector-option" data-group="electrical" data-value="120V/1PH">120V / 1PH <span class="option-count"></span></button>
-          <button type="button" class="selector-option" data-group="electrical" data-value="208V/1PH">208V / 1PH <span class="option-count"></span></button>
-          <button type="button" class="selector-option" data-group="electrical" data-value="240V/1PH">240V / 1PH <span class="option-count"></span></button>
-          <button type="button" class="selector-option" data-group="electrical" data-value="208V/3PH">208V / 3PH <span class="option-count"></span></button>
-          <button type="button" class="selector-option" data-group="electrical" data-value="240V/3PH">240V / 3PH <span class="option-count"></span></button>
-          <button type="button" class="selector-option" data-group="electrical" data-value="480V/3PH">480V / 3PH <span class="option-count"></span></button>
-        </div>
-      </div>
 
-      <div class="selector-filter-group" data-filter-group="sanitize">
-        <div class="selector-filter-heading">Sanitizing Method</div>
-        <div class="selector-button-grid two-up">
-          <button type="button" class="selector-option" data-group="sanitize" data-value="hotWater">Hot Water <span class="option-count"></span></button>
-          <button type="button" class="selector-option" data-group="sanitize" data-value="chemical">Chemical <span class="option-count"></span></button>
-        </div>
-      </div>
 
-      <div class="selector-filter-group selector-height-group">
-        <div>
-          <label class="selector-filter-heading" for="maxHeightInput">Maximum Available Height</label>
-          <div class="height-input-wrap">
-            <input id="maxHeightInput" type="number" inputmode="decimal" min="0" step="0.5" placeholder="Any">
-            <span>inches</span>
-          </div>
-        </div>
-        <div>
-          <label class="selector-filter-heading" for="maxAmpsInput">Maximum Amp Rating</label>
-          <div class="height-input-wrap">
-            <input id="maxAmpsInput" type="number" inputmode="decimal" min="0" step="0.1" placeholder="Any">
-            <span>amps</span>
-          </div>
-        </div>
-
-        <button type="button" id="clearSelectorFilters" class="selector-clear-button">Clear Filters</button>
-      </div>
-    </section>
-
-    <section class="selector-results-heading">
-      <strong id="selectorResultCount"></strong>
-      <span id="selectorFilterSummary">No filters selected</span>
-    </section>
-
-    <section id="selectorResults" class="selector-results"></section>
-  </main>
-
-  <script>
-    const MACHINE_DATA = [{"equipmentId":"5AG-ES","manufacturer":"ADS","model":"5AG-ES","displayName":"ADS 5AG-ES","category":"DRLTS","machineStyle":"Double Rack","hotWater":false,"chemical":true,"racksPerHour":74,"cycleTime":90,"waterPerRack":1.78,"width":49,"depth":35,"height":71.25,"maxHeight":80,"imageUrl":"assets/equipment-images/5AG-ES.jpg","straightInstall":true,"cornerInstall":false,"electrical":[{"key":"120V/1PH","label":"120V / 1PH","amps":30}],"detailsHref":"mechanical-warewash/5AG-ES.html"},{"equipmentId":"ADC44","manufacturer":"ADS","model":"ADC44","displayName":"ADS ADC44","category":"Conveyor","machineStyle":"Conveyor","hotWater":true,"chemical":true,"racksPerHour":244,"cycleTime":40,"waterPerRack":0.49,"width":44,"depth":25.25,"height":71.25,"maxHeight":81.25,"imageUrl":"assets/equipment-images/ADC44.webp","straightInstall":true,"cornerInstall":false,"electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":110},{"key":"240V/1PH","label":"240V / 1PH","amps":110},{"key":"208V/3PH","label":"208V / 3PH","amps":60},{"key":"240V/3PH","label":"240V / 3PH","amps":60},{"key":"480V/3PH","label":"480V / 3PH","amps":35}],"detailsHref":"mechanical-warewash/ADC44.html"},{"equipmentId":"ADC66","manufacturer":"ADS","model":"ADC66","displayName":"ADS ADC66","category":"Conveyor","machineStyle":"Conveyor","hotWater":true,"chemical":true,"racksPerHour":244,"cycleTime":49,"waterPerRack":0.49,"width":66,"depth":34.5,"height":71.25,"maxHeight":81.25,"imageUrl":"assets/equipment-images/ADC66.webp","straightInstall":true,"cornerInstall":false,"electrical":[{"key":"208V/3PH","label":"208V / 3PH","amps":90},{"key":"240V/3PH","label":"240V / 3PH","amps":90}],"detailsHref":"mechanical-warewash/ADC66.html"},{"equipmentId":"CMA180-C","manufacturer":"CMA","model":"180-C","displayName":"CMA 180-C","category":"HTSRC","machineStyle":"Single Rack","hotWater":false,"chemical":true,"racksPerHour":60,"cycleTime":58,"waterPerRack":0.82,"width":25.5,"depth":25,"height":73.5,"maxHeight":79,"imageUrl":"assets/equipment-images/CMA180-C.jpg","straightInstall":false,"cornerInstall":true,"electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":36},{"key":"240V/1PH","label":"240V / 1PH","amps":38},{"key":"208V/3PH","label":"208V / 3PH","amps":24},{"key":"240V/3PH","label":"240V / 3PH","amps":26},{"key":"480V/3PH","label":"480V / 3PH","amps":10}],"detailsHref":"mechanical-warewash/CMA180-C.html"},{"equipmentId":"CMA180-C-B","manufacturer":"CMA","model":"180-C-B","displayName":"CMA 180-C-B","category":"HTSRC","machineStyle":"Single Rack","hotWater":true,"chemical":true,"racksPerHour":60,"cycleTime":58,"waterPerRack":0.82,"width":25.5,"depth":25,"height":73.5,"maxHeight":79,"imageUrl":"assets/equipment-images/CMA180-C-B.jpg","straightInstall":false,"cornerInstall":true,"electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":78},{"key":"240V/1PH","label":"240V / 1PH","amps":88},{"key":"208V/3PH","label":"208V / 3PH","amps":49},{"key":"240V/3PH","label":"240V / 3PH","amps":55},{"key":"480V/3PH","label":"480V / 3PH","amps":25}],"detailsHref":"mechanical-warewash/CMA180-C-B.html"},{"equipmentId":"CMA180-S","manufacturer":"CMA","model":"180-S","displayName":"CMA 180-S","category":"HTSRS","machineStyle":"Single Rack","hotWater":false,"chemical":true,"racksPerHour":60,"cycleTime":58,"waterPerRack":0.82,"width":25.5,"depth":25,"height":73.5,"maxHeight":79,"imageUrl":"assets/equipment-images/CMA180-S.jpg","straightInstall":true,"cornerInstall":false,"electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":36},{"key":"240V/1PH","label":"240V / 1PH","amps":38},{"key":"208V/3PH","label":"208V / 3PH","amps":24},{"key":"240V/3PH","label":"240V / 3PH","amps":26},{"key":"480V/3PH","label":"480V / 3PH","amps":10}],"detailsHref":"mechanical-warewash/CMA180-S.html"},{"equipmentId":"CMA180-S-B","manufacturer":"CMA","model":"180-S-B","displayName":"CMA 180-S-B","category":"HTSRS","machineStyle":"Single Rack","hotWater":true,"chemical":true,"racksPerHour":60,"cycleTime":58,"waterPerRack":0.82,"width":25.5,"depth":25,"height":73.5,"maxHeight":79,"imageUrl":"assets/equipment-images/CMA180-S-B.jpg","straightInstall":true,"cornerInstall":false,"electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":78},{"key":"240V/1PH","label":"240V / 1PH","amps":88},{"key":"208V/3PH","label":"208V / 3PH","amps":49},{"key":"240V/3PH","label":"240V / 3PH","amps":55},{"key":"480V/3PH","label":"480V / 3PH","amps":25}],"detailsHref":"mechanical-warewash/CMA180-S-B.html"},{"equipmentId":"180UC-3","manufacturer":"CMA","model":"180UC-3","displayName":"CMA 180UC-3","category":"Undercounter","machineStyle":"Undercounter","hotWater":true,"chemical":false,"racksPerHour":28,"cycleTime":120,"waterPerRack":0.68,"width":24,"depth":25,"height":34.5,"maxHeight":35,"imageUrl":"assets/equipment-images/180UC-3.png","straightInstall":false,"cornerInstall":false,"electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":30},{"key":"240V/1PH","label":"240V / 1PH","amps":32}],"detailsHref":"mechanical-warewash/180UC-3.html"},{"equipmentId":"AH2","manufacturer":"CMA","model":"AH2","displayName":"CMA AH2","category":"SRLTS","machineStyle":"Single Rack","hotWater":false,"chemical":true,"racksPerHour":40,"cycleTime":90,"waterPerRack":1.7,"width":25.75,"depth":25.75,"height":74,"maxHeight":74,"imageUrl":"assets/equipment-images/AH2.jpg","straightInstall":true,"cornerInstall":false,"electrical":[{"key":"120V/1PH","label":"120V / 1PH","amps":16}],"detailsHref":"mechanical-warewash/AH2.html"},{"equipmentId":"B2","manufacturer":"CMA","model":"B2","displayName":"CMA B2","category":"DRLTS","machineStyle":"Double Rack","hotWater":false,"chemical":true,"racksPerHour":80,"cycleTime":90,"waterPerRack":0.97,"width":44.25,"depth":25.25,"height":81,"maxHeight":82,"imageUrl":"assets/equipment-images/B2.jpg","straightInstall":true,"cornerInstall":false,"electrical":[{"key":"120V/1PH","label":"120V / 1PH","amps":30}],"detailsHref":"mechanical-warewash/B2.html"},{"equipmentId":"C2","manufacturer":"CMA","model":"C2","displayName":"CMA C2","category":"SRLTC","machineStyle":"Single Rack","hotWater":false,"chemical":true,"racksPerHour":40,"cycleTime":90,"waterPerRack":1.7,"width":25.75,"depth":25.75,"height":74,"maxHeight":74,"imageUrl":"assets/equipment-images/C2.jpg","straightInstall":false,"cornerInstall":true,"electrical":[{"key":"120V/1PH","label":"120V / 1PH","amps":16}],"detailsHref":"mechanical-warewash/C2.html"},{"equipmentId":"CB","manufacturer":"CMA","model":"CB","displayName":"CMA CB","category":"DRLTC","machineStyle":"Double Rack","hotWater":false,"chemical":true,"racksPerHour":80,"cycleTime":90,"waterPerRack":0.97,"width":44.25,"depth":25.25,"height":81,"maxHeight":82,"imageUrl":"assets/equipment-images/CB.jpg","straightInstall":false,"cornerInstall":true,"electrical":[{"key":"120V/1PH","label":"120V / 1PH","amps":30}],"detailsHref":"mechanical-warewash/CB.html"},{"equipmentId":"EST44","manufacturer":"CMA","model":"EST-44","displayName":"CMA EST-44","category":"Conveyor","machineStyle":"Conveyor","hotWater":false,"chemical":true,"racksPerHour":249,"cycleTime":40,"waterPerRack":0.46,"width":44,"depth":25.25,"height":73,"maxHeight":73,"imageUrl":"assets/equipment-images/EST44.jpg","straightInstall":true,"cornerInstall":false,"electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":71},{"key":"240V/1PH","label":"240V / 1PH","amps":80},{"key":"208V/3PH","label":"208V / 3PH","amps":55},{"key":"240V/3PH","label":"240V / 3PH","amps":62.5},{"key":"480V/3PH","label":"480V / 3PH","amps":24}],"detailsHref":"mechanical-warewash/EST44.html"},{"equipmentId":"EST44-EXT","manufacturer":"CMA","model":"EST-44-EXT","displayName":"CMA EST-44-EXT","category":"Conveyor","machineStyle":"Conveyor","hotWater":false,"chemical":true,"racksPerHour":249,"cycleTime":40,"waterPerRack":0.46,"width":44,"depth":25.25,"height":79,"maxHeight":79,"imageUrl":"assets/equipment-images/EST44-EXT.jpg","straightInstall":true,"cornerInstall":false,"electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":71},{"key":"240V/1PH","label":"240V / 1PH","amps":80},{"key":"208V/3PH","label":"208V / 3PH","amps":60.5},{"key":"240V/3PH","label":"240V / 3PH","amps":69},{"key":"480V/3PH","label":"480V / 3PH","amps":27}],"detailsHref":"mechanical-warewash/EST44-EXT.html"},{"equipmentId":"EST66","manufacturer":"CMA","model":"EST-66","displayName":"CMA EST-66","category":"Conveyor","machineStyle":"Conveyor","hotWater":false,"chemical":true,"racksPerHour":249,"cycleTime":49,"waterPerRack":0.46,"width":66,"depth":25.25,"height":73,"maxHeight":73,"imageUrl":"assets/equipment-images/EST66.jpg","straightInstall":true,"cornerInstall":false,"electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":78},{"key":"240V/1PH","label":"240V / 1PH","amps":87},{"key":"208V/3PH","label":"208V / 3PH","amps":58},{"key":"240V/3PH","label":"240V / 3PH","amps":66},{"key":"480V/3PH","label":"480V / 3PH","amps":26}],"detailsHref":"mechanical-warewash/EST66.html"},{"equipmentId":"EST66-EXT","manufacturer":"CMA","model":"EST-66-EXT","displayName":"CMA EST-66-EXT","category":"Conveyor","machineStyle":"Conveyor","hotWater":false,"chemical":true,"racksPerHour":249,"cycleTime":49,"waterPerRack":0.46,"width":66,"depth":25.25,"height":79,"maxHeight":79,"imageUrl":"assets/equipment-images/EST66-EXT.jpg","straightInstall":true,"cornerInstall":false,"electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":78},{"key":"240V/1PH","label":"240V / 1PH","amps":87},{"key":"208V/3PH","label":"208V / 3PH","amps":64},{"key":"240V/3PH","label":"240V / 3PH","amps":72},{"key":"480V/3PH","label":"480V / 3PH","amps":29}],"detailsHref":"mechanical-warewash/EST66-EXT.html"},{"equipmentId":"EST-FL","manufacturer":"CMA","model":"EST-FL","displayName":"CMA EST-FL","category":"SRLTF","machineStyle":"Single Rack","hotWater":false,"chemical":true,"racksPerHour":40,"cycleTime":90,"waterPerRack":1.09,"width":25.25,"depth":25.25,"height":65,"maxHeight":65,"imageUrl":"assets/equipment-images/EST-FL.jpg","straightInstall":true,"cornerInstall":true,"electrical":[{"key":"120V/1PH","label":"120V / 1PH","amps":16}],"detailsHref":"mechanical-warewash/EST-FL.html"},{"equipmentId":"GLC","manufacturer":"CMA","model":"GL-C","displayName":"CMA GL-C","category":"Glasswasher","machineStyle":"Undercounter","hotWater":false,"chemical":true,"racksPerHour":1000,"cycleTime":90,"waterPerRack":2.8,"width":25.25,"depth":25.25,"height":40.5,"maxHeight":41,"imageUrl":"assets/equipment-images/GLC.jpg","straightInstall":false,"cornerInstall":false,"electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":14.8},{"key":"240V/1PH","label":"240V / 1PH","amps":14.6}],"detailsHref":"mechanical-warewash/GLC.html"},{"equipmentId":"GW100","manufacturer":"CMA","model":"GW-100","displayName":"CMA GW-100","category":"Glasswasher","machineStyle":"Undercounter","hotWater":false,"chemical":true,"racksPerHour":1000,"cycleTime":90,"waterPerRack":2.8,"width":25.25,"depth":25.25,"height":40.5,"maxHeight":41,"imageUrl":"assets/equipment-images/GW100.jpg","straightInstall":false,"cornerInstall":false,"electrical":[{"key":"120V/1PH","label":"120V / 1PH","amps":14.4}],"detailsHref":"mechanical-warewash/GW100.html"},{"equipmentId":"UC65E-M3","manufacturer":"CMA","model":"UC65e-M3","displayName":"CMA UC65e-M3","category":"Undercounter","machineStyle":"Undercounter","hotWater":true,"chemical":false,"racksPerHour":30,"cycleTime":120,"waterPerRack":0.8,"width":24,"depth":25,"height":33.5,"maxHeight":33.5,"imageUrl":"assets/equipment-images/UC65E-M3.png","straightInstall":false,"cornerInstall":false,"electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":24},{"key":"240V/1PH","label":"240V / 1PH","amps":26}],"detailsHref":"mechanical-warewash/UC65E-M3.html"}];
+<script>
+    const MACHINE_DATA = [{"equipmentId":"5AG-ES","manufacturer":"ADS","model":"5AG-ES","displayName":"ADS 5AG-ES","category":"DRLTS","machineStyle":"Double Rack","hotWater":false,"chemical":true,"straightInstall":true,"cornerInstall":false,"imageUrl":"assets/local/0fccc702b4a53e46178bdf25.jpg","detailsHref":"mechanical-warewash/5AG-ES.html","electrical":[{"key":"120V/1PH","label":"120V / 1PH","amps":30.0}],"racksPerHour":74.0,"cycleTime":90.0,"waterPerRack":1.78,"width":49.0,"depth":35.0,"height":71.25,"maxHeight":80.0},{"equipmentId":"ADC44","manufacturer":"ADS","model":"ADC44","displayName":"ADS ADC44","category":"Conveyor","machineStyle":"Conveyor","hotWater":true,"chemical":true,"straightInstall":true,"cornerInstall":false,"imageUrl":"assets/local/ba6a650231fd164fd650530b.png","detailsHref":"mechanical-warewash/ADC44.html","electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":110.0},{"key":"240V/1PH","label":"240V / 1PH","amps":110.0},{"key":"208V/3PH","label":"208V / 3PH","amps":60.0},{"key":"240V/3PH","label":"240V / 3PH","amps":60.0},{"key":"480V/3PH","label":"480V / 3PH","amps":35.0}],"racksPerHour":244.0,"cycleTime":40.0,"waterPerRack":0.49,"width":44.0,"depth":25.25,"height":71.25,"maxHeight":81.25},{"equipmentId":"ADC66","manufacturer":"ADS","model":"ADC66","displayName":"ADS ADC66","category":"Conveyor","machineStyle":"Conveyor","hotWater":true,"chemical":true,"straightInstall":true,"cornerInstall":false,"imageUrl":"assets/local/d1815bed95ba27555c8f9a48.png","detailsHref":"mechanical-warewash/ADC66.html","electrical":[{"key":"208V/3PH","label":"208V / 3PH","amps":90.0},{"key":"240V/3PH","label":"240V / 3PH","amps":90.0}],"racksPerHour":244.0,"cycleTime":49.0,"waterPerRack":0.49,"width":66.0,"depth":34.5,"height":71.25,"maxHeight":81.25},{"equipmentId":"CMA180-C","manufacturer":"CMA","model":"180-C","displayName":"CMA 180-C","category":"HTSRC","machineStyle":"Single Rack","hotWater":false,"chemical":true,"straightInstall":false,"cornerInstall":true,"imageUrl":"assets/equipment-images/CMA180-C.jpg","detailsHref":"mechanical-warewash/CMA180-C.html","electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":36.0},{"key":"240V/1PH","label":"240V / 1PH","amps":38.0},{"key":"208V/3PH","label":"208V / 3PH","amps":24.0},{"key":"240V/3PH","label":"240V / 3PH","amps":26.0},{"key":"480V/3PH","label":"480V / 3PH","amps":10.0}],"racksPerHour":60.0,"cycleTime":58.0,"waterPerRack":0.82,"width":25.5,"depth":25.0,"height":73.5,"maxHeight":79.0},{"equipmentId":"CMA180-C-B","manufacturer":"CMA","model":"180-C-B","displayName":"CMA 180-C-B","category":"HTSRC","machineStyle":"Single Rack","hotWater":true,"chemical":true,"straightInstall":false,"cornerInstall":true,"imageUrl":"assets/equipment-images/CMA180-C-B.jpg","detailsHref":"mechanical-warewash/CMA180-C-B.html","electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":78.0},{"key":"240V/1PH","label":"240V / 1PH","amps":88.0},{"key":"208V/3PH","label":"208V / 3PH","amps":49.0},{"key":"240V/3PH","label":"240V / 3PH","amps":55.0},{"key":"480V/3PH","label":"480V / 3PH","amps":25.0}],"racksPerHour":60.0,"cycleTime":58.0,"waterPerRack":0.82,"width":25.5,"depth":25.0,"height":73.5,"maxHeight":79.0},{"equipmentId":"CMA180-S","manufacturer":"CMA","model":"180-S","displayName":"CMA 180-S","category":"HTSRS","machineStyle":"Single Rack","hotWater":false,"chemical":true,"straightInstall":true,"cornerInstall":false,"imageUrl":"assets/equipment-images/CMA180-S.jpg","detailsHref":"mechanical-warewash/CMA180-S.html","electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":36.0},{"key":"240V/1PH","label":"240V / 1PH","amps":38.0},{"key":"208V/3PH","label":"208V / 3PH","amps":24.0},{"key":"240V/3PH","label":"240V / 3PH","amps":26.0},{"key":"480V/3PH","label":"480V / 3PH","amps":10.0}],"racksPerHour":60.0,"cycleTime":58.0,"waterPerRack":0.82,"width":25.5,"depth":25.0,"height":73.5,"maxHeight":79.0},{"equipmentId":"CMA180-S-B","manufacturer":"CMA","model":"180-S-B","displayName":"CMA 180-S-B","category":"HTSRS","machineStyle":"Single Rack","hotWater":true,"chemical":true,"straightInstall":true,"cornerInstall":false,"imageUrl":"assets/equipment-images/CMA180-S-B.jpg","detailsHref":"mechanical-warewash/CMA180-S-B.html","electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":78.0},{"key":"240V/1PH","label":"240V / 1PH","amps":88.0},{"key":"208V/3PH","label":"208V / 3PH","amps":49.0},{"key":"240V/3PH","label":"240V / 3PH","amps":55.0},{"key":"480V/3PH","label":"480V / 3PH","amps":25.0}],"racksPerHour":60.0,"cycleTime":58.0,"waterPerRack":0.82,"width":25.5,"depth":25.0,"height":73.5,"maxHeight":79.0},{"equipmentId":"180UC-3","manufacturer":"CMA","model":"180UC-3","displayName":"CMA 180UC-3","category":"Undercounter","machineStyle":"Undercounter","hotWater":true,"chemical":false,"straightInstall":false,"cornerInstall":false,"imageUrl":"assets/equipment-images/180UC-3.png","detailsHref":"mechanical-warewash/180UC-3.html","electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":30.0},{"key":"240V/1PH","label":"240V / 1PH","amps":32.0}],"racksPerHour":28.0,"cycleTime":120.0,"waterPerRack":0.68,"width":24.0,"depth":25.0,"height":34.5,"maxHeight":35.0},{"equipmentId":"AH2","manufacturer":"CMA","model":"AH2","displayName":"CMA AH2","category":"SRLTS","machineStyle":"Single Rack","hotWater":false,"chemical":true,"straightInstall":true,"cornerInstall":false,"imageUrl":"assets/equipment-images/AH2.jpg","detailsHref":"mechanical-warewash/AH2.html","electrical":[{"key":"120V/1PH","label":"120V / 1PH","amps":16.0}],"racksPerHour":40.0,"cycleTime":90.0,"waterPerRack":1.7,"width":25.75,"depth":25.75,"height":74.0,"maxHeight":74.0},{"equipmentId":"B2","manufacturer":"CMA","model":"B2","displayName":"CMA B2","category":"DRLTS","machineStyle":"Double Rack","hotWater":false,"chemical":true,"straightInstall":true,"cornerInstall":false,"imageUrl":"assets/equipment-images/B2.jpg","detailsHref":"mechanical-warewash/B2.html","electrical":[{"key":"120V/1PH","label":"120V / 1PH","amps":30.0}],"racksPerHour":80.0,"cycleTime":90.0,"waterPerRack":0.97,"width":44.25,"depth":25.25,"height":81.0,"maxHeight":82.0},{"equipmentId":"C2","manufacturer":"CMA","model":"C2","displayName":"CMA C2","category":"SRLTC","machineStyle":"Single Rack","hotWater":false,"chemical":true,"straightInstall":false,"cornerInstall":true,"imageUrl":"assets/equipment-images/C2.jpg","detailsHref":"mechanical-warewash/C2.html","electrical":[{"key":"120V/1PH","label":"120V / 1PH","amps":16.0}],"racksPerHour":40.0,"cycleTime":90.0,"waterPerRack":1.7,"width":25.75,"depth":25.75,"height":74.0,"maxHeight":74.0},{"equipmentId":"CB","manufacturer":"CMA","model":"CB","displayName":"CMA CB","category":"DRLTC","machineStyle":"Double Rack","hotWater":false,"chemical":true,"straightInstall":false,"cornerInstall":true,"imageUrl":"assets/equipment-images/CB.jpg","detailsHref":"mechanical-warewash/CB.html","electrical":[{"key":"120V/1PH","label":"120V / 1PH","amps":30.0}],"racksPerHour":80.0,"cycleTime":90.0,"waterPerRack":0.97,"width":44.25,"depth":25.25,"height":81.0,"maxHeight":82.0},{"equipmentId":"EST44","manufacturer":"CMA","model":"EST-44","displayName":"CMA EST-44","category":"Conveyor","machineStyle":"Conveyor","hotWater":false,"chemical":true,"straightInstall":true,"cornerInstall":false,"imageUrl":"assets/equipment-images/EST44.jpg","detailsHref":"mechanical-warewash/EST44.html","electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":71.0},{"key":"240V/1PH","label":"240V / 1PH","amps":80.0},{"key":"208V/3PH","label":"208V / 3PH","amps":55.0},{"key":"240V/3PH","label":"240V / 3PH","amps":62.5},{"key":"480V/3PH","label":"480V / 3PH","amps":24.0}],"racksPerHour":249.0,"cycleTime":40.0,"waterPerRack":0.46,"width":44.0,"depth":25.25,"height":73.0,"maxHeight":73.0},{"equipmentId":"EST44-EXT","manufacturer":"CMA","model":"EST-44-EXT","displayName":"CMA EST-44-EXT","category":"Conveyor","machineStyle":"Conveyor","hotWater":false,"chemical":true,"straightInstall":true,"cornerInstall":false,"imageUrl":"assets/equipment-images/EST44-EXT.jpg","detailsHref":"mechanical-warewash/EST44-EXT.html","electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":71.0},{"key":"240V/1PH","label":"240V / 1PH","amps":80.0},{"key":"208V/3PH","label":"208V / 3PH","amps":60.5},{"key":"240V/3PH","label":"240V / 3PH","amps":69.0},{"key":"480V/3PH","label":"480V / 3PH","amps":27.0}],"racksPerHour":249.0,"cycleTime":40.0,"waterPerRack":0.46,"width":44.0,"depth":25.25,"height":79.0,"maxHeight":79.0},{"equipmentId":"EST66","manufacturer":"CMA","model":"EST-66","displayName":"CMA EST-66","category":"Conveyor","machineStyle":"Conveyor","hotWater":false,"chemical":true,"straightInstall":true,"cornerInstall":false,"imageUrl":"assets/equipment-images/EST66.jpg","detailsHref":"mechanical-warewash/EST66.html","electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":78.0},{"key":"240V/1PH","label":"240V / 1PH","amps":87.0},{"key":"208V/3PH","label":"208V / 3PH","amps":58.0},{"key":"240V/3PH","label":"240V / 3PH","amps":66.0},{"key":"480V/3PH","label":"480V / 3PH","amps":26.0}],"racksPerHour":249.0,"cycleTime":49.0,"waterPerRack":0.46,"width":66.0,"depth":25.25,"height":73.0,"maxHeight":73.0},{"equipmentId":"EST66-EXT","manufacturer":"CMA","model":"EST-66-EXT","displayName":"CMA EST-66-EXT","category":"Conveyor","machineStyle":"Conveyor","hotWater":false,"chemical":true,"straightInstall":true,"cornerInstall":false,"imageUrl":"assets/equipment-images/EST66-EXT.jpg","detailsHref":"mechanical-warewash/EST66-EXT.html","electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":78.0},{"key":"240V/1PH","label":"240V / 1PH","amps":87.0},{"key":"208V/3PH","label":"208V / 3PH","amps":64.0},{"key":"240V/3PH","label":"240V / 3PH","amps":72.0},{"key":"480V/3PH","label":"480V / 3PH","amps":29.0}],"racksPerHour":249.0,"cycleTime":49.0,"waterPerRack":0.46,"width":66.0,"depth":25.25,"height":79.0,"maxHeight":79.0},{"equipmentId":"EST-FL","manufacturer":"CMA","model":"EST-FL","displayName":"CMA EST-FL","category":"SRLTF","machineStyle":"Single Rack","hotWater":false,"chemical":true,"straightInstall":true,"cornerInstall":true,"imageUrl":"assets/equipment-images/EST-FL.jpg","detailsHref":"mechanical-warewash/EST-FL.html","electrical":[{"key":"120V/1PH","label":"120V / 1PH","amps":16.0}],"racksPerHour":40.0,"cycleTime":90.0,"waterPerRack":1.09,"width":25.25,"depth":25.25,"height":65.0,"maxHeight":65.0},{"equipmentId":"GLC","manufacturer":"CMA","model":"GL-C","displayName":"CMA GL-C","category":"Glasswasher","machineStyle":"Undercounter","hotWater":false,"chemical":true,"straightInstall":false,"cornerInstall":false,"imageUrl":"assets/local/6100bfb27735f1e7f15801c5.jpg","detailsHref":"mechanical-warewash/GLC.html","electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":14.8},{"key":"240V/1PH","label":"240V / 1PH","amps":14.6}],"racksPerHour":1000.0,"cycleTime":90.0,"waterPerRack":2.8,"width":25.25,"depth":25.25,"height":40.5,"maxHeight":41.0},{"equipmentId":"GW100","manufacturer":"CMA","model":"GW-100","displayName":"CMA GW-100","category":"Glasswasher","machineStyle":"Undercounter","hotWater":false,"chemical":true,"straightInstall":false,"cornerInstall":false,"imageUrl":"assets/local/bf8b50da86086c7fa998d261.jpg","detailsHref":"mechanical-warewash/GW100.html","electrical":[{"key":"120V/1PH","label":"120V / 1PH","amps":14.4}],"racksPerHour":1000.0,"cycleTime":90.0,"waterPerRack":2.8,"width":25.25,"depth":25.25,"height":40.5,"maxHeight":41.0},{"equipmentId":"UC65E-M3","manufacturer":"CMA","model":"UC65e-M3","displayName":"CMA UC65e-M3","category":"Undercounter","machineStyle":"Undercounter","hotWater":true,"chemical":false,"straightInstall":false,"cornerInstall":false,"imageUrl":"assets/equipment-images/UC65E-M3.png","detailsHref":"mechanical-warewash/UC65E-M3.html","electrical":[{"key":"208V/1PH","label":"208V / 1PH","amps":24.0},{"key":"240V/1PH","label":"240V / 1PH","amps":26.0}],"racksPerHour":30.0,"cycleTime":120.0,"waterPerRack":0.8,"width":24.0,"depth":25.0,"height":33.5,"maxHeight":33.5}];
 
     const state = {
       style: new Set(),
