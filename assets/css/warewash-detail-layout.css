@@ -1,5 +1,37 @@
-.top-grid.warewash-photo-grid {
-  grid-template-columns: minmax(0, 1fr);
+.page {
+  overflow-wrap: anywhere;
+}
+
+.page .top-grid:has(> .spec-card) {
+  grid-template-columns: clamp(150px, 28vw, 240px) minmax(0, 1fr);
+}
+
+.page .top-grid > .spec-card {
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  overflow: visible;
+}
+
+.page .top-grid > .spec-card .spec-grid {
+  height: auto;
+  grid-template-rows: none;
+}
+
+.page .top-grid .spec-item {
+  overflow: visible;
+}
+
+.page .top-grid .manuals-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 5rem), 1fr));
+  height: auto;
+}
+
+.page .top-grid .manual-tile {
+  height: auto;
+  min-height: 24px;
+  padding: 2px;
+  box-sizing: border-box;
 }
 
 .warewash-description {
@@ -10,77 +42,33 @@
   padding: 4px 8px;
   text-align: left;
   line-height: 1.5;
-  overflow-wrap: anywhere;
 }
 
 .warewash-description-text p + p {
   margin-top: 0.75em;
 }
 
-.spec-card.warewash-spec-card {
-  height: auto;
-  min-height: 0;
-  max-height: none;
-  margin-bottom: 8px;
+.page .parts-table :is(th, td) {
+  white-space: normal;
 }
 
-.warewash-spec-card .spec-grid {
-  height: auto;
-  grid-template-rows: none;
-}
-
-.warewash-spec-card .manuals-grid,
-.warewash-spec-card .manual-tile {
-  height: auto;
+@media screen and (max-width: 540px) {
+  .page .top-grid:has(> .spec-card) {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 @media screen and (max-width: 650px) {
-  .page {
-    overflow-wrap: anywhere;
-  }
-
-  .page .top-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
   .page table {
     overflow: visible;
   }
 
-  .page .parts-table :is(th, td) {
-    white-space: normal;
-  }
-
-  .page .parts-table :is(th, td):first-child {
-    width: 26%;
-  }
-
+  .page .parts-table :is(th, td):first-child,
   .page .parts-table :is(th, td):last-child {
     width: 26%;
   }
 
-  .page .spec-card {
-    height: auto;
-    min-height: 0;
-    max-height: none;
-  }
-
-  .page .spec-card .spec-grid,
-  .page .spec-card .manuals-grid,
-  .page .spec-card .manual-tile {
-    height: auto;
-    grid-template-rows: none;
-  }
-
-  .page .spec-card .spec-item {
-    overflow: visible;
-  }
-
-  .page .spec-card .manuals-grid {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
-  }
-
-  .page .spec-card .manual-tile {
+  .page .top-grid .manual-tile {
     font-size: 0.8rem;
     line-height: 1.25;
   }
