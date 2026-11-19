@@ -1,0 +1,87 @@
+.top-grid.warewash-photo-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.warewash-description {
+  margin-bottom: 8px;
+}
+
+.warewash-description-text {
+  padding: 4px 8px;
+  text-align: left;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.warewash-description-text p + p {
+  margin-top: 0.75em;
+}
+
+.spec-card.warewash-spec-card {
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  margin-bottom: 8px;
+}
+
+.warewash-spec-card .spec-grid {
+  height: auto;
+  grid-template-rows: none;
+}
+
+.warewash-spec-card .manuals-grid,
+.warewash-spec-card .manual-tile {
+  height: auto;
+}
+
+@media screen and (max-width: 650px) {
+  .page {
+    overflow-wrap: anywhere;
+  }
+
+  .page .top-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .page table {
+    overflow: visible;
+  }
+
+  .page .parts-table :is(th, td) {
+    white-space: normal;
+  }
+
+  .page .parts-table :is(th, td):first-child {
+    width: 26%;
+  }
+
+  .page .parts-table :is(th, td):last-child {
+    width: 26%;
+  }
+
+  .page .spec-card {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+  }
+
+  .page .spec-card .spec-grid,
+  .page .spec-card .manuals-grid,
+  .page .spec-card .manual-tile {
+    height: auto;
+    grid-template-rows: none;
+  }
+
+  .page .spec-card .spec-item {
+    overflow: visible;
+  }
+
+  .page .spec-card .manuals-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
+  }
+
+  .page .spec-card .manual-tile {
+    font-size: 0.8rem;
+    line-height: 1.25;
+  }
+}

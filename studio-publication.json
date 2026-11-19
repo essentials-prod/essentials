@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "publisher": "Essentials Studio",
-  "operation": "bf4d3012cde24cd99e51cf7998fb9935",
+  "operation": "853b9a24bc624ceeb45633b9d06cb454",
   "kind": "publish",
-  "build": 69,
-  "output_sha256": "d6e25edac99c691cd7bbec473f85a1f6581f4e4f19a8e722354101eea054b0e4",
+  "build": 75,
+  "output_sha256": "699b4095533980ef27771a8ce32e4bbbebcfd4f68b48270cb69f7f2e1e66ff47",
   "rollback_target": null,
   "files": {
     "_studio-build.json": {
       "bytes": 788,
-      "sha256": "7c55315c5d2ff46af62ac530ec9ddf37cbecf412aab341a8d6aedfc1d6f705aa",
-      "git_blob": "e409cc7e4a2296f38cc6be4ffaea429aa1975b9c"
+      "sha256": "d044d64c5e973d32fb5240dfba40ae7d9c353ee5d75e3d3c1e84252a201c68df",
+      "git_blob": "8f0ec7d55b5055e1ac0806eb4bec6161efc23334"
     },
     "assets/chemical-category-images/dish-machine.png": {
       "bytes": 200162,
@@ -751,6 +751,11 @@
       "bytes": 20679,
       "sha256": "9b021602864c69440dbc7df7c27631e1cb8aa69a8487a1cb42a9f3d2eea49323",
       "git_blob": "4fe7506628818bed0e9ee03e3d8979eeaf845efe"
+    },
+    "assets/css/warewash-detail-layout.css": {
+      "bytes": 1476,
+      "sha256": "ad7cdc4b8baf4d3fbdefc38f11bebdaf870c8a9fb7c658f9c69cc0dfbafa72c2",
+      "git_blob": "3490f72be09bfb49ad3449fef3902e37080dd4b6"
     },
     "assets/css/warewash.64da8de94946.css": {
       "bytes": 17670,
@@ -19968,139 +19973,139 @@
       "git_blob": "1eee45aecde50b0e554fa0b1a41a640cdd329a4f"
     },
     "mechanical-warewash/180UC-3.html": {
-      "bytes": 20128,
-      "sha256": "d0c420e9aa01e63ef690e5c721e3b50cf35d8de9990bb00dadd437cc7c91fe3b",
-      "git_blob": "bbf77ae7a62debc13bccc933af99834b1c823b5a"
+      "bytes": 20220,
+      "sha256": "a6c36ab7121ec1746f7f99bf948ebe2bb52643da93ffdf03e27f0a9a9238199d",
+      "git_blob": "7eb03cf66906534cc72e1f8112de149623c931ec"
     },
     "mechanical-warewash/5AG-ES.html": {
-      "bytes": 25860,
-      "sha256": "4f791f5493addfa5c1f6b4ae83bb2c88711184797e532a4949fb4dccccf6e81a",
-      "git_blob": "c33b716175ea88af88fd0787a8eaa81cd51b311a"
+      "bytes": 25952,
+      "sha256": "036260b3ac89e2aa60f87b3dfa24fec472a2cb2204991472ec4497716017aff7",
+      "git_blob": "63a94e1f51ba6ec9063f1cd2614286cdec8ec932"
     },
     "mechanical-warewash/ADC44.html": {
-      "bytes": 46955,
-      "sha256": "854b79a32233ecdc22afd6c285fc21cccc548e0f3055b0a10271702b962f7bdd",
-      "git_blob": "9d53b27cf7affe78e36d87687696e50b0b32972d"
+      "bytes": 47047,
+      "sha256": "1be4a224c186ed815624e47f6c769af1cd4c25fa869f8cbcdd4195d18599ffe6",
+      "git_blob": "3e1e10295d6d839f53fac7bbbc2dad0cbece16e2"
     },
     "mechanical-warewash/ADC66.html": {
-      "bytes": 46932,
-      "sha256": "d824915bca70bb0d9be1a8dfce2bfa6accfe95d281d537722069a5fa819ce402",
-      "git_blob": "6ac202767bbda733145600393b275854dea56237"
+      "bytes": 47024,
+      "sha256": "ebf465e260cc0e75142156c444b173569600fc270662826790cb1e9e81af5f76",
+      "git_blob": "0ab19b4e18685a3dddb908b5e9f59f37001c9a4e"
     },
     "mechanical-warewash/AH.html": {
-      "bytes": 32593,
-      "sha256": "1c1c5275c92ae4bbe540f578622f3a3947f0f0d98e1665a8c7467d1917fb792c",
-      "git_blob": "8eb522473aaf1cf8bcc00c5040664a21e7e068e1"
+      "bytes": 32646,
+      "sha256": "30cc30f068c2cee2f66ea4c93d8ab9cdebe8159df1be9fdd00a71566cabc5a1d",
+      "git_blob": "260195f70d73206b1193bfeaa78fd0c44af7dcb9"
     },
     "mechanical-warewash/AH2.html": {
-      "bytes": 39577,
-      "sha256": "055684ba4e7b07133f9f22a688ca146732abc422f865021e03949149576a2202",
-      "git_blob": "f59aa6d31c72d123c15a2188b1439f517d7eaa51"
+      "bytes": 39669,
+      "sha256": "d7e0c9c32641066c00ee820e0fbb21b19ffb4770024876f369f911e9d137f98c",
+      "git_blob": "ff809500d0eb44c80e329da6d2e305d06b01aa53"
     },
     "mechanical-warewash/B.html": {
-      "bytes": 22115,
-      "sha256": "a13365cb9a8a5d70b8928e8b5886658d64fcb187eec94745d9f600c5bdb0e3c5",
-      "git_blob": "3eae0b6992566305a731aa74cb29c44875ebc096"
+      "bytes": 22168,
+      "sha256": "07adfed36a817a4aebf79de3394153732c70c9244b40588029ec6e36a6d9f024",
+      "git_blob": "18a1849b130465ec7bfd6c318176db1ee172d513"
     },
     "mechanical-warewash/B2.html": {
-      "bytes": 34526,
-      "sha256": "35048bbdd4f9846cc4a6f7d1a128a952457db77e5f2909e8b1b3cd9c00ca6893",
-      "git_blob": "02d16a5598b00ce6fc1bfd0342c976d0edc00e75"
+      "bytes": 34618,
+      "sha256": "0590236c77a349b6a4d667d53dec53bbebfb2a002569a314cc963e2627e1f0e2",
+      "git_blob": "76447b77dec619d00b09962358d7cc5770b8dddf"
     },
     "mechanical-warewash/C.html": {
-      "bytes": 32580,
-      "sha256": "e314fa8a188749e9529b47c12b4755199f706821d537a13a95c368753ddecef3",
-      "git_blob": "33b3798a2607ddb2335445146822f8f71ba7075d"
+      "bytes": 32633,
+      "sha256": "5343c4502de9fc34cbb763b4f007631696efd80bb122213339db0a362cd8989c",
+      "git_blob": "8865dc7bbef23d6259c761352769e3d2c813afd1"
     },
     "mechanical-warewash/C2.html": {
-      "bytes": 39570,
-      "sha256": "7c4e9ef30ce6f79a170ab564b41ddd862e8ea4dd1a92066a623efcd0ec8a54b8",
-      "git_blob": "d67750322624368c3fa9b54f739826b2559b8ac9"
+      "bytes": 39662,
+      "sha256": "d9a61952598af1588c49b539ee3855655909506033f277d903222bcb69c1ad80",
+      "git_blob": "dbaa7d29acf64249c9001dc9502d8a9b003dde6f"
     },
     "mechanical-warewash/CB.html": {
-      "bytes": 34524,
-      "sha256": "1da4040d6ddc2cf8b97828e40ded0159920b1f2359dedc0e7b5353200a629942",
-      "git_blob": "aed263c4d02e696c035d13997204896e651663ad"
+      "bytes": 34616,
+      "sha256": "a73bd90f070417f69ac2ee5f3204b56eae120c62bd6b0dce8463346ddbe68bd2",
+      "git_blob": "73adacba689564cd6cb431fc620e786c35b44eb9"
     },
     "mechanical-warewash/CMA180-C-B.html": {
-      "bytes": 37524,
-      "sha256": "c5f603b575e8aab4d848e12c88aeb58941e762aa97c53a236c95b2addae85e4d",
-      "git_blob": "84d360c9d7017c86127fbe83eea5863cef6c42a8"
+      "bytes": 37616,
+      "sha256": "0c7aaf70d7e76e57e2e3a6859b61c41c4fffca4f3b166a8f3a36ef5f14d9f49a",
+      "git_blob": "e5bc87cbca95ca809ce26fa91b6dc316581d8905"
     },
     "mechanical-warewash/CMA180-C.html": {
-      "bytes": 37502,
-      "sha256": "9fcb83a994ff666d121ea17e952c4f152529c4e6f756dcca4157db918026c0ac",
-      "git_blob": "615cef1809af441d78d0aacb9fd79b014cba9234"
+      "bytes": 37594,
+      "sha256": "fdd78312b2b13ffe3d72240c8a5587f091f67e6e26bf0fbbde566e2e55929e62",
+      "git_blob": "bd151d5ac92eaebe864573e4c3b2927f32829653"
     },
     "mechanical-warewash/CMA180-S-B.html": {
-      "bytes": 37526,
-      "sha256": "3ff83164281ad14e489e43eff7d19705e2cf62d3e7c3391a594dc52e5349c584",
-      "git_blob": "b009ad4fe48534d3f46bb01dfb19d5e8da5f1488"
+      "bytes": 37618,
+      "sha256": "489d92b4de01c2ba6239ed257ad8fb988b44a0ef0aafcaac32a5860e752e216a",
+      "git_blob": "844796295feeccd3c1e1c10ca95e83a9a9d88e1b"
     },
     "mechanical-warewash/CMA180-S.html": {
-      "bytes": 37504,
-      "sha256": "dfa39c9b65df1d0a9e05f71fac82226c49e4ba20719d19a57d622d8d6c7ee448",
-      "git_blob": "2b4bf10cc1beb147c4a993bd12614d64322c974a"
+      "bytes": 37596,
+      "sha256": "0b732afae0d33302d96900e8f69465a5c43ed73a5f4ae47ff07b1a29443b0f09",
+      "git_blob": "868956c38c07c601c39eb0668c0c4ec39d0de1e0"
     },
     "mechanical-warewash/CMA180VL.html": {
-      "bytes": 36382,
-      "sha256": "54a74c62adc8873c3a5946bc13a870d3e0eeb415b851e1e538e34b9ff4412576",
-      "git_blob": "14f68ca32aef00d9b342778c2eaeae591158595f"
+      "bytes": 36521,
+      "sha256": "0287304c5af827c28e206a0b8bbf48c770b7516293918dd2cdcd26d080361681",
+      "git_blob": "3747d8f031fd9a26900f5c4b47ab209ba5fed0f8"
     },
     "mechanical-warewash/EST-FL.html": {
-      "bytes": 20101,
-      "sha256": "fa0ca60cf04fa23402e4726a2dce9b1a5c89fb4f9debdeb31537bd29080f7f61",
-      "git_blob": "92678069d173d6c530f86007cba2d31e39c2ea5b"
+      "bytes": 20193,
+      "sha256": "497a406783a76925b4266779eeebc62925929be76094695ab41a1964e5d7267a",
+      "git_blob": "b1c919dcdbf74ec71683768e69e0f7f5153aa31e"
     },
     "mechanical-warewash/EST44-EXT.html": {
-      "bytes": 28726,
-      "sha256": "55e38c8f924e27040b74d09a8f9ef8dead9862294dada515a70f779cc1f83b8f",
-      "git_blob": "eed93c9dfdc73e83717b05f530071a4c2f050c65"
+      "bytes": 28818,
+      "sha256": "bda84d652a78f455688f34b04ca52b20ebe9ee32ee232d14e5a423b87898c58f",
+      "git_blob": "5cc7d3aa0118f926167d357a3ab545f8641609f5"
     },
     "mechanical-warewash/EST44.html": {
-      "bytes": 28706,
-      "sha256": "cd31465fcd8af8b6e99d3f677defa4981bd1d2c9f21aaf0542b4232caaea06ac",
-      "git_blob": "0d44c5588b183f270707cfd2e9617de7c0765f8e"
+      "bytes": 28798,
+      "sha256": "14a3b8a269a75311b49e2bffc4bd9533d5728db48aaad445b0b0ca6fd46cd129",
+      "git_blob": "9ab98994453ed57effec27de76ad315b6988527a"
     },
     "mechanical-warewash/EST66-EXT.html": {
-      "bytes": 30754,
-      "sha256": "2243ea2b99fda39680a1ce5b16c9c6b614f84f21fb96b7668b4a7617dcc885b0",
-      "git_blob": "69719587dcce4829c895afcb311ae60522ec286a"
+      "bytes": 30846,
+      "sha256": "0ba711df1feba278ee15ef9855229f5038b8fb06e623d7a93adf27268c72a3d8",
+      "git_blob": "de3280b52053ca6d7d990c375cc7718edeffcd95"
     },
     "mechanical-warewash/EST66.html": {
-      "bytes": 30734,
-      "sha256": "5f7787e713f436f674478d9d588be99694fe9bc4905f5ee7ab1438d69f7297f1",
-      "git_blob": "5cb48efdfc654ab1b854c8d3768c4f8bb5042c14"
+      "bytes": 30826,
+      "sha256": "5c0239eb7686debc5262bb78e983d13f3049789a931d02bf7f83bdd371c578fb",
+      "git_blob": "0d0ee92ea1fe918f4b8fda1737b60e23237544aa"
     },
     "mechanical-warewash/GLC.html": {
-      "bytes": 22750,
-      "sha256": "1df32031cb49f006261eec2a6a56ab7aa8bf99345f7877b4e2e7a2a17a1b0603",
-      "git_blob": "14134a2a3c7d4272eef61795cde531d0c2784a03"
+      "bytes": 22842,
+      "sha256": "533a0b644c6f11c2c7dd1864e457b86549ba9a3769734409fa390ca898f8d280",
+      "git_blob": "631db2e4a181231578aa6b576c98578fe11eed24"
     },
     "mechanical-warewash/GW100.html": {
-      "bytes": 22089,
-      "sha256": "87f573338ad5b9d7506a22dc5d71e7c3ebb0ad525ce7828b4403bda00feaec92",
-      "git_blob": "9fb7418c375e1b13d55145faca12d9c0ed6c2cc7"
+      "bytes": 22181,
+      "sha256": "50814db8d134d3b24d5c23f78b64f791f7f476600eb6e13eaadb12a97a2cd24b",
+      "git_blob": "f3f928b8793373589bf0eca9071f75347b93528b"
     },
     "mechanical-warewash/HT25-C-B.html": {
-      "bytes": 2428,
-      "sha256": "fa697280db919f0c4534aefc4331064aeec5a9d41876bd9e95a4f347bdca1e2b",
-      "git_blob": "e3edbc0f246d9541e28128774e6e1aa0953614d8"
+      "bytes": 2520,
+      "sha256": "04cb874cbfbe3af1f02693b4a0343c48c89168af72a19dec5647da6fb751e77a",
+      "git_blob": "186fbc3b55e9862ec3c353e49fcb86bee1fc2830"
     },
     "mechanical-warewash/HT25.html": {
-      "bytes": 2913,
-      "sha256": "4bc008c302b181a21c0511b23f838c6aec15efcfc187a22312a6cfe8b0f633f2",
-      "git_blob": "12d5c46d66f6ab9418b7e85337820f7b1ec5033f"
+      "bytes": 3005,
+      "sha256": "a63a322d60a2660c70a67162257969db377c84f818362df8bdb310383daf8be4",
+      "git_blob": "83b1e5f5c38149c9b2bf3e6ab7d24847cfebf796"
     },
     "mechanical-warewash/UC65E-M2.html": {
-      "bytes": 2532,
-      "sha256": "a74b2fd3eecab1df96a953de121d8b8e8315773e85f175eb18cc6ff03c56132a",
-      "git_blob": "bdcd00b202a43411006739828c2c5c2684a9e782"
+      "bytes": 2624,
+      "sha256": "bc7a23fc4006de9839091fe0bccf356f95c54eaa0ca67ce6ad90bd986823963b",
+      "git_blob": "f3e9102e1d754a2ba7a5be0ff01fac5754a4a849"
     },
     "mechanical-warewash/UC65E-M3.html": {
-      "bytes": 10018,
-      "sha256": "f2f608217c0cb4ac1d471760c70e00e0c1e1baff4bd5ed6b5aaba859a271134c",
-      "git_blob": "8b0f6b458f0c5131a1196c8bc37af0f31917c90d"
+      "bytes": 10110,
+      "sha256": "798e0b86d60f7b5b3c55a96d56b349522055d1f10b0447fafdba70fc51f2cb68",
+      "git_blob": "87f981e1682606d9c9c2b641af47fddfe30db56f"
     },
     "mechanical-warewash-categories/conveyor.html": {
       "bytes": 2208,
